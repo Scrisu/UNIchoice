@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIchoice - Autentificare</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="/images/logo.png" alt="UNIchoice Logo">
+                <h1>UNIchoice</h1>
+                <p>Vă ajutăm să faceți cea mai bună alegere</p>
+            </div>
+        </header>
+
+        <!-- Login Container -->
+        <div class="login-container" id="login-container">
+            <h2>Bine ai venit!</h2>
+            <div class="tabs">
+                <a href="#" class="active-tab" id="login-tab">Conectare</a>
+                <a href="#" id="register-tab">Creare cont</a>
+            </div>
+            <div id="login-form-container">
+                <p>Introdu detaliile de conectare pentru a accesa contul tău.</p>
+
+                <form id="login-form">
+                    <label for="email">Email/telefon:</label>
+                    <input type="text" id="login-email" name="email" placeholder="Introduceți email sau telefonul">
+
+                    <label for="password">Parolă:</label>
+                    <input type="password" id="login-password" name="password" placeholder="Introduceți parola">
+
+                    <a href="#" class="forgot-password">Ți-ai uitat parola?</a>
+
+                    <button type="submit" class="btn-primary">Conectare</button>
+                </form>
+            </div>
+
+            <!-- Register Form -->
+            <div id="register-form-container" style="display: none;">
+                <p>Crează-ți un cont pentru a începe.</p>
+
+                <form id="register-form">
+                    <label for="username">Nume utilizator:</label>
+                    <input type="text" id="register-username" name="username" placeholder="Introduceți numele de utilizator">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="register-email" name="email" placeholder="Introduceți email-ul">
+
+                    <label for="password">Parolă:</label>
+                    <input type="password" id="register-password" name="password" placeholder="Introduceți parola">
+
+                    <button type="submit" class="btn-primary">Creează cont</button>
+                </form>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <!-- Footer Content (ca mai sus) -->
+        </footer>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
