@@ -69,8 +69,6 @@
 }
 
 
-
-
 .between-sections-text {
     font-size: 36px;      /* Setează dimensiunea fontului */
     text-align: center;   /* Centrează textul */
@@ -201,7 +199,7 @@
 .card {
     position: relative;
     width: 381px;
-    height: 421px;
+    height: 430px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -220,6 +218,20 @@
     z-index: 1;
     opacity: 70%;
 }
+
+/* Adăugăm un efect de hover pentru imaginile cardurilor */
+.card:hover img.card-image {
+    transform: scale(1.05); /* Mărirea imaginii */
+    transition: transform 0.3s ease; /* Tranziție lină */
+}
+
+/* Adăugăm și un efect de hover pentru card */
+.card:hover {
+    transform: translateY(-5px); /* Mișcare ușoară pe verticală */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Umbra mai mare la hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Tranziție lină pentru mișcare și umbră */
+}
+
 
 /* Dreptunghiul semi-transparent de pe imagine */
 .overlay-rectangle {
@@ -308,7 +320,7 @@
 }
 
 .card-content button:hover {
-    background-color: #2F584E;
+    background-color: #21443b;
 }
 
 /* Stil personalizat pentru butonul "Transport" */
@@ -362,7 +374,7 @@
 }
 
 .forum button:hover {
-    background-color: #2F584E;
+    background-color: #21443b;
 }
 
 
