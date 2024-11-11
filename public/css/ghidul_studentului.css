@@ -123,7 +123,7 @@
 }
 
 .frame h2 {
-    font-size: 40;
+    font-size: 40px;
     color: #333;
     margin-bottom: 1rem;
     text-align: center;
@@ -139,7 +139,7 @@
 .gallery {
     display: flex;
     gap: 10px;
-    align-items: flex-start; /* Aliniază partea de sus a imaginilor */
+    align-items: flex-end; /* Aliniază partea de sus a imaginilor */
 }
 
 /* Container pentru imaginile orizontale plasate una sub alta */
@@ -151,6 +151,7 @@
 
 /* Imagini orizontale */
 .image-horizontal {
+    padding: 2px;
     width: 305px;
     height: 203px;
     object-fit: cover;
@@ -160,10 +161,12 @@
 
 /* Imagine verticală */
 .image-vertical {
+    padding: 2px;
     width: 283px;
-    height: 427px;
+    height: 416px;
     object-fit: cover;
     border-radius: 16px; /* Adaugă colțuri rotunjite */
+    align-items: flex-start;
 }
 
 
@@ -180,8 +183,6 @@
     border-radius: 8px; /* Opțional, colțuri rotunjite */
 }
 
-/* Restul stilurilor rămân la fel pentru .info-cards și .card */
-
 
 
 
@@ -195,7 +196,7 @@
     width: 100%;
 }
 /* Stilizare card */
-/* Stilizare card */
+
 .card {
     position: relative;
     width: 381px;
@@ -205,6 +206,7 @@
     overflow: hidden;
     color: white;
     text-align: center;
+    margin-left: 30px;
 }
 
 /* Fundal imagine pentru fiecare card */
@@ -281,8 +283,6 @@
     font-family: "Source Sans Pro", sans-serif;  /* Setează fontul, cu un font de rezervă */
     color: white;  /* Setează culoarea textului pe alb */
 }
-
-
 
 
 
@@ -369,7 +369,7 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
-    margin-top: 20px;
+    margin-top: 0px;
     padding: 20px;
 }
 
