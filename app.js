@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const userRoutes = require('./routes/userRoutes'); // Rutele pentru utilizatori
+app.use(express.static('public'));
 
 
 
