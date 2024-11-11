@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghidul Studentului - UNIchoice</title>
+    <link rel="stylesheet" href="css/ghidul_studentului.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <div class="nav-links">
+                <img src="images/logo.png" alt="Logo">
+                <nav class="nav-buttons">
+                    <div class="nav-item">Ghidul viitorului student</div>
+                    <div class="nav-item">Facultăți</div>
+                    <div class="nav-item">Programe de studii</div>
+                    <div class="nav-item">Forum</div>
+                </nav>
+            </div>
+            <div class="contact-profile">
+                <div class="contact-button">Contact</div>
+                <img src="images/contul-meu.png" alt="Profile Icon">
+            </div>
+        </header>
+    
+
+    <section class="welcome-section">
+        <img src="images/pagina-ghid.jpg" alt="Welcome Image">
+        <h1>Bine ai venit în Ghidul Studentului</h1>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <section class="intro">
+            <h2>Crează-ți cele mai frumoase amintiri în anii de facultate</h2>
+            <p>Bine ai venit în Ghidul Studentului, resursa ta principală pentru a naviga cu ușurință viața de student. Descoperă informații esențiale despre cazare, transport, facultăți și multe altele, toate concepute pentru a-ți face experiența universitară mai simplă și mai plăcută.</p>
+        </section>
+
+        <section class="info-cards">
+            <div class="card">
+                <h3>Camine</h3>
+                <p>Explorează căminele din întreaga țară pentru a avea cât mai multe informații despre viața de student.</p>
+                <button>Vezi cămine</button>
+            </div>
+            <div class="card">
+                <h3>Transport</h3>
+                <p>Explorează mijloacele de transport din întreaga țară pentru a avea cât mai multe informații despre viața de student.</p>
+                <button>Vezi transport</button>
+            </div>
+            <div class="card">
+                <h3>Evenimente</h3>
+                <p>Explorează evenimentele din întreaga țară pentru a avea cât mai multe informații despre viața de student.</p>
+                <button>Vezi evenimente</button>
+            </div>
+        </section>
+
+        <section class="forum">
+            <h2>Vrei să discuți cu ceilalți studenții?</h2>
+            <button>Vizitează Forum</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="contact-info">
+                <h3>UNIchoice</h3>
+                <p>Ghidul viitorului student de pretutindeni</p>
+                <p><strong>Telefon:</strong> 0711223344</p>
+                <p><strong>Email:</strong> unichoice@contact.ro</p>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Planificare</h4>
+                    <a href="#">Financiar</a>
+                    <a href="#">Surse externe</a>
+                </div>
+                <div>
+                    <h4>Aplicații studii</h4>
+                    <a href="#">Licență</a>
+                    <a href="#">Master</a>
+                    <a href="#">Doctorat</a>
+                </div>
+                <div>
+                    <h4>Resurse</h4>
+                    <a href="#">Ajutor</a>
+                    <a href="#">Newsletter</a>
+                    <a href="#">Noutăți</a>
+                    <a href="#">Tutoriale</a>
+                    <a href="#">Despre noi</a>
+                </div>
+                <div>
+                    <h4>Politici</h4>
+                    <a href="#">Termeni și condiții</a>
+                    <a href="#">Politica de utilizare Cookie-uri</a>
+                    <a href="#">Politica de confidențialitate</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 UNIchoice. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript pentru a include header.html
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

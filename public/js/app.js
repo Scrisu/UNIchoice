@@ -79,5 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Eroare:', error);
         }
-    });
+    });<script>
+   
+</script>
+
+
+ 
+
 });
+
+
