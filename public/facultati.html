@@ -4,359 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UNIchioce - Explorează facultățile</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <link rel="stylesheet" href="css/facultati.css">
+  </head>
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: white;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* Header */
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 40px;
-      background-color: #ffffff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo img {
-      width: 50px;
-      height: auto;
-      margin-right: 10px;
-    }
-
-    .logo-text h1 {
-      font-size: 1.5em;
-      color: #e88a15;
-    }
-
-    .logo-text p {
-      font-size: 0.9em;
-      color: #666;
-    }
-
-    .navigation a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #333;
-      font-size: 1em;
-    }
-
-    .contact a {
-      text-decoration: none;
-      color: #333;
-      margin-right: 10px;
-    }
-
-    .user-icon img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-    }
-
-    /* Hero Section */
-    .hero {
-      position: relative;
-      height: 500px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden; /* pentru a evita ca imaginea să depășească marginile secțiunii */
-    }
-
-    .hero-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Asigură-te că imaginea acoperă întreaga secțiune */
-      z-index: -1; /* Plasează imaginea în spatele textului */
-    }
-
-    .hero .centered-box {
-      width: 400px;
-      height: 200px;
-      background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 16px;
-    }
-
-    .hero .centered-box h1 {
-      color: white;
-      font-size: 2em;
-      text-align: center;
-      margin: 0;
-    }
-
-    /* Main Content */
-    .main-content {
-      display: flex;
-      flex-grow: 1;
-      padding: 40px;
-      justify-content: space-between;
-    }
-
-    /* Sidebar Filter */
-    .filter {
-  width: 300px;
-  padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 12px; /* colțuri rotunjite */
-  margin-right: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adaugă tranziție pentru interactivitate */
-}
-
-.filter:hover {
-  transform: translateY(-5px); /* Mărire ușoară la hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Umbra mai puternică la hover */
-}
-.filter h3 {
-  font-size: 1.4em;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.filter-item {
-  margin-bottom: 20px;
-}
-
-.filter-item label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #555;
-}
-
-.filter-item select {
-  width: 100%;
-  padding: 12px;
-  font-size: 1em;
-  border: px solid #ccc;
-  border-radius: 8px; /* Colțuri rotunjite */
-  background-color: #ffffff; /* Fundal deschis pentru un look mai curat */
-  transition: border-color 0.3s ease;
-}
-
-.filter-item select:focus {
-  border-color: #e88a15; /* Culoare de focus portocalie */
-  background-color: #ffffff41;
-}
-
-.filter-item select option {
-  padding: 10px;
-}
-
-.filter-item select:hover {
-  cursor: pointer;
-}
-    /* Faculties Section */
-    .faculties {
-      flex: 1;
-    }
-
-    .faculties h3 {
-      font-size: 1.5em;
-      margin-bottom: 20px;
-    }
-
-    .sort {
-      margin-bottom: 20px;
-    }
-
-    /* Faculty Card Layout */
-    .faculty-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
-      gap: 20px;
-    }
-
-    /* Media Queries */
-    @media (max-width: 1200px) {
-      .faculty-cards {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
-      }
-    }
-
-    @media (max-width: 768px) {
-      .faculty-cards {
-        grid-template-columns: 1fr; /* 1 column for small screens */
-      }
-    }
-
-    /* Faculty Card */
-    .faculty-card {
-      background-color: #ffffff;
-      padding: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      position: relative;
-    }
-
-    .faculty-card img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
-
-    .faculty-card h4 {
-      font-size: 1.1em;
-      margin-bottom: 5px;
-    }
-
-    .faculty-card p {
-      font-size: 0.9em;
-      color: #666;
-    }
-
-    .faculty-card .favorite {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      color: #e88a15;
-      font-size: 1.5em;
-      cursor: pointer;
-    }
-
-    /* News Section */
-    .news-section {
-  padding: 30px;
-  background-color: #f8f8f8; /* Optional background color */
-  text-align: left;
-    }
-  .news-banner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 16px; /* Optional: to round the corners of the entire banner */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a light shadow */
-}
-
-
-.text-content {
-  flex: 1;
-  padding-right: 20px;
-}
-
-.text-content h3 {
-  font-size: 50px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.text-content p {
-  font-size: 20px;
-  color: #666;
-  margin-bottom: 20px;
-}
-.text-content button {
-  padding: 10px 20px;
-  font-size: 1em;
-  color: #fff;
-  background-color: #e88a15;
-  border: none;
-  border-radius: 16px;
-  cursor: pointer;
-}
-.text-content button:hover {
-  background-color: #d67b12; /* Darker shade on hover */
-}
-.image-content img {
-  width: 300px;
-  height: 290px;
-  object-fit: cover;
-  border-radius: 16px; /* Rounded corners for the image */
-}
-
-    /* Footer */
-    .footer {
-      padding: 40px;
-      background-color: #333;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .footer-logo img {
-      width: 50px;
-      height: auto;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .footer-links div {
-      margin-right: 20px;
-    }
-
-    .footer-links h4 {
-      margin-bottom: 10px;
-    }
-
-    .footer-links ul {
-      list-style: none;
-    }
-
-    .footer-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.9em;
-    }
-
-    .social-media a {
-      color: #fff;
-      margin-right: 15px;
-      text-decoration: none;
-    }
-    .map-section iframe {
-  width: 100%;  /* Harta va ocupa întreaga lățime a containerului */
-  height: 400px; /* Poți ajusta înălțimea după preferință */
-  border-radius: 8px; /* Colțuri rotunjite */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Umbră subtilă */
-}
-/* Background container for filter and faculties */
-/* Container pentru fundalul secțiunilor de filtre și facultăți */
-/* Fundal distinct pentru secțiunea filtre și facultăți */
-.main-background {
-  background-color: #F2F5F9; /* culoare deschisă */
-  padding: 20px;
-  border-radius: 8px; /* colțuri rotunjite opționale */
-  display: flex;
-  justify-content: space-between;
-}
-
-
-
-
-  </style>
-</head>
 <body>
   <!-- Header -->
   <header class="header">
@@ -492,7 +142,12 @@
           <img src="images/ubb.jpg" alt="Universitatea Babeș-Bolyai">
           <h4>Universitatea Babeș-Bolyai</h4>
           <p>Cluj-Napoca</p>
-          <span class="favorite">&#10084;</span>
+          <span class="favorite">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </span>
+          
         </div>
 
         <!-- Faculty Card 2 -->
@@ -500,7 +155,12 @@
           <img src="images/romana.jpg" alt="Facultatea de Limba și Literatura Română">
           <h4>Facultatea de Limba și Literatura Română</h4>
           <p>Universitatea din București</p>
-          <span class="favorite">&#10084;</span>
+          <span class="favorite">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </span>
+          
         </div>
 
         <!-- Faculty Card 3 -->
@@ -508,7 +168,12 @@
           <img src="images/engleza.jpg" alt="Facultatea de Limba și Literatura Engleză">
           <h4>Facultatea de Limba și Literatura Engleză</h4>
           <p>Universitatea din Cluj-Napoca</p>
-          <span class="favorite">&#10084;</span>
+          <span class="favorite">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </span>
+          
         </div>
 
         <!-- Faculty Card 4 -->
@@ -516,7 +181,12 @@
           <img src="images/chimie.jpg" alt="Facultatea de Chimie">
           <h4>Facultatea de Chimie</h4>
           <p>Universitatea Politehnica din București</p>
-          <span class="favorite">&#10084;</span>
+          <span class="favorite">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </span>
+          
         </div>
 
         <!-- Faculty Card 5 -->
@@ -524,7 +194,12 @@
           <img src="images/biologie.jpg" alt="Facultatea de Biologie">
           <h4>Facultatea de Biologie</h4>
           <p>Universitatea Alexandru Ioan Cuza din Iași</p>
-          <span class="favorite">&#10084;</span>
+          <span class="favorite">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </span>
+          
         </div>
 
         <!-- Faculty Card 6 -->
@@ -532,7 +207,11 @@
           <img src="images/inginerie.jpg" alt="Facultatea de Inginerie">
           <h4>Facultatea de Inginerie</h4>
           <p>Universitatea Tehnică din Cluj-Napoca</p>
-          <span class="favorite">&#10084;</span>
+          <span class="favorite">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </span>          
         </div>
       </div>
     </section>
@@ -551,7 +230,6 @@
       loading="lazy">
     </iframe>
   </section>
-  
 
  <!-- News Section -->
 <section class="news-section">
@@ -566,8 +244,6 @@
       </div>
     </div>
   </section>
-  
-  
 
   <!-- Footer -->
   <footer class="footer">
