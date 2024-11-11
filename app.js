@@ -1,18 +1,13 @@
 require('dotenv').config();
+
+
+
 const express = require('express');
 const app = express();
-const userRoutes = require('./routes/userRoutes'); // Rutele pentru utilizatori
-app.use(express.static('public'));
 
+// Use process.env.PORT for deployment, or 3000 as a default for local development
+const PORT = process.env.PORT || 3000;
 
-
-
-
-// Folosește rutele definite
-app.use('/api/users', userRoutes);
-
-// Pornire server
-const port = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
