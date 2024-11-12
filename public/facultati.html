@@ -25,7 +25,7 @@
 
 
 
-option {
+.filter-item:option {
     background-color: rgb(255, 255, 255); /* Fundal implicit pentru opțiuni */
     color: rgb(0, 0, 0); /* Text implicit pentru opțiuni */
 
@@ -168,11 +168,36 @@ option {
         font-size: 1.5em;
         margin-bottom: 20px;
       }
-    
-      .sort {
-        margin-bottom: 20px;
-      }
-    
+ /* Eliminăm orice stil implicit de la <div> */
+.sort {
+  padding: 0;
+  margin: 0;
+  border: none; /* Elimină orice chenar pentru div */
+  display: inline-block;
+}
+#sort {
+  -webkit-appearance: none; /* Removes default dropdown styling in Webkit browsers */
+  -moz-appearance: none;    /* Removes default dropdown styling in Firefox */
+  appearance: none;         /* Removes default dropdown styling in all browsers */
+  border: none;             /* Remove any border */
+  outline: none;            /* Remove focus outline */
+  background: transparent;  /* Transparent background */
+  padding: 5px;             /* Padding for spacing */
+  font-size: 16px;          /* Font size */
+  width: 100%;              /* Full width */
+  color: #333;              /* Text color */
+}
+
+#sort::-ms-expand {
+  display: none;            /* Removes the dropdown arrow in Internet Explorer and Edge */
+}
+
+#sort:focus {
+  outline: none;            /* Removes the focus outline on focus */
+}
+
+
+
       /* Faculty Card Layout */
       .faculty-cards {
         display: grid;
@@ -472,14 +497,17 @@ option {
     <section class="faculties">
       <h3>Cele mai vizionate facultăți din România</h3>
       
-      <!-- Sort Option -->
-      <div class="sort">
-        <label for="sort">Sortează</label>
-        <select id="sort">
-          <option value="popular">Popular</option>
-          <option value="rating">Rating</option>
-        </select>
-      </div>
+  <!-- Sort Option -->
+<div class="sort">
+  <select id="sort">
+    <option value="Recomandat"selected>Recomandat</option>
+    <option value="Alfabetic A-Z">Alfabetic A-Z</option>
+    <option value="Alfabetic Z-A">Alfabetic Z-A</option>
+  </select>
+</div>
+
+
+
 
       <div class="faculty-cards">
         <!-- Faculty Card 1 -->
@@ -523,9 +551,9 @@ option {
 
         <!-- Faculty Card 4 -->
         <div class="faculty-card">
-          <img src="images/chimie.jpg" alt="Facultatea de Chimie">
-          <h5>Facultatea de Chimie</h5>
-          <p>Universitatea Politehnica din București</p>
+          <img src="images/uaic.jpg" alt="Universitatea Al. I. Cuza">
+          <h5>Universitatea Al. I. Cuza</h5>
+          <p>Iași</p>
           <span class="favorite">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
               <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -536,9 +564,9 @@ option {
 
         <!-- Faculty Card 5 -->
         <div class="faculty-card">
-          <img src="images/biologie.jpg" alt="Facultatea de Biologie">
-          <h5>Facultatea de Biologie</h5>
-          <p>Universitatea Alexandru Ioan Cuza din Iași</p>
+          <img src="images/ghAsachi.jpg" alt="Universitatea Tehnică “Gheorghe Asachi” din Iași">
+          <h5>Universitatea Tehnică “Gheorghe Asachi” din Iași</h5>
+          <p>Iași</p>
           <span class="favorite">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
               <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -549,9 +577,9 @@ option {
 
         <!-- Faculty Card 6 -->
         <div class="faculty-card">
-          <img src="images/inginerie.jpg" alt="Facultatea de Inginerie">
-          <h5>Facultatea de Inginerie</h5>
-          <p>Universitatea Tehnică din Cluj-Napoca</p>
+          <img src="images/poliTimi.jpg" alt="Universitatea Politehnica Timișoara">
+          <h5>Universitatea Politehnica Timișoara</h5>
+          <p>Timișoara</p>
           <span class="favorite">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
               <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
