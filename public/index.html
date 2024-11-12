@@ -1,72 +1,57 @@
 <!DOCTYPE html>
-<html lang="ro">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNIchoice - Autentificare</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Register or Log In</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <div class="container">
-        <header class="header">
-            <div class="logo">
-                <img src="/images/logo.png" alt="UNIchoice Logo">
-                <h1>UNIchoice</h1>
-                <p>Vă ajutăm să faceți cea mai bună alegere</p>
-            </div>
-        </header>
-
-        <!-- Login Container -->
-        <div class="login-container" id="login-container">
-            <h2>Bine ai venit!</h2>
-            <div class="tabs">
-                <a href="#" class="active-tab" id="login-tab">Conectare</a>
-                <a href="#" id="register-tab">Creare cont</a>
-            </div>
-            <div id="login-form-container">
-                <p>Introdu detaliile de conectare pentru a accesa contul tău.</p>
-
-                <form id="login-form">
-                    <label for="email">Email/telefon:</label>
-                    <input type="text" id="login-email" name="email" placeholder="Introduceți email sau telefonul">
-
-                    <label for="password">Parolă:</label>
-                    <input type="password" id="login-password" name="password" placeholder="Introduceți parola">
-
-                    <a href="#" class="forgot-password">Ți-ai uitat parola?</a>
-
-                    <button type="submit" class="btn-primary">Conectare</button>
-                </form>
-            </div>
-
-            <!-- Register Form -->
-            <div id="register-form-container" style="display: none;">
-                <p>Crează-ți un cont pentru a începe.</p>
-
-                <form id="register-form">
-                    <label for="username">Nume utilizator:</label>
-                    <input type="text" id="register-username" name="username" placeholder="Introduceți numele de utilizator">
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="register-email" name="email" placeholder="Introduceți email-ul">
-
-                    <label for="password">Parolă:</label>
-                    <input type="password" id="register-password" name="password" placeholder="Introduceți parola">
-
-                    <button type="submit" class="btn-primary">Creează cont</button>
-                </form>
-            </div>
+        <div class="toggle-buttons">
+            <button id="registerToggle" class="toggle active">Register</button>
+            <button id="loginToggle" class="toggle">Log In</button>
         </div>
 
-        <footer class="footer">
-            <!-- Footer Content (ca mai sus) -->
-        </footer>
+        <div class="form-container active" id="registerFormContainer">
+            <h2>Register</h2>
+            <form id="registerForm" method="POST" action="/register">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit" class="button">Register</button>
+            </form>
+        </div>
+
+        <div class="form-container hidden" id="loginFormContainer">
+            <h2>Log In</h2>
+            <form id="loginForm" method="POST" action="/login">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit" class="button">Log In</button>
+            </form>
+        </div>
     </div>
 
-    <script src="/js/app.js"></script>
-</body>
+    <script>
+        // JavaScript for toggling between forms
+        const registerToggle = document.getElementById('registerToggle');
+        const loginToggle = document.getElementById('loginToggle');
+        const registerFormContainer = document.getElementById('registerFormContainer');
+        const loginFormContainer = document.getElementById('loginFormContainer');
 
+        registerToggle.addEventListener('click', () => {
+            registerFormContainer.classList.add('active');
+            loginFormContainer.classList.remove('active');
+            registerToggle.classList.add('active');
+            loginToggle.classList.remove('active');
+        });
+
+        loginToggle.addEventListener('click', () => {
+            loginFormContainer.classList.add('active');
+            registerFormContainer.classList.remove('active');
+            loginToggle.classList.add('active');
+            registerToggle.classList.remove('active');
+        });
+    </script>
+</body>
 </html>
