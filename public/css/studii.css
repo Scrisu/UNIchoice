@@ -1,11 +1,11 @@
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Freeman, sans-serif;
 }
 
 header {
@@ -18,6 +18,7 @@ header {
 
 header .logo {
     font-weight: bold;
+    font-size: 14px;
 }
 
 header nav a {
@@ -38,19 +39,20 @@ header nav a {
 }
 
 .welcome-section img {
-    width: 100%; 
+    width: 100%;
+    position: center; 
 }
 
 .program-cards {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     position: absolute;
     top: 20%; 
     left: 50%;
     transform: translate(-50%, 50%); /* Centrează cardurile pe orizontală și le coboară pe verticală */
     z-index: 1;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .card.card-master {
@@ -65,13 +67,13 @@ header nav a {
 }
 
 .card {
-    padding: 20px;
+    padding: 15px;
     border-radius: 5px;
     margin: 0;
     display: flex;
     align-items: center;
-    width: 360px; 
-    height: 440px; 
+    width: 350px; 
+    height: 450px; 
     box-sizing: border-box;
     transition: transform 0.3s ease;
     position: relative;
@@ -86,7 +88,7 @@ header nav a {
 }
 
 .card.master {
-    top: 60px; /
+    top: 50px; /
 }
 
 .card.doctorat {
@@ -104,17 +106,17 @@ header nav a {
 
 /* Stiluri pentru imagine */
 .program-image {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
 
 /* Stiluri pentru label */
 .program-image-container label {
-    margin-top: 10px; 
+    margin-top: 8px; 
     font-family: 'Freeman', sans-serif;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: normal;
     color: #2F584E; 
 }
@@ -122,6 +124,18 @@ header nav a {
 .program-cards a {
     text-decoration: none;  
     color: inherit;         
+}
+.program-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;  /* Crește gap-ul între carduri */
+    position: absolute;
+    top: 30%;  /* Păstrează acest top pentru a poziționa cardurile mai sus, dacă dorești */
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 1;
+    margin-top: 30px;
+    width: 80%;
 }
 
 
@@ -180,9 +194,9 @@ header nav a {
 
 /* Adaugă fontul Freeman la toate etichetele din carduri */
 .card label {
-    margin-top: 20%;;
+    margin-top: 15%;;
     font-family: 'Freeman', sans-serif;
-    font-size: 48px;
+    font-size: 40px;
     font-weight: normal; 
 }
 
@@ -190,110 +204,135 @@ header nav a {
 
 /* Efect de hover pentru carduri */
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 }
 
 .description {
     display: flex;
     text-align: center;
-    padding: 40px 20px;
-    margin-top: 350px;
-    padding-left: 70px;
+    padding: 30px 20px;
+    margin-top: 250px;
+    padding-left: 40px;
 }
 .text-and-image {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 2px; 
+    gap: 20px; 
+    padding: 30px 0;
     
 }
 .description-text {
     font-family: 'Freeman', sans-serif;
-    font-size: 60px;
+    font-size: 55px;
     font-weight: 400; 
     color: #2F584E; 
+    padding-left: 50px;
+    padding-top: 40px;
 }
 
 .description-image {
-    width: 494px;
-    height: 472px;
-   padding-right: 50px;
+    width: 500px;
+    height: 500px;
+   padding-right: 30px;
+   padding-top: 50px;
    
 }
-
-
 .reviews {
-    background-color: #ffffff;
-    padding: 40px 20px;
+    background-color: #f9f9f9;
+    padding: 60px 20px;
     text-align: center;
-    padding-left: 20;
 }
 
-.reviews-container{
-    background-color: rgba(21, 59, 50, 0.14);
-    padding-bottom: 90px;
-    padding-top: 10px;
-    padding-left: 30px;
-   border-radius: 16px;
+.reviews-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
 }
 
 .reviews h2 {
-    padding-top: 20px;
-    padding-bottom: 50px;
-    margin-bottom: 20px;
-    font-family: 'Source Sans Pro', sans-serif;  
-    font-size: 60px; 
-    font-weight: normal; 
+    font-family: 'Freeman', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #2F584E;
+    margin-bottom: 40px;
 }
-
-
 
 .review-cards {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px; /* Distanța între carduri */
+    transition: transform 0.5s ease;
 }
+
 
 .review-card {
     background-color: #fff;
     border-radius: 8px;
-    padding: 20px;
-    width: 233px;
-    height: 192;
-    box-sizing: border-box;
+    padding: 25px;
+    width: 300px; /* Lățimea cardului */
     text-align: center;
-    position: relative; /* Permite manipularea imaginii față de card */
-    overflow: visible;  /* Permite imaginii să iasă din card */
-    height: 220px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Previne micșorarea cardurilor */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Tranziție pentru efectul de hover */
+}
+
+.review-card:hover {
+    transform: translateY(-10px); /* Mută cardul cu 10px în sus */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Umbră mai intensă pentru efect */
+}
+.review-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .stars {
-    margin-top: 10px;
     font-size: 20px;
-    margin-bottom: 10px; 
+    color: #FFD700; /* Culoare auriu pentru stele */
+    margin: 10px 0;
 }
+
 
 .review-card p {
-    margin-top: 10px;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.4;
+}
+ /* Butoane de navigare */
+ .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background-color: #2F584E;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
 }
 
-.review-image {
-    width: 70px;  
-    height: 70px; 
-    margin-bottom: 15px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-    position: absolute; 
-    top: -40px;  
-    left: 50%;   
-    transform: translateX(-50%); 
-    z-index: 1;
+.nav-button:hover {
+    background-color: #ffffff;
 }
+
+.nav-prev {
+    left: -30px;
+}
+
+.nav-next {
+    right: -30px;
+}
+
 
 .forum-frame {
     background-color:white;
     border-radius: 8px;
-    padding: 30px; 
+    padding: 25px; 
     width: 95%; 
     height: 60%;
     margin-left: 40px;
@@ -304,7 +343,7 @@ header nav a {
 
 .forum h2 {
 padding-left: 50%;
-    font-size: 50px; 
+    font-size: 40px; 
     margin-bottom: 1rem;
     font-family: "Freeman, Regular";
     padding: 20px;
@@ -325,6 +364,7 @@ padding-left: 50%;
 .forum button:hover {
     background-color: #21443b;
 }
+
 
 
 footer {
@@ -349,3 +389,35 @@ footer {
     margin-right: 10px;
     text-decoration: none;
 }
+.welcome-box {
+    position: absolute;
+    top: 40%; /* Poziționează chenarul pe verticală în mijlocul imaginii */
+    left: 50%; /* Poziționează chenarul pe orizontală în mijlocul imaginii */
+    transform: translate(-50%, -50%); /* Centrează chenarul perfect pe imagine */
+    background-color: rgba(47, 88, 78, 0.8); /* Adaugă un fundal semi-transparent */
+    padding: 20px 40px; /* Adaugă margini interne pentru text */
+    border-radius: 10px; /* Răsucirea colțurilor pentru un efect mai plăcut */
+    text-align: center;
+    color: white; /* Culoare albă pentru text */
+    font-family: 'Freeman', sans-serif;
+    font-size: 24px;
+}
+
+.welcome-box {
+    width: 460px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    
+}
+.welcome-box h1 {
+    color: white;
+    font-size: 50px; ;
+    text-align: center;
+    margin: 0;
+  }
+
+  

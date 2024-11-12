@@ -23,7 +23,10 @@
     </header>
     <section class="hero">
         <section class="welcome-section">
-            <img src="images/studii.png" alt="Welcome Image">
+            <img src="images/studii3.png" alt="Welcome Image">
+            <div class="welcome-box">
+                <h1>Alegeți programul de studii care ți se potriveste!</h1>
+            </div>
         </section>
         <div class="program-cards">
             <!-- Program Licență -->
@@ -71,32 +74,59 @@
 
     <section class="reviews">
         <div class="reviews-container">
-        <h2>Află părerea.......</h2>
-        <div class="review-cards">
-            <div class="review-card">
-                <img src="images/testimoniale-person1.jpg" alt="Review Image 1" class="review-image">
-                <div class="stars">★★★★★</div>
-                <p>„Am fost copleșit de opțiunile disponibile, dar cu ajutorul platformei am descoperit programele care mi se potrivesc. Este o resursă esențială pentru orice student care caută direcția potrivită!”</p>
+            <h2>Află părerea studenților care și-au găsit drumul alături de UNIchioce</h2>
+            <div class="review-cards" id="reviewCards">
+                <!-- Testimoniale -->
+                <div class="review-card">
+                    <img src="images/testimoniale-person1.jpg" alt="Review Image 1" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Am fost copleșit de opțiunile disponibile, dar cu ajutorul platformei am descoperit programele care mi se potrivesc. Este o resursă esențială pentru orice student care caută direcția potrivită!”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person2.jpg" alt="Review Image 2" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Mulțumită acestui site, am găsit rapid informațiile de care aveam nevoie pentru a alege facultatea perfectă. Recomand cu încredere, mi-a ușurat mult procesul de decizie!”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person3.jpg" alt="Review Image 3" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Folosind acest site am putut compara mai multe facultăți și am aflat detalii importante despre fiecare. M-a ajutat să fac alegerea corectă pentru viitorul meu academic!”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person4.jpg" alt="Review Image 4" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Site-ul m-a ghidat pas cu pas în alegerea facultății, oferindu-mi informații clare și utile. Este un instrument fantastic pentru a face alegerea mai ușoară și mai informată.”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person5.avif" alt="Review Image 5" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„O platformă minunată care te ajută să înțelegi exact ce oferă fiecare program. Nu mi-aș fi putut alege facultatea fără UNIchioice!”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person6.avif" alt="Review Image 6" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Cel mai bun suport pentru studenți! Mulțumesc pentru toate informațiile și pentru că m-ați ghidat spre o decizie potrivită.”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person7.avif" alt="Review Image 7" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Cel mai bun suport pentru studenți! Mulțumesc pentru toate informațiile și pentru că m-ați ghidat spre o decizie potrivită.”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person8.avif" alt="Review Image 8" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Cel mai bun suport pentru studenți! Mulțumesc pentru toate informațiile și pentru că m-ați ghidat spre o decizie potrivită.”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person9.avif" alt="Review Image 9" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Cel mai bun suport pentru studenți! Mulțumesc pentru toate informațiile și pentru că m-ați ghidat spre o decizie potrivită.”</p>
+                </div>
             </div>
-            <div class="review-card">
-                <img src="images/testimoniale-person2.jpg" alt="Review Image 2" class="review-image">
-                <div class="stars">★★★★★</div>
-                <p>„Mulțumită acestui site, am găsit rapid informațiile de care aveam nevoie pentru a alege facultatea perfectă. Recomand cu încredere, mi-a ușurat mult procesul de decizie!”</p>
-            </div>
-            <div class="review-card">
-                <img src="images/testimoniale-person3.jpg" alt="Review Image 3" class="review-image">
-                <div class="stars">★★★★★</div>
-                <p>„Folosind acest site am putut compara mai multe facultăți și am aflat detalii importante despre fiecare. M-a ajutat să fac alegerea corectă pentru viitorul meu academic!”</p>
-            </div>
-            <div class="review-card">
-                <img src="images/testimoniale-person4.jpg" alt="Review Image 4" class="review-image">
-                <div class="stars">★★★★★</div>
-                <p>„Site-ul m-a ghidat pas cu pas în alegerea facultății, oferindu-mi informații clare și utile. Este un instrument fantastic pentru a face alegerea mai ușoară și mai informată.”
-
-                </p>
-            </div>
+            <!-- Butoane navigare -->
+            <button class="nav-button nav-prev" onclick="prevReview()">❮</button>
+            <button class="nav-button nav-next" onclick="nextReview()">❯</button>
         </div>
-    </div>
     </section>
     
     
@@ -147,5 +177,41 @@
             </div>
         </div>
     </footer>
+
+    <script>
+let currentIndex = 0;
+        const cardsVisible = 3; // Numărul de testimoniale vizibile simultan
+
+        function showReviews() {
+            const reviewCards = document.getElementById('reviewCards');
+            const cardWidth = 320; // Lățimea cardului (300px + 20px gap)
+            reviewCards.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
+
+        function nextReview() {
+            const totalReviews = document.querySelectorAll('.review-card').length;
+            const maxIndex = totalReviews - cardsVisible;
+            if (currentIndex < maxIndex) {
+                currentIndex++; // Mergi la următorul grup de 3 carduri
+            } else {
+                currentIndex = 0; // Revenire la început
+            }
+            showReviews();
+        }
+
+        function prevReview() {
+            const totalReviews = document.querySelectorAll('.review-card').length;
+            if (currentIndex > 0) {
+                currentIndex--; // Mergi la grupul anterior
+            } else {
+                currentIndex = totalReviews - cardsVisible; // Mergi la ultimul grup de 3 carduri
+            }
+            showReviews();
+        }
+
+        // Navigare automată
+        setInterval(nextReview, 3000); // Schimbă la fiecare 4 secunde
+
+    </script>
 </body>
 </html>
