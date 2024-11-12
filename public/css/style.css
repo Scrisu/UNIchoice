@@ -1,96 +1,91 @@
-/* Reset basic styling */
+/* styles.css */
+
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Body and container styling */
 body {
-    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    color: #333;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
     width: 100%;
-    max-width: 800px;
-    padding: 20px;
+    padding: 40px;
 }
 
-.form-wrapper {
+.toggle-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.toggle {
+    background: none;
+    border: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toggle.active {
+    font-weight: bold;
+    color: #2575fc;
+    border-bottom: 2px solid #2575fc;
+}
+
+.form-container {
+    display: none;
+}
+
+.form-container.active {
+    display: block;
+}
+
+form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
-@media(min-width: 768px) {
-    .form-wrapper {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
-/* Form container styling */
-.form-container {
-    background-color: #fff;
-    padding: 2em;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 350px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.form-container:hover {
-    transform: scale(1.05);
-}
-
-.form-container h2 {
-    color: #2193b0;
-    margin-bottom: 1em;
-}
-
-/* Input field styling */
-input[type="text"],
-input[type="password"] {
-    width: 100%;
+input {
+    margin-bottom: 15px;
     padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: border-color 0.3s ease;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
-    border-color: #2193b0;
-    outline: none;
+input:focus {
+    border-color: #2575fc;
 }
 
-/* Button styling */
 .button {
-    background-color: #2193b0;
-    color: white;
+    background-color: #2575fc;
+    color: #ffffff;
     padding: 12px;
-    font-size: 1em;
+    font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
+    transition: background-color 0.3s;
 }
 
 .button:hover {
-    background-color: #1a7d98;
+    background-color: #6a11cb;
 }
 
-.button:active {
-    background-color: #155f72;
+.hidden {
+    display: none;
 }
