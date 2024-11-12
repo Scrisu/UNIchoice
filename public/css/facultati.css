@@ -176,12 +176,6 @@
     .filter-item select option {
         padding: 10px;
     }
-
-
-    .filter-item select:hover {
-        cursor: pointer;
-    }
-
   /* Faculties Section */
   .faculties {
     flex: 1;

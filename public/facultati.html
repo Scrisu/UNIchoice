@@ -6,352 +6,6 @@
   <title>UNIchioce - Explorează facultățile</title>
   <link rel="stylesheet" href="css/facultati.css">
   </head>
-  <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-    
-      body {
-        font-family: Arial, sans-serif;
-        background-color: white;
-        color: #333;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-     
-
-
-
-option {
-    background-color: rgb(255, 255, 255); /* Fundal implicit pentru opțiuni */
-    color: rgb(0, 0, 0); /* Text implicit pentru opțiuni */
-
-}
-
-    
-      /* Header */
-      .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px 40px;
-        background-color: #ffffff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-    
-      .logo {
-        display: flex;
-        align-items: center;
-      }
-    
-      .logo img {
-        width: 50px;
-        height: auto;
-        margin-right: 10px;
-      }
-    
-      .logo-text h1 {
-        font-size: 1.5em;
-        color: #e88a15;
-      }
-    
-      .logo-text p {
-        font-size: 0.9em;
-        color: #666;
-      }
-    
-      .navigation a {
-        margin: 0 15px;
-        text-decoration: none;
-        color: #333;
-        font-size: 1em;
-      }
-    
-      .contact a {
-        text-decoration: none;
-        color: #333;
-        margin-right: 10px;
-      }
-    
-      .user-icon img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-      }
-    
-      /* Hero Section */
-      .hero {
-        position: relative;
-        height: 500px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden; /* pentru a evita ca imaginea să depășească marginile secțiunii */
-      }
-    
-      .hero-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Asigură-te că imaginea acoperă întreaga secțiune */
-        z-index: -1; /* Plasează imaginea în spatele textului */
-      }
-    
-      .hero .centered-box {
-        width: 400px;
-        height: 200px;
-        background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 16px;
-      }
-    
-      .hero .centered-box h1 {
-        color: white;
-        font-size: 2em;
-        text-align: center;
-        margin: 0;
-      }
-    
-      /* Main Content */
-      .main-content {
-        display: flex;
-        flex-grow: 1;
-        padding: 40px;
-        justify-content: space-between;
-      }
-    
-      /* Sidebar Filter */
-      .filter {
-        width: 300px;
-        padding: 20px;
-        background-color: #ffffff;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        border-radius: 12px; /* colțuri rotunjite */
-        margin-right: 20px;
-
-     .filter h3 {
-        font-size: 1.4em;
-        font-weight: bold;
-        margin-bottom: 20px;
-        color: #333;
-      }
-    
-      .filter-item {
-        margin-bottom: 15px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adaugă tranziție pentru interactivitate */
-      }
-
-      .filter-item:hover{
-        transform: translateY(-5px); /* Mișcare ușoară pe verticală */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Umbra mai mare la hover */
-      }
-    
-      .filter-item label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 5px;
-        color: #555555;
-      }
-      /* Faculties Section */
-      .faculties {
-        flex: 1;
-      }
-    
-      .faculties h3 {
-        font-size: 1.5em;
-        margin-bottom: 20px;
-      }
-    
-      .sort {
-        margin-bottom: 20px;
-      }
-    
-      /* Faculty Card Layout */
-      .faculty-cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
-        gap: 20px;
-      }
-    
-      /* Media Queries */
-      @media (max-width: 1200px) {
-        .faculty-cards {
-          grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
-        }
-      }
-    
-      @media (max-width: 768px) {
-        .faculty-cards {
-          grid-template-columns: 1fr; /* 1 column for small screens */
-        }
-      }
-    
-      /* Faculty Card */
-      .faculty-card {
-        background-color: #ffffff;
-        padding: 20px;
-        width: 444px;
-        height: 549px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: left; /* Aliniază textul la stânga */
-        position: relative; /* Important pentru a poziționa corect inima */
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-        .faculty-card:hover {
-            transform: translateY(-5px); /* Mișcare ușoară pe verticală */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Umbra mai mare la hover */
-    }
-  .faculty-card img {
-    max-width: 100%;       /* Imaginea va ocupa lățimea maximă a containerului */
-    max-height: 100%;      /* Își păstrează proporțiile și nu depășește înălțimea containerului */
-    margin-bottom: 10px;
-}
-
-
-    
-      /* Titlul facultății */
-       .faculty-card h5 {
-        font-size:xx-small;
-        margin-bottom: 1px;
-      
-    }
-        .faculty-card p {
-            font-size: xx-small;
-            color: #666;
-          padding: auto;
-    }
-        .faculty-card .favorite {
-    position: absolute;
-    bottom: 66px; /* Plasează inima jos */
-    right: 20px; /* Plasează inima la dreapta */
-    color: white; /* Culoarea interioară a inimii */
-    font-size: 2em; /* Mărimea inimii */
-    cursor: pointer;
-    padding: 6px; /* Adaugă puțin spațiu în jurul inimii pentru contur */
-    background-color: white; /* Fundal alb pentru interiorul inimii */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-    
-    
-      /* News Section */
-      .news-section {
-    padding: 30px;
-    background-color: #f8f8f8; /* Optional background color */
-    text-align: left;
-      }
-    .news-banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 16px; /* Optional: to round the corners of the entire banner */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a light shadow */
-    }
-    
-    
-    .text-content {
-    flex: 1;
-    padding-right: 20px;
-    }
-    
-    .text-content h3 {
-    font-size: 50px;
-    color: #333;
-    margin-bottom: 10px;
-    }
-    
-    .text-content p {
-    font-size: 20px;
-    color: #666;
-    margin-bottom: 20px;
-    }
-    .text-content button {
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #e38707;
-    background-color: #e88a15;
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
-    }
-    .text-content button:hover {
-    background-color: #d67b12; /* Darker shade on hover */
-    }
-    .image-content img {
-    width: 300px;
-    height: 290px;
-    object-fit: cover;
-    border-radius: 16px; 
-    }
-    
-      /* Footer */
-      .footer {
-        padding: 40px;
-        background-color: #333;
-        color: #fff;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
-    
-      .footer-logo img {
-        width: 50px;
-        height: auto;
-      }
-    
-      .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-      }
-    
-      .footer-links div {
-        margin-right: 20px;
-      }
-    
-      .footer-links h4 {
-        margin-bottom: 10px;
-      }
-    
-      .footer-links ul {
-        list-style: none;
-      }
-    
-      .footer-links a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 0.9em;
-      }
-    
-      .social-media a {
-        color: #fff;
-        margin-right: 15px;
-        text-decoration: none;
-      }
-      .map-section iframe {
-    width: 100%;  
-    height: 400px; /* Poți ajusta înălțimea după preferință */
-    border-radius: 8px; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
-    }
-    
-    .main-background {
-    background-color: #F2F5F9; /* culoare deschisă */
-    padding: 20px;
-    border-radius: 8px; /* colțuri rotunjite opționale */
-    display: flex;
-    justify-content: space-between;
-    }</style>
-
 <body>
   <!-- Header -->
   <header class="header">
@@ -472,14 +126,16 @@ option {
     <section class="faculties">
       <h3>Cele mai vizionate facultăți din România</h3>
       
-      <!-- Sort Option -->
-      <div class="sort">
-        <label for="sort">Sortează</label>
-        <select id="sort">
-          <option value="popular">Popular</option>
-          <option value="rating">Rating</option>
-        </select>
-      </div>
+  <!-- Sort Option -->
+<div class="sort">
+  <select id="sort">
+    <option value="Alfabetic A-Z" selected>Alfabetic A-Z</option>
+    <option value="Alfabetic Z-A">Alfabetic Z-A</option>
+  </select>
+</div>
+
+
+
 
       <div class="faculty-cards">
         <!-- Faculty Card 1 -->
@@ -523,9 +179,9 @@ option {
 
         <!-- Faculty Card 4 -->
         <div class="faculty-card">
-          <img src="images/chimie.jpg" alt="Facultatea de Chimie">
-          <h5>Facultatea de Chimie</h5>
-          <p>Universitatea Politehnica din București</p>
+          <img src="images/uaic.jpg" alt="Universitatea Al. I. Cuza">
+          <h5>Universitatea Al. I. Cuza</h5>
+          <p>Iași</p>
           <span class="favorite">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
               <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -536,9 +192,9 @@ option {
 
         <!-- Faculty Card 5 -->
         <div class="faculty-card">
-          <img src="images/biologie.jpg" alt="Facultatea de Biologie">
-          <h5>Facultatea de Biologie</h5>
-          <p>Universitatea Alexandru Ioan Cuza din Iași</p>
+          <img src="images/ghAsachi.jpg" alt="Universitatea Tehnică “Gheorghe Asachi” din Iași">
+          <h5>Universitatea Tehnică “Gheorghe Asachi” din Iași</h5>
+          <p>Iași</p>
           <span class="favorite">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
               <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -549,9 +205,9 @@ option {
 
         <!-- Faculty Card 6 -->
         <div class="faculty-card">
-          <img src="images/inginerie.jpg" alt="Facultatea de Inginerie">
-          <h5>Facultatea de Inginerie</h5>
-          <p>Universitatea Tehnică din Cluj-Napoca</p>
+          <img src="images/poliTimi.jpg" alt="Universitatea Politehnica Timișoara">
+          <h5>Universitatea Politehnica Timișoara</h5>
+          <p>Timișoara</p>
           <span class="favorite">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
               <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
