@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-weight: bold;
+}
+
+header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.welcome-section img {
+    width: 100%;  /* Asigură-te că imaginea se extinde pe întreaga lățime a secțiunii */
+    height: auto;
+    display: block;
+}
+
+.hero {
+    position: relative; /* Setează poziționarea relativă a secțiunii pentru ca cardurile să poată fi poziționate față de aceasta */
+    overflow: visible; /* Permite ca cardurile să iasă din secțiune */
+}
+
+.welcome-section img {
+    width: 100%; /* Asigură-te că imaginea se extinde pe întreaga lățime a secțiunii */
+    height: auto;
+}
+
+.program-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: absolute; /* Poziționează cardurile absolut față de .hero */
+    top: 20%; /* Plasează cardurile la jumătatea imaginii */
+    left: 50%;
+    transform: translate(-50%, 50%); /* Centrează cardurile pe orizontală și le coboară pe verticală */
+    z-index: 1;
+    margin-top: 40px;
+}
+
+.card.card-master {
+    top: 50%;  /* Ajustează valoarea pentru a muta cardul mai sus */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: absolute; /* Poziționează cardurile absolut față de .hero */
+    left: 50%;
+    transform: translate(-50%, 50%); /* Centrează cardurile pe orizontală și le coboară pe verticală */
+    z-index: 1;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    width: 360px; /* Ajustează lățimea cardurilor */
+    height: 440px; /* Ajustează înălțimea cardurilor */
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    position: relative;
+    border-radius: 4%;
+    z-index: 2; /* Asigură-te că cardurile sunt deasupra imaginii */
+}
+
+/* Ajustează poziționarea cardurilor pentru a ieși parțial în jos față de imagine */
+.card.licenta {
+    top: 20px; /* Plasează cardul de Licență puțin mai jos față de imagine */
+}
+
+.card.master {
+    top: 60px; /* Plasează cardul de Master puțin mai jos față de imagine */
+}
+
+.card.doctorat {
+    top: 20px; /* Plasează cardul de Doctorat puțin mai jos față de imagine */
+}
+
+
+/* Adaugă un container pentru imagine și label */
+.program-image-container {
+    display: flex;
+    flex-direction: column; /* Aliniază imaginea și label vertical */
+    align-items: center; /* Centrează imaginea și label */
+    text-align: center;
+}
+
+/* Stiluri pentru imagine */
+.program-image {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* Stiluri pentru label */
+.program-image-container label {
+    margin-top: 10px; /* Adaugă spațiu între imagine și text */
+    font-family: 'Freeman', sans-serif;
+    font-size: 24px; /* Ajustează dimensiunea fontului */
+    font-weight: normal;
+    color: #2F584E; /* Setează culoarea */
+}
+
+
+/* Cardul pentru Licență */
+.licenta {
+    background-color: #ffffff;
+    border: 2px solid #2F584E;
+}
+
+.licenta label {
+    color: #2F584E;
+    opacity: 70%;
+}
+
+/* Cardul pentru Master */
+.master {
+    background-color: #ffffff;
+    border: 2px solid #2F584E;
+}
+
+.master label {
+    color: #ffffff;
+}
+
+/* Cardul pentru Doctorat */
+.doctorat {
+    background-color: #ffffff;
+    border: 2px solid #2F584E;
+}
+
+.doctorat label {
+    color: #153B32;
+}
+
+/* Card selectat - stilizare pentru cardurile selectate */
+.selected {
+    background-color: #ffffff;
+ 
+}
+
+.selected label {
+    font-weight: bold;
+    color: #2F584E;
+    opacity:90%;
+}
+
+/* Efecte pentru imagini (simularea unui checkbox) */
+.checkbox img.selected {
+    opacity: 0.6; /* Când imaginea este "selectată", devine mai transparentă */
+}
+
+/* Adaugă fontul Freeman la toate etichetele din carduri */
+.card label {
+    margin-top: 20%;;
+    font-family: 'Freeman', sans-serif;
+    font-size: 48px; /* Setează dimensiunea fontului la 48px */
+    font-weight: normal; /* Asigură-te că este folosit stilul normal */
+}
+
+
+
+/* Efect de hover pentru carduri */
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.description {
+    display: flex;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 400px;
+    padding-left: 100px;
+}
+.text-and-image {
+    display: flex;
+    align-items: center; /* Aliniază textul și imaginea pe verticală */
+    gap: 2px; /* Spațiu între text și imagine */
+}
+.description-text {
+    font-family: 'Freeman', sans-serif;
+    font-size: 60px;
+    font-weight: 400; /* Stil regular */
+    color: #2F584E; /* Ajustează culoarea dacă este nevoie */
+}
+
+.description-image {
+    width: 494px;
+    height: 472px;
+   padding-right: 50px;
+}
+
+
+.reviews {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.reviews h2 {
+    margin-bottom: 20px;
+}
+
+.review-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.review-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 200px;
+}
+
+.forum-call {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.forum-call button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-links h3, .footer-contact p {
+    font-weight: bold;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.social-icons a {
+    margin-right: 10px;
+    text-decoration: none;
+}

@@ -73,7 +73,11 @@
     align-items: center;
     overflow: hidden; /* pentru a evita ca imaginea să depășească marginile secțiunii */
   }
+  option {
+    background-color: rgb(255, 255, 255); /* Fundal implicit pentru opțiuni */
+    color: rgb(0, 0, 0); /* Text implicit pentru opțiuni */
 
+}
   .hero-image {
     position: absolute;
     top: 0;
@@ -139,35 +143,40 @@
     color: #333;
   }
 
-  .filter-item {
-    margin-bottom: 20px;
-  }
-
-  .filter-item label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
-  }
-
-   .filter-item select {
-    width: 100%;
-    padding: 12px;
-    font-size: 1em;
-    border: 0 px solid #ccc;
-    border-radius: 8px; /* Colțuri rotunjite */
-    background-color: #ffffff; /* Fundal deschis pentru un look mai curat */
-    transition: border-color 0.3s ease;
+ /* Filtrele din sidebar */
+.filter-item {
+  margin-bottom: 20px;
 }
 
-    .filter-item select:focus {
-        border-color: #3b2306; /* Culoare de focus portocalie */
-        background-color: #ffffff41;
-    }
+.filter-item label {
+  display: block; /* Plasează eticheta pe o linie separată */
+  margin-bottom: 8px; /* Adaugă un spațiu între etichetă și select */
+  font-weight: bold;
+  color: #555;
+  transition: none; /* Elimină orice efect de tranziție de hover */
+}
+
+.filter-item select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Colțuri rotunjite */
+  background-color: #ffffff; /* Fundal deschis pentru un look mai curat */
+  transition: border-color 0.3s ease;
+}
+
+.filter-item select:focus {
+  border-color: #3b2306; /* Culoare de focus portocalie */
+  background-color: #ffffff41;
+}
+
+
 
     .filter-item select option {
         padding: 10px;
     }
+
 
     .filter-item select:hover {
         cursor: pointer;

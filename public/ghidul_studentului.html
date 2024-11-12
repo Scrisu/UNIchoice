@@ -23,7 +23,6 @@
                 <img src="images/contul-meu.png" alt="Profile Icon">
             </div>
         </header>
-    
         <section class="welcome-section">
             <img src="images/Group135.png" alt="Welcome Image">
         </section>
@@ -63,7 +62,7 @@
                     <div class="card-content">
                         <h3 class="title-camine">Camine</h3>
                         <p>Explorează căminele din întreaga țară pentru a avea cât mai multe informații despre viața de student.</p>
-                        <button>Vezi cămine</button>
+                        <button onclick="window.location.href='camine.html'">Vezi cămine</button>
                     </div>
                 </div>
                 
@@ -74,7 +73,7 @@
                      <div class="card-content">
                        <h3 class="title-transport">Transport</h3>
                                   <p class="content-transport">Explorează mijloacele de transport din întreaga țară pentru a avea cât mai multe informații despre viața de student.</p>
-                      <button class="button-transport">Vezi transport</button>
+                        <button onclick="window.location.href='transport.html'">Vezi transport</button>
                     </div>
                     </div>
 
@@ -86,7 +85,7 @@
                     <div class="card-content">
                         <h3 class="title-evenimente">Evenimente</h3>
                         <p>Explorează evenimentele din întreaga țară pentru a avea cât mai multe informații despre viața de student.</p>
-                        <button>Vezi evenimente</button>
+                        <button onclick="window.location.href='evenimente.html'">Vezi evenimente</button>
                     </div>
                 </div>
             </section>
@@ -97,7 +96,7 @@
         <section class="forum">
             <div class="forum-frame">
                 <h2>Vrei să discuți cu ceilalți studenți?</h2>
-                <button>Vizitează Forum</button>
+                <button onclick="window.location.href='forum.html'">Vizitează forum</button>
             </div>
         </section>
         
@@ -105,7 +104,7 @@
         
     </main>
 
-    <!----> Footer -->
+     <!-- Footer -->
     <footer>
         <div class="footer-top">
             <div class="contact-info">
@@ -149,7 +148,15 @@
 
    
     
-    <script src="script.js"></script>
+    
+    <script>
+        fetch('header&footer.html') // 'header.html' este documentul care conține header-ul
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
 
 </body>
 </html>

@@ -11,7 +11,9 @@
     background: white;
 }
 
-/* Header */
+
+  
+  /* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -52,7 +54,6 @@
     background: rgba(235, 235, 235, 1);  /* Culoarea #EBEBEB cu opacitate 100% */
     border-radius: 100px;
 }
-
 
 /* Importă fontul Freeman Regular (asigură-te că ai fișierul de font) */
 @font-face {
