@@ -134,22 +134,24 @@
 let currentIndex = 0;
 const cardsVisible = 3; // Numărul de testimoniale vizibile simultan
 const reviewCards = document.getElementById('reviewCards');
-const reviewCardElements = document.querySelectorAll('.review-card');
+const reviewCardElements = Array.from(document.querySelectorAll('.review-card'));
 const totalReviews = reviewCardElements.length;
 
-// 1. Clonează primele și ultimele 3 carduri pentru tranziție ciclică
-for (let i = 0; i < cardsVisible; i++) {
-    const firstClone = reviewCardElements[i].cloneNode(true);
-    const lastClone = reviewCardElements[totalReviews - i - 1].cloneNode(true);
-    reviewCards.appendChild(firstClone); // Adaugă clonele primelor carduri la final
-    reviewCards.insertBefore(lastClone, reviewCards.firstChild); // Adaugă clonele ultimelor carduri la început
-}
+// 1. Clonează primele și ultimele testimoniale pentru tranziție ciclică
+reviewCardElements.slice(0, cardsVisible).forEach(card => {
+    const clone = card.cloneNode(true);
+    reviewCards.appendChild(clone); // Adaugă clonele primelor carduri la final
+});
+reviewCardElements.slice(-cardsVisible).forEach(card => {
+    const clone = card.cloneNode(true);
+    reviewCards.insertBefore(clone, reviewCards.firstChild); // Adaugă clonele ultimelor carduri la început
+});
 
-// 2. Setează offset-ul inițial pentru a evita "săritura" de la început
-reviewCards.style.transform = `translateX(-${cardsVisible * 320}px)`;
+// 2. Setează offset-ul inițial pentru a începe de la primul testimonial original
+const cardWidth = 320; // Lățimea unui card, inclusiv margini
+reviewCards.style.transform = `translateX(-${cardsVisible * cardWidth}px)`;
 
 function updateTransform() {
-    const cardWidth = 320; // Lățimea unui card, inclusiv margini
     reviewCards.style.transition = 'transform 0.5s ease';
     reviewCards.style.transform = `translateX(-${(currentIndex + cardsVisible) * cardWidth}px)`;
 }
@@ -158,13 +160,13 @@ function nextReview() {
     currentIndex++;
     updateTransform();
 
-    // Când ajungem la finalul real, resetăm la primul card real
+    // Dacă ajungem la capătul listei de testimoniale originale, resetăm la primul testimonial
     if (currentIndex >= totalReviews) {
         setTimeout(() => {
-            reviewCards.style.transition = 'none'; // Eliminăm tranziția
+            reviewCards.style.transition = 'none'; // Eliminăm tranziția pentru resetare invizibilă
             currentIndex = 0;
-            reviewCards.style.transform = `translateX(-${cardsVisible * 320}px)`;
-        }, 500); // Așteaptă ca tranziția să se termine
+            reviewCards.style.transform = `translateX(-${cardsVisible * cardWidth}px)`;
+        }, 500); // Așteaptă ca tranziția să se termine înainte de resetare
     }
 }
 
@@ -172,23 +174,25 @@ function prevReview() {
     currentIndex--;
     updateTransform();
 
-    // Când ajungem la începutul real, resetăm la ultimul card real
+    // Dacă ajungem la începutul listei de testimoniale originale, resetăm la ultimul testimonial
     if (currentIndex < 0) {
         setTimeout(() => {
-            reviewCards.style.transition = 'none'; // Eliminăm tranziția
+            reviewCards.style.transition = 'none';
             currentIndex = totalReviews - 1;
-            reviewCards.style.transform = `translateX(-${(currentIndex + cardsVisible) * 320}px)`;
-        }, 500); // Așteaptă ca tranziția să se termine
+            reviewCards.style.transform = `translateX(-${(currentIndex + cardsVisible) * cardWidth}px)`;
+        }, 500); // Așteaptă ca tranziția să se termine înainte de resetare
     }
 }
 
 // Navigare automată
-setInterval(nextReview, 3000); // Schimbă la fiecare 3 secunde
+setInterval(nextReview, 3000); // Schimbă testimonialul la fiecare 3 secunde
 
-// Reaplicăm tranziția după resetare pentru a asigura efectul ciclic
+// Reaplicăm tranziția după resetare pentru a menține efectul de tranziție ciclică
 reviewCards.addEventListener('transitionend', () => {
     reviewCards.style.transition = 'transform 0.5s ease';
 });
+
+
 
 
         fetch('activity_bar.html') // Fetch pentru header și footer
