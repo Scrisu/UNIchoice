@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="css/studii.css">
     <link href="https://fonts.googleapis.com/css2?family=Freeman:wght@400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
-
-
 </head>
 <body>
     <header>
@@ -180,37 +178,63 @@
 
     <script>
 let currentIndex = 0;
-        const cardsVisible = 3; // Numărul de testimoniale vizibile simultan
+const cardsVisible = 3; // Numărul de testimoniale vizibile simultan
+const reviewCards = document.getElementById('reviewCards');
+const reviewCardElements = document.querySelectorAll('.review-card');
+const totalReviews = reviewCardElements.length;
 
-        function showReviews() {
-            const reviewCards = document.getElementById('reviewCards');
-            const cardWidth = 320; // Lățimea cardului (300px + 20px gap)
-            reviewCards.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-        }
+// 1. Clonează primele și ultimele 3 carduri pentru tranziție ciclică
+for (let i = 0; i < cardsVisible; i++) {
+    const firstClone = reviewCardElements[i].cloneNode(true);
+    const lastClone = reviewCardElements[totalReviews - i - 1].cloneNode(true);
+    reviewCards.appendChild(firstClone); // Adaugă clonele primelor carduri la final
+    reviewCards.insertBefore(lastClone, reviewCards.firstChild); // Adaugă clonele ultimelor carduri la început
+}
 
-        function nextReview() {
-            const totalReviews = document.querySelectorAll('.review-card').length;
-            const maxIndex = totalReviews - cardsVisible;
-            if (currentIndex < maxIndex) {
-                currentIndex++; // Mergi la următorul grup de 3 carduri
-            } else {
-                currentIndex = 0; // Revenire la început
-            }
-            showReviews();
-        }
+// 2. Setează offset-ul inițial pentru a evita "săritura" de la început
+reviewCards.style.transform = `translateX(-${cardsVisible * 320}px)`;
 
-        function prevReview() {
-            const totalReviews = document.querySelectorAll('.review-card').length;
-            if (currentIndex > 0) {
-                currentIndex--; // Mergi la grupul anterior
-            } else {
-                currentIndex = totalReviews - cardsVisible; // Mergi la ultimul grup de 3 carduri
-            }
-            showReviews();
-        }
+function updateTransform() {
+    const cardWidth = 320; // Lățimea unui card, inclusiv margini
+    reviewCards.style.transition = 'transform 0.5s ease';
+    reviewCards.style.transform = `translateX(-${(currentIndex + cardsVisible) * cardWidth}px)`;
+}
 
-        // Navigare automată
-        setInterval(nextReview, 3000); // Schimbă la fiecare 4 secunde
+function nextReview() {
+    currentIndex++;
+    updateTransform();
+
+    // Când ajungem la finalul real, resetăm la primul card real
+    if (currentIndex >= totalReviews) {
+        setTimeout(() => {
+            reviewCards.style.transition = 'none'; // Eliminăm tranziția
+            currentIndex = 0;
+            reviewCards.style.transform = `translateX(-${cardsVisible * 320}px)`;
+        }, 500); // Așteaptă ca tranziția să se termine
+    }
+}
+
+function prevReview() {
+    currentIndex--;
+    updateTransform();
+
+    // Când ajungem la începutul real, resetăm la ultimul card real
+    if (currentIndex < 0) {
+        setTimeout(() => {
+            reviewCards.style.transition = 'none'; // Eliminăm tranziția
+            currentIndex = totalReviews - 1;
+            reviewCards.style.transform = `translateX(-${(currentIndex + cardsVisible) * 320}px)`;
+        }, 500); // Așteaptă ca tranziția să se termine
+    }
+}
+
+// Navigare automată
+setInterval(nextReview, 3000); // Schimbă la fiecare 3 secunde
+
+// Reaplicăm tranziția după resetare pentru a asigura efectul ciclic
+reviewCards.addEventListener('transitionend', () => {
+    reviewCards.style.transition = 'transform 0.5s ease';
+});
 
     </script>
 </body>
