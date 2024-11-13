@@ -6,4 +6,5 @@ const isAuthenticated = (req, res, next) => {
         res.status(401).send('Unauthorized. <a href="/">Log in</a>');
     }
 };
+
 module.exports = { isAuthenticated };

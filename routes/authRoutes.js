@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
-const { isAuthenticated } = require('../middleware/authmiddleware');
+const { isAuthenticated } = require('../middleware/authMiddleware');
 
 
 // Login Route
