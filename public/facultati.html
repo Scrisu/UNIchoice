@@ -7,24 +7,8 @@
   <link rel="stylesheet" href="css/facultati.css">
   </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">
-      <img src="images/unichoice-logo.png" alt="UNIchioce Logo">
-    </div>
-    <nav class="navigation">
-      <a href="#">Ghidul viitorului student</a>
-      <a href="#">Facultăți</a>
-      <a href="#">Programe de studii</a>
-      <a href="#">Forum</a>
-    </nav>
-    <div class="contact">
-      <a href="#">Contact</a>
-      <div class="user-icon">
-        <img src="images/user-icon.png" alt="User Icon">
-      </div>
-    </div>
-  </header>
+  
+  <div id="header-placeholder"></div>
 
   <section class="hero">
     <section class="welcome-section">
@@ -247,37 +231,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-logo">
-      <img src="images/logo.png" alt="UNIchioce Logo">
-    </div>
-    <div class="footer-links">
-      <div>
-        <h4>Despre noi</h4>
-        <ul>
-          <li><a href="#">Cine suntem</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legături rapide</h4>
-        <ul>
-          <li><a href="#">Facultăți</a></li>
-          <li><a href="#">Programe de studii</a></li>
-          <li><a href="#">Forum</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Social Media</h4>
-        <ul class="social-media">
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Twitter</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
 </body>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -340,6 +294,16 @@ document.querySelectorAll(".favorite svg").forEach(svg => {
         svg.style.fill = svg.style.fill === "red" ? "white" : "red";
     });
 });
+
+
+        fetch('headerFooter.html') // Fetch pentru header și footer
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header/footer:', error));
+   
 
 
 
