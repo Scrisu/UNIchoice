@@ -16,7 +16,7 @@ router.post('/login', async (req, res) => {
 
         if (user && await bcrypt.compare(password, user.password)) {
             req.session.user = user;
-            res.redirect('/home');
+            res.redirect('/facultati');
         } else {
             res.status(401).send('Invalid credentials. <a href="/">Try again</a>');
         }
@@ -33,7 +33,7 @@ router.get('/logout', isAuthenticated, (req, res) => {
             console.error('Logout error:', err);
             return res.status(500).send('An error occurred. <a href="/">Try again</a>');
         }
-        res.redirect('/');
+        res.send('You have logged out. <a href="/">Go back</a>');
     });
 });
 

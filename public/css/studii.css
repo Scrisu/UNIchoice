@@ -231,6 +231,7 @@ body {
     margin: 0 auto;
     overflow: hidden;
     position: relative;
+    width: 100%;
 }
 
 .reviews h2 {
@@ -244,9 +245,8 @@ body {
 .review-cards {
     display: flex;
     gap: 30px; /* Distanța între carduri */
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease; /* Animație lină pentru tranziția caruselului */
 }
-
 
 .review-card {
     background-color: #fff;
@@ -263,6 +263,7 @@ body {
     transform: translateY(-10px); /* Mută cardul cu 10px în sus */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Umbră mai intensă pentru efect */
 }
+
 .review-image {
     width: 80px;
     height: 80px;
@@ -277,14 +278,14 @@ body {
     margin: 10px 0;
 }
 
-
 .review-card p {
     font-size: 15px;
     color: #555;
     line-height: 1.4;
 }
- /* Butoane de navigare */
- .nav-button {
+
+/* Butoane de navigare */
+.nav-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -309,6 +310,16 @@ body {
 .nav-next {
     right: -30px;
 }
+
+/* Asigurăm că tranzițiile sunt mai puțin vizibile la resetare */
+.review-cards {
+    transition: none; /* Dezactivează tranziția imediat la resetare */
+}
+
+.review-cards.reset {
+    transition: transform 0s ease; /* Resetăm tranziția la 0 secunde când se întâmplă săritura */
+}
+
 
 
 .forum-frame {

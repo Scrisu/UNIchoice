@@ -9,23 +9,16 @@ const setupMiddleware = require('./config/middleware'); // Middleware setup
 const authRoutes = require('./routes/authRoutes');
 const verificationRoutes = require('./routes/verificationRoutes');
 const initDb = require('./config/initDb');
-const pgSession = require('connect-pg-simple')(session); // pgSession setup for PostgreSQL sessions
-const { Pool } = require('pg'); // Import Pool from the pg package
-
+const pgSession = require('connect-pg-simple')(session);
+const { Pool } = require('pg');
 
 // Import Models
 const User = require('./models/User');
 const VerificationCode = require('./models/VerificationCode');
 
-// Import Utilities
-const { sendVerificationEmail, generateVerificationCode } = require('./utils/emailService');
-
 // Initialize Express App
 const app = express();
 const PORT = process.env.PORT || 3000;
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL, // Ensure this is set in your .env file
-  });
 
 // Set up Middleware
 setupMiddleware(app);
@@ -35,37 +28,50 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Use the static middleware to serve static files
-app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from 'public'
+// Serve static files from 'public'
 
 // Initialize Database (Sync Models)
 initDb();
+const pgPool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false // Needed if you are using SSL
+    }
+});
 
 // Set up session management
 app.use(
     session({
-      store: new pgSession({
-        pool: pool, // Connection pool for PostgreSQL
-        tableName: 'session' // Optional: Customize the session table name
-      }),
-      secret: process.env.SESSION_SECRET || 'your_secret_key',
-      resave: false,
-      saveUninitialized: false,
-      cookie: {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production', // Set to true in production
-        maxAge: 1000 * 60 * 10, // Session expiration (10 minutes in this example)
-      },
+        store: new pgSession({
+            pool: pgPool, // Connection pool
+            tableName: 'session' // Defaults to 'session'
+        }),
+        secret: process.env.SESSION_SECRET || 'your_secret_key',
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // Secure cookies for production
+            maxAge: 1000 * 60 * 10 // Adjust session expiration as needed
+        }
     })
-  );
+);
 
 // Set up Routes
 app.use('/', authRoutes);
 app.use('/', verificationRoutes);
 
-// Home Page Route
+// Home Page Route (Main Landing Page)
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serves the static 'index.html' file from 'public'
+    res.sendFile(path.join(__dirname, 'public', 'facultati.html')); // Serves the static 'index.html' file from 'public'
 });
+
+// Authentication Page Route (Registration and Login Page)
+app.get('/auth', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'auth.html')); // Serves the new 'auth.html' file from 'public'
+});
+
+app.use(express.static(path.join(__dirname, 'public'))); 
 
 // Verification Page Route
 app.get('/verify-email', (req, res) => {
@@ -142,7 +148,9 @@ app.post('/verify-code', async (req, res) => {
     }
 });
 
-
+app.get('/facultati', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'facultati.html')); // Serve facultati.html when someone visits /facultati
+});
 
 // Home page after successful login or registration
 app.get('/home', isAuthenticated, (req, res) => {
