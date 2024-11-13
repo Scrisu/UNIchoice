@@ -9,8 +9,8 @@ const setupMiddleware = require('./config/middleware'); // Middleware setup
 const authRoutes = require('./routes/authRoutes');
 const verificationRoutes = require('./routes/verificationRoutes');
 const initDb = require('./config/initDb');
-const pgSession = require('connect-pg-simple')(session); // pgSession setup for PostgreSQL sessions
-const { Pool } = require('pg'); // Import Pool from the pg package
+const pgSession = require('connect-pg-simple')(session);
+const { Pool } = require('pg');
 
 
 // Import Models
@@ -23,9 +23,6 @@ const { sendVerificationEmail, generateVerificationCode } = require('./utils/ema
 // Initialize Express App
 const app = express();
 const PORT = process.env.PORT || 3000;
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL, // Ensure this is set in your .env file
-  });
 
 // Set up Middleware
 setupMiddleware(app);
@@ -39,24 +36,30 @@ app.use(express.static(path.join(__dirname, 'public'))); // Serve static files f
 
 // Initialize Database (Sync Models)
 initDb();
+const pgPool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false // Needed if you are using SSL
+    }
+});
 
 // Set up session management
 app.use(
     session({
-      store: new pgSession({
-        pool: pool, // Connection pool for PostgreSQL
-        tableName: 'session' // Optional: Customize the session table name
-      }),
-      secret: process.env.SESSION_SECRET || 'your_secret_key',
-      resave: false,
-      saveUninitialized: false,
-      cookie: {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production', // Set to true in production
-        maxAge: 1000 * 60 * 10, // Session expiration (10 minutes in this example)
-      },
+        store: new pgSession({
+            pool: pgPool, // Connection pool
+            tableName: 'session' // Defaults to 'session'
+        }),
+        secret: process.env.SESSION_SECRET || 'your_secret_key',
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // Secure cookies for production
+            maxAge: 1000 * 60 * 10 // Adjust session expiration as needed
+        }
     })
-  );
+);
 
 // Set up Routes
 app.use('/', authRoutes);
@@ -141,8 +144,6 @@ app.post('/verify-code', async (req, res) => {
         res.status(500).send('Failed to verify code');
     }
 });
-
-
 
 // Home page after successful login or registration
 app.get('/home', isAuthenticated, (req, res) => {

@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
-
 // Verification model definition for email verification
 const VerificationCode = sequelize.define('VerificationCode', {
     email: {
@@ -17,5 +16,4 @@ const VerificationCode = sequelize.define('VerificationCode', {
         allowNull: false,
     },
 });
-
 module.exports = VerificationCode;
