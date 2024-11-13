@@ -23,7 +23,6 @@ const { sendVerificationEmail, generateVerificationCode } = require('./utils/ema
 // Initialize Express App
 const app = express();
 const PORT = process.env.PORT || 3000;
-
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL, // Ensure this is set in your .env file
   });
@@ -142,6 +141,8 @@ app.post('/verify-code', async (req, res) => {
         res.status(500).send('Failed to verify code');
     }
 });
+
+
 
 // Home page after successful login or registration
 app.get('/home', isAuthenticated, (req, res) => {
