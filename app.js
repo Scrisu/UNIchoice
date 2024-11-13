@@ -9,6 +9,9 @@ const setupMiddleware = require('./config/middleware'); // Middleware setup
 const authRoutes = require('./routes/authRoutes');
 const verificationRoutes = require('./routes/verificationRoutes');
 const initDb = require('./config/initDb');
+const pgSession = require('connect-pg-simple')(session);
+const { Pool } = require('pg');
+
 
 // Import Models
 const User = require('./models/User');
@@ -33,18 +36,28 @@ app.use(express.static(path.join(__dirname, 'public'))); // Serve static files f
 
 // Initialize Database (Sync Models)
 initDb();
+const pgPool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false // Needed if you are using SSL
+    }
+});
 
 // Set up session management
 app.use(
     session({
+        store: new pgSession({
+            pool: pgPool, // Connection pool
+            tableName: 'session' // Defaults to 'session'
+        }),
         secret: process.env.SESSION_SECRET || 'your_secret_key',
         resave: false,
         saveUninitialized: false,
         cookie: {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production', // Secure only for production
-            maxAge: 1000 * 60 * 10, // Session expires after 10 minutes (can adjust)
-        },
+            secure: process.env.NODE_ENV === 'production', // Secure cookies for production
+            maxAge: 1000 * 60 * 10 // Adjust session expiration as needed
+        }
     })
 );
 
