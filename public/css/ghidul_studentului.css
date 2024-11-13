@@ -7,9 +7,13 @@
 
 /* Container de bază */
 .main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Extinde pe toată înălțimea paginii */
     width: 100%;
     background: white;
 }
+
 
 
   

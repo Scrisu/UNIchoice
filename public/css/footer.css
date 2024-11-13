@@ -1,22 +1,18 @@
 /* Footer */
 .footer {
-    background-color: #e9e9e9;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 95%;
-    max-width: 1200px;
-    border-radius: 5px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Source Sans Pro', sans-serif;
-  }
+  background-color: #e9e9e9;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto; /* Centrează footer-ul */
+  border-radius: 5px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Source Sans Pro', sans-serif;
+}
   
   .footer-content {
     display: grid;
@@ -111,4 +107,56 @@
     flex: 1;
     padding-bottom: 80px;
   }
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .footer-content {
+      grid-template-columns: repeat(4, 1fr); /* Reduce to 4 columns */
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-content {
+      grid-template-columns: repeat(3, 1fr); /* Reduce to 3 columns */
+  }
+
+  .footer-logo, .footer-contact {
+      text-align: center; /* Center align logo and contact on smaller screens */
+  }
+
+  .social-icons {
+      justify-content: center; /* Center social icons */
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+      grid-template-columns: repeat(2, 1fr); /* Reduce to 2 columns */
+  }
+
+  .footer-logo, .footer-contact {
+      text-align: center; /* Center align logo and contact on very small screens */
+  }
+
+  .footer-section h3 {
+      font-size: 12px; /* Smaller headings */
+  }
+
+  .footer-section p {
+      font-size: 10px; /* Smaller text for footer links */
+  }
+
+  .social-icons {
+      gap: 15px;
+  }
+
+  .logo-image {
+      width: 120px; /* Smaller logo */
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-content {
+      grid-template-columns: 1fr; /* Stack all columns into one */
+  }
   
+ 
