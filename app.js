@@ -10,7 +10,7 @@ const { Pool } = require('pg');
 // Import Middleware, Routes, and Models
 const { isAuthenticated } = require('./middleware/authmiddleware'); // Correct path to middleware
 const setupMiddleware = require('./config/middleware'); // Middleware setup
-const authRoutes = require('./routes/authRoutes');
+const authRoutes = require('./routes/authRoutes'); // Import authRoutes here
 const verificationRoutes = require('./routes/verificationRoutes');
 const initDb = require('./config/initDb');
 const User = require('./models/User');
@@ -63,8 +63,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 initDb();
 
 // Set up Routes
-app.use('/', authRoutes);
-app.use('/', verificationRoutes);
+app.use('/', authRoutes); // Use authRoutes once
+app.use('/', verificationRoutes); // Use verificationRoutes once
 
 // Home Page Route (Main Landing Page)
 app.get('/', (req, res) => {
@@ -85,70 +85,6 @@ app.get('/verify-email', (req, res) => {
 
     // Serve the verification HTML page
     res.sendFile(path.join(__dirname, 'public', 'verify-email.html'));
-});
-
-// Verify Code Route
-app.post('/verify-code', async (req, res) => {
-    try {
-        const { email, code } = req.body;
-
-        if (!email || !code) {
-            return res.status(400).send('Both email and code are required. <a href="/verify-email?email=' + encodeURIComponent(email) + '">Try again</a>');
-        }
-
-        // Step 1: Retrieve the verification record from the database
-        const record = await VerificationCode.findOne({ where: { email } });
-
-        // Step 2: Check if the record exists and verify the code
-        if (record) {
-            console.log(`Verification record found: Code in DB: ${record.code}, Expires at: ${record.expiresAt}`);
-
-            if (record.code.trim() === code.trim() && record.expiresAt > new Date()) {
-                console.log(`Code matched and is not expired for email: ${email}`);
-
-                // Step 3: Check if `req.session.tempUser` exists
-                if (!req.session.tempUser) {
-                    return res.status(400).send('Session expired. Please register again. <a href="/">Register</a>');
-                }
-
-                // Step 4: Assign the `tempUser` from the session
-                const tempUser = req.session.tempUser;
-
-                // Step 5: Extract email, username, and password with error handling
-                const { username, password } = tempUser;
-
-                if (!email || !username || !password) {
-                    return res.status(400).send('Session data is incomplete. Please register again. <a href="/">Register</a>');
-                }
-
-                // Step 6: Hash the password
-                const hashedPassword = await bcrypt.hash(password, 10);
-
-                // Step 7: Create a new user record in the database
-                const newUser = await User.create({ username, email, password: hashedPassword });
-
-                // Step 8: Set the user in the session and clean up tempUser
-                req.session.user = newUser;
-                delete req.session.tempUser;
-
-                // Step 9: Redirect to home page
-                res.redirect('/home');
-            } else {
-                if (record.code.trim() !== code.trim()) {
-                    console.log(`Verification failed: Entered code does not match the stored code.`);
-                } else if (record.expiresAt <= new Date()) {
-                    console.log(`Verification failed: Code expired.`);
-                }
-                res.status(400).send('Invalid or expired verification code. <a href="/verify-email?email=' + encodeURIComponent(email) + '">Try again</a>');
-            }
-        } else {
-            console.log(`No verification record found for email: ${email}`);
-            res.status(400).send('Invalid or expired verification code. <a href="/verify-email?email=' + encodeURIComponent(email) + '">Try again</a>');
-        }
-    } catch (error) {
-        console.error('Verification error:', error);
-        res.status(500).send('Failed to verify code');
-    }
 });
 
 // Facultati Page Route
