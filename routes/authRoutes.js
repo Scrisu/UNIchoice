@@ -33,7 +33,7 @@ router.get('/logout', isAuthenticated, (req, res) => {
             console.error('Logout error:', err);
             return res.status(500).send('An error occurred. <a href="/">Try again</a>');
         }
-        res.redirect('/');
+        res.send('You have logged out. <a href="/">Go back</a>');
     });
 });
 

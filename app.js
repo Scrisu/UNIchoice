@@ -4,14 +4,11 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const bodyParser = require('body-parser');
-const { isAuthenticated } = require('./middleware/authmiddleware'); // Correct path to middleware
+const { isAuthenticated } = require('./middleware/authMiddleware'); // Correct path to middleware
 const setupMiddleware = require('./config/middleware'); // Middleware setup
 const authRoutes = require('./routes/authRoutes');
 const verificationRoutes = require('./routes/verificationRoutes');
 const initDb = require('./config/initDb');
-const pgSession = require('connect-pg-simple')(session); // pgSession setup for PostgreSQL sessions
-const { Pool } = require('pg'); // Import Pool from the pg package
-
 
 // Import Models
 const User = require('./models/User');
@@ -23,9 +20,6 @@ const { sendVerificationEmail, generateVerificationCode } = require('./utils/ema
 // Initialize Express App
 const app = express();
 const PORT = process.env.PORT || 3000;
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL, // Ensure this is set in your .env file
-  });
 
 // Set up Middleware
 setupMiddleware(app);
@@ -43,20 +37,16 @@ initDb();
 // Set up session management
 app.use(
     session({
-      store: new pgSession({
-        pool: pool, // Connection pool for PostgreSQL
-        tableName: 'session' // Optional: Customize the session table name
-      }),
-      secret: process.env.SESSION_SECRET || 'your_secret_key',
-      resave: false,
-      saveUninitialized: false,
-      cookie: {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production', // Set to true in production
-        maxAge: 1000 * 60 * 10, // Session expiration (10 minutes in this example)
-      },
+        secret: process.env.SESSION_SECRET || 'your_secret_key',
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // Secure only for production
+            maxAge: 1000 * 60 * 10, // Session expires after 10 minutes (can adjust)
+        },
     })
-  );
+);
 
 // Set up Routes
 app.use('/', authRoutes);
@@ -141,8 +131,6 @@ app.post('/verify-code', async (req, res) => {
         res.status(500).send('Failed to verify code');
     }
 });
-
-
 
 // Home page after successful login or registration
 app.get('/home', isAuthenticated, (req, res) => {
