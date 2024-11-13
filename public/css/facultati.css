@@ -14,56 +14,9 @@
     min-height: 100vh;
   }
 
-  /* Header */
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+  
 
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo img {
-    width: 50px;
-    height: auto;
-    margin-right: 10px;
-  }
-
-  .logo-text h1 {
-    font-size: 1.5em;
-    color: #e88a15;
-  }
-
-  .logo-text p {
-    font-size: 0.9em;
-    color: #666;
-  }
-
-  .navigation a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #333;
-    font-size: 1em;
-  }
-
-  .contact a {
-    text-decoration: none;
-    color: #333;
-    margin-right: 10px;
-  }
-
-  .user-icon img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  }
-
+  
   /* Hero Section */
   .hero {
     position: relative;
@@ -321,49 +274,7 @@ object-fit: cover;
 border-radius: 16px; 
 }
 
-  /* Footer */
-  .footer {
-    padding: 40px;
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  .footer-logo img {
-    width: 50px;
-    height: auto;
-  }
-
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .footer-links div {
-    margin-right: 20px;
-  }
-
-  .footer-links h4 {
-    margin-bottom: 10px;
-  }
-
-  .footer-links ul {
-    list-style: none;
-  }
-
-  .footer-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.9em;
-  }
-
-  .social-media a {
-    color: #fff;
-    margin-right: 15px;
-    text-decoration: none;
-  }
+  
   .map-section iframe {
 width: 100%;  
 height: 400px; /* Poți ajusta înălțimea după preferință */
