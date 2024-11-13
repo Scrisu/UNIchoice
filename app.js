@@ -9,6 +9,10 @@ const setupMiddleware = require('./config/middleware'); // Middleware setup
 const authRoutes = require('./routes/authRoutes');
 const verificationRoutes = require('./routes/verificationRoutes');
 const initDb = require('./config/initDb');
+const pgSession = require('connect-pg-simple')(session); // pgSession setup for PostgreSQL sessions
+
+const { Pool } = require('pg'); // Import Pool from the pg package
+
 
 // Import Models
 const User = require('./models/User');
@@ -33,20 +37,26 @@ app.use(express.static(path.join(__dirname, 'public'))); // Serve static files f
 
 // Initialize Database (Sync Models)
 initDb();
-
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL, // Ensure this is set in your .env file
+  });
 // Set up session management
 app.use(
     session({
-        secret: process.env.SESSION_SECRET || 'your_secret_key',
-        resave: false,
-        saveUninitialized: false,
-        cookie: {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === 'production', // Secure only for production
-            maxAge: 1000 * 60 * 10, // Session expires after 10 minutes (can adjust)
-        },
+      store: new pgSession({
+        pool: pool, // Connection pool for PostgreSQL
+        tableName: 'session' // Optional: Customize the session table name
+      }),
+      secret: process.env.SESSION_SECRET || 'your_secret_key',
+      resave: false,
+      saveUninitialized: false,
+      cookie: {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production', // Set to true in production
+        maxAge: 1000 * 60 * 10, // Session expiration (10 minutes in this example)
+      },
     })
-);
+  );
 
 // Set up Routes
 app.use('/', authRoutes);
