@@ -9,55 +9,11 @@
 .main-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Extinde pe toată înălțimea paginii */
     width: 100%;
     background: white;
 }
 
-
-
-  
-  /* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: #EBEBEB;
-}
-
-.header .nav-links,
-.header .contact-profile {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.header .nav-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.header .nav-item {
-    padding: 8px 16px;
-    background: white;
-    border-radius: 100px;
-    font-size: 14px;
-    font-weight: 500;
-}
-/* Stilizare pentru logo */
-.header img {
-    width: 210px;  /* Lățimea logo-ului */
-    height: 57px;  /* Înălțimea logo-ului */
-    object-fit: contain; /* Asigură că logo-ul se ajustează proporțional în cadrul specificat */
-}
-
-
-.contact-button {
-    padding: 10px 20px;
-    background: rgba(235, 235, 235, 1);  /* Culoarea #EBEBEB cu opacitate 100% */
-    border-radius: 100px;
-}
+ 
 
 /* Importă fontul Freeman Regular (asigură-te că ai fișierul de font) */
 @font-face {
@@ -88,13 +44,14 @@
     box-sizing: border-box;
 }
 
+
 /* Secțiunea Intro */
 
 .intro {
     display: flex;
     justify-content: space-between;
     gap: 56px; /* Distanță între containerul din stânga și galerie */
-    padding: 100px 0;
+    padding: 50px 0;
     margin-left: 100px; /* Distanță de la marginea stângă */
     margin-right: 100px; /* Distanță de la marginea dreaptă */
 }

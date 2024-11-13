@@ -191,10 +191,18 @@ reviewCards.addEventListener('transitionend', () => {
 });
 
 
-        fetch('headerFooter.html') // Fetch pentru header și footer
+        fetch('activity_bar.html') // Fetch pentru header și footer
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
+            
+            })
+            .catch(error => console.error('Error loading header/footer:', error));
+
+            fetch('footer.html') // Fetch pentru header și footer
+            .then(response => response.text())
+            .then(data => {
+                
                 document.getElementById('footer-placeholder').innerHTML = data;
             })
             .catch(error => console.error('Error loading header/footer:', error));
