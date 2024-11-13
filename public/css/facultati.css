@@ -90,6 +90,7 @@
   margin: 0 auto; /* Centrează secțiunea pe pagină */
   justify-content: center;
   gap: 30px; /* Spațiu între filtre și secțiunea cardurilor */
+  padding-top: 400x;
 }
 
   /* Sidebar Filter */
@@ -290,74 +291,96 @@ align-items: center;
 .nav-button:hover {
   background-color: #e65c00;
 }
-
-  /* News Section */
-  .news-section {
-padding: 30px;
-justify-content: center;
-background-color: #f8f8f8; /* Optional background color */
-text-align: left;
+/* News Section */
+.news-section {
+  padding: 40px; /* Elimină padding-ul de sus și jos */
+  background-color: #ffffff; /* Fundal deschis */
+  display: flex;
+  justify-content: center; /* Centrează bannerul pe orizontală */
+  align-items: center; /* Centrează bannerul pe verticală */
+  min-height: auto; /* Elimină înălțimea minimă pentru a nu afecta alte secțiuni */
+  margin: 0; /* Elimină marginile pentru a nu adăuga spațiu suplimentar */
+  width: 100%;
 }
 
+/* Banner-ul de știri */
 .news-banner {
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: #ffffff;
-padding: 20px;
-border-radius: 16px; /* Optional: to round the corners of the entire banner */
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a light shadow */
-width: 100%; /* Se va adapta pe ecrane mai mici */
+  display: flex;
+  justify-content: space-between; /* Aliniere text-imagine pe orizontală */
+  align-items: center; /* Centrează pe verticală */
+  background-color: #ffffff; /* Fundal alb pentru banner */
+  padding: 20px 30px; /* Dimensiuni reduse pentru padding */
+  border-radius: 16px; /* Colțuri rotunjite */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbra ușoară pentru efect */
+  max-width: 100%; /* Lărgirea până la 100% din lățimea containerului părinte */
+  width: 94%; /* Lățimea completă a secțiunii */
+  margin: 0 auto; /* Centrează bannerul pe pagină */
+  height: auto; /* Înălțimea se ajustează automat */
 }
 
-
+/* Textul din banner */
 .text-content {
-flex: 1;
-padding-right: 20px;
+  flex: 1; /* Permite textului să ocupe tot spațiul disponibil pe partea stângă */
+  padding-right: 60px; /* Adaugă spațiu între text și imagine */
 }
 
 .text-content h3 {
-font-size: 50px;
-color: #333;
-margin-bottom: 10px;
+  font-size: 40px; /* Font mai mare */
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .text-content p {
-font-size: 20px;
-color: #666;
-margin-bottom: 20px;
-}
-.text-content button {
-padding: 10px 20px;
-font-size: 1em;
-color: #fff;
-background-color: #e88a15;
-border: none;
-border-radius: 12px;
-cursor: pointer;
-}
-.text-content button:hover {
-background-color: #d67b12; /* Darker shade on hover */
-}
-.image-content img {
-width: 300px;
-height: 290px;
-object-fit: cover;
-border-radius: 16px; 
+  font-size: 16px; /* Font mai mic pentru paragrafe */
+  color: #666;
+  margin-bottom: 30px;
 }
 
-  
-  .map-section iframe {
-width: 100%;  
-height: 400px; /* Poți ajusta înălțimea după preferință */
-border-radius: 8px; 
-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+.text-content button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #e88a15;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
 }
+
+.text-content button:hover {
+  background-color: #d67b12; /* Umbră mai închisă la hover */
+}
+
+/* Imaginea din banner */
+.image-content img {
+  width: 200px; /* Mărire imaginea */
+  height: 200px; /* Mărire imaginea */
+  object-fit: cover;
+  border-radius: 16px; /* Colțuri rotunjite pentru imagine */
+}
+
+/* Pentru secțiunea hărții */
+.map-section {
+  display: flex;
+  flex-direction: column; /* Asigură-te că textul va fi deasupra hărții */
+  justify-content: center; /* Centrează conținutul pe verticală */
+  align-items: center; /* Centrează conținutul pe orizontală */
+  width: 100%;
+  padding: 20px;
+}
+
+.map-section iframe {
+  width: 92%; /* Lățimea iframe-ului va fi 80% din secțiunea .map-section */
+  height: 500px;
+  border-radius: 8px; /* Colțuri rotunjite pentru iframe */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adăugarea unei umbre pentru efect */
+}
+
+
 
 .main-background {
 background-color: #F2F5F9; /* culoare deschisă */
 padding: 20px;
 border-radius: 8px; /* colțuri rotunjite opționale */
 display: flex;
-justify-content: space-between;
+justify-content: center;
 }
