@@ -11,7 +11,9 @@
     background: white;
 }
 
-/* Header */
+
+  
+  /* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -53,7 +55,6 @@
     border-radius: 100px;
 }
 
-
 /* Importă fontul Freeman Regular (asigură-te că ai fișierul de font) */
 @font-face {
     font-family: 'Freeman Regular';
@@ -61,7 +62,6 @@
 }
 
 /* Welcome Section */
-
 
 .welcome-section img {
     width: 100%;  /* Asigură-te că imaginea se extinde pe întreaga lățime a secțiunii */
@@ -75,8 +75,6 @@
     font-weight: bold;    /* Adaugă un aspect de tip "bold" (opțional, pentru a face textul mai vizibil) */
     padding-bottom: 30px;
 }
-
-
 
 
 /* General Reset */
@@ -96,8 +94,6 @@
     margin-left: 100px; /* Distanță de la marginea stângă */
     margin-right: 100px; /* Distanță de la marginea dreaptă */
 }
-
-
 
 
 /* Left container (pentru text) */
@@ -182,9 +178,6 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Opțional, umbră pentru efect de card */
     border-radius: 8px; /* Opțional, colțuri rotunjite */
 }
-
-
-
 
 /* Info Cards Section */
 .info-cards {
@@ -303,7 +296,7 @@
 
 
 
-/* Modificăm butonul să fie sub dreptunghi */
+
 /* Stilul general pentru butoanele cardurilor */
 .card-content button {
     position: absolute;
@@ -314,7 +307,7 @@
     background-color: #2F584E;
     color: white;
     border: none;
-    border-radius: 16px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 0.9rem;
 }
@@ -334,7 +327,6 @@
 }
 
 
-/* Forum Section */
 /* Forum Section */
 .forum {
     display: flex;
@@ -366,80 +358,55 @@
     background-color: #2F584E;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 16px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 18px;
     margin-top: 0px;
     padding: 20px;
+    height: auto;
+
 }
 
 .forum button:hover {
     background-color: #21443b;
 }
 
-
-
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 3rem 2rem;
-    font-size: 0.9rem;
-}
-
-.footer-top {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #444;
-}
-
-.contact-info {
-    flex: 1;
-    min-width: 200px;
-}
-
-.contact-info h3 {
-    font-size: 60px;
-    margin-bottom: 0.5rem;
-    font-family:"Freeman, Regular";
-}
-
-.footer-links {
-    display: flex;
-    flex: 2;
-    justify-content: space-between;
-    min-width: 300px;
-}
-
-.footer-links div {
-    min-width: 120px;
-}
-
-.footer-links h4 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #aaa;
-}
-
-.footer-links a {
-    display: block;
-    color: #ccc;
-    text-decoration: none;
-    margin-bottom: 5px;
-    font-size: 0.9rem;
-}
-
-.footer-links a:hover {
-    color: #fff;
-}
-
-.footer-bottom {
+.welcome-box {
+    position: absolute;
+    top: 40%; /* Poziționează chenarul pe verticală în mijlocul imaginii */
+    left: 50%; /* Poziționează chenarul pe orizontală în mijlocul imaginii */
+    transform: translate(-50%, -50%); /* Centrează chenarul perfect pe imagine */
+    background-color: rgba(47, 88, 78, 0.8); /* Adaugă un fundal semi-transparent */
+    padding: 20px 40px; /* Adaugă margini interne pentru text */
+    border-radius: 10px; /* Răsucirea colțurilor pentru un efect mai plăcut */
     text-align: center;
-    margin-top: 1rem;
-    font-size: 0.8rem;
-    color: #bbb;
+    color: white; /* Culoare albă pentru text */
+    font-family: 'Freeman', sans-serif;
+    font-size: 24px;
 }
+
+.welcome-box {
+    width: 490px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    
+}
+.welcome-box h1 {
+    color: white;
+    font-size: 40px; ;
+    text-align: center;
+    margin: 0;
+  }
+  h2::before {
+    content: "☆";            /* Asteriscul sau simbolul dorit */
+    display: block;          /* Afișează asteriscul pe o linie separată */
+    font-size: 50px;         /* Mărimea asteriscului */
+    color: #2F584E;          /* Culoarea asteriscului */
+    text-align: center;      /* Centrează asteriscul */
+    margin-bottom: 0.5rem;   /* Spațiere între asterisc și text */
+}
+

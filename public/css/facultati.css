@@ -73,40 +73,60 @@
     align-items: center;
     overflow: hidden; /* pentru a evita ca imaginea să depășească marginile secțiunii */
   }
+  option {
+    background-color: rgb(255, 255, 255); /* Fundal implicit pentru opțiuni */
+    color: rgb(0, 0, 0); /* Text implicit pentru opțiuni */
 
-  .hero-image {
+}
+.welcome-section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+  .welcome-box {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asigură-te că imaginea acoperă întreaga secțiune */
-    z-index: -1; /* Plasează imaginea în spatele textului */
-  }
+    top: 40%; /* Poziționează chenarul pe verticală în mijlocul imaginii */
+    left: 50%; /* Poziționează chenarul pe orizontală în mijlocul imaginii */
+    transform: translate(-50%, -50%); /* Centrează chenarul perfect pe imagine */
+    background-color: rgba(47, 88, 78, 0.8); /* Adaugă un fundal semi-transparent */
+    padding: 20px 40px; /* Adaugă margini interne pentru text */
+    border-radius: 10px; /* Răsucirea colțurilor pentru un efect mai plăcut */
+    text-align: center;
+    color: white; /* Culoare albă pentru text */
+    font-family: 'Freeman', sans-serif;
 
-  .hero .centered-box {
-    width: 400px;
+}
+
+.welcome-box {
+    width: 470px;
     height: 200px;
     background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 16px;
-  }
-
-  .hero .centered-box h1 {
+    
+}
+.welcome-box h1 {
     color: white;
-    font-size: 2em;
+    font-size: 38px; ;
     text-align: center;
     margin: 0;
   }
+
+  
 
   /* Main Content */
   .main-content {
     display: flex;
     flex-grow: 1;
     padding: 40px;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   /* Sidebar Filter */
@@ -139,40 +159,39 @@
     color: #333;
   }
 
-  .filter-item {
-    margin-bottom: 20px;
-  }
-
-  .filter-item label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
-  }
-
-   .filter-item select {
-    width: 100%;
-    padding: 12px;
-    font-size: 1em;
-    border: 0 px solid #ccc;
-    border-radius: 8px; /* Colțuri rotunjite */
-    background-color: #ffffff; /* Fundal deschis pentru un look mai curat */
-    transition: border-color 0.3s ease;
+ /* Filtrele din sidebar */
+.filter-item {
+  margin-bottom: 20px;
 }
 
-    .filter-item select:focus {
-        border-color: #3b2306; /* Culoare de focus portocalie */
-        background-color: #ffffff41;
-    }
+.filter-item label {
+  display: block; /* Plasează eticheta pe o linie separată */
+  margin-bottom: 8px; /* Adaugă un spațiu între etichetă și select */
+  font-weight: bold;
+  color: #555;
+  transition: none; /* Elimină orice efect de tranziție de hover */
+}
+
+.filter-item select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Colțuri rotunjite */
+  background-color: #ffffff; /* Fundal deschis pentru un look mai curat */
+  transition: border-color 0.3s ease;
+}
+
+.filter-item select:focus {
+  border-color: #3b2306; /* Culoare de focus portocalie */
+  background-color: #ffffff41;
+}
+
+
 
     .filter-item select option {
         padding: 10px;
     }
-
-    .filter-item select:hover {
-        cursor: pointer;
-    }
-
   /* Faculties Section */
   .faculties {
     flex: 1;
@@ -289,7 +308,7 @@ font-size: 1em;
 color: #fff;
 background-color: #e88a15;
 border: none;
-border-radius: 16px;
+border-radius: 12px;
 cursor: pointer;
 }
 .text-content button:hover {

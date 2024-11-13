@@ -8,29 +8,21 @@
 </head>
 <body>
     <div class="main-container">
-        <header class="header">
-            <div class="nav-links">
-                <img src="images/logo.png" alt="Logo">
-                <nav class="nav-buttons">
-                    <div class="nav-item">Ghidul viitorului student</div>
-                    <div class="nav-item">Facultăți</div>
-                    <div class="nav-item">Programe de studii</div>
-                    <div class="nav-item">Forum</div>
-                </nav>
-            </div>
-            <div class="contact-profile">
-                <div class="contact-button">Contact</div>
-                <img src="images/contul-meu.png" alt="Profile Icon">
-            </div>
-        </header>
-    
+        
+        <div id="header-placeholder"></div>
+
         <section class="welcome-section">
-            <img src="images/Group135.png" alt="Welcome Image">
+            <img src="images/pagina-ghid2.png" alt="Welcome Image">
+            <div class="welcome-box">
+                <h1>Bine ai venit în Ghidul Studentului</h1>
+            </div>
         </section>
         
         
     <!-- Main Content -->
     <main>
+
+        <div class="main-container"></div>
         <section class="intro">
             <!-- Left container pentru text -->
             <div class="left-container">
@@ -52,7 +44,7 @@
             
         </section>
 
-        <p class="between-sections-text">Află mai multe despre ce îți oferă viața de student</p>
+        <h2 class="between-sections-text">Află mai multe despre ce îți oferă viața de student</h2>
          
         <div class="info-cards-frame">
             <section class="info-cards">
@@ -63,7 +55,7 @@
                     <div class="card-content">
                         <h3 class="title-camine">Camine</h3>
                         <p>Explorează căminele din întreaga țară pentru a avea cât mai multe informații despre viața de student.</p>
-                        <button>Vezi cămine</button>
+                        <button onclick="window.location.href='camine.html'">Vezi cămine</button>
                     </div>
                 </div>
                 
@@ -74,7 +66,7 @@
                      <div class="card-content">
                        <h3 class="title-transport">Transport</h3>
                                   <p class="content-transport">Explorează mijloacele de transport din întreaga țară pentru a avea cât mai multe informații despre viața de student.</p>
-                      <button class="button-transport">Vezi transport</button>
+                        <button onclick="window.location.href='transport.html'">Vezi transport</button>
                     </div>
                     </div>
 
@@ -86,7 +78,7 @@
                     <div class="card-content">
                         <h3 class="title-evenimente">Evenimente</h3>
                         <p>Explorează evenimentele din întreaga țară pentru a avea cât mai multe informații despre viața de student.</p>
-                        <button>Vezi evenimente</button>
+                        <button onclick="window.location.href='evenimente.html'">Vezi evenimente</button>
                     </div>
                 </div>
             </section>
@@ -97,59 +89,25 @@
         <section class="forum">
             <div class="forum-frame">
                 <h2>Vrei să discuți cu ceilalți studenți?</h2>
-                <button>Vizitează Forum</button>
+                <button onclick="window.location.href='forum.html'">Vizitează forum</button>
             </div>
         </section>
+
+        <div id="footer-placeholder"></div>
         
         
         
     </main>
-
-    <!----> Footer -->
-    <footer>
-        <div class="footer-top">
-            <div class="contact-info">
-                <h3>UNIchoice</h3>
-                <p>Ghidul viitorului student de pretutindeni</p>
-                <p><strong>Telefon:</strong> 0711223344</p>
-                <p><strong>Email:</strong> unichoice@contact.ro</p>
-            </div>
-            <div class="footer-links">
-                <div>
-                    <h4>Planificare</h4>
-                    <a href="#">Financiar</a>
-                    <a href="#">Surse externe</a>
-                </div>
-                <div>
-                    <h4>Aplicații studii</h4>
-                    <a href="#">Licență</a>
-                    <a href="#">Master</a>
-                    <a href="#">Doctorat</a>
-                </div>
-                <div>
-                    <h4>Resurse</h4>
-                    <a href="#">Ajutor</a>
-                    <a href="#">Newsletter</a>
-                    <a href="#">Noutăți</a>
-                    <a href="#">Tutoriale</a>
-                    <a href="#">Despre noi</a>
-                </div>
-                <div>
-                    <h4>Politici</h4>
-                    <a href="#">Termeni și condiții</a>
-                    <a href="#">Politica de utilizare Cookie-uri</a>
-                    <a href="#">Politica de confidențialitate</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 UNIchoice. Toate drepturile rezervate.</p>
-        </div>
-    </footer>
-
-   
     
-    <script src="script.js"></script>
+    <script>
+        fetch('headerFooter.html') // Fetch pentru header și footer
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header/footer:', error));
+    </script>
 
 </body>
 </html>
