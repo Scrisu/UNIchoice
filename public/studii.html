@@ -112,6 +112,56 @@
                     <div class="stars">★★★★★</div>
                     <p>„Cel mai bun suport pentru studenți! Mulțumesc pentru toate informațiile și pentru că m-ați ghidat spre o decizie potrivită.”</p>
                 </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person10.jpg" alt="Review Image 10" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Am fost copleșit de opțiunile disponibile, dar cu ajutorul platformei am descoperit programele care mi se potrivesc. Este o resursă esențială pentru orice student care caută direcția potrivită!”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person11.jpg" alt="Review Image 11" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Mulțumită acestui site, am găsit rapid informațiile de care aveam nevoie pentru a alege facultatea perfectă. Recomand cu încredere, mi-a ușurat mult procesul de decizie!”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person12.jpg" alt="Review Image 12" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Folosind acest site am putut compara mai multe facultăți și am aflat detalii importante despre fiecare. M-a ajutat să fac alegerea corectă pentru viitorul meu academic!”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person13.jpg" alt="Review Image 13" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Site-ul m-a ghidat pas cu pas în alegerea facultății, oferindu-mi informații clare și utile. Este un instrument fantastic pentru a face alegerea mai ușoară și mai informată.”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person14.jpg" alt="Review Image 14" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„O platformă minunată care te ajută să înțelegi exact ce oferă fiecare program. Nu mi-aș fi putut alege facultatea fără UNIchioice!”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person15.jpg" alt="Review Image 15" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Am fost copleșit de opțiunile disponibile, dar cu ajutorul platformei am descoperit programele care mi se potrivesc. Este o resursă esențială pentru orice student care caută direcția potrivită!”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person16.jpg" alt="Review Image 16" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Mulțumită acestui site, am găsit rapid informațiile de care aveam nevoie pentru a alege facultatea perfectă. Recomand cu încredere, mi-a ușurat mult procesul de decizie!”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person17.jpg" alt="Review Image 17" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Folosind acest site am putut compara mai multe facultăți și am aflat detalii importante despre fiecare. M-a ajutat să fac alegerea corectă pentru viitorul meu academic!”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person18.jpg" alt="Review Image 18" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„Site-ul m-a ghidat pas cu pas în alegerea facultății, oferindu-mi informații clare și utile. Este un instrument fantastic pentru a face alegerea mai ușoară și mai informată.”</p>
+                </div>
+                <div class="review-card">
+                    <img src="images/testimoniale-person19.jpg" alt="Review Image 19" class="review-image">
+                    <div class="stars">★★★★★</div>
+                    <p>„O platformă minunată care te ajută să înțelegi exact ce oferă fiecare program. Nu mi-aș fi putut alege facultatea fără UNIchioice!”</p>
+                </div>
             </div>
             <!-- Butoane navigare -->
             <button class="nav-button nav-prev" onclick="prevReview()">❮</button>
@@ -134,64 +184,81 @@
 let currentIndex = 0;
 const cardsVisible = 3; // Numărul de testimoniale vizibile simultan
 const reviewCards = document.getElementById('reviewCards');
-const reviewCardElements = Array.from(document.querySelectorAll('.review-card'));
+const reviewCardElements = document.querySelectorAll('.review-card');
 const totalReviews = reviewCardElements.length;
-
-// 1. Clonează primele și ultimele testimoniale pentru tranziție ciclică
-reviewCardElements.slice(0, cardsVisible).forEach(card => {
-    const clone = card.cloneNode(true);
-    reviewCards.appendChild(clone); // Adaugă clonele primelor carduri la final
-});
-reviewCardElements.slice(-cardsVisible).forEach(card => {
-    const clone = card.cloneNode(true);
-    reviewCards.insertBefore(clone, reviewCards.firstChild); // Adaugă clonele ultimelor carduri la început
-});
-
-// 2. Setează offset-ul inițial pentru a începe de la primul testimonial original
 const cardWidth = 320; // Lățimea unui card, inclusiv margini
+
+// 1. Clonăm primele și ultimele carduri pentru a crea bucla continuă
+for (let i = 0; i < cardsVisible; i++) {
+    const firstClone = reviewCardElements[i].cloneNode(true); // Clonează cardurile de la început
+    const lastClone = reviewCardElements[totalReviews - i - 1].cloneNode(true); // Clonează cardurile de la sfârșit
+    reviewCards.appendChild(firstClone); // Adaugă clonele primelor carduri la final
+    reviewCards.insertBefore(lastClone, reviewCards.firstChild); // Adaugă clonele ultimelor carduri la început
+}
+
+// 2. Setăm poziția inițială pentru a începe de la al treilea card (pentru a evita săritura)
 reviewCards.style.transform = `translateX(-${cardsVisible * cardWidth}px)`;
 
+// 3. Funcția pentru a actualiza poziția testimonialelor
 function updateTransform() {
-    reviewCards.style.transition = 'transform 0.5s ease';
-    reviewCards.style.transform = `translateX(-${(currentIndex + cardsVisible) * cardWidth}px)`;
+    reviewCards.style.transition = 'transform 0.5s ease'; // Setăm tranziția lină
+    reviewCards.style.transform = `translateX(-${(currentIndex + cardsVisible) * cardWidth}px)`; // Mișcarea completă
 }
 
+// 4. Funcția pentru a schimba la următorul testimonial
 function nextReview() {
-    currentIndex++;
+    currentIndex++; // Mergem la următorul testimonial
     updateTransform();
 
-    // Dacă ajungem la capătul listei de testimoniale originale, resetăm la primul testimonial
+    // Când ajungem la sfârșitul caruselului real, resetăm la primul card real, dar păstrăm poziția unde s-a oprit
     if (currentIndex >= totalReviews) {
+        // Eliminăm tranziția pentru a preveni „săriturile” vizibile
+        reviewCards.style.transition = 'none';
+
+        // După un mic delay, resetăm poziția fără tranziție
         setTimeout(() => {
-            reviewCards.style.transition = 'none'; // Eliminăm tranziția pentru resetare invizibilă
-            currentIndex = 0;
-            reviewCards.style.transform = `translateX(-${cardsVisible * cardWidth}px)`;
-        }, 500); // Așteaptă ca tranziția să se termine înainte de resetare
+            // Continuăm din poziția curentă fără a reveni la început
+            reviewCards.style.transform = `translateX(-${(currentIndex % totalReviews + cardsVisible) * cardWidth}px)`; // Calculăm corect noua poziție
+            currentIndex = currentIndex % totalReviews; // Resetăm indexul, dar păstrăm poziția curentă
+
+            // După resetare, reaplicăm tranziția fără a lăsa timp pentru o mișcare vizibilă
+            setTimeout(() => {
+                reviewCards.style.transition = 'transform 0.5s ease'; // Reaplicăm tranziția din nou
+            }, 50); // După 50ms pentru a preveni „săritura”
+        }, 500); // Așteptăm ca tranziția să se termine (500ms)
     }
 }
 
+// 5. Funcția pentru a schimba la testimonialul anterior
 function prevReview() {
-    currentIndex--;
+    currentIndex--; // Mergem la testimonialul anterior
     updateTransform();
 
-    // Dacă ajungem la începutul listei de testimoniale originale, resetăm la ultimul testimonial
+    // Când ajungem la începutul caruselului real, resetăm la ultimul card real
     if (currentIndex < 0) {
+        // Eliminăm tranziția pentru a preveni „săriturile”
+        reviewCards.style.transition = 'none';
+
+        // După un mic delay, resetăm poziția, dar fără tranziție
         setTimeout(() => {
-            reviewCards.style.transition = 'none';
-            currentIndex = totalReviews - 1;
-            reviewCards.style.transform = `translateX(-${(currentIndex + cardsVisible) * cardWidth}px)`;
-        }, 500); // Așteaptă ca tranziția să se termine înainte de resetare
+            currentIndex = totalReviews - 1; // Resetăm indexul la ultimul card
+            reviewCards.style.transform = `translateX(-${(currentIndex + cardsVisible) * cardWidth}px)`; // Resetăm poziția
+
+            // După resetare, reaplicăm tranziția fără a lăsa timp pentru o mișcare vizibilă
+            setTimeout(() => {
+                reviewCards.style.transition = 'transform 0.5s ease'; // Reaplicăm tranziția din nou
+            }, 50); // După 50ms pentru a preveni „săritura”
+        }, 500); // Așteptăm ca tranziția să se termine (500ms)
     }
 }
 
-// Navigare automată
-setInterval(nextReview, 3000); // Schimbă testimonialul la fiecare 3 secunde
+// Navigare automată - schimbă testimonialele la fiecare 3 secunde
+setInterval(nextReview, 3000);
 
-// Reaplicăm tranziția după resetare pentru a menține efectul de tranziție ciclică
+// Reaplicăm tranziția după resetare pentru a asigura efectul ciclic
 reviewCards.addEventListener('transitionend', () => {
     reviewCards.style.transition = 'transform 0.5s ease';
 });
-
 
 
 
