@@ -296,7 +296,7 @@
 
 
 
-/* Modificăm butonul să fie sub dreptunghi */
+
 /* Stilul general pentru butoanele cardurilor */
 .card-content button {
     position: absolute;
@@ -371,72 +371,6 @@
     background-color: #21443b;
 }
 
-
-
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 3rem 2rem;
-    font-size: 0.9rem;
-}
-
-.footer-top {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #444;
-}
-
-.contact-info {
-    flex: 1;
-    min-width: 200px;
-}
-
-.contact-info h3 {
-    font-size: 60px;
-    margin-bottom: 0.5rem;
-    font-family:"Freeman, Regular";
-}
-
-.footer-links {
-    display: flex;
-    flex: 2;
-    justify-content: space-between;
-    min-width: 300px;
-}
-
-.footer-links div {
-    min-width: 120px;
-}
-
-.footer-links h4 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #aaa;
-}
-
-.footer-links a {
-    display: block;
-    color: #ccc;
-    text-decoration: none;
-    margin-bottom: 5px;
-    font-size: 0.9rem;
-}
-
-.footer-links a:hover {
-    color: #fff;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 0.8rem;
-    color: #bbb;
-}
 .welcome-box {
     position: absolute;
     top: 40%; /* Poziționează chenarul pe verticală în mijlocul imaginii */

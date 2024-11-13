@@ -8,24 +8,6 @@ body {
     font-family: Freeman, sans-serif;
 }
 
-header {
-    background-color: #f1f1f1;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo {
-    font-weight: bold;
-    font-size: 14px;
-}
-
-header nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #333;
-}
 
 .welcome-section img {
     width: 100%;  

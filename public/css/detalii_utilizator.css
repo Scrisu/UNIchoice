@@ -1,0 +1,144 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex; 
+    align-items: flex-start; 
+    background-color: #F8F8F8;
+    color: #333;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 20px;
+    gap: 20px; 
+}
+
+.sidebar .main-content{
+    align-items: flex-start;
+}
+.sidebar {
+    width: 205px;
+    height: 245px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    margin-top: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #C3F499;
+}
+
+.sidebar ul li a.active {
+    color: #000;
+}
+
+
+.main-content {
+    flex: 1; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+
+
+.user-details, .documents {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.user-details h2, .documents h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+/* Edit Button Styling */
+.edit-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: transparent;
+    border: 2px solid transparent; /* Initial border */
+    border-radius: 5px;
+    padding: 5px 15px; /* Default padding */
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border 0.3s ease; /* Transition border width and color */
+}
+
+.edit-btn:hover {
+    background-color: #f8c8d8; 
+    border: 2px solid #f8c8d8; 
+    padding: 5px 15px; 
+}
+
+
+
+.profile {
+    display: flex;
+    align-items:flex-start;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #d3d3d3;
+    margin-right: 20px;
+}
+
+.info p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+
+.document-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.document-item {
+    width: 45%;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.document-item p {
+    margin-bottom: 5px;
+}
