@@ -10,7 +10,6 @@ const authRoutes = require('./routes/authRoutes');
 const verificationRoutes = require('./routes/verificationRoutes');
 const initDb = require('./config/initDb');
 const pgSession = require('connect-pg-simple')(session); // pgSession setup for PostgreSQL sessions
-
 const { Pool } = require('pg'); // Import Pool from the pg package
 
 
@@ -25,6 +24,10 @@ const { sendVerificationEmail, generateVerificationCode } = require('./utils/ema
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL, // Ensure this is set in your .env file
+  });
+
 // Set up Middleware
 setupMiddleware(app);
 
@@ -37,9 +40,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // Serve static files f
 
 // Initialize Database (Sync Models)
 initDb();
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL, // Ensure this is set in your .env file
-  });
+
 // Set up session management
 app.use(
     session({
