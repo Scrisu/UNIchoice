@@ -12,13 +12,9 @@ const initDb = require('./config/initDb');
 const pgSession = require('connect-pg-simple')(session);
 const { Pool } = require('pg');
 
-
 // Import Models
 const User = require('./models/User');
 const VerificationCode = require('./models/VerificationCode');
-
-// Import Utilities
-const { sendVerificationEmail, generateVerificationCode } = require('./utils/emailService');
 
 // Initialize Express App
 const app = express();
@@ -32,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Use the static middleware to serve static files
-app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from 'public'
+// Serve static files from 'public'
 
 // Initialize Database (Sync Models)
 initDb();
@@ -65,10 +61,17 @@ app.use(
 app.use('/', authRoutes);
 app.use('/', verificationRoutes);
 
-// Home Page Route
+// Home Page Route (Main Landing Page)
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serves the static 'index.html' file from 'public'
+    res.sendFile(path.join(__dirname, 'public', 'facultati.html')); // Serves the static 'index.html' file from 'public'
 });
+
+// Authentication Page Route (Registration and Login Page)
+app.get('/auth', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'auth.html')); // Serves the new 'auth.html' file from 'public'
+});
+
+app.use(express.static(path.join(__dirname, 'public'))); 
 
 // Verification Page Route
 app.get('/verify-email', (req, res) => {
@@ -143,6 +146,10 @@ app.post('/verify-code', async (req, res) => {
         console.error('Verification error:', error);
         res.status(500).send('Failed to verify code');
     }
+});
+
+app.get('/facultati', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'facultati.html')); // Serve facultati.html when someone visits /facultati
 });
 
 // Home page after successful login or registration

@@ -16,7 +16,7 @@ router.post('/login', async (req, res) => {
 
         if (user && await bcrypt.compare(password, user.password)) {
             req.session.user = user;
-            res.redirect('/home');
+            res.redirect('/facultati');
         } else {
             res.status(401).send('Invalid credentials. <a href="/">Try again</a>');
         }
