@@ -1,135 +1,143 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
-const { Sequelize, DataTypes } = require('sequelize');
+const bodyParser = require('body-parser');
+const { isAuthenticated } = require('./middleware/authMiddleware'); // Correct path to middleware
+const setupMiddleware = require('./config/middleware'); // Middleware setup
+const authRoutes = require('./routes/authRoutes');
+const verificationRoutes = require('./routes/verificationRoutes');
+const initDb = require('./config/initDb');
 
+// Import Models
+const User = require('./models/User');
+const VerificationCode = require('./models/VerificationCode');
+
+// Import Utilities
+const { sendVerificationEmail, generateVerificationCode } = require('./utils/emailService');
+
+// Initialize Express App
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Database connection using Sequelize
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  dialect: 'postgres',
-  protocol: 'postgres',
-  dialectOptions: {
-      ssl: {
-          require: true,
-          rejectUnauthorized: false, // Allows connection to servers with self-signed certificates
-      },
-  },
-  logging: false,
-});
+// Set up Middleware
+setupMiddleware(app);
 
-sequelize.authenticate()
-    .then(() => console.log('Database connected...'))
-    .catch(err => console.error('Database connection failed:', err));
-
-// User model definition
-const User = sequelize.define('User', {
-    username: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-    },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-});
-
-// Sync model with the database
-(async () => {
-    try {
-        await sequelize.sync();
-        console.log('Database synchronized.');
-    } catch (error) {
-        console.error('Failed to synchronize database:', error);
-    }
-})();
-
-// Middleware
-app.use(express.static(path.join(__dirname, 'public')));
+// Use `body-parser` middleware to parse incoming form data
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({
-    secret: process.env.SESSION_SECRET || 'your_secret_key', // Use an environment variable for the secret
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-        httpOnly: true, // Helps prevent XSS attacks
-        secure: process.env.NODE_ENV === 'production', // Secure cookie in production
-        maxAge: 1000 * 60 * 60 * 24 // 1 day
-    }
-}));
+app.use(bodyParser.json());
 
-// Custom Middleware for User Authentication
-const isAuthenticated = (req, res, next) => {
-    if (req.session.user) {
-        next();
-    } else {
-        res.status(401).send('Unauthorized. <a href="/">Log in</a>');
-    }
-};
+// Use the static middleware to serve static files
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from 'public'
 
-// Routes
+// Initialize Database (Sync Models)
+initDb();
+
+// Set up session management
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET || 'your_secret_key',
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // Secure only for production
+            maxAge: 1000 * 60 * 10, // Session expires after 10 minutes (can adjust)
+        },
+    })
+);
+
+// Set up Routes
+app.use('/', authRoutes);
+app.use('/', verificationRoutes);
+
+// Home Page Route
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serves the static 'index.html' file from 'public'
 });
 
-// Registration Route
-app.post('/register', async (req, res) => {
+// Verification Page Route
+app.get('/verify-email', (req, res) => {
+    const email = req.query.email;
+    if (!email) {
+        return res.status(400).send('Email is required. <a href="/">Try again</a>');
+    }
+
+    // Serve the verification HTML page
+    res.sendFile(path.join(__dirname, 'public', 'verify-email.html'));
+});
+
+// Verify Code Route
+app.post('/verify-code', async (req, res) => {
     try {
-        const { username, password } = req.body;
-        if (!username || !password) {
-            return res.status(400).send('Username and password are required. <a href="/">Try again</a>');
+        const { email, code } = req.body;
+
+        if (!email || !code) {
+            return res.status(400).send('Both email and code are required. <a href="/verify-email?email=' + encodeURIComponent(email) + '">Try again</a>');
         }
-        const hashedPassword = await bcrypt.hash(password, 10);
-        await User.create({ username, password: hashedPassword });
-        res.send('Registration successful! <a href="/">Go back</a>');
-    } catch (error) {
-        if (error.name === 'SequelizeUniqueConstraintError') {
-            res.status(409).send('Username already exists. <a href="/">Try again</a>');
+
+        // Step 1: Retrieve the verification record from the database
+        const record = await VerificationCode.findOne({ where: { email } });
+
+        // Step 2: Check if the record exists and verify the code
+        if (record) {
+            console.log(`Verification record found: Code in DB: ${record.code}, Expires at: ${record.expiresAt}`);
+
+            if (record.code.trim() === code.trim() && record.expiresAt > new Date()) {
+                console.log(`Code matched and is not expired for email: ${email}`);
+
+                // Step 3: Check if `req.session.tempUser` exists
+                if (!req.session.tempUser) {
+                    return res.status(400).send('Session expired. Please register again. <a href="/">Register</a>');
+                }
+
+                // Step 4: Assign the `tempUser` from the session
+                const tempUser = req.session.tempUser;
+
+                // Step 5: Extract email, username, and password with error handling
+                const { username, password } = tempUser;
+
+                if (!email || !username || !password) {
+                    return res.status(400).send('Session data is incomplete. Please register again. <a href="/">Register</a>');
+                }
+
+                // Step 6: Hash the password
+                const hashedPassword = await bcrypt.hash(password, 10);
+
+                // Step 7: Create a new user record in the database
+                const newUser = await User.create({ username, email, password: hashedPassword });
+
+                // Step 8: Set the user in the session and clean up tempUser
+                req.session.user = newUser;
+                delete req.session.tempUser;
+
+                // Step 9: Redirect to home page
+                res.redirect('/home');
+            } else {
+                if (record.code.trim() !== code.trim()) {
+                    console.log(`Verification failed: Entered code does not match the stored code.`);
+                } else if (record.expiresAt <= new Date()) {
+                    console.log(`Verification failed: Code expired.`);
+                }
+                res.status(400).send('Invalid or expired verification code. <a href="/verify-email?email=' + encodeURIComponent(email) + '">Try again</a>');
+            }
         } else {
-            console.error('Registration error:', error);
-            res.status(500).send('An error occurred. <a href="/">Try again</a>');
+            console.log(`No verification record found for email: ${email}`);
+            res.status(400).send('Invalid or expired verification code. <a href="/verify-email?email=' + encodeURIComponent(email) + '">Try again</a>');
         }
+    } catch (error) {
+        console.error('Verification error:', error);
+        res.status(500).send('Failed to verify code');
     }
 });
 
-// Login Route
-app.post('/login', async (req, res) => {
-    try {
-        const { username, password } = req.body;
-        if (!username || !password) {
-            return res.status(400).send('Username and password are required. <a href="/">Try again</a>');
-        }
-        const user = await User.findOne({ where: { username } });
-
-        if (user && await bcrypt.compare(password, user.password)) {
-            req.session.user = user;  // Save user session
-            res.send(`Welcome ${username}! <a href="/logout">Log out</a>`);
-        } else {
-            res.status(401).send('Invalid credentials. <a href="/">Try again</a>');
-        }
-    } catch (error) {
-        console.error('Login error:', error);
-        res.status(500).send('An error occurred. <a href="/">Try again</a>');
-    }
+// Home page after successful login or registration
+app.get('/home', isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'home.html')); // Serves the static 'home.html' file from 'public'
 });
 
-// Logout Route
-app.get('/logout', isAuthenticated, (req, res) => {
-    req.session.destroy((err) => {
-        if (err) {
-            console.error('Logout error:', err);
-            return res.status(500).send('An error occurred. <a href="/">Try again</a>');
-        }
-        res.send('You have logged out. <a href="/">Go back</a>');
-    });
-});
-
-// Middleware to prevent caching
+// Middleware to Prevent Caching
 app.use((req, res, next) => {
     res.setHeader('Cache-Control', 'no-store');
     next();
