@@ -4,7 +4,7 @@ const session = require('express-session');
 const path = require('path');
 
 const setupMiddleware = (app) => {
-    app.use(express.static(path.join(__dirname, 'public')));
+   
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(session({
         secret: process.env.SESSION_SECRET || 'your_secret_key',
