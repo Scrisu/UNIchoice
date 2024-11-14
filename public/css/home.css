@@ -17,37 +17,51 @@ html, body {
 
 /* Intro Section */
 .intro-section {
-    background-color: #EBEBEB;
-    width: 92%;
-    height: 500px;
-    margin: 0 auto; /* Centrează pe axa orizontală */
+    position: relative;
+    height: 100vh; /* Înălțimea secțiunii pe toată fereastra browserului */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    border-radius: 16px;
+  }
+
+  .content-container {
+    position: relative;
+    z-index: 2; /* Asigură că textul va fi vizibil deasupra imaginii */
+    color: white;
+    text-align: center;
+    max-width: 80%; /* Limitează lățimea textului */
     padding: 20px;
-    box-sizing: border-box;
-    margin-bottom: 60px;
-    margin-top: 5%;
-   
-}
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    align-items: center;
+  }
+
+  .background-image {
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    align-items: center;
+    object-fit: cover; /* Asigură-te că imaginea acoperă întreaga secțiune */
+    z-index: 1; /* Pune imaginea în spatele textului */
+    opacity: 100%;
+    border-radius: 16px;
+
+  }
 
 /* Titlu și descriere */
-.title {
+.title1 {
     width: 100%;
     text-align: center;
-    color: black;
+    color: white;
     font-size: 64px;
     font-family: 'Freeman', sans-serif;
     font-weight: 400;
     word-wrap: break-word;
 }
 
-.description {
+.description1 {
     width: 100%;
-    color: black;
+    color: white;
     font-size: 24px;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
@@ -68,6 +82,9 @@ html, body {
     margin-top: 30px;
     transition: transform 0.3s ease; /* Adaugă o tranziție lină */
     cursor: pointer; /* Modifică cursorul la mână la hover */
+     margin-left: 45%;
+     margin-top: 5%;
+     margin-bottom: 5%;
 }
 
 /* Efect de hover pentru buton */
@@ -87,6 +104,57 @@ html, body {
 .cta-button:hover span {
     color: white; /* Păstrează textul alb la hover, dar îl poți schimba la o altă culoare */
 }
+
+.home-message::before {
+    content: "☆☆☆";            /* Asteriscul sau simbolul dorit */
+    display: block;          /* Afișează asteriscul pe o linie separată */
+    font-size: 40px;         /* Mărimea asteriscului */
+    color: #2F584E;          /* Culoarea asteriscului */
+    text-align: center;      /* Centrează asteriscul */
+    margin-bottom: 0.5rem;   /* Spațiere între asterisc și text */
+}
+
+.home-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* Poți schimba culoarea fundalului */
+    border-radius: 10px;
+    margin-left: 47px;
+    height: 20%;
+    width: 90%;
+}
+
+.title {
+    font-size: 36px;
+    font-family: 'Freeman', sans-serif;
+    color: #333;
+}
+
+.description {
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #555;
+    margin: 20px 20px;
+}
+
+.cta-button {
+    margin-top: 20px;
+}
+
+.cta-link {
+    background-color: #FF9861;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 16px;
+    transition: background-color 0.3s;
+}
+
+.cta-link:hover {
+    background-color: #FF6347; /* Culoare mai închisă la hover */
+}
+
 
 
 /* Galerie imagini */
