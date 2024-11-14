@@ -30,10 +30,10 @@
 
 
 .between-sections-text {
-    font-size: 36px;      /* Setează dimensiunea fontului */
+    font-size: 28px;      /* Setează dimensiunea fontului */
     text-align: center;   /* Centrează textul */
     font-weight: bold;    /* Adaugă un aspect de tip "bold" (opțional, pentru a face textul mai vizibil) */
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 
@@ -50,10 +50,9 @@
 .intro {
     display: flex;
     justify-content: space-between;
-    gap: 56px; /* Distanță între containerul din stânga și galerie */
-    padding: 50px 0;
-    margin-left: 100px; /* Distanță de la marginea stângă */
-    margin-right: 100px; /* Distanță de la marginea dreaptă */
+    gap: 10px; /* Reducem distanța dintre elemente */
+    padding: 20px 20px; /* Reducem padding-ul */
+    margin: 0 px; /* Reducem marginile laterale */
 }
 
 
@@ -62,41 +61,41 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 598px;
-    height: 427px;
-    size: 20px;
+    width: 45%; /* Reducem lățimea */
+    height: auto; /* Permite containerului să se ajusteze */
+    padding-left: 60px;
 }
-
 /* Frame pentru text */
 .frame {
     background-color: white;
-    padding: 20px;
+    padding: 15px; /* Reducem padding-ul */
     border: 2px solid white;
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .frame h2 {
-    font-size: 40px;
+    font-size: 30px; /* Reducem dimensiunea titlului */
     color: #333;
     margin-bottom: 1rem;
     text-align: center;
 }
 
+
 .frame p {
-    font-size: 20px;
+    font-size: 16px; /* Reducem dimensiunea textului */
     color: #555;
     text-align: center;
 }
+
 
 /* Galerie de imagini */
 .gallery {
     display: flex;
     gap: 10px;
-    align-items: flex-end; /* Aliniază partea de sus a imaginilor */
+    align-items: flex-start;
+    padding-right: 100px;
 }
 
 /* Container pentru imaginile orizontale plasate una sub alta */
@@ -108,59 +107,59 @@
 
 /* Imagini orizontale */
 .image-horizontal {
-    padding: 2px;
-    width: 305px;
-    height: 203px;
+    width: 260px; /* Micșorăm dimensiunea imaginilor orizontale */
+    height: 173px;
     object-fit: cover;
-    border-radius: 16px; /* Adaugă un colț rotunjit */
-
+    border-radius: 16px;
 }
 
 /* Imagine verticală */
 .image-vertical {
-    padding: 2px;
-    width: 283px;
-    height: 416px;
+    width: 240px; /* Micșorăm dimensiunea imaginilor verticale */
+    height: 360px;
     object-fit: cover;
-    border-radius: 16px; /* Adaugă colțuri rotunjite */
-    align-items: flex-start;
+    border-radius: 16px;
 }
-
 
 /* Container principal pentru secțiunea info-cards */
 .info-cards-container {
-    width: 1440px;
-    height: 568px;
-    margin: 0 auto; /* Centrează containerul pe pagină */
+    width: 100%;
+    height: auto; /* Permitem să se ajusteze la conținut */
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f5f5f5; /* Fundal pentru vizibilitate */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Opțional, umbră pentru efect de card */
-    border-radius: 8px; /* Opțional, colțuri rotunjite */
+    background-color: #f5f5f5;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 /* Info Cards Section */
 .info-cards {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    padding: 3rem 0;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0;
     background-color: #f5f5f5;
-    width: 100%;
+    width: 90%;
+    flex-wrap: wrap;
+    border-radius: 16px;
+    margin: 0 auto; 
+    height: 500px ;/* Asigură că frame-ul este centrat pe pagină */
 }
 /* Stilizare card */
 
 .card {
     position: relative;
-    width: 381px;
-    height: 430px;
+    width: 280px; /* Reducem lățimea cardului */
+    height: 350px; /* Reducem înălțimea cardului */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     color: white;
     text-align: center;
-    margin-left: 30px;
+    margin: 10px; /* Reducem marginea între carduri */
 }
 
 /* Fundal imagine pentru fiecare card */
@@ -177,68 +176,65 @@
 
 /* Adăugăm un efect de hover pentru imaginile cardurilor */
 .card:hover img.card-image {
-    transform: scale(1.05); /* Mărirea imaginii */
-    transition: transform 0.3s ease; /* Tranziție lină */
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 /* Adăugăm și un efect de hover pentru card */
 .card:hover {
-    transform: translateY(-5px); /* Mișcare ușoară pe verticală */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Umbra mai mare la hover */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Tranziție lină pentru mișcare și umbră */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
 /* Dreptunghiul semi-transparent de pe imagine */
 .overlay-rectangle {
     position: absolute;
-    top: 122px;             /* Distanță de 122px față de marginea de sus */
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
-    width: 354px;
-    height: 169px;
-    background-color: rgba(0, 0, 0, 0.4); /* Negru cu opacitate 40% */
+    width: 260px;
+    height: 140px;
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 2;
     border-radius: 8px;
 }
 
-
-
-
 /* Conținutul cardului plasat pe dreptunghi */
 .card-content {
     position: absolute;
-    top: 122px;  /* Alinează cu partea de sus a dreptunghiului */
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
-    width: 354px;  /* Lățimea card-content să coincidă cu dreptunghiul */
-    height: 169px;
+    width: 260px;
+    height: 140px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     z-index: 3;
-    color: white;
 }
 
 .card-content h3 {
-    font-size: 50px;
+    font-size: 24px; /* Micșorăm dimensiunea titlului */
     margin-bottom: 0.5rem;
     position: absolute;
-    top: -90px;  /* Ajustează distanța pentru a fi deasupra dreptunghiului */
+    top: -50px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 4; /* Asigură că titlul este deasupra dreptunghiului */
 }
 
 .card-content p {
-    font-size: 20px;  /* Setează dimensiunea fontului */
-    font-family: "Source Sans Pro", sans-serif;  /* Setează fontul, cu un font de rezervă */
-    color: white;  /* Setează culoarea textului pe alb */
+    font-size: 14px; /* Micșorăm dimensiunea textului */
+    color: white;
 }
 
-
+/* Stilul pentru titluri */
+.title-camine, .title-evenimente, .title-transport {
+    font-size: 18px; /* Micșorăm dimensiunea titlurilor */
+}
 
 /* Stil pentru titlul "Camine" */
 .title-camine {
@@ -261,7 +257,7 @@
 /* Stilul general pentru butoanele cardurilor */
 .card-content button {
     position: absolute;
-    bottom: -60px;
+    bottom: -50px;
     left: 50%;
     transform: translateX(-50%);
     padding: 0.5rem 1rem;
@@ -270,7 +266,7 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.8rem; /* Micșorăm dimensiunea fontului butonului */
 }
 
 .card-content button:hover {
@@ -293,25 +289,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 30px;
 }
 
 /* Containerul alb pentru text, redimensionat */
 .forum-frame {
-    background-color: rgb(232, 231, 231);
+    background-color: rgb(255, 255, 255);
     border-radius: 8px;
-    padding: 30px; /* Spațiu interior pentru un cadru mai compact */
-    width: 95%; /* Lățime mai mică pentru cadru */
-    height: 40%;
+    padding: 20px;
+    width: 93%; /* Reducem lățimea */
     text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ușoară umbră */
+    box-shadow: 0px;
 }
-
 .forum h2 {
-    font-size: 40px; /* Dimensiune mai mică pentru titlu */
+    font-size: 35px; /* Dimensiune mai mică pentru titlu */
     margin-bottom: 1rem;
     font-family: "Freeman, Regular";
     padding: 20px;
+}
+.forum h2 {
+    font-size: 30px; /* Reducem dimensiunea titlului */
 }
 
 .forum button {
@@ -321,11 +318,7 @@
     border: none;
     border-radius: 16px;
     cursor: pointer;
-    font-size: 18px;
-    margin-top: 0px;
-    padding: 20px;
-    height: auto;
-
+    font-size: 18px; /* Reducem dimensiunea fontului butonului */
 }
 
 .forum button:hover {
@@ -363,9 +356,9 @@
     margin: 0;
   }
   h2::before {
-    content: "☆";            /* Asteriscul sau simbolul dorit */
+    content: "☆☆☆";            /* Asteriscul sau simbolul dorit */
     display: block;          /* Afișează asteriscul pe o linie separată */
-    font-size: 50px;         /* Mărimea asteriscului */
+    font-size: 40px;         /* Mărimea asteriscului */
     color: #2F584E;          /* Culoarea asteriscului */
     text-align: center;      /* Centrează asteriscul */
     margin-bottom: 0.5rem;   /* Spațiere între asterisc și text */

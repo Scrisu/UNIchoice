@@ -188,67 +188,47 @@ const reviewCardElements = document.querySelectorAll('.review-card');
 const totalReviews = reviewCardElements.length;
 const cardWidth = 320; // Lățimea unui card, inclusiv margini
 
-// 1. Clonăm primele și ultimele carduri pentru a crea bucla continuă
+// Clonează primul set de carduri la final și ultimul set la început
 for (let i = 0; i < cardsVisible; i++) {
-    const firstClone = reviewCardElements[i].cloneNode(true); // Clonează cardurile de la început
-    const lastClone = reviewCardElements[totalReviews - i - 1].cloneNode(true); // Clonează cardurile de la sfârșit
-    reviewCards.appendChild(firstClone); // Adaugă clonele primelor carduri la final
-    reviewCards.insertBefore(lastClone, reviewCards.firstChild); // Adaugă clonele ultimelor carduri la început
+    const firstClone = reviewCardElements[i].cloneNode(true);
+    const lastClone = reviewCardElements[totalReviews - i - 1].cloneNode(true);
+    reviewCards.appendChild(firstClone);
+    reviewCards.insertBefore(lastClone, reviewCards.firstChild);
 }
 
-// 2. Setăm poziția inițială pentru a începe de la al treilea card (pentru a evita săritura)
+// Setează poziția de start pentru a evita „săriturile”
 reviewCards.style.transform = `translateX(-${cardsVisible * cardWidth}px)`;
 
-// 3. Funcția pentru a actualiza poziția testimonialelor
 function updateTransform() {
-    reviewCards.style.transition = 'transform 0.5s ease'; // Setăm tranziția lină
-    reviewCards.style.transform = `translateX(-${(currentIndex + cardsVisible) * cardWidth}px)`; // Mișcarea completă
+    reviewCards.style.transition = 'transform 0.5s ease';
+    reviewCards.style.transform = `translateX(-${(currentIndex + cardsVisible) * cardWidth}px)`;
 }
 
-// 4. Funcția pentru a schimba la următorul testimonial
 function nextReview() {
-    currentIndex++; // Mergem la următorul testimonial
+    currentIndex++;
     updateTransform();
 
-    // Când ajungem la sfârșitul caruselului real, resetăm la primul card real, dar păstrăm poziția unde s-a oprit
+    // Verificăm dacă am ajuns la finalul real și resetăm pentru ciclicitate
     if (currentIndex >= totalReviews) {
-        // Eliminăm tranziția pentru a preveni „săriturile” vizibile
-        reviewCards.style.transition = 'none';
-
-        // După un mic delay, resetăm poziția fără tranziție
         setTimeout(() => {
-            // Continuăm din poziția curentă fără a reveni la început
-            reviewCards.style.transform = `translateX(-${(currentIndex % totalReviews + cardsVisible) * cardWidth}px)`; // Calculăm corect noua poziție
-            currentIndex = currentIndex % totalReviews; // Resetăm indexul, dar păstrăm poziția curentă
-
-            // După resetare, reaplicăm tranziția fără a lăsa timp pentru o mișcare vizibilă
-            setTimeout(() => {
-                reviewCards.style.transition = 'transform 0.5s ease'; // Reaplicăm tranziția din nou
-            }, 50); // După 50ms pentru a preveni „săritura”
-        }, 500); // Așteptăm ca tranziția să se termine (500ms)
+            reviewCards.style.transition = 'none'; // Elimină tranziția pentru resetare
+            currentIndex = 0; // Revine la primul card real
+            reviewCards.style.transform = `translateX(-${cardsVisible * cardWidth}px)`;
+        }, 500); // Așteptăm ca tranziția să se termine
     }
 }
 
-// 5. Funcția pentru a schimba la testimonialul anterior
 function prevReview() {
-    currentIndex--; // Mergem la testimonialul anterior
+    currentIndex--;
     updateTransform();
 
-    // Când ajungem la începutul caruselului real, resetăm la ultimul card real
+    // Verificăm dacă am ajuns la începutul real și resetăm pentru ciclicitate
     if (currentIndex < 0) {
-        // Eliminăm tranziția pentru a preveni „săriturile”
-        reviewCards.style.transition = 'none';
-
-        // După un mic delay, resetăm poziția, dar fără tranziție
         setTimeout(() => {
-            currentIndex = totalReviews - 1; // Resetăm indexul la ultimul card
-            reviewCards.style.transform = `translateX(-${(currentIndex + cardsVisible) * cardWidth}px)`; // Resetăm poziția
-
-            // După resetare, reaplicăm tranziția fără a lăsa timp pentru o mișcare vizibilă
-            setTimeout(() => {
-                reviewCards.style.transition = 'transform 0.5s ease'; // Reaplicăm tranziția din nou
-            }, 50); // După 50ms pentru a preveni „săritura”
-        }, 500); // Așteptăm ca tranziția să se termine (500ms)
+            reviewCards.style.transition = 'none';
+            currentIndex = totalReviews - 1;
+            reviewCards.style.transform = `translateX(-${(currentIndex + cardsVisible) * cardWidth}px)`;
+        }, 500);
     }
 }
 
@@ -259,7 +239,6 @@ setInterval(nextReview, 3000);
 reviewCards.addEventListener('transitionend', () => {
     reviewCards.style.transition = 'transform 0.5s ease';
 });
-
 
 
         fetch('activity_bar.html') // Fetch pentru header și footer
