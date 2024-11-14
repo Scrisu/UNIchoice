@@ -241,17 +241,14 @@ html, body {
 
 /* Galerie imagini */
 .image-gallery {
-    
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
     gap: 60px;
-    margin: 60px auto; /* Asigură spațiu înainte și după galerie */
-    margin-top: 0; /* Resetare pentru evitarea unei distanțe prea mari */
-    margin-bottom: 60px; /* Spațiu față de footer */
-    padding: 0 20px; /* Ajustare spațiu */
+    margin: 60px auto;
+    padding: 0 20px;
+    transform: scale(1.1); /* Mărește întregul container la 110% constant */
 }
-
 
 .image-item {
     width: 400px;
@@ -360,16 +357,14 @@ html, body {
   
 }
 /* News Section */
-.news-section {
-    padding: 40px; /* Elimină padding-ul de sus și jos */
-    background-color: #ffffff; /* Fundal deschis */
-    display: flex;
-    justify-content: center; /* Centrează bannerul pe orizontală */
-    align-items: center; /* Centrează bannerul pe verticală */
-    min-height: auto; /* Elimină înălțimea minimă pentru a nu afecta alte secțiuni */
-    margin: 0; /* Elimină marginile pentru a nu adăuga spațiu suplimentar */
-    width: 100%;
-  }
+    .news-section {
+        margin-top: 20px; /* Ajustează această valoare până când imaginea se aliniază cu cea din galerie */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 20px;
+        margin-right: 15px;
+    }
   
   /* Banner-ul de știri */
   .news-banner {
@@ -379,7 +374,7 @@ html, body {
     background-color: #ffffff; /* Fundal alb pentru banner */
     padding: 20px 30px; /* Dimensiuni reduse pentru padding */
     border-radius: 16px; /* Colțuri rotunjite */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbra ușoară pentru efect */
+    box-shadow: 0; /* Umbra ușoară pentru efect */
     max-width: 100%; /* Lărgirea până la 100% din lățimea containerului părinte */
     width: 94%; /* Lățimea completă a secțiunii */
     margin: 0 auto; /* Centrează bannerul pe pagină */
@@ -393,25 +388,30 @@ html, body {
   }
   
   .text-content h3 {
-    font-size: 40px; /* Font mai mare */
+    font-size: 45px; /* Font mai mare */
     color: #333;
     margin-bottom: 10px;
+    margin-left: 0px;
   }
   
   .text-content p {
-    font-size: 16px; /* Font mai mic pentru paragrafe */
+    font-size: 20px; /* Font mai mic pentru paragrafe */
     color: #666;
     margin-bottom: 30px;
+    margin-left: 0px;
   }
   
   .text-content button {
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #e88a15;
+    background-color: #333;
+    color: white;
     border: none;
-    border-radius: 12px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 18px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 40px;
+    margin-left: 0px;
   }
   
   .text-content button:hover {
@@ -419,12 +419,14 @@ html, body {
   }
   
   /* Imaginea din banner */
-  .image-content img {
-    width: 200px; /* Mărire imaginea */
-    height: 200px; /* Mărire imaginea */
+   .image-content img {
+    width: 440px; /* Setează lățimea la 400px, la fel ca în galerie */
+    height: 340px; /* Setează înălțimea la 300px, la fel ca în galerie */
+    border-radius: 16px; /* Aplică colțurile rotunjite, dacă este necesar */
     object-fit: cover;
-    border-radius: 16px; /* Colțuri rotunjite pentru imagine */
-  }
+}
+
+
   
   /* Quiz Section */
   .quiz-section {
@@ -496,11 +498,11 @@ html, body {
   }
   
   .quiz-icon img {
-    width: 400px; /* Ajustăm dimensiunea imaginii pentru a încăpea bine în container */
-    height: 400px; /* Ajustăm dimensiunea imaginii */
+    width: 430px; /* Ajustăm dimensiunea imaginii pentru a încăpea bine în container */
+    height: 430px; /* Ajustăm dimensiunea imaginii */
     object-fit: contain;
     padding-right: 202px;
-    padding-bottom: 30px; /* Menține imaginea proporționată */
+    padding-bottom: 8px; /* Menține imaginea proporționată */
   }
   
   .newsletter-section {

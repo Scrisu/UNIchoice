@@ -356,11 +356,11 @@
     margin: 0;
   }
   h2::before {
-    content: "☆☆☆";            /* Asteriscul sau simbolul dorit */
-    display: block;          /* Afișează asteriscul pe o linie separată */
-    font-size: 40px;         /* Mărimea asteriscului */
-    color: #2F584E;          /* Culoarea asteriscului */
-    text-align: center;      /* Centrează asteriscul */
-    margin-bottom: 0.5rem;   /* Spațiere între asterisc și text */
-}
+        content: "☆☆☆";            /* Asteriscul sau simbolul dorit */
+        display: block;          /* Afișează asteriscul pe o linie separată */
+        font-size: 40px;         /* Mărimea asteriscului */
+        color: #2F584E;          /* Culoarea asteriscului */
+        text-align: center;      /* Centrează asteriscul */
+        margin-bottom: 0.5rem;   /* Spațiere între asterisc și text */
+    }  /* Spațiere între asterisc și text */
 

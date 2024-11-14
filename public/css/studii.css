@@ -415,15 +415,14 @@ footer {
     margin: 0;
   }
 /* Stil pentru titlurile principale cu un asterisc centrat deasupra */
-h2::before {
-    content: "☆☆☆";            /* Steluța sus */
-    display: block;          /* Afișează steluța pe o linie separată */
-    font-size: 40px;         /* Mărimea steluței */
-    color: #2F584E;          /* Culoarea steluței */
-    text-align: center;      /* Centrează steluța */
-    margin-bottom: 0.5rem;   /* Spațiere între steluță și text */
-    padding-bottom: 20px;    /* Mai mult spațiu sub steluță */
-}
+h2::before{
+        content: "☆☆☆";            /* Asteriscul sau simbolul dorit */
+        display: block;          /* Afișează asteriscul pe o linie separată */
+        font-size: 40px;         /* Mărimea asteriscului */
+        color: #2F584E;          /* Culoarea asteriscului */
+        text-align: center;      /* Centrează asteriscul */
+        margin-bottom: 0.5rem;   /* Spațiere între asterisc și text */
+    }   /* Mai mult spațiu sub steluță */
 
 
 .card.licenta:hover,
