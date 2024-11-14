@@ -3,14 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Home</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to UniChoice!</h1>
-        <p>You have successfully logged in.</p>
-        <a href="/logout" class="button">Logout</a>
+    
+<div class="main-container">
+    
+    <div id="header-placeholder"></div>
+    <!-- Secțiunea principală -->
+    <div class="intro-section">
+      <div class="title">
+        PRIMUL PAS CĂTRE VIITORUL TĂU!
+      </div>
+      <div class="description">
+        Transformă-ți visurile în realitate alături de noi! Suntem aici să-ți ghidăm fiecare pas în alegerea facultății care te inspiră și te reprezintă. Descoperă-ți pasiunile, explorează opțiunile și lasă-te îndrumat de experți dedicați care îți vor arăta toate posibilitățile. Viitorul tău începe acum—fă primul pas spre cariera la care visezi!
+      </div>
+      <div class="cta-button">
+        <span class="descoperă-text">Descoperă</span>
+      </div>
     </div>
+  
+ <!-- Galerie imagini -->
+ <div class="image-gallery">
+    <div class="image-item">
+        <img src="images/home-universitate.png" alt="image 1"/>
+        <div class="overlay">
+            <div class="overlay-background"></div>
+            <a href="facultati.html" class="overlay-link facultati">Facultăți</a>
+        </div>
+    </div>
+    <div class="image-item">
+        <img src="images/home-studii.png" alt="image 2" class="image-opacity"/>
+        <div class="overlay">
+            <div class="overlay-background"></div>
+            <a href="studii.html" class="overlay-link studii">Studii</a>
+        </div>
+    </div>
+    <div class="image-item">
+        <img src="images/home-ghid.jpg" alt="image 3"/>
+        <div class="overlay">
+            <div class="overlay-background"></div>
+            <a href="ghidul_studentului.html" class="overlay-link ghid-student">Ghid student</a>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+<div id="footer-placeholder"></div>
+</div>
+
+<script>
+window.onload = function() {
+    fetch('activity_bar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header/footer:', error));
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header/footer:', error));
+};
+
+</script>
+
+
+
 </body>
 </html>
