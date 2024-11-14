@@ -277,3 +277,195 @@ html, body {
     width: 100px;
   
 }
+/* News Section */
+.news-section {
+    padding: 40px; /* Elimină padding-ul de sus și jos */
+    background-color: #ffffff; /* Fundal deschis */
+    display: flex;
+    justify-content: center; /* Centrează bannerul pe orizontală */
+    align-items: center; /* Centrează bannerul pe verticală */
+    min-height: auto; /* Elimină înălțimea minimă pentru a nu afecta alte secțiuni */
+    margin: 0; /* Elimină marginile pentru a nu adăuga spațiu suplimentar */
+    width: 100%;
+  }
+  
+  /* Banner-ul de știri */
+  .news-banner {
+    display: flex;
+    justify-content: space-between; /* Aliniere text-imagine pe orizontală */
+    align-items: center; /* Centrează pe verticală */
+    background-color: #ffffff; /* Fundal alb pentru banner */
+    padding: 20px 30px; /* Dimensiuni reduse pentru padding */
+    border-radius: 16px; /* Colțuri rotunjite */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbra ușoară pentru efect */
+    max-width: 100%; /* Lărgirea până la 100% din lățimea containerului părinte */
+    width: 94%; /* Lățimea completă a secțiunii */
+    margin: 0 auto; /* Centrează bannerul pe pagină */
+    height: auto; /* Înălțimea se ajustează automat */
+  }
+  
+  /* Textul din banner */
+  .text-content {
+    flex: 1; /* Permite textului să ocupe tot spațiul disponibil pe partea stângă */
+    padding-right: 60px; /* Adaugă spațiu între text și imagine */
+  }
+  
+  .text-content h3 {
+    font-size: 40px; /* Font mai mare */
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .text-content p {
+    font-size: 16px; /* Font mai mic pentru paragrafe */
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .text-content button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #e88a15;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  
+  .text-content button:hover {
+    background-color: #d67b12; /* Umbră mai închisă la hover */
+  }
+  
+  /* Imaginea din banner */
+  .image-content img {
+    width: 200px; /* Mărire imaginea */
+    height: 200px; /* Mărire imaginea */
+    object-fit: cover;
+    border-radius: 16px; /* Colțuri rotunjite pentru imagine */
+  }
+  
+  /* Quiz Section */
+  .quiz-section {
+    background-color: #EBEBEB;
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    height: 29=50px;
+    max-width: 1500px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap:20px;
+  }
+  
+  /* Quiz Content Styling */
+  .quiz-content {
+    flex: 1;
+  }
+  
+  /* Stil pentru imaginea din quiz-content */
+  .quiz-content img {
+    display: block; /* Elimină eventualele margini sau spațieri suplimentare */
+    margin-left: 0; /* Asigură-te că imaginea nu are un spațiu pe stânga */
+    margin-right: 0; /* Permite alinierea la stânga, folosind margin-right auto */
+    width: 200px; /* Permite imaginii să își păstreze dimensiunile originale */
+    height: auto;
+  }
+  
+  
+  .quiz-content p {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 0px;
+    max-width: 700px;
+    margin-top: 20px;
+  
+  }
+  
+  .quiz-content button {
+    background-color: #f4a200;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .quiz-content button:hover {
+    background-color: #e09200;
+  }
+  
+  /* Icon Styling without circle */
+  .quiz-icon {
+    width: 80px; /* Lărgim puțin containerul */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EBEBEB; /* Fundalul containerului */
+    border-radius: 50%; /* Colțuri rotunjite pentru un efect circular */
+     /* Adăugăm un pic de padding pentru a da mai mult spațiu imaginii */
+  }
+  
+  .quiz-icon img {
+    width: 400px; /* Ajustăm dimensiunea imaginii pentru a încăpea bine în container */
+    height: 400px; /* Ajustăm dimensiunea imaginii */
+    object-fit: contain;
+    padding-right: 202px;
+    padding-bottom: 30px; /* Menține imaginea proporționată */
+  }
+  
+  .newsletter-section {
+    background-color: white;
+    padding: 40px;
+    width: 100%; /* Expands the width to fill the container */
+    max-width: 1900px; /* Sets a larger maximum width */
+    margin: 0 auto; /* Centers the section horizontally */
+    text-align: center;
+    box-shadow: 0;
+  }
+  
+  .newsletter-section h3 {
+    font-size: 35px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .newsletter-section form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+  }
+  
+  .newsletter-section input[type="email"] {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 18px;
+    width: 70%;
+    max-width: 500px;
+    margin-bottom: 40px; /* Slightly wider for a larger screen */
+  }
+  
+  .newsletter-section button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 40px;
+  }
+  
+  .newsletter-section button:hover {
+    background-color: #555;
+  }
