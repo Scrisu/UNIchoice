@@ -241,6 +241,7 @@ reviewCards.addEventListener('transitionend', () => {
 });
 
 
+<<<<<<< HEAD
         fetch('activity_bar.html') // Fetch pentru header și footer
             .then(response => response.text())
             .then(data => {
@@ -256,6 +257,27 @@ reviewCards.addEventListener('transitionend', () => {
             })
             .catch(error => console.error('Error loading footer:', error));
     ;
+=======
+
+
+window.onload = function() {
+    fetch('activity_bar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header/footer:', error));
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header/footer:', error));
+};
+
+
+>>>>>>> 24af2288956ec2d73bce0af95e4a6ce4fcaf2d9e
     
     </script>
 </body>

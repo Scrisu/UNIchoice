@@ -5,6 +5,92 @@ html, body {
     margin: 0;
 }
 
+/* Ecrane mari - desktop */
+@media (min-width: 1024px) {
+    .main-container {
+        padding: 0 20px; /* Adaugă padding pentru margini */
+    }
+}
+
+/* Ecrane medii - tablete */
+@media (max-width: 1024px) {
+    .cta-button {
+        width: 20%;
+    }
+
+    .title1 {
+        font-size: 48px;
+    }
+
+    .description1 {
+        font-size: 20px;
+    }
+
+    .image-gallery {
+        flex-direction: column; /* Afișează imaginile pe o singură coloană */
+        align-items: center; /* Centrează imaginile */
+    }
+
+    .image-item {
+        width: 80%; /* Redu lățimea imaginilor */
+        height: auto; /* Păstrează proporția imaginii */
+    }
+}
+
+/* Ecrane mici - telefoane mobile */
+@media (max-width: 768px) {
+    .cta-button {
+        width: 80%; /* Lărgește butonul pentru ecrane mici */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .title1 {
+        font-size: 36px; /* Diminuează dimensiunea fontului pentru titlu */
+    }
+
+    .description1 {
+        font-size: 18px;
+    }
+
+    .content-container {
+        max-width: 100%; /* Extinde lățimea containerului de text */
+        padding: 10px;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        gap: 20px; /* Redu spațierea între imagini */
+    }
+
+    .image-item {
+        width: 100%; /* Folosește întreaga lățime disponibilă */
+        height: auto;
+    }
+}
+
+/* Ecrane foarte mici - telefoane foarte înguste */
+@media (max-width: 480px) {
+    .title1 {
+        font-size: 28px; /* Diminuează și mai mult fontul */
+    }
+
+    .description1 {
+        font-size: 16px;
+    }
+
+    .cta-button {
+        width: 90%;
+        height: 40px; /* Diminuează înălțimea butonului */
+        font-size: 16px; /* Diminuează dimensiunea textului */
+    }
+
+    .overlay-link {
+        font-size: 20px; /* Redu dimensiunea fontului pentru linkuri */
+    }
+}
+
+
 .main-container {
     width: 100%; /* Lățimea se va adapta la lățimea ferestrei */
     max-width: 1440px; /* Lățimea maximă va fi de 1440px */
@@ -53,7 +139,7 @@ html, body {
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 64px;
+    font-size: 5vw;
     font-family: 'Freeman', sans-serif;
     font-weight: 400;
     word-wrap: break-word;
@@ -182,7 +268,7 @@ html, body {
 
 .image-item img {
     width: 100%;
-    height: 100%;
+    height: auto;
     position: absolute;
     left: 0;
     top: 0;
