@@ -8,12 +8,13 @@
 </head>
 <body>
     <h1>Verify Your Email</h1>
-    <form action="/verify-code" method="POST">
+    <form action="/verify-email" method="POST">
         <input type="hidden" id="email" name="email" value="" />
         <label for="code">Enter Verification Code:</label>
         <input type="text" id="code" name="code" required />
-        <button type="submit">Verify</button>
+        <button type="submit">Verify Code</button>
     </form>
+    
     <script>
         // JavaScript to populate the email field from URL query parameter
         const params = new URLSearchParams(window.location.search);
