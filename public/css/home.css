@@ -1,0 +1,279 @@
+/* Main container styling */
+html, body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.main-container {
+    width: 100%; /* Lățimea se va adapta la lățimea ferestrei */
+    max-width: 1440px; /* Lățimea maximă va fi de 1440px */
+    min-height: 100vh; /* Înălțimea minimă a containerului va fi 100vh (înălțimea ferestrei) */
+    background: white;
+    display: flex;
+    flex-direction: column; /* Aranjează conținutul pe verticală */
+   
+}
+
+/* Intro Section */
+.intro-section {
+    position: relative;
+    height: 100vh; /* Înălțimea secțiunii pe toată fereastra browserului */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-container {
+    position: relative;
+    z-index: 2; /* Asigură că textul va fi vizibil deasupra imaginii */
+    color: white;
+    text-align: center;
+    max-width: 80%; /* Limitează lățimea textului */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    align-items: center;
+  }
+
+  .background-image {
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    align-items: center;
+    object-fit: cover; /* Asigură-te că imaginea acoperă întreaga secțiune */
+    z-index: 1; /* Pune imaginea în spatele textului */
+    opacity: 100%;
+    border-radius: 16px;
+
+  }
+
+/* Titlu și descriere */
+.title1 {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 64px;
+    font-family: 'Freeman', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.description1 {
+    width: 100%;
+    color: white;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* Butonul CTA */
+/* Stilul inițial al butonului */
+.cta-button {
+    width: 10%;
+    height: 50px;
+    background: #FF9861;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    transition: transform 0.3s ease; /* Adaugă o tranziție lină */
+    cursor: pointer; /* Modifică cursorul la mână la hover */
+     margin-left: 45%;
+     margin-top: 5%;
+     margin-bottom: 5%;
+}
+
+/* Efect de hover pentru buton */
+.cta-button:hover {
+    background: #FF6347; /* Schimbă culoarea la hover (poți alege altă culoare) */
+    transform: scale(1.1); /* Crește dimensiunea butonului pentru un efect de zoom */
+}
+
+/* Stilul textului din buton */
+.cta-button span {
+    font-size: 1.2vw;
+    color: white; /* Asigură-te că textul rămâne alb */
+    transition: color 0.3s ease; /* Adaugă o tranziție lină pentru schimbarea culorii textului */
+}
+
+/* Efect de hover pentru textul din buton */
+.cta-button:hover span {
+    color: white; /* Păstrează textul alb la hover, dar îl poți schimba la o altă culoare */
+}
+
+.home-message::before {
+    content: "☆☆☆";            /* Asteriscul sau simbolul dorit */
+    display: block;          /* Afișează asteriscul pe o linie separată */
+    font-size: 40px;         /* Mărimea asteriscului */
+    color: #2F584E;          /* Culoarea asteriscului */
+    text-align: center;      /* Centrează asteriscul */
+    margin-bottom: 0.5rem;   /* Spațiere între asterisc și text */
+}
+
+.home-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* Poți schimba culoarea fundalului */
+    border-radius: 10px;
+    margin-left: 47px;
+    height: 20%;
+    width: 90%;
+}
+
+.title {
+    font-size: 36px;
+    font-family: 'Freeman', sans-serif;
+    color: #333;
+}
+
+.description {
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #555;
+    margin: 20px 20px;
+}
+
+.cta-button {
+    margin-top: 20px;
+}
+
+.cta-link {
+    background-color: #FF9861;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 16px;
+    transition: background-color 0.3s;
+}
+
+.cta-link:hover {
+    background-color: #FF6347; /* Culoare mai închisă la hover */
+}
+
+
+
+/* Galerie imagini */
+.image-gallery {
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 60px;
+    margin: 60px auto; /* Asigură spațiu înainte și după galerie */
+    margin-top: 0; /* Resetare pentru evitarea unei distanțe prea mari */
+    margin-bottom: 60px; /* Spațiu față de footer */
+    padding: 0 20px; /* Ajustare spațiu */
+}
+
+
+.image-item {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer; /* Modifică cursorul la mână pe imagine */
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Overlay container */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Nu afectează textul, doar fundalul */
+    background: rgba(0, 0, 0, 0.6); /* Fundal semi-transparent pentru overlay */
+    transition: opacity 0.3s ease-in-out;
+    z-index: 2;
+}
+
+/* Background for overlay */
+.overlay-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    border-radius: 16px; /* Același border-radius ca la imagine */
+    z-index: 1; /* Fundalul este în spatele textului */
+}
+
+/* Stiluri comune pentru toate linkurile */
+.overlay-link {
+    color: #FF9861 !important; /* Asigură că textul va fi vizibil indiferent de hover */
+    text-decoration: none !important;
+    font-size: 30px !important;
+    font-family: 'Source Sans Pro', sans-serif !important;
+    font-weight: 600 !important;
+    z-index: 3; /* Textul apare deasupra fundalului semi-transparent */
+    position: relative !important;
+    transition: color 0.3s ease !important;
+    opacity: 1 !important; /* Textul va rămâne opac */
+    margin-right: 20%;
+}
+
+.descoperă-text {
+    font-size: 20px; /* Setează dimensiunea fontului la 16px */
+    font-family: 'Source Sans Pro', sans-serif; /* Aplică familia de fonturi Source Sans Pro */
+    font-weight: 400; /* Poți ajusta greutatea fontului dacă dorești */
+    color: white; /* Poți seta o culoare pentru text dacă vrei */
+}
+
+
+/* Stiluri pentru link-ul "Facultăți" */
+.overlay-link.facultati {
+    font-size: 35px; /* Mărime mai mare pentru Facultăți */
+    color: #FF6347; /* O culoare diferită */
+}
+
+/* Stiluri pentru link-ul "Studii" */
+.overlay-link.studii {
+    font-size: 28px;
+    color: #32CD32; /* O culoare verde pentru Studii */
+}
+
+/* Stiluri pentru link-ul "Ghid student" */
+.overlay-link.ghid-student {
+    font-size: 30px;
+    color: #1E90FF; /* O culoare albastră pentru Ghid student */
+}
+
+
+.image-item:hover .overlay {
+    opacity: 1; /* Doar fundalul devine vizibil */
+}
+
+/* Modificare pentru background-ul overlay la hover */
+.overlay:hover .overlay-background {
+    background: rgba(0, 0, 0, 0.1) !important; /* Fundalul devine mai închis la hover */
+    cursor: pointer; /* Modifică cursorul la mână la hover pe overlay */
+}
+
+
+/* Footer */
+.footer-placeholder {
+    margin-top: auto;
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 20px 0;
+    width: 100px;
+  
+}

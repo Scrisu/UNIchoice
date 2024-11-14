@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Activity Bar</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro:wght@400;700&display=swap">
-    <link rel="stylesheet" href="css/activity_bar.css"> 
+    <link rel="stylesheet" href="AB_login.css"> 
 </head>
 <body>
   <!-- Activity Bar Section -->
@@ -31,22 +31,15 @@
           </div>
         </div>
         <a href="forum.html">Forum</a>
-        </div>
       </div>
     </div>
 
     <!-- Right-aligned profile section -->
-    <div class="right-buttons">
-      <div class="dropdown">
-        <a href="#detalii_utilizator" class="profile-button dropdown-btn">Profil</a>
-        <div class="dropdown-content">
-          <a href="detalii_utilizator.html">Contul Meu</a>
-          <a href="universitatile_mele.html">Universitățile mele</a>
-          <a href="evenimente_importante.html">Evenimente importante</a>
-        </div>
-      </div>
-      <img src="images/account.png" alt="Avatar" class="avatar-icon">
+    <div class="right-buttons" id="auth-section">
+      <!-- The content here will be populated by JavaScript based on login status -->
     </div>
   </header>
+
+  <script src="AB_login.js"></script>
 </body>
 </html>
