@@ -3,6 +3,7 @@ html, body {
     display: flex;
     flex-direction: column;
     margin: 0;
+    overflow-x: hidden;
 }
 
 /* Ecrane mari - desktop */
@@ -90,15 +91,10 @@ html, body {
     }
 }
 
-
 .main-container {
-    width: 100%; /* Lățimea se va adapta la lățimea ferestrei */
-    max-width: 1440px; /* Lățimea maximă va fi de 1440px */
-    min-height: 100vh; /* Înălțimea minimă a containerului va fi 100vh (înălțimea ferestrei) */
-    background: white;
     display: flex;
-    flex-direction: column; /* Aranjează conținutul pe verticală */
-   
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Intro Section */
