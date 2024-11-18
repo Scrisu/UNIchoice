@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+<style>
+#contactButton {
+    position: fixed; /* Rămâne fixat în colțul din dreapta jos */
+    bottom: 20px; /* Distanța de la marginea de jos */
+    right: 20px; /* Distanța de la marginea din dreapta */
+    width: 35px; /* Dimensiunea butonului */
+    height: 35px;
+    background-color: #adadad; /* Albastru */
+    border-radius: 50%; /* Rotunjirea completă pentru un buton circular */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbră pentru efect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000; /* Asigură-te că butonul este deasupra altor elemente */
+}
+
+#contactButton a {
+    color: white; /* Culoarea iconului */
+    font-size: 24px; /* Dimensiunea iconului */
+    text-decoration: none; /* Elimină sublinierea */
+}
+
+</style>
+<body>
+    <div id="contactButton">
+        <a href="/formular-de-contact.html" title="Contactează-ne!">
+            <i class="fas fa-question"></i>
+        </a>
+    </div>
+    
+</body>
+</html>

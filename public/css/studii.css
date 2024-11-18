@@ -178,9 +178,10 @@ body {
 .card label {
     margin-top: 15%;;
     font-family: 'Freeman', sans-serif;
-    font-size: 35px;
+    font-size: 33px;
     font-weight: normal; 
     align-items: center;
+
 }
 
 
@@ -191,33 +192,55 @@ body {
 }
 
 .description {
-    display:grid;
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Centrează tot conținutul pe orizontală */
     padding: 30px 20px;
     margin-top: 250px;
-    padding-left: 40px;
-}
-.text-and-image {
-    display: flex;
-    flex-direction: row;      /* Elemente orizontale */
-    align-items: center;      /* Centrează imaginea și textul pe verticală */
-    justify-content: center;  /* Centrează imaginea și textul pe orizontală */
-    text-align: center;
-    padding: 20px;
-    gap: 20px;                /* Spațiu între text și imagine */
+    text-align: center; /* Centrează tot conținutul textual */
 }
 
-.description-text {
-    font-family: 'Freeman', sans-serif;
-    font-size: 50px;
-    font-weight: 400; 
-    color: #2F584E; 
-    max-width: 600px;
+.text-and-image {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* Crește distanța între imagine și text */
 }
 
 .description-image {
     width: 400px;
     height: 400px;
+    margin-top: 20px;  /* Dacă vrei să păstrezi un spațiu deasupra imaginii */
+    margin-bottom: 40px;  /* Adaugă mai mult spațiu sub imagine */
+}
+.description-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+.description-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;  /* Adaugă mai mult spațiu deasupra textului */
+}
+
+.description h2 {
+    font-family: 'Freeman', sans-serif;
+    font-size: 30px;
+    color: #2F584E;
+    margin-bottom: 10px; /* Spațiu între titlu și descriere */
+    margin-top: 90px;  /* Titlul este mutat mai jos */
+}
+
+.description-text {
+    font-family: 'Freeman', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #555;
+    max-width: 600px; /* Maximizează lățimea descrierii */
+    margin: 0 auto; /* Centrarea textului */
 }
 
 .reviews {
@@ -231,6 +254,7 @@ body {
     border-radius: 16px; /* Colțuri rotunjite pentru întreaga secțiune */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbră subtilă pentru un efect vizual plăcut */
     overflow: hidden; /* Asigură că conținutul care iese din container nu va fi vizibil */
+    margin-top: 50px;
 }
 
 .reviews-container {
@@ -243,7 +267,7 @@ body {
 
 .reviews h2 {
     font-family: 'Freeman', sans-serif;
-    font-size: 36px;
+    font-size: 30px;
     font-weight: bold;
     color: #2F584E;
     margin-bottom: 40px;
@@ -343,8 +367,8 @@ body {
 
 .forum h2 {
 padding-left: 50%;
-    font-size: 35px; 
-    margin-bottom: 1rem;
+    font-size: 30px; 
+    margin-bottom: 5px;
     font-family: "Freeman, Regular";
     padding: 20px;
 }
@@ -354,9 +378,10 @@ padding-left: 50%;
     background-color: #2F584E;
     color: white;
     border: none;
-    border-radius: 16px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 18px; /* Reducem dimensiunea fontului butonului */
+    font-size: 0.8rem; /* Reducem dimensiunea fontului butonului */
+    margin-bottom: 20px;
 }
 .forum button:hover {
     background-color: #21443b;
@@ -434,4 +459,24 @@ h2::before{
     background-color: #FFFFFF; 
 }
 
+#contactButton {
+    position: fixed; /* Rămâne fixat în colțul din dreapta jos */
+    bottom: 20px; /* Distanța de la marginea de jos */
+    right: 20px; /* Distanța de la marginea din dreapta */
+    width: 35px; /* Dimensiunea butonului */
+    height: 35px;
+    background-color: #adadad; /* Albastru */
+    border-radius: 50%; /* Rotunjirea completă pentru un buton circular */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbră pentru efect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000; /* Asigură-te că butonul este deasupra altor elemente */
+  }
   
+  #contactButton a {
+    color: white; /* Culoarea iconului */
+    font-size: 24px; /* Dimensiunea iconului */
+    text-decoration: none; /* Elimină sublinierea */
+  }

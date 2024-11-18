@@ -1,11 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Evenimente Studențești</title>
+    <link rel="stylesheet" href="css/evenimente.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
+    <div id="header-placeholder"></div>
+
+    <header>
+        <h1>Evenimente Studențești</h1>
+        <p>Descoperă cele mai interesante evenimente pentru studenți din întreaga țară!</p>
+    </header>
+
+    <main>
+        <!-- Filtru de Căutare -->
+        <div class="filter-section">
+            <label for="event-type">Selectează tipul de eveniment:</label>
+            <select id="event-type">
+                <option value="">Toate tipurile</option>
+                <option value="workshop">Workshopuri</option>
+                <option value="party">Petreceri</option>
+                <option value="conference">Conferințe</option>
+                <option value="contest">Concursuri</option>
+            </select>
+
+            <label for="city">Selectează orașul:</label>
+            <select id="city">
+                <option value="">Toate orașele</option>
+                <option value="București">București</option>
+                <option value="Cluj-Napoca">Cluj-Napoca</option>
+                <option value="Iași">Iași</option>
+                <option value="Timișoara">Timișoara</option>
+                <option value="Brașov">Brașov</option>
+            </select>
+        </div>
+
+        <!-- Evenimente Populare -->
+        <div class="popular-events">
+            <h2>Evenimente Populare</h2>
+            <div class="events-list">
+                <div class="event-item" data-city="București" data-type="workshop">
+                    <img src="https://via.placeholder.com/300x200" alt="Eveniment 1">
+                    <h3>Workshop despre Programare</h3>
+                    <p>Participă la un workshop intensiv despre programare web. Învață de la cei mai buni!</p>
+                    <p><strong>Data:</strong> 25 Noiembrie 2024</p>
+                    <p><strong>Locație:</strong> București, Universitatea X</p>
+                    <a href="#" class="btn">Înregistrează-te</a>
+                </div>
+                <div class="event-item" data-city="Cluj-Napoca" data-type="party">
+                    <img src="https://via.placeholder.com/300x200" alt="Eveniment 2">
+                    <h3>Petrecerea de Crăciun a Studenților</h3>
+                    <p>Vino alături de colegii tăi la cea mai tare petrecere din acest an!</p>
+                    <p><strong>Data:</strong> 10 Decembrie 2024</p>
+                    <p><strong>Locație:</strong> Cluj-Napoca, Club Y</p>
+                    <a href="#" class="btn">Rezervă-ți locul</a>
+                </div>
+                <div class="event-item" data-city="Iași" data-type="conference">
+                    <img src="https://via.placeholder.com/300x200" alt="Eveniment 3">
+                    <h3>Conferința Națională a Studenților</h3>
+                    <p>Oportunități de networking și sesiuni educaționale pentru studenți.</p>
+                    <p><strong>Data:</strong> 15 Decembrie 2024</p>
+                    <p><strong>Locație:</strong> Iași, Centrul de Conferințe</p>
+                    <a href="#" class="btn">Mai multe detalii</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Evenimente Viitoare -->
+        <div class="upcoming-events">
+            <h2>Evenimente Viitoare</h2>
+            <div class="event-slider">
+                <img src="https://via.placeholder.com/300x200" alt="Eveniment 1">
+                <img src="https://via.placeholder.com/300x200" alt="Eveniment 2">
+                <img src="https://via.placeholder.com/300x200" alt="Eveniment 3">
+            </div>
+        </div>
+
+        <!-- Testimoniale -->
+        <div class="testimonials">
+            <h2>Cele Mai Bune Experiențe ale Studenților</h2>
+            <div>
+                <p><strong>Maria P.</strong> - "Am participat la conferința despre programare și am învățat enorm! Recomand tuturor studenților care vor să își dezvolte abilitățile tehnice!"</p>
+            </div>
+            <div>
+                <p><strong>Ion V.</strong> - "Petrecerea de Crăciun a fost o experiență de neuitat! A fost o oportunitate excelentă de a socializa și de a cunoaște alți studenți."</p>
+            </div>
+        </div>
+    </main>
+    <div id="contactButton">
+        <a href="/formular-de-contact.html" title="Contactează-ne!">
+            <i class="fas fa-question"></i>
+        </a>
+    </div>
     
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Filtrare Evenimente pe tip și oraș
+        const filterType = document.getElementById('event-type');
+        const filterCity = document.getElementById('city');
+        const eventItems = document.querySelectorAll('.event-item');
+        
+        function filterEvents() {
+            const selectedType = filterType.value;
+            const selectedCity = filterCity.value;
+            
+            eventItems.forEach(item => {
+                const itemType = item.getAttribute('data-type');
+                const itemCity = item.getAttribute('data-city');
+                
+                if ((selectedType === '' || itemType === selectedType) && 
+                    (selectedCity === '' || itemCity === selectedCity)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        filterType.addEventListener('change', filterEvents);
+        filterCity.addEventListener('change', filterEvents);
+
+
+
+        fetch('activity_bar.html') // Fetch pentru header și footer
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+               
+            })
+            .catch(error => console.error('Error loading header/footer:', error));
+  
+    fetch('footer.html') // Fetch pentru header și footer
+        .then(response => response.text())
+        .then(data => {
+           
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header/footer:', error));
+    </script>
 </body>
 </html>

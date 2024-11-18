@@ -309,6 +309,7 @@
 }
 .forum h2 {
     font-size: 30px; /* Reducem dimensiunea titlului */
+    margin-bottom: 5px;
 }
 
 .forum button {
@@ -316,9 +317,10 @@
     background-color: #2F584E;
     color: white;
     border: none;
-    border-radius: 16px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 18px; /* Reducem dimensiunea fontului butonului */
+    font-size: 0.8rem; /* Reducem dimensiunea fontului butonului */
+    margin-bottom: 20px;
 }
 
 .forum button:hover {
@@ -364,3 +366,24 @@
         margin-bottom: 0.5rem;   /* Spațiere între asterisc și text */
     }  /* Spațiere între asterisc și text */
 
+    #contactButton {
+        position: fixed; /* Rămâne fixat în colțul din dreapta jos */
+        bottom: 20px; /* Distanța de la marginea de jos */
+        right: 20px; /* Distanța de la marginea din dreapta */
+        width: 35px; /* Dimensiunea butonului */
+        height: 35px;
+        background-color: #adadad; /* Albastru */
+        border-radius: 50%; /* Rotunjirea completă pentru un buton circular */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbră pentru efect */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1000; /* Asigură-te că butonul este deasupra altor elemente */
+      }
+      
+      #contactButton a {
+        color: white; /* Culoarea iconului */
+        font-size: 24px; /* Dimensiunea iconului */
+        text-decoration: none; /* Elimină sublinierea */
+      }

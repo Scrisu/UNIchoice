@@ -1,12 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program de Licență - Facultăți din România</title>
+    <link rel="stylesheet" href="css/licenta.css">
 </head>
 <body>
-    
+
+    <header>
+        <h1>Programe de Licență în Facultăți din România</h1>
+        <p>Explorează programele de licență oferite de facultăți din toată țara!</p>
+    </header>
+
+    <main>
+        <!-- Filtru de Căutare -->
+        <div class="filter-section">
+            <label for="study-field">Selectează domeniul de studii:</label>
+            <select id="study-field">
+                <option value="">Toate domeniile</option>
+                <option value="Informatică">Informatică</option>
+                <option value="Drept">Drept</option>
+                <option value="Economie">Economie</option>
+                <option value="Medicină">Medicină</option>
+                <option value="Arhitectură">Arhitectură</option>
+            </select>
+
+            <label for="university">Selectează facultatea:</label>
+            <select id="university">
+                <option value="">Toate facultățile</option>
+                <option value="Facultatea de Informatică">Facultatea de Informatică</option>
+                <option value="Facultatea de Drept">Facultatea de Drept</option>
+                <option value="Facultatea de Economie">Facultatea de Economie</option>
+                <option value="Facultatea de Medicină">Facultatea de Medicină</option>
+            </select>
+
+            <label for="city">Selectează orașul:</label>
+            <select id="city">
+                <option value="">Toate orașele</option>
+                <option value="București">București</option>
+                <option value="Cluj-Napoca">Cluj-Napoca</option>
+                <option value="Iași">Iași</option>
+                <option value="Timișoara">Timișoara</option>
+            </select>
+        </div>
+
+      
+        <!-- Programe de Licență -->
+        <div class="programs-list">
+            <div class="program-item" data-field="Informatică" data-university="Facultatea de Informatică" data-city="București">
+                <img src="https://via.placeholder.com/300x200" alt="Program 1" class="program-image">
+                <h3>Program de Licență în Informatică</h3>
+                <p>Studii aprofundate în domeniul informaticii, pregătire pentru dezvoltarea software-ului și infrastructuri IT.</p>
+                <p><strong>Facultatea:</strong> Facultatea de Informatică, Universitatea din București</p>
+                <p><strong>Durata:</strong> 3 ani</p>
+                <p><strong>Tip diplomă:</strong> Licență</p>
+                <button class="btn" onclick="openModal('Informatică', 'Facultatea de Informatică', 'București', 'www.unibuc.ro')">Mai multe detalii</button>
+            </div>
+            <div class="program-item" data-field="Drept" data-university="Facultatea de Drept" data-city="Cluj-Napoca">
+                <img src="https://via.placeholder.com/300x200" alt="Program 2" class="program-image">
+                <h3>Program de Licență în Drept</h3>
+                <p>Pregătire teoretică și practică în domeniul dreptului, pentru a deveni avocat sau judecător.</p>
+                <p><strong>Facultatea:</strong> Facultatea de Drept, Universitatea din Cluj-Napoca</p>
+                <p><strong>Durata:</strong> 3 ani</p>
+                <p><strong>Tip diplomă:</strong> Licență</p>
+                <button class="btn" onclick="openModal('Drept', 'Facultatea de Drept', 'Cluj-Napoca', 'www.universitateacluj.ro')">Mai multe detalii</button>
+            </div>
+            <div class="program-item" data-field="Medicină" data-university="Facultatea de Medicină" data-city="Iași">
+                <img src="https://via.placeholder.com/300x200" alt="Program 3" class="program-image">
+                <h3>Program de Licență în Medicină</h3>
+                <p>Studii aprofundate pentru viitorii medici, incluzând teorie medicală și practică în spitale.</p>
+                <p><strong>Facultatea:</strong> Facultatea de Medicină, Universitatea de Medicină și Farmacie Iași</p>
+                <p><strong>Durata:</strong> 6 ani</p>
+                <p><strong>Tip diplomă:</strong> Licență</p>
+                <button class="btn" onclick="openModal('Medicină', 'Facultatea de Medicină', 'Iași', 'www.umfiasi.ro')">Mai multe detalii</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Popup Modal -->
+    <div id="programModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Detalii Program de Licență</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Domeniu:</strong> <span id="modalField"></span></p>
+                <p><strong>Facultatea:</strong> <span id="modalUniversity"></span></p>
+                <p><strong>Oraș:</strong> <span id="modalCity"></span></p>
+                <p><strong>Link:</strong> <a id="modalLink" href="#" target="_blank">Accesează pagina facultății</a></p>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModal()">Închide</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ghidul Viitorului Student | Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+        // Filtrare Programe pe domeniu, facultate și oraș
+        const filterField = document.getElementById('study-field');
+        const filterUniversity = document.getElementById('university');
+        const filterCity = document.getElementById('city');
+        const programItems = document.querySelectorAll('.program-item');
+        
+        function filterPrograms() {
+            const selectedField = filterField.value;
+            const selectedUniversity = filterUniversity.value;
+            const selectedCity = filterCity.value;
+            
+            programItems.forEach(item => {
+                const itemField = item.getAttribute('data-field');
+                const itemUniversity = item.getAttribute('data-university');
+                const itemCity = item.getAttribute('data-city');
+                
+                if ((selectedField === '' || itemField === selectedField) && 
+                    (selectedUniversity === '' || itemUniversity === selectedUniversity) && 
+                    (selectedCity === '' || itemCity === selectedCity)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        filterField.addEventListener('change', filterPrograms);
+        filterUniversity.addEventListener('change', filterPrograms);
+        filterCity.addEventListener('change', filterPrograms);
+
+
+
+        ////popup
+        function openModal(field, university, city, link) {
+            document.getElementById('modalField').textContent = field;
+            document.getElementById('modalUniversity').textContent = university;
+            document.getElementById('modalCity').textContent = city;
+            document.getElementById('modalLink').href = link;
+
+            document.getElementById('programModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('programModal').style.display = "none";
+        }
+    </script>
+
 </body>
 </html>
