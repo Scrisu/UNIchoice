@@ -29,11 +29,10 @@ const pgPool = new Pool({
 });
 
 // Set 'trust proxy' to handle secure cookies correctly behind proxies/load balancers
-app.set('trust proxy', 1);
+
 
 // Set up Body Parser middleware to parse incoming form data
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+
 
 // Set up Session Management with PostgreSQL Store
 app.use(
@@ -53,11 +52,16 @@ app.use(
     })
 );
 
+
+
 // Middleware setup
 setupMiddleware(app);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.set('trust proxy', 1);
 
 // Static files middleware to serve files from 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), { index: false }));
 
 // Initialize Database (Sync Models)
 initDb();
@@ -65,10 +69,26 @@ initDb();
 // Set up Routes
 app.use('/', authRoutes); // Use authRoutes once
 app.use('/', verificationRoutes); // Use verificationRoutes once
+// User status endpoint to check if the user is logged in// User status endpoint to check if the user is logged in
+app.get('/user/status', (req, res) => {
+    console.log("Session data:", req.session); // Check if session data is being retrieved correctly
+    if (req.session.user) {
+        res.json({
+            loggedIn: true,
+            username: req.session.user.username,
+        });
+    } else {
+        res.json({
+            loggedIn: false,
+        });
+    }
+});
+
+
 
 // Home Page Route (Main Landing Page)
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'facultati.html')); // Serves the static 'facultati.html' file from 'public'
+    res.sendFile(path.join(__dirname, 'public', 'home.html')); // Serves the static 'facultati.html' file from 'public'
 });
 
 // Authentication Page Route (Registration and Login Page)
@@ -88,12 +108,12 @@ app.get('/verify-email', (req, res) => {
 });
 
 // Facultati Page Route
-app.get('/facultati', isAuthenticated, (req, res) => {
+app.get('/facultati', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'facultati.html')); // Serve facultati.html when someone visits /facultati
 });
 
 // Home page after successful login or registration
-app.get('/home', isAuthenticated, (req, res) => {
+app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'home.html')); // Serves the static 'home.html' file from 'public'
 });
 

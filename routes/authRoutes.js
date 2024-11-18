@@ -14,35 +14,48 @@ const Sequelize = require('sequelize');
 
 
 // Login Route
+// Login Route
+// Login Route
 router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
         if (!email || !password) {
-            return res.status(400).send('Email and password are required. <a href="/auth">Try again</a>');
+            return res.status(400).json({ error: 'Email and password are required.' });
         }
+        
+        // Find the user in the database
         const user = await User.findOne({ where: { email } });
 
+        // Compare password
         if (user && await bcrypt.compare(password, user.password)) {
-            req.session.user = user;
-            res.redirect('/facultati');
+            // Store minimal user information in the session
+            req.session.user = {
+                id: user.id,
+                username: user.username,
+            };
+            res.json({ loggedIn: true, message: 'Login successful', username: user.username });
         } else {
-            res.status(401).send('Invalid credentials. <a href="/auth">Try again</a>');
+            res.status(401).json({ error: 'Invalid credentials' });
         }
     } catch (error) {
         console.error('Login error:', error);
-        res.status(500).send('An error occurred. <a href="/auth">Try again</a>');
+        res.status(500).json({ error: 'An error occurred.' });
     }
 });
 
+
+
+// Logout Route
 // Logout Route
 router.get('/logout', isAuthenticated, (req, res) => {
     req.session.destroy((err) => {
         if (err) {
             console.error('Logout error:', err);
-            return res.status(500).send('An error occurred. <a href="/auth">Try again</a>');
+            return res.status(500).json({ error: 'An error occurred during logout.' });
         }
-        res.send('You have logged out. <a href="/">Go back</a>');
+        res.json({ message: 'Logged out successfully' });
     });
 });
+
 
 module.exports = router;

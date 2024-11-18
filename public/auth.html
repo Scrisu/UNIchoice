@@ -27,9 +27,9 @@
         <!-- Login Form -->
         <div class="form-container hidden" id="loginFormContainer">
             <h2>Log In</h2>
-            <form id="loginForm" method="POST" action="/login">
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
+            <form id="login-form"> <!-- Corrected the ID to 'login-form' and removed 'method' and 'action' -->
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
                 <button type="submit" class="button">Log In</button>
             </form>
         </div>
@@ -56,5 +56,6 @@
             registerToggle.classList.remove('active');
         });
     </script>
+    <script src="js/activity_bar.js"></script> <!-- Link to activity_bar.js after the HTML content -->
 </body>
 </html>

@@ -31,12 +31,14 @@
           </div>
         </div>
         <a href="forum.html">Forum</a>
-        </div>
       </div>
     </div>
 
     <!-- Right-aligned profile section -->
     <div class="right-buttons">
+      <button id="sign-in-btn" class="sign-in-button" onclick="window.location.href='/auth';">Sign In</button>
+      <button id="logout-btn" class="logout-button" style="display: none;">Log Out</button>
+
       <div class="dropdown">
         <a href="#detalii_utilizator" class="profile-button dropdown-btn">Profil</a>
         <div class="dropdown-content">
@@ -45,8 +47,11 @@
           <a href="evenimente_importante.html">Evenimente importante</a>
         </div>
       </div>
+      
       <img src="images/account.png" alt="Avatar" class="avatar-icon">
     </div>
   </header>
+  
+  <script src="js/activity_bar.js"></script> <!-- Link to the new JavaScript file -->
 </body>
 </html>
