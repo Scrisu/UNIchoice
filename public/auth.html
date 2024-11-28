@@ -3,59 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register or Log In</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/SIGN_IN.css">
 </head>
 <body>
-    <div class="container">
-        <div class="toggle-buttons">
-            <button id="registerToggle" class="toggle active">Register</button>
-            <button id="loginToggle" class="toggle">Log In</button>
-        </div>
-
-        <!-- Registration Form -->
-        <div class="form-container active" id="registerFormContainer">
-            <h2>Register</h2>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
             <form id="registerForm" method="POST" action="/request-verification">
+                <h1>Crează cont</h1>
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <button type="submit" class="button">Register</button>
             </form>
         </div>
-
-        <!-- Login Form -->
-        <div class="form-container hidden" id="loginFormContainer">
-            <h2>Log In</h2>
+        <div class="form-container sign-in-container">
             <form id="login-form"> <!-- Corrected the ID to 'login-form' and removed 'method' and 'action' -->
+                <h1>Sign in</h1>
                 <input type="email" id="email" name="email" placeholder="Email" required>
                 <input type="password" id="password" name="password" placeholder="Password" required>
                 <button type="submit" class="button">Log In</button>
             </form>
         </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Ne bucurăm să te revedem!</h1>
+                    <p>Pentru a rămâne la curent cu noile informații, conectează-te cu informațiile personale.</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Bine ai venit!</h1>
+                    <p>Introdu-ți detaliile personale și hai să pornim împreună în călătoria spre viitorul tău academic.</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <script>
-        // JavaScript for toggling between forms
-        const registerToggle = document.getElementById('registerToggle');
-        const loginToggle = document.getElementById('loginToggle');
-        const registerFormContainer = document.getElementById('registerFormContainer');
-        const loginFormContainer = document.getElementById('loginFormContainer');
-
-        registerToggle.addEventListener('click', () => {
-            registerFormContainer.classList.add('active');
-            loginFormContainer.classList.remove('active');
-            registerToggle.classList.add('active');
-            loginToggle.classList.remove('active');
-        });
-
-        loginToggle.addEventListener('click', () => {
-            loginFormContainer.classList.add('active');
-            registerFormContainer.classList.remove('active');
-            loginToggle.classList.add('active');
-            registerToggle.classList.remove('active');
-        });
-    </script>
-    <script src="js/activity_bar.js"></script> <!-- Link to activity_bar.js after the HTML content -->
+    
+<script src="js/activity_bar.js"></script>
 </body>
 </html>
