@@ -1,386 +1,418 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  @import url('https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro:wght@400;700&display=swap');
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Freeman', sans-serif; /* Font pentru toate titlurile */
-  }
-  
-  p {
-    font-family: 'Source Sans Pro', sans-serif; /* Font pentru toate paragrafele */
-  }
-  body {
-    font-family: 'Source Sans Pro', sans-serif;
-    background-color: white;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden; /* Evită derularea orizontală */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-  /* Hero Section */
-  .hero {
-    position: relative;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* pentru a evita ca imaginea să depășească marginile secțiunii */
-  }
-  option {
-    background-color: rgb(255, 255, 255); /* Fundal implicit pentru opțiuni */
-    color: rgb(0, 0, 0); /* Text implicit pentru opțiuni */
-
+ 
+ 
+ 
+@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro:wght@400;700&display=swap');
+ 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Freeman', sans-serif; /* Font pentru toate titlurile */
+}
+ 
+p {
+  font-family: 'Source Sans Pro', sans-serif; /* Font pentru toate paragrafele */
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: white;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden; /* Evită derularea orizontală */
+}
+ 
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* pentru a evita ca imaginea să depășească marginile secțiunii */
+}
+option {
+  background-color: rgb(255, 255, 255); /* Fundal implicit pentru opțiuni */
+  color: rgb(0, 0, 0); /* Text implicit pentru opțiuni */
+ 
 }
 .welcome-section img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: con;
-  display: block;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: con;
+display: block;
 }
-
-  .welcome-box {
-    position: absolute;
-    top: 50%; /* Poziționează chenarul pe verticală în mijlocul imaginii */
-    left: 50%; /* Poziționează chenarul pe orizontală în mijlocul imaginii */
-    transform: translate(-50%, -50%); /* Centrează chenarul perfect pe imagine */
-    background-color: rgba(47, 88, 78, 0.8); /* Adaugă un fundal semi-transparent */
-    padding: 20px 40px; /* Adaugă margini interne pentru text */
-    border-radius: 10px; /* Răsucirea colțurilor pentru un efect mai plăcut */
-    text-align: center;
-    color: white; /* Culoare albă pentru text */
-    font-family: 'Freeman', sans-serif;
-}
-
+ 
 .welcome-box {
-  width: 410px;
-  height: 190px;
-    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 16px;
-    
+  position: absolute;
+  top: 50%; /* Poziționează chenarul pe verticală în mijlocul imaginii */
+  left: 50%; /* Poziționează chenarul pe orizontală în mijlocul imaginii */
+  transform: translate(-50%, -50%); /* Centrează chenarul perfect pe imagine */
+  background-color: rgba(47, 88, 78, 0.8); /* Adaugă un fundal semi-transparent */
+  padding: 20px 40px; /* Adaugă margini interne pentru text */
+  border-radius: 10px; /* Răsucirea colțurilor pentru un efect mai plăcut */
+  text-align: center;
+  color: white; /* Culoare albă pentru text */
+  font-family: 'Freeman', sans-serif;
+}
+ 
+.welcome-box {
+width: 410px;
+height: 190px;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+ 
 }
 .welcome-box h1 {
-    color: white;
-    font-size: 38px; ;
-    text-align: center;
-    margin: 0;
-  }
-
-  
-
-  /* Main Content */
-.main-content {
-  display: auto;
-  flex-grow: 1;
-  padding: 20px 0; /* Elimină padding-ul lateral pentru a extinde secțiunea */
-  width: 90%; /* Setează lățimea secțiunii principale să fie aproape întreaga pagină */
-  margin: 0 auto; /* Centrează secțiunea pe pagină */
-  justify-content: center;
-  gap: 30px; /* Spațiu între filtre și secțiunea cardurilor */
-  padding-top: 400x;
+  color: white;
+  font-size: 38px; ;
+  text-align: center;
+  margin: 0;
 }
-
-  /* Sidebar Filter */
-  .filter {
-    width: 250px;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 12px; /* colțuri rotunjite */
-    margin-right: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adaugă tranziție pentru interactivitate */
-  }
-
-  .filters-section {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
-  }
-
-  .filter:hover {
-    transform: translateY(-5px); /* Mărire ușoară la hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Umbra mai puternică la hover */
-  }
-
- .filter h3 {
-    font-size: 1.4em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-  }
-
- /* Filtrele din sidebar */
+ 
+ 
+ 
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%; /* Se păstrează lățimea, dar */
+  max-width: 1550px; /* Optional: limitează lățimea maximă */
+  margin: 0 auto; /* Centrează containerul pe axa orizontală */
+  justify-content: center; /* Centrează conținutul în cadrul containerului */
+  gap: 10px; /* Spațiu între elemente */
+  padding: 20px; /* Spațiu interior */
+  overflow-x: hidden; /* Previne derularea orizontală */
+}
+ 
+ 
+ 
+/* Sidebar Filter */
+.filter {
+  width: 200px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px; /* colțuri rotunjite */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adaugă tranziție pentru interactivitate */
+  max-width: 100%; /* Asigură-te că nu ies din cadru */
+  margin-right: 20px;
+}
+ 
+.filters-section {
+  display: flex;
+  flex-wrap: wrap; /* Permite împachetarea dacă lățimea e depășită */
+  gap: 20px;
+  width: 100%;
+  justify-content: center; /* Centrează filtrele dacă ies din cadru */
+}
+ 
+.filter:hover {
+  transform: translateY(-5px); /* Mărire ușoară la hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Umbra mai puternică la hover */
+}
+ 
+.filter h3 {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+ 
+/* Filtrele din sidebar */
 .filter-item {
+margin-bottom: 1px;
+}
+ 
+.filter-item label {
+display: block; /* Plasează eticheta pe o linie separată */
+margin-bottom: 8px; /* Adaugă un spațiu între etichetă și select */
+font-weight: bold;
+color: #555;
+transition: none; /* Elimină orice efect de tranziție de hover */
+}
+ 
+.filter-item select {
+width: 100%;
+padding: 10px;
+font-size: 1em;
+border: 1px solid #ccc;
+border-radius: 8px; /* Colțuri rotunjite */
+background-color: #ffffff; /* Fundal deschis pentru un look mai curat */
+transition: border-color 0.3s ease;
+}
+ 
+.filter-item select:focus {
+border-color: #3b2306; /* Culoare de focus portocalie */
+background-color: #ffffff41;
+}
+ 
+  .filter-item select option {
+      padding: 10px;
+  }
+/* Faculties Section */
+.faculties {
+  flex: 1;
+}
+ 
+.faculties h3 {
+  font-size: 1.5em;
   margin-bottom: 20px;
 }
-
-.filter-item label {
-  display: block; /* Plasează eticheta pe o linie separată */
-  margin-bottom: 8px; /* Adaugă un spațiu între etichetă și select */
-  font-weight: bold;
-  color: #555;
-  transition: none; /* Elimină orice efect de tranziție de hover */
+ 
+.sort {
+  margin-bottom: 20px;
+  justify-content: justify-between;
 }
-
-.filter-item select {
+ 
+.results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100%;
-  padding: 12px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 8px; /* Colțuri rotunjite */
-  background-color: #ffffff; /* Fundal deschis pentru un look mai curat */
-  transition: border-color 0.3s ease;
-}
-
-.filter-item select:focus {
-  border-color: #3b2306; /* Culoare de focus portocalie */
-  background-color: #ffffff41;
-}
-
-    .filter-item select option {
-        padding: 10px;
-    }
-  /* Faculties Section */
-  .faculties {
-    flex: 1;
-  }
-
-  .faculties h3 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-  }
-
-  .sort {
-    margin-bottom: 20px;
-    justify-content: justify-between;
-  }
-
-  .results-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
 }
 .sort-results-info {
+display: flex;
+align-items: center;
+width: 100%;
+margin-bottom: 0px; /* Spațiu între sortare și cardurile facultăților */
+gap: 10px; /* Spațiu între butonul de sortare și rezultatele afișate */
+}
+ 
+.results-info {
   display: flex;
   align-items: center;
+  justify-content: right;
   width: 100%;
-  margin-bottom: 0px; /* Spațiu între sortare și cardurile facultăților */
-  gap: 10px; /* Spațiu între butonul de sortare și rezultatele afișate */
+  margin-bottom: 10px;
 }
-
-.results-info {
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
+ 
 #results-count {
-    font-size: 12px;
-    color: #666;
-    margin-right: 20px; /* Pentru spațiere față de meniul de sortare */
+  font-size: 12px;
+  color: #666;
+  margin-right: 20px; /* Pentru spațiere față de meniul de sortare */
 }
-
-  /* Faculty Card Layout */
+ 
+/* Faculty Card Layout */
+.faculty-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 coloane pe rând */
+  gap: 20px 20px; /* adăugăm gap pentru a separa atât pe orizontală, cât și pe verticală */
+}
+ 
+/* Media Queries */
+@media (max-width: 1200px) {
   .faculty-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
   }
-
-  /* Media Queries */
-  @media (max-width: 1200px) {
-    .faculty-cards {
-      grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
-    }
-  }
-
-  @media (max-width: 768px) {
-    .faculty-cards {
-      grid-template-columns: 1fr; /* 1 column for small screens */
-    }
-  }
-
-  /* Faculty Card */
-  .faculty-card {
-    background-color: #ffffff;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    position: relative; /* Important pentru a poziționa corect inima */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 400px; /* Creștem înălțimea cardului pentru a face loc inimii mai mari */
-    width: 400px; /* Cardul este mai îngust */
-    border-radius: 16px;
 }
-
+ 
+@media (max-width: 768px) {
+  .faculty-cards {
+    grid-template-columns: 1fr; /* 1 column for small screens */
+  }
+}
+ 
+/* Faculty Card */
+.faculty-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  height: 250px;
+  border-radius: 16px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+ 
+.faculty-card .favorite-button {
+  position: absolute;
+  bottom: 10px; /* Plasăm butonul imediat sub imagine */
+  right: 10px; /* Aliniere pe colțul din dreapta jos */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Asigură-te că butonul este deasupra altor elemente */
+}
+ 
+.faculty-card .favorite-button .heart-icon {
+  width: 24px;
+  height: 24px;
+  fill: none; /* Inimă goală */
+  stroke: orange; /* Contur portocaliu */
+  stroke-width: 2;
+  transition: transform 0.2s ease, stroke 0.2s ease;
+}
+ 
+ 
+ 
+ 
+.faculty-card .favorite-button:hover .heart-icon {
+  transform: scale(1.2); /* Efect de mărire */
+  stroke: darkorange; /* Culoare mai intensă la hover */
+}
 .faculty-card:hover {
-  transform: translateY(-5px); /* Mișcare ușoară pe verticală */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Umbra mai mare la hover */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
-
+ 
 .faculty-card img {
   width: 100%;
-  height: 270px;
+  height: 260px;
   object-fit: cover;
-  margin-bottom: 10px;
-  padding: 8px;
   border-radius: 16px;
 }
-  /* Titlul facultății */
-   .faculty-card h5 {
-    font-size: 18px;
-    margin-bottom: 5px;
-    max-width: 300px;
+.faculty-card h5 {
+  font-size: 16px;
+  line-height: 1.2; /* Control asupra distanței între rânduri */
+  min-height: 2.9em; /* Spațiu pentru două rânduri */
+  max-height: 2.4em; /* Asigură că textul lung nu ocupă mai mult de două rânduri */
+  overflow: hidden; /* Ascunde textul în exces */
+  text-overflow: ellipsis; /* Adaugă "..." dacă textul este prea lung */
+  white-space: normal; /* Permite împărțirea pe mai multe rânduri */
+  padding-top: 5px;
 }
-    .faculty-card p {
-        font-size: 18px;
-        color: #666;
+ 
+ 
+ 
+.faculty-card .spacer {
+  flex-grow: 1; /* Creează un spațiu gol între titlu și localitate */
 }
-
-.faculty-card .favorite {
-  position: absolute;
-  bottom: 70px; /* Plasăm inima un pic mai sus decât înainte */
-  right: 10px; /* Plasăm inima la dreapta */
-  color: #ff6600; /* Culoare portocalie pentru inimă */
-  font-size: 3em; /* Mărirea inimii */
-  cursor: pointer;
-  padding: 8px;
-  background-color: white; /* Fundal alb pentru interiorul inimii */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ 
+.faculty-card p {
+  font-size: 16px;
+  margin: 0;
+  align-self: flex-start; /* Aliniere la începutul cardului */
 }
-/* Schimbare culoare la hover */
-.faculty-card .favorite:hover {
-  color: #ff4500; /* Culoare mai închisă pentru hover */
-}
-
-
+ 
+ 
+ 
 .results-navigation {
-  display: flex;
-  justify-content: flex-end; /* Aliniază la dreapta */
-  margin-top: 20px; /* Spațiu față de facultăți */
-  align-items: center;
+display: flex;
+justify-content: flex-end; /* Aliniază la dreapta */
+margin-top: 20px; /* Spațiu față de facultăți */
+align-items: center;
 }
-
+ 
 #results-count {
-  margin-right: 10px; /* Spațiu între text și buton */
+margin-right: 10px; /* Spațiu între text și buton */
 }
-
+ 
 .nav-button {
-  background-color: #ff6600;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 4px;
-  font-weight: bold;
+background-color: #ff6600;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 4px;
+font-weight: bold;
 }
-
+ 
 .nav-button:hover {
-  background-color: #e65c00;
+background-color: #e65c00;
 }
 /* News Section */
 .news-section {
-  padding: 40px; /* Elimină padding-ul de sus și jos */
-  background-color: #ffffff; /* Fundal deschis */
-  display: flex;
-  justify-content: center; /* Centrează bannerul pe orizontală */
-  align-items: center; /* Centrează bannerul pe verticală */
-  min-height: auto; /* Elimină înălțimea minimă pentru a nu afecta alte secțiuni */
-  margin: 0; /* Elimină marginile pentru a nu adăuga spațiu suplimentar */
+padding: 40px; /* Elimină padding-ul de sus și jos */
+background-color: #ffffff; /* Fundal deschis */
+display: flex;
+justify-content: center; /* Centrează bannerul pe orizontală */
+align-items: center; /* Centrează bannerul pe verticală */
+min-height: auto; /* Elimină înălțimea minimă pentru a nu afecta alte secțiuni */
+margin: 0; /* Elimină marginile pentru a nu adăuga spațiu suplimentar */
 }
-
+ 
 /* Banner-ul de știri */
 .news-banner {
-  display: flex;
-  justify-content: space-between; /* Aliniere text-imagine pe orizontală */
-  align-items: center; /* Centrează pe verticală */
-  background-color: #ffffff; /* Fundal alb pentru banner */
-  padding: 20px 30px; /* Dimensiuni reduse pentru padding */
-  border-radius: 16px; /* Colțuri rotunjite */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbra ușoară pentru efect */
-  max-width: 100%; /* Lărgirea până la 100% din lățimea containerului părinte */
-  width: 100%; /* Lățimea completă a secțiunii */
-  margin: 0 auto; /* Centrează bannerul pe pagină */
-  height: 100%; /* Înălțimea se ajustează automat */
+display: flex;
+justify-content: space-between; /* Aliniere text-imagine pe orizontală */
+align-items: center; /* Centrează pe verticală */
+background-color: #ffffff; /* Fundal alb pentru banner */
+padding: 20px 30px; /* Dimensiuni reduse pentru padding */
+border-radius: 16px; /* Colțuri rotunjite */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbra ușoară pentru efect */
+max-width: 100%; /* Lărgirea până la 100% din lățimea containerului părinte */
+width: 100%; /* Lățimea completă a secțiunii */
+margin: 0 auto; /* Centrează bannerul pe pagină */
+height: 100%; /* Înălțimea se ajustează automat */
 }
-
+ 
 /* Textul din banner */
 .text-content {
-  flex: 1; /* Permite textului să ocupe tot spațiul disponibil pe partea stângă */
-  padding-right: 60px; /* Adaugă spațiu între text și imagine */
+flex: 1; /* Permite textului să ocupe tot spațiul disponibil pe partea stângă */
+padding-right: 60px; /* Adaugă spațiu între text și imagine */
 }
-
+ 
 .text-content h3 {
-  font-size: 40px; /* Font mai mare */
-  color: #333;
-  margin-bottom: 10px;
+font-size: 40px; /* Font mai mare */
+color: #333;
+margin-bottom: 10px;
 }
-
+ 
 .text-content p {
-  font-size: 16px; /* Font mai mic pentru paragrafe */
-  color: #666;
-  margin-bottom: 30px;
+font-size: 16px; /* Font mai mic pentru paragrafe */
+color: #666;
+margin-bottom: 30px;
 }
-
+ 
 .text-content button {
-  padding: 10px 20px;
-  font-size: 1em;
-  color: #fff;
-  background-color: #e88a15;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
+padding: 10px 20px;
+font-size: 1em;
+color: #fff;
+background-color: #e88a15;
+border: none;
+border-radius: 12px;
+cursor: pointer;
 }
-
+ 
 .text-content button:hover {
-  background-color: #d67b12; /* Umbră mai închisă la hover */
+background-color: #d67b12; /* Umbră mai închisă la hover */
 }
-
+ 
 /* Imaginea din banner */
 .image-content img {
-  width: 200px; /* Mărire imaginea */
-  height: 200px; /* Mărire imaginea */
-  object-fit: cover;
-  border-radius: 16px; /* Colțuri rotunjite pentru imagine */
+width: 200px; /* Mărire imaginea */
+height: 200px; /* Mărire imaginea */
+object-fit: cover;
+border-radius: 16px; /* Colțuri rotunjite pentru imagine */
 }
-
+ 
 /* Pentru secțiunea hărții */
 .map-section {
-  display: flex;
-  flex-direction: column; /* Asigură-te că textul va fi deasupra hărții */
-  justify-content: center; /* Centrează conținutul pe verticală */
-  align-items: center; /* Centrează conținutul pe orizontală */
-  width: 100%;
-  padding: 20px;
+display: flex;
+flex-direction: column; /* Asigură-te că textul va fi deasupra hărții */
+justify-content: center; /* Centrează conținutul pe verticală */
+align-items: center; /* Centrează conținutul pe orizontală */
+width: 100%;
+padding: 20px;
 }
-
+ 
 .map-section iframe {
-  width: 92%; /* Lățimea iframe-ului va fi 80% din secțiunea .map-section */
-  height: 500px;
-  border-radius: 8px; /* Colțuri rotunjite pentru iframe */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adăugarea unei umbre pentru efect */
+width: 92%; /* Lățimea iframe-ului va fi 80% din secțiunea .map-section */
+height: 500px;
+border-radius: 8px; /* Colțuri rotunjite pentru iframe */
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adăugarea unei umbre pentru efect */
 }
-
-
-
+ 
+ 
+ 
 .main-background {
 background-color: #F2F5F9; /* culoare deschisă */
 padding: 20px;
@@ -388,179 +420,178 @@ border-radius: 8px; /* colțuri rotunjite opționale */
 display: flex;
 justify-content: center;
 }
-
+ 
 /* Stilizare pentru noua secțiune cu fundal alb */
 .additional-info {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-  text-align: center;
+background-color: white;
+padding: 20px;
+margin-top: 10px;
+text-align: center;
 }
-
+ 
 .additional-info h3 {
-  color: #333;
-  font-size: 35px;
-  margin-bottom: 10px;
+color: #333;
+font-size: 30px;
+margin-bottom: 10px;
 }
-
+ 
 .additional-info p {
-  color: #555;
-  font-size: 1em;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
+color: #555;
+font-size: 1em;
+max-width: 800px;
+margin: 0 auto;
+line-height: 1.6;
 }
-
+ 
 /* Quiz Section */
 .quiz-section {
-  background-color: #EBEBEB;
-  padding: 40px;
-  border-radius: 15px;
-  width: 100%;
-  height: 29=50px;
-  max-width: 1500px;
-  margin: 20px auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  gap:20px;
+background-color: #EBEBEB;
+padding: 40px;
+border-radius: 15px;
+width: 100%;
+height: 29=50px;
+max-width: 1500px;
+margin: 0px auto;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-direction: row;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+gap:20px;
 }
-
+ 
 /* Quiz Content Styling */
 .quiz-content {
-  flex: 1;
+flex: 1;
 }
-
+ 
 /* Stil pentru imaginea din quiz-content */
 .quiz-content img {
-  display: block; /* Elimină eventualele margini sau spațieri suplimentare */
-  margin-left: 0; /* Asigură-te că imaginea nu are un spațiu pe stânga */
-  margin-right: 0; /* Permite alinierea la stânga, folosind margin-right auto */
-  width: 200px; /* Permite imaginii să își păstreze dimensiunile originale */
-  height: auto;
+display: block; /* Elimină eventualele margini sau spațieri suplimentare */
+margin-left: 0; /* Asigură-te că imaginea nu are un spațiu pe stânga */
+margin-right: 0; /* Permite alinierea la stânga, folosind margin-right auto */
+width: 180px; /* Permite imaginii să își păstreze dimensiunile originale */
+height: auto;
 }
-
-
+ 
+ 
 .quiz-content p {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 0px;
-  max-width: 700px;
-  margin-top: 20px;
-
+font-size: 18px;
+color: #333;
+margin-bottom: 0px;
+max-width: 700px;
+margin-top: 20px;
+ 
 }
-
+ 
 .quiz-content button {
-  background-color: #f4a200;
-  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #e88a15;
   border: none;
-  padding: 15px 30px;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-
+  margin-top: 20px
+  }
+   
+ 
 .quiz-content button:hover {
-  background-color: #e09200;
+background-color: #e09200;
 }
-
+ 
 /* Icon Styling without circle */
 .quiz-icon {
-  width: 80px; /* Lărgim puțin containerul */
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #EBEBEB; /* Fundalul containerului */
-  border-radius: 50%; /* Colțuri rotunjite pentru un efect circular */
-   /* Adăugăm un pic de padding pentru a da mai mult spațiu imaginii */
+width: 50px; /* Lărgim puțin containerul */
+height: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #EBEBEB; /* Fundalul containerului */
+border-radius: 50%; /* Colțuri rotunjite pentru un efect circular */
+ /* Adăugăm un pic de padding pentru a da mai mult spațiu imaginii */
 }
-
+ 
 .quiz-icon img {
-  width: 550px; /* Ajustăm dimensiunea imaginii pentru a încăpea bine în container */
-  height: 550px; /* Ajustăm dimensiunea imaginii */
-  object-fit: contain;
-  padding-right: 202px;
-  padding-bottom: 170px; /* Menține imaginea proporționată */
+width: 500px; /* Ajustăm dimensiunea imaginii pentru a încăpea bine în container */
+height: 500px; /* Ajustăm dimensiunea imaginii */
+object-fit: contain;
+padding-right: 202px;
+padding-bottom: 170px; /* Menține imaginea proporționată */
 }
-
+ 
 .newsletter-section {
-  background-color: white;
-  padding: 40px;
-  width: 100%; /* Expands the width to fill the container */
-  max-width: 1900px; /* Sets a larger maximum width */
-  margin: 0 auto; /* Centers the section horizontally */
-  text-align: center;
-  box-shadow: 0;
+background-color: white;
+padding: 40px;
+width: 100%; /* Expands the width to fill the container */
+max-width: 1900px; /* Sets a larger maximum width */
+margin: 0 auto; /* Centers the section horizontally */
+text-align: center;
+box-shadow: 0;
 }
-
+ 
 .newsletter-section h3 {
-  font-size: 35px;
-  color: #333;
-  margin-bottom: 20px;
+font-size: 30px;
+color: #333;
+margin-bottom: 20px;
 }
-
+ 
 .newsletter-section form {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+display: flex;
+justify-content: center;
+gap: 15px;
+flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
 }
-
+ 
 .newsletter-section input[type="email"] {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 18px;
-  width: 70%;
-  max-width: 500px;
-  margin-bottom: 40px; /* Slightly wider for a larger screen */
+padding: 15px;
+border: 1px solid #ddd;
+border-radius: 8px;
+font-size: 18px;
+width: 70%;
+max-width: 500px;
+margin-bottom: 50px; /* Slightly wider for a larger screen */
 }
-
+ 
 .newsletter-section button {
-  background-color: #333;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 8px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-bottom: 40px;
+background-color: #333;
+color: white;
+border: none;
+padding: 1px 20px;
+border-radius: 8px;
+font-size: 14px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+margin-bottom: 50px;
 }
-
+ 
 .newsletter-section button:hover {
-  background-color: #555;
+background-color: #555;
 }
 .filter-ordonare {
-  position: relative;
-  display: inline-block;
-  width: 200px;
+position: relative;
+display: inline-block;
+width: 200px;
 }
-
+ 
 /* Ascunde săgeata implicită a select */
 .filter-ordonare select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  width: 130px;
-  padding: 1px;
-  border: 0px solid #ccc;
-  border-radius: 8px;
-  background-color: #F2F5F9;
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 10px;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+width: 130px;
+padding: 1px;
+border: 0px solid #ccc;
+border-radius: 8px;
+background-color: #F2F5F9;
+font-size: 16px;
+color: #333;
+margin-bottom: 10px;
 }
-
+ 
 select {
-  appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="10" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M5 8l7 7 7-7H5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
+appearance: none;
+background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="10" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M5 8l7 7 7-7H5z"/></svg>');
+background-repeat: no-repeat;
+background-position: right 10px center;
 }
-

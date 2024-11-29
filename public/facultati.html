@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="css/facultati.css">
   </head>
 <body>
-  
+ 
   <div id="header-placeholder"></div>
-
+ 
   <section class="hero">
     <section class="welcome-section">
       <img src="images/DoamneAjuta.png" alt="Welcome Image">
@@ -17,14 +17,14 @@
           <h1>Explorează facultatea visurilor tale</h1>
       </div>
   </section></section>
-
+ 
   <!-- Main Content -->
   <main class="main-content">
     <div class="main-background">
  <!-- Sidebar Filter -->
 <aside class="filter">
     <h3>Filtrează</h3>
-    
+   
     <!-- Filtru Tip Admitere -->
     <div class="filter-item">
       <label>Tip admitere</label>
@@ -34,7 +34,7 @@
         <option value="2">Dosar</option>
       </select>
     </div>
-    
+   
     <!-- Filtru Tip Instituție -->
     <div class="filter-item">
       <label>Tip instituție</label>
@@ -44,7 +44,7 @@
         <option value="2">Colegiu</option>
       </select>
     </div>
-  
+ 
     <!-- Filtru Domeniul de studiu -->
     <div class="filter-item">
       <label>Domeniul de studiu</label>
@@ -56,7 +56,7 @@
         <option value="4">Artă</option>
       </select>
     </div>
-  
+ 
     <!-- Filtru Limbă de predare -->
     <div class="filter-item">
       <label>Limbă de predare</label>
@@ -67,7 +67,7 @@
         <option value="3">Franceză</option>
       </select>
     </div>
-  
+ 
     <!-- Filtru Durata programului -->
     <div class="filter-item">
       <label>Durata programului</label>
@@ -78,7 +78,7 @@
         <option value="3">5 ani</option>
       </select>
     </div>
-  
+ 
     <!-- Filtru Locație -->
     <div class="filter-item">
       <label>Locație</label>
@@ -90,7 +90,7 @@
         <option value="4">Timișoara</option>
       </select>
     </div>
-  
+ 
     <!-- Filtru Rating -->
     <div class="filter-item">
       <label>Rating</label>
@@ -103,14 +103,14 @@
         <option value="5">5 stele</option>
       </select>
     </div>
-  
+ 
   </aside>
-  
-  
+ 
+ 
   <!-- Faculties Section -->
     <section class="faculties">
       <h3>Cele mai vizionate facultăți din România</h3>
-      
+     
       <div class="filter-ordonare">
         <select id="filter" name="filter">
           <option value="Recomandat">Recomandat</option>
@@ -118,115 +118,180 @@
           <option value="Alfabetic Z-A">Alfabetic Z-A</option>
         </select>
       </div>
-      
-
-
+     
+ 
+ 
       <div class="faculty-cards">
-       <!-- Facultate Card 1 -->
-<div class="faculty-card" data-id="1">
-  <img src="images/ubb.jpg" alt="Universitatea Babeș-Bolyai">
-  <h5>Universitatea Babeș-Bolyai</h5>
-  <p>Cluj-Napoca</p>
-  <span class="favorite">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-      <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-    </svg>
-  </span>
-</div>
-
-
+        <!-- Faculty Card 1 -->
+        <div class="faculty-card" data-id="1">
+            <img src="images/ubb.jpg" alt="Universitatea Babeș-Bolyai">
+            <h5>Universitatea Babeș-Bolyai</h5>
+            <p>Cluj-Napoca</p>
+            <button class="favorite-button">
+                <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 8 4 9.5 5 12 7.5 14.5 5 16 4 17.5 4 20 4 22 6 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+            </button>
+        </div>
+   
         <!-- Faculty Card 2 -->
-        <div class="faculty-card">
-          <img src="images/UMFCD.png" alt="Facultatea de Medicină - Universitatea de Medicină și Farmacie „Carol Davila">
-          <h5>Facultatea de Medicină și Farmacie „Carol Davila”</h5>
-          <p>București</p>
-          <span class="favorite">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-          </span>
-          
+        <div class="faculty-card" data-id="2">
+            <img src="images/UMFCD.png" alt="Facultatea de Medicină - Universitatea de Medicină și Farmacie „Carol Davila”">
+            <h5>Facultatea de Medicină și Farmacie „Carol Davila”</h5>
+            <p>București</p>
+            <button class="favorite-button">
+                <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 8 4 9.5 5 12 7.5 14.5 5 16 4 17.5 4 20 4 22 6 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+            </button>
         </div>
-
+   
         <!-- Faculty Card 3 -->
-        <div class="faculty-card">
-          <img src="images/UMFGTP.png" alt="Universitatea de Medicină și Farmacie Grigore T. Pop">
-          <h5>Universitatea de Medicină și Farmacie Grigore T. Pop</h5>
-          <p>Iași</p>
-          <span class="favorite">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-          </span>
-          
+        <div class="faculty-card" data-id="3">
+            <img src="images/UMFGTP.png" alt="Universitatea de Medicină și Farmacie Grigore T. Pop">
+            <h5>Universitatea de Medicină și Farmacie Grigore T. Pop</h5>
+            <p>Iași</p>
+            <button class="favorite-button">
+                <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 8 4 9.5 5 12 7.5 14.5 5 16 4 17.5 4 20 4 22 6 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+            </button>
         </div>
-
+   
         <!-- Faculty Card 4 -->
-        <div class="faculty-card">
-          <img src="images/uaic.jpg" alt="Universitatea Al. I. Cuza">
-          <h5>Universitatea Al. I. Cuza</h5>
-          <p>Iași</p>
-          <span class="favorite">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-          </span>
-          
+        <div class="faculty-card" data-id="4">
+            <img src="images/uaic.jpg" alt="Universitatea „Alexandru Ioan Cuza">
+            <h5>Universitatea Al. I. Cuza</h5>
+            <p>Iași</p>
+            <button class="favorite-button">
+                <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 8 4 9.5 5 12 7.5 14.5 5 16 4 17.5 4 20 4 22 6 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+            </button>
         </div>
-
+    </div>
+   
+    <div class="faculty-cards">
         <!-- Faculty Card 5 -->
-        <div class="faculty-card">
-          <img src="images/ghAsachi.jpg" alt="Universitatea Tehnică “Gheorghe Asachi” din Iași">
-          <h5>Universitatea Tehnică “Gheorghe Asachi”</h5>
-          <p>Iași</p>
-          <span class="favorite">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-          </span>
-          
+        <div class="faculty-card" data-id="5">
+            <img src="images/ghAsachi.jpg" alt="Universitatea Tehnică “Gheorghe Asachi” din Iași">
+            <h5>Universitatea Tehnică “Gheorghe Asachi”</h5>
+            <p>Iași</p>
+            <button class="favorite-button">
+                <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 8 4 9.5 5 12 7.5 14.5 5 16 4 17.5 4 20 4 22 6 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+            </button>
         </div>
-
+   
         <!-- Faculty Card 6 -->
-        <div class="faculty-card">
+        <div class="faculty-card" data-id="6">
+            <img src="images/poliTimi.jpg" alt="Universitatea Politehnica Timișoara">
+            <h5>Universitatea Politehnica Timișoara</h5>
+            <p>Timișoara</p>
+            <button class="favorite-button">
+                <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 8 4 9.5 5 12 7.5 14.5 5 16 4 17.5 4 20 4 22 6 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+            </button>
+        </div>
+        <!-- Faculty Card 7 -->
+        <div class="faculty-card" data-id="7">
           <img src="images/poliTimi.jpg" alt="Universitatea Politehnica Timișoara">
           <h5>Universitatea Politehnica Timișoara</h5>
           <p>Timișoara</p>
-          <span class="favorite">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path fill="white" stroke="orange" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-          </span>          
-        </div>
+          <button class="favorite-button">
+              <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 8 4 9.5 5 12 7.5 14.5 5 16 4 17.5 4 20 4 22 6 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+          </button>
       </div>
+      <!-- Faculty Card 8 -->
+      <div class="faculty-card" data-id="8">
+        <img src="images/poliTimi.jpg" alt="Universitatea Politehnica Timișoara">
+        <h5>Universitatea Politehnica Timișoara</h5>
+        <p>Timișoara</p>
+        <button class="favorite-button">
+            <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 8 4 9.5 5 12 7.5 14.5 5 16 4 17.5 4 20 4 22 6 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+        </button>
+    </div>
+    <!-- Faculty Card 9 -->
+    <div class="faculty-card" data-id="9">
+      <img src="images/poliTimi.jpg" alt="Universitatea Politehnica Timișoara">
+      <h5>Universitatea Politehnica Timișoara</h5>
+      <p>Timișoara</p>
+      <button class="favorite-button">
+          <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 8 4 9.5 5 12 7.5 14.5 5 16 4 17.5 4 20 4 22 6 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          </svg>
+      </button>
+  </div>
+  <!-- Faculty Card 10 -->
+  <div class="faculty-card" data-id="10">
+    <img src="images/poliTimi.jpg" alt="Universitatea Politehnica Timișoara">
+    <h5>Universitatea Politehnica Timișoara</h5>
+    <p>Timișoara</p>
+    <button class="favorite-button">
+        <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 8 4 9.5 5 12 7.5 14.5 5 16 4 17.5 4 20 4 22 6 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+        </svg>
+    </button>
+</div>
+<!-- Faculty Card 11 -->
+<div class="faculty-card" data-id="11">
+  <img src="images/poliTimi.jpg" alt="Universitatea Politehnica Timișoara">
+  <h5>Universitatea Politehnica Timișoara</h5>
+  <p>Timișoara</p>
+  <button class="favorite-button">
+      <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 8 4 9.5 5 12 7.5 14.5 5 16 4 17.5 4 20 4 22 6 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+      </svg>
+  </button>
+</div>
+<!-- Faculty Card 12 -->
+<div class="faculty-card" data-id="12">
+  <img src="images/poliTimi.jpg" alt="Universitatea Politehnica Timișoara">
+  <h5>Universitatea Politehnica Timișoara</h5>
+  <p>Timișoara</p>
+  <button class="favorite-button">
+      <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 8 4 9.5 5 12 7.5 14.5 5 16 4 17.5 4 20 4 22 6 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+      </svg>
+  </button>
+</div>
+    </div>
+ 
+    <div class="results-navigation">
+      <p id="results-count">1-6 din ... rezultate</p>
+      <button id="next-page" class="nav-button">Mai multe rezultate ▼</button>
+    </div>
     </section>
 </div>
-<div class="results-navigation">
-  <p id="results-count">1-6 din ... rezultate</p>
-  <button id="next-page" class="nav-button">Mai multe rezultate ▼</button>
-</div>
-
+ 
+ 
   </main>
-
+ 
   <!-- Secțiunea Harta -->
 <section class="map-section" style="padding: 20px;">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAPS_EMBED_URL" 
-      width="600" 
-      height="450" 
-      style="border:0;" 
-      allowfullscreen="" 
+    <iframe
+      src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAPS_EMBED_URL"
+      width="600"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
       loading="lazy">
     </iframe>
   </section>
-  
+ 
   <section class="additional-info">
     <h3>Nu ești sigur ce domeniu de studii ți se potrivește?</h3>
     <p>
       Nu-ți face griji! Cu ajutorul unui quiz rapid și interesant, UNIchioce îți va arăta calea! Răspunde la câteva întrebări și lasă-ne să-ți ghicim domeniul ideal, în funcție de interesele și pasiunile tale.
     </p>
   </section>
-
+ 
   <div class="quiz-section">
     <div class="quiz-content">
         <!-- Înlocuim h2 cu o imagine -->
@@ -238,7 +303,7 @@
         <img src="images/quizImage.png" alt="Quiz Icon">
     </div>
 </div>
-
+ 
 <!-- Newsletter Section -->
 <section class="newsletter-section">
   <h3>Rămâi la curent cu noutățile din educație!</h3>
@@ -247,21 +312,21 @@
       <button type="submit">Abonare</button>
   </form>
 </section>
-
-
-
+ 
+ 
+ 
   <div id="footer-placeholder"></div>
 </body>
 <script>
-
+ 
          fetch('activity_bar.html') // Fetch pentru header și footer
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
-                
+               
             })
             .catch(error => console.error('Error loading header/footer:', error));
-
+ 
             fetch('footer.html') // Fetch pentru header și footer
             .then(response => response.text())
             .then(data => {
@@ -269,211 +334,89 @@
                 document.getElementById('footer-placeholder').innerHTML = data;
             })
             .catch(error => console.error('Error loading header/footer:', error));
-
-
-
-
-
-
-
-
-            document.addEventListener('DOMContentLoaded', function() {
-    const favoriteIcons = document.querySelectorAll('.favorite');
-    
-    favoriteIcons.forEach(icon => {
-      icon.addEventListener('click', function() {
-        this.classList.toggle('active'); // Toggle class active pentru a schimba starea inimii
-      });
-    });
-  });
-
-  
-  ///////////////////////////
-    document.addEventListener('DOMContentLoaded', function() {
-    const filterSelects = document.querySelectorAll('.filter select');
-    const facultyCards = document.querySelectorAll('.faculty-card');
-    
-    filterSelects.forEach(select => {
-      select.addEventListener('change', function() {
-        filterFaculties();
-      });
-    });
-
-    function filterFaculties() {
-      const selectedFilters = {
-        admission: document.querySelector('select[name="admission"]').value,
-        institution: document.querySelector('select[name="institution"]').value,
-        studyField: document.querySelector('select[name="studyField"]').value,
-        language: document.querySelector('select[name="language"]').value,
-        duration: document.querySelector('select[name="duration"]').value,
-        location: document.querySelector('select[name="location"]').value,
-        rating: document.querySelector('select[name="rating"]').value
-      };
-
-      facultyCards.forEach(card => {
-        let matches = true;
-
-        // Filtrarea pe baza valorilor selectate
-        for (const key in selectedFilters) {
-          const filterValue = selectedFilters[key];
-          if (filterValue && !card.dataset[key].includes(filterValue)) {
-            matches = false;
-            break;
-          }
-        }
-
-        // Afișează sau ascunde cardul în funcție de filtrare
-        if (matches) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-  });
-
-document.querySelectorAll(".favorite svg").forEach(svg => {
-    svg.addEventListener("click", () => {
-        svg.style.fill = svg.style.fill === "red" ? "white" : "red";
-    });
-});
-
-
-         fetch('activity_bar.html') // Fetch pentru header și footer
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-                
-            })
-            .catch(error => console.error('Error loading header/footer:', error));
-
-            fetch('footer.html') // Fetch pentru header și footer
-            .then(response => response.text())
-            .then(data => {
-               
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading header/footer:', error));
-
-
-
-
-
-
-
-
-
-
-
-
-            ///////////////
-            document.addEventListener('DOMContentLoaded', function() {
-    const filterSelects = document.querySelectorAll('.filter select');
+ 
+ 
+ 
+ 
+ 
+ 
+            document.addEventListener('DOMContentLoaded', function () {
+    let currentPage = 1;
+    const resultsPerPage = 6;
     const facultyCards = document.querySelectorAll('.faculty-card');
     const resultsCount = document.getElementById('results-count');
-    const resultsPerPage = 6; // Numărul de rezultate afișate per pagină
-    let totalResults = 0;
-    let currentPage = 1;
-
-    filterSelects.forEach(select => {
-      select.addEventListener('change', function() {
-        currentPage = 1; // Resetează la pagina 1 la schimbarea filtrului
-        filterFaculties();
-      });
-    });
-
-    function filterFaculties() {
-      const selectedFilters = {
-        admission: document.querySelector('select[name="admission"]').value,
-        institution: document.querySelector('select[name="institution"]').value,
-        studyField: document.querySelector('select[name="studyField"]').value,
-        language: document.querySelector('select[name="language"]').value,
-        duration: document.querySelector('select[name="duration"]').value,
-        location: document.querySelector('select[name="location"]').value,
-        rating: document.querySelector('select[name="rating"]').value
-      };
-
-      let visibleCount = 0;
-      
-      facultyCards.forEach(card => {
-        let matches = true;
-
-        for (const key in selectedFilters) {
-          const filterValue = selectedFilters[key];
-          if (filterValue && !card.dataset[key].includes(filterValue)) {
-            matches = false;
-            break;
-          }
-        }
-
-        if (matches) {
-          card.style.display = '';
-          visibleCount++;
+    const nextPageButton = document.getElementById('next-page');
+ 
+    // Actualizare informații rezultate
+    function updateResultsInfo(visibleCards) {
+        const startResult = (currentPage - 1) * resultsPerPage + 1;
+        const endResult = Math.min(currentPage * resultsPerPage, visibleCards);
+        resultsCount.textContent = `${startResult}-${endResult} din ${visibleCards} rezultate`;
+    }
+ 
+    // Afișare/ascundere buton paginare
+    function toggleNextPageButton(visibleCards) {
+        if (visibleCards > resultsPerPage * currentPage) {
+            nextPageButton.style.display = 'block';
         } else {
-          card.style.display = 'none';
+            nextPageButton.style.display = 'none';
         }
-      });
-
-      totalResults = visibleCount;
-      updateResultsInfo();
     }
-
-    function updateResultsInfo() {
-      const startResult = (currentPage - 1) * resultsPerPage + 1;
-      const endResult = Math.min(currentPage * resultsPerPage, totalResults);
-      resultsCount.textContent = `${startResult}-${endResult} of ${totalResults} results`;
+ 
+    // Filtrare carduri
+    function filterFaculties() {
+        const selectedFilters = {
+            admission: document.querySelector('select[name="admission"]').value,
+            institution: document.querySelector('select[name="institution"]').value,
+            studyField: document.querySelector('select[name="studyField"]').value,
+            language: document.querySelector('select[name="language"]').value,
+            duration: document.querySelector('select[name="duration"]').value,
+            location: document.querySelector('select[name="location"]').value,
+            rating: document.querySelector('select[name="rating"]').value
+        };
+ 
+        let visibleCards = 0;
+ 
+        facultyCards.forEach((card, index) => {
+            let matches = true;
+            for (const key in selectedFilters) {
+                const filterValue = selectedFilters[key];
+                if (filterValue && !card.dataset[key]?.includes(filterValue)) {
+                    matches = false;
+                    break;
+                }
+            }
+ 
+            if (matches && index >= (currentPage - 1) * resultsPerPage && index < currentPage * resultsPerPage) {
+                card.style.display = '';
+                visibleCards++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+ 
+        updateResultsInfo(visibleCards);
+        toggleNextPageButton(visibleCards);
     }
-});
-
-
-///////////////
-document.addEventListener('DOMContentLoaded', function() {
-  const nextPageButton = document.getElementById('next-page');
-  const resultsCount = document.getElementById('results-count');
-  let currentPage = 1;
-  const resultsPerPage = 6;
-  const totalResults = facultyCards.length; // Presupunând că facultyCards conține toate cardurile de facultăți
-
-  // Inițial, actualizează informațiile și vizibilitatea butonului
-  updateResultsInfo();
-  toggleNextPageButton();
-
-  nextPageButton.addEventListener('click', function() {
-    currentPage++;
-    filterFaculties();
-  });
-
-  function updateResultsInfo() {
-    const startResult = (currentPage - 1) * resultsPerPage + 1;
-    const endResult = Math.min(currentPage * resultsPerPage, totalResults);
-    resultsCount.textContent = `${startResult}-${endResult} din ${totalResults} rezultate`;
-  }
-
-  function toggleNextPageButton() {
-    // Afișează butonul doar dacă există mai multe rezultate decât cele afișate pe o singură pagină
-    if (totalResults > resultsPerPage * currentPage) {
-      nextPageButton.style.display = 'inline-block';
-    } else {
-      nextPageButton.style.display = 'none';
-    }
-  }
-
-  function filterFaculties() {
-    // Afișează doar cardurile din intervalul corespunzător paginii curente
-    facultyCards.forEach((card, index) => {
-      if (index >= (currentPage - 1) * resultsPerPage && index < currentPage * resultsPerPage) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
+ 
+    // Evenimente
+    document.querySelectorAll('.filter select').forEach(select => {
+        select.addEventListener('change', function () {
+            currentPage = 1; // Reset pagină
+            filterFaculties();
+        });
     });
-
-    // Actualizează informațiile și vizibilitatea butonului
-    updateResultsInfo();
-    toggleNextPageButton();
-  }
+ 
+    nextPageButton.addEventListener('click', function () {
+        currentPage++;
+        filterFaculties();
+    });
+ 
+    // Inițializare
+    filterFaculties();
 });
-
+ 
+ 
 </script>
-
+ 
 </html>
