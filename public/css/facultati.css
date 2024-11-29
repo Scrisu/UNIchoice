@@ -41,47 +41,54 @@ option {
  
 }
 .welcome-section img {
-position: absolute;
+position:absolute;
 top: 0;
 left: 0;
-width: 100%;
+width: 90%;
 height: 100%;
 object-fit: con;
 display: block;
+align-items: center;
+margin-left: 90px;
+border-radius: 14px;
 }
- 
-.welcome-box {
-  position: absolute;
-  top: 50%; /* Poziționează chenarul pe verticală în mijlocul imaginii */
-  left: 50%; /* Poziționează chenarul pe orizontală în mijlocul imaginii */
-  transform: translate(-50%, -50%); /* Centrează chenarul perfect pe imagine */
-  background-color: rgba(47, 88, 78, 0.8); /* Adaugă un fundal semi-transparent */
-  padding: 20px 40px; /* Adaugă margini interne pentru text */
-  border-radius: 10px; /* Răsucirea colțurilor pentru un efect mai plăcut */
-  text-align: center;
-  color: white; /* Culoare albă pentru text */
-  font-family: 'Freeman', sans-serif;
+
+/* Stiluri pentru secțiunea de introducere */
+.intro-section {
+  background-color: #ffffff; /* Fundal deschis pentru a face secțiunea ușor de distins */
+  padding: 40px 20px; /* Spațiere interioară pentru confort vizual */
+  margin: 30px 0; /* Adaugă margini sus și jos pentru separare */
+  border-radius: 8px; /* Colțuri rotunjite pentru un aspect modern */
 }
- 
-.welcome-box {
-width: 410px;
-height: 190px;
-  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
- 
+
+.intro-content {
+  max-width: 900px; /* Lățime maximă pentru a evita alinierea prea largă a textului */
+  margin: 0 auto; /* Centrarea conținutului */
+  text-align: center; /* Alinierea textului pe centru */
 }
-.welcome-box h1 {
-  color: white;
-  font-size: 38px; ;
-  text-align: center;
-  margin: 0;
+
+.intro-section h2 {
+  font-size: 2em; /* Mărimea titlului */
+  color: #333; /* Culoare închisă pentru titlu */
+  margin-bottom: 20px; /* Spațiu sub titlu */
+  font-weight: bold; /* Grosimea titlului */
 }
- 
- 
- 
+
+.intro-section p {
+  font-size: 1.1em; /* Mărimea textului pentru un contrast mai mare */
+  color: #555; /* Culoare ușor mai deschisă decât cea a titlului */
+  line-height: 1.6; /* Înălțimea liniei pentru a face textul mai ușor de citit */
+  margin-bottom: 15px; /* Spațiu între paragrafe */
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 30px 15px; /* Redu spațierea pentru ecrane mai mici */
+  }
+  .intro-content {
+    padding: 0 10px; /* Adaugă puțină marjă pe laterale pentru mobil */
+  }
+} 
 .main-content {
   display: flex;
   flex-wrap: wrap;
@@ -616,3 +623,103 @@ background-position: right 10px center;
   font-size: 24px; /* Dimensiunea iconului */
   text-decoration: none; /* Elimină sublinierea */
 }
+
+    /* Stil pentru pop-up */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; /* Lățime extinsă */
+      max-height: 80%; /* Înălțime maximă */
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      display: none;
+      padding: 30px;
+      overflow-y: auto; /* Permite derularea verticală */
+    }
+    
+        .popup.show {
+          display: block;
+        }
+    
+        .popup .popup-content {
+          text-align: center;
+        }
+    
+        .popup .popup-content img {
+          max-width: 100%;
+          border-radius: 10px;
+        }
+    
+        .popup .popup-content h2 {
+          margin-top: 10px;
+          font-size: 2em;
+        }
+    
+        .popup .popup-content p {
+          margin: 10px 0;
+          text-align: justify;
+          font-size: 1.1em;
+          line-height: 1.6;
+        }
+    
+        .popup .close-popup {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: none;
+          border: none;
+          font-size: 1.5em;
+          cursor: pointer;
+        }
+    
+        .popup .official-link {
+          display: block;
+          margin-top: 15px;
+          font-weight: bold;
+          color: #007bff;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+    
+        .popup .official-link:hover {
+          color: #0056b3;
+        }
+    
+        /* Stil pentru overlay */
+        .popup-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+          display: none;
+        }
+    
+        .popup-overlay.show {
+          display: block;
+        }
+    
+         /* Stilizarea barei de derulare */
+         .popup::-webkit-scrollbar {
+          width: 8px;
+        }
+    
+        .popup::-webkit-scrollbar-track {
+          background: #f1f1f1; /* Culoare de fundal */
+          border-radius: 10px;
+        }
+    
+        .popup::-webkit-scrollbar-thumb {
+          background: #007bff; /* Culoarea glisorului */
+          border-radius: 10px;
+        }
+    
+        .popup::-webkit-scrollbar-thumb:hover {
+          background: #0056b3; /* Culoarea glisorului la hover */
+        }
