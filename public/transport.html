@@ -1,11 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Transport – Ghidul viitorului student</title>
+    <link rel="stylesheet" href="css/transport.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
 </head>
 <body>
-    
+    <div id="header-placeholder"></div>
+    <header>
+        <h1>Transport – Ghidul Viitorului Student</h1>
+        <p>Informații utile despre transportul pentru studenți în România.</p>
+    </header>
+ 
+    <main>
+        
+       
+
+        <!-- Informații generale -->
+        <section class="general-section">
+            <h2>Reduceri generale pentru studenți</h2>
+            <p>În România, studenții beneficiază de numeroase reduceri pentru transportul public, atât la nivel local, cât și național:</p>
+            <ul>
+                <li><strong>Transport feroviar:</strong> Gratuitate pentru călătoriile cu trenurile CFR pe rutele Regio și InterRegio, clasa a II-a.</li>
+                <li><strong>Transport urban:</strong> Reduceri semnificative sau chiar gratuitate în majoritatea orașelor universitare.</li>
+                <li><strong>Acte necesare:</strong> Este nevoie de un carnet de student vizat la zi sau un card studențesc recunoscut de operatorul de transport.</li>
+            </ul>
+            <div class="info-box">
+                <p>Studenții trebuie să se asigure că au carnetul de student vizat pentru a beneficia de reduceri. La operatorii privați, pot exista condiții suplimentare.</p>
+            </div>
+        </section>
+
+        <!-- Secțiunea de filtre -->
+        <div class="filter-section">
+            <label for="city-select">Alege orașul:</label>
+            <select id="city-select">
+                <option value="">-- Selectează un oraș --</option>
+                <option value="bucuresti">București</option>
+                <option value="cluj">Cluj-Napoca</option>
+                <option value="iasi">Iași</option>
+                <option value="timisoara">Timișoara</option>
+            </select>
+        </div>
+
+        <!-- Informații pentru București -->
+        <section id="bucuresti" class="section">
+            <h2>Transport în București</h2>
+            <p>Bucureștiul oferă multiple opțiuni de transport:</p>
+            <ul>
+                <li>Metrou: O rețea rapidă care acoperă principalele zone ale orașului.</li>
+                <li>Autobuze și troleibuze STB: Funcționează pe rute extinse.</li>
+                <li>Ride-sharing: Uber, Bolt și FreeNow sunt disponibile.</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>Reduceri pentru studenți:</strong> Abonamente gratuite pe transportul public local cu carnetul de student vizat.</p>
+            </div>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400?text=Metroul+din+Bucuresti" alt="Metrou București">
+            </div>
+        </section>
+
+        <!-- Informații pentru Cluj-Napoca -->
+        <section id="cluj" class="section">
+            <h2>Transport în Cluj-Napoca</h2>
+            <p>Cluj-Napoca este bine deservit de transport public:</p>
+            <ul>
+                <li>Autobuze, troleibuze și tramvaie.</li>
+                <li>Biciclete și trotinete electrice disponibile pentru închiriere.</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>Reduceri pentru studenți:</strong> Abonamente reduse pe mijloacele de transport local.</p>
+            </div>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400?text=Transport+Cluj-Napoca" alt="Transport Cluj-Napoca">
+            </div>
+        </section>
+
+        <!-- Informații pentru Iași -->
+        <section id="iasi" class="section">
+            <h2>Transport în Iași</h2>
+            <p>Iașiul oferă transport public accesibil studenților:</p>
+            <ul>
+                <li>Autobuze și tramvaie moderne.</li>
+                <li>Stații de biciclete publice în oraș.</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>Reduceri pentru studenți:</strong> Tarife reduse pentru abonamente lunare.</p>
+            </div>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400?text=Transport+Iasi" alt="Transport Iași">
+            </div>
+        </section>
+
+        <!-- Informații pentru Timișoara -->
+        <section id="timisoara" class="section">
+            <h2>Transport în Timișoara</h2>
+            <p>Opțiuni principale de transport:</p>
+            <ul>
+                <li>Tramvaie și autobuze eficiente.</li>
+                <li>Infrastructură dezvoltată pentru biciclete.</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>Reduceri pentru studenți:</strong> Abonamente la preț redus pentru toți studenții înregistrați.</p>
+            </div>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400?text=Transport+Timisoara" alt="Transport Timișoara">
+            </div>
+        </section>
+        <div id="contactButton">
+            <a href="/formular-de-contact.html" title="Contactează-ne!">
+                <i class="fas fa-question"></i>
+            </a>
+        </div>
+        
+        
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // JavaScript pentru schimbarea orașului
+        document.getElementById("city-select").addEventListener("change", function () {
+            const selectedCity = this.value;
+            document.querySelectorAll(".section").forEach(section => {
+                section.classList.remove("active");
+            });
+            if (selectedCity) {
+                document.getElementById(selectedCity).classList.add("active");
+            }
+        });
+   
+        fetch('activity_bar.html') // Fetch pentru header și footer
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+               
+            })
+            .catch(error => console.error('Error loading header/footer:', error));
+  
+    fetch('footer.html') // Fetch pentru header și footer
+        .then(response => response.text())
+        .then(data => {
+           
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header/footer:', error));
+</script>
 </body>
 </html>

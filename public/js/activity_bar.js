@@ -145,6 +145,17 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Logout button not found.');
         }
     };
+    const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
 
     // Run these functions on page load to set up event listeners and check user status
     checkUserStatus();
