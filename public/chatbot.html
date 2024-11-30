@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/chatbot.css">
+    <title>Chatbot</title>
+</head>
+<body>
+    <!-- Chatbot Button and Widget -->
+    <div id="chatbot-container">
+        <!-- Chatbot Button -->
+        <button id="chatbot-toggle">
+            <img id="chatbot-icon" src="/images/mugurel.png" alt="Chatbot Icon"> Cere-i ajutor lui Mugurel
+        </button>
+
+        <!-- Chat Widget (Hidden by Default) -->
+        <div id="chat-widget">
+            <div id="chatbot-header">
+                <img id="chatbot-icon-header" src="/images/mugurel.png" alt="Chatbot Icon"> Mugurel
+            </div>
+            <div id="chatbox-messages">
+                <!-- Chat Messages -->
+            </div>
+            <div class="input-area">
+                <input id="chat-input" type="text" placeholder="Scrie un mesaj..." />
+                <button id="send-message">Trimite</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include chatbot JavaScript -->
+    <script src="/js/chatbot.js"></script>
+</body>
+</html>
