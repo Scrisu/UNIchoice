@@ -52,33 +52,42 @@ align-items: center;
 margin-left: 90px;
 border-radius: 14px;
 }
-
-/* Stiluri pentru secțiunea de introducere */
+/* Stiluri pentru secțiunea de banner */
 .intro-section {
-  background-color: #ffffff; /* Fundal deschis pentru a face secțiunea ușor de distins */
-  padding: 40px 20px; /* Spațiere interioară pentru confort vizual */
-  margin: 30px 0; /* Adaugă margini sus și jos pentru separare */
-  border-radius: 8px; /* Colțuri rotunjite pentru un aspect modern */
+  background: #3b3636; /* Fundal gri închis */
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
 }
 
 .intro-content {
-  max-width: 900px; /* Lățime maximă pentru a evita alinierea prea largă a textului */
-  margin: 0 auto; /* Centrarea conținutului */
-  text-align: center; /* Alinierea textului pe centru */
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.intro-section h2 {
-  font-size: 2em; /* Mărimea titlului */
-  color: #333; /* Culoare închisă pentru titlu */
-  margin-bottom: 20px; /* Spațiu sub titlu */
-  font-weight: bold; /* Grosimea titlului */
+.intro-content h2 {
+  font-size: 2.5em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
-.intro-section p {
-  font-size: 1.1em; /* Mărimea textului pentru un contrast mai mare */
-  color: #555; /* Culoare ușor mai deschisă decât cea a titlului */
-  line-height: 1.6; /* Înălțimea liniei pentru a face textul mai ușor de citit */
-  margin-bottom: 15px; /* Spațiu între paragrafe */
+.intro-content p {
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 20px auto 30px;
+  line-height: 1.6;
+  color: rgba(14, 13, 13, 0.9);
+}
+
+/* Culori diferite pentru fiecare paragraf */
+.intro-content p:nth-child(2) {
+  color: rgba(19, 18, 18, 0.9);
+}
+
+.intro-content p:nth-child(3) {
+  color: rgba(1, 1, 1, 0.9);
 }
 
 @media (max-width: 768px) {
