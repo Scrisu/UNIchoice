@@ -39,6 +39,7 @@
     gap: 10px; /* Spațiu între elemente */
     padding: 20px; /* Spațiu interior */
     overflow-x: hidden; /* Previne derularea orizontală */
+    margin-top: 40px;
   }
   
   .pre-quiz-banner {

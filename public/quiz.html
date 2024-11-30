@@ -288,5 +288,27 @@ function showErrorMessage() {
         errorDiv.remove();
     }, 3000); // Mesajul va dispărea după 3 secunde
 }
+
+// Eveniment pentru butonul de închidere al quiz-ului
+closeQuizBtn.addEventListener('click', () => {
+  quizModal.style.display = 'none'; // Ascunde popup-ul de quiz
+});
+// Eveniment pentru butonul de închidere al quiz-ului
+closeQuizBtn.addEventListener('click', () => {
+  quizModal.style.display = 'none'; // Ascunde popup-ul de quiz
+  
+  // Redirecționează utilizatorul înapoi la pagina anterioară
+  window.history.back(); // Aceasta îl va duce înapoi la pagina anterioară în browser
+});
+
+// Eveniment pentru butonul de închidere al rezultatului
+closeResultBtn.addEventListener('click', () => {
+  resultModal.style.display = 'none'; // Ascunde popup-ul de rezultat
+  
+  // Redirecționează utilizatorul înapoi la pagina anterioară
+  window.history.back(); // Aceasta îl va duce înapoi la pagina anterioară în browser
+});
+
+
 </script>
 </body></html>

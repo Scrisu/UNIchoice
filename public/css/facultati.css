@@ -25,39 +25,60 @@ body {
   min-height: 100vh;
   overflow-x: hidden; /* Evită derularea orizontală */
 }
- 
-/* Hero Section */
-.hero {
-  position: relative;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* pentru a evita ca imaginea să depășească marginile secțiunii */
-}
+
 option {
   background-color: rgb(255, 255, 255); /* Fundal implicit pentru opțiuni */
   color: rgb(0, 0, 0); /* Text implicit pentru opțiuni */
  
 }
-.welcome-section img {
-position:absolute;
-top: 0;
-left: 0;
-width: 90%;
-height: 100%;
-object-fit: con;
-display: block;
-align-items: center;
-margin-left: 90px;
-border-radius: 14px;
-}
-/* Stiluri pentru secțiunea de banner */
+
+
 .intro-section {
-  background: #3b3636; /* Fundal gri închis */
-  color: white;
+  background: #EBEBEB; /* Fundal mai deschis pentru un contrast plăcut */
+  color: #ff7845; /* Portocaliu cald pentru text */
   padding: 80px 20px;
   text-align: center;
+  width: 95%; /* Se păstrează lățimea, dar */
+  max-width: 1500px; /* Optional: limitează lățimea maximă */
+  margin: 50px auto; /* Centrare orizontală */
+  border-radius: 16px;
+  margin-top: 80px;
+  height: 600px;
+  transition: background-color 0.3s ease; 
+
+}
+
+
+/* Secțiunea principală */
+.intro-section {
+  position: relative; /* Permite suprapunerea elementelor în interior */
+  background: #EBEBEB; /* Fundal gri deschis */
+
+  text-align: center;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.intro-container {
+  position: absolute; /* Poziționează containerul peste banner */
+  top: 50%; /* Poziționare verticală la mijloc */
+  left: 50%; /* Poziționare orizontală la mijloc */
+  transform: translate(-50%, -50%); /* Ajustare pentru centrare perfectă */
+  background: #EBEBEB; /* Fundal alb semi-transparent */
+  border-radius: 16px;
+  padding: 40px;
+  width: calc(100% - 40px); /* Ocupă întreaga lățime minus spațiul pentru padding */
+  max-width: 1000px; /* Limita maximă */
+   /* Umbră pentru profunzime */
+  z-index: 2; /* Asigură că e deasupra bannerului */
+  height: 500px;
+}
+
+
+/* Efect estetic pe paragrafe */
+.intro-content p:not(:last-child) {
+  border-bottom: 1px solid #c0bebe; /* Linie sub fiecare paragraf */
+  padding-bottom: 15px;
 }
 
 .intro-content {
@@ -66,29 +87,33 @@ border-radius: 14px;
 }
 
 .intro-content h2 {
-  font-size: 2.5em;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  color: #FF9861;
+  margin-bottom: 50px; /* Micșorează spațiul dintre titlu și text */
+  margin-top: 0; /* Elimină marginile suplimentare de sus */
 }
 
 .intro-content p {
-  font-size: 1.1em;
-  max-width: 800px;
-  margin: 20px auto 30px;
+  font-size: 18px;
+  max-width: 900px;
+  margin: 10px auto; /* Reduce spațierea pentru un aspect mai compact */
   line-height: 1.6;
-  color: rgba(14, 13, 13, 0.9);
+  color: #555;
+  text-align: center; /* Centrare text */
 }
 
-/* Culori diferite pentru fiecare paragraf */
+
 .intro-content p:nth-child(2) {
-  color: rgba(19, 18, 18, 0.9);
+  color: #444;
 }
 
 .intro-content p:nth-child(3) {
-  color: rgba(1, 1, 1, 0.9);
+  color: #333;
 }
+
 
 @media (max-width: 768px) {
   .intro-section {
@@ -427,7 +452,7 @@ box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adăugarea unei umbre pentru efec
  
  
 .main-background {
-background-color: #F2F5F9; /* culoare deschisă */
+background-color: #EBEBEB; /* culoare deschisă */
 padding: 20px;
 border-radius: 8px; /* colțuri rotunjite opționale */
 display: flex;
@@ -596,7 +621,7 @@ width: 130px;
 padding: 1px;
 border: 0px solid #ccc;
 border-radius: 8px;
-background-color: #F2F5F9;
+background-color: #EBEBEB;
 font-size: 16px;
 color: #333;
 margin-bottom: 10px;
