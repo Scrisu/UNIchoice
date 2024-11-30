@@ -306,18 +306,15 @@ gap: 10px; /* Spațiu între butonul de sortare și rezultatele afișate */
   padding-top: 5px;
 }
  
-
  
 .faculty-card .spacer {
   flex-grow: 1; /* Creează un spațiu gol între titlu și localitate */
 }
-
 .faculty-card p {
   font-size: 16px;
   margin: 0;
   align-self: flex-start; /* Aliniere la începutul cardului */
 }
-
  
  
 .results-navigation {
