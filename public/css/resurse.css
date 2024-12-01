@@ -1,0 +1,478 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+   
+   
+   
+  @import url('https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro:wght@400;700&display=swap');
+   
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Freeman', sans-serif; /* Font pentru toate titlurile */
+  }
+   
+  p {
+    font-family: 'Source Sans Pro', sans-serif; /* Font pentru toate paragrafele */
+  }
+
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: white;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evită derularea orizontală */
+  }
+/* Stilizare pentru secțiunea cu imagine de fundal (Hero Section) */
+
+
+  .main-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%; /* Se păstrează lățimea, dar */
+    max-width: 1550px; /* Optional: limitează lățimea maximă */
+    margin: 0 auto; /* Centrează containerul pe axa orizontală */
+    justify-content: center; /* Centrează conținutul în cadrul containerului */
+    gap: 10px; /* Spațiu între elemente */
+    padding: 20px; /* Spațiu interior */
+    overflow-x: hidden; /* Previne derularea orizontală */
+    margin-top: 40px;
+  }
+  
+  .pre-quiz-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem;
+    background-color:white; /* Fundal cald, atrăgător */
+    
+    margin: 2rem 0;
+
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Pentru dispozitive mai mici */
+}
+
+.text-content {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    color: #2F584E;
+}
+
+.text-content h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: #FF9861;
+    text-align: center;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.image-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.image-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+ /* Quiz Section */
+ .quiz-section {
+    background-color: #f9f9f9;;
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    height: 29=50px;
+    max-width: 1500px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap:20px;
+  }
+
+  .quiz-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-container {
+    max-width: 50%;
+}
+
+.text-container h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.text-container p {
+    font-size: 16px;
+    color: #34495e;
+    line-height: 1.6;
+}
+
+.image-container {
+    max-width: 40%;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+  
+  /* Quiz Content Styling */
+
+  .quiz-section {
+    background-color: #EBEBEB;
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    height: 29=50px;
+    max-width: 1500px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap:20px;
+  }
+  .quiz-content {
+    flex: 1;
+  }
+  
+  /* Stil pentru imaginea din quiz-content */
+  .quiz-content img {
+    display: block; /* Elimină eventualele margini sau spațieri suplimentare */
+    margin-left: 0; /* Asigură-te că imaginea nu are un spațiu pe stânga */
+    margin-right: 0; /* Permite alinierea la stânga, folosind margin-right auto */
+    width: 200px; /* Permite imaginii să își păstreze dimensiunile originale */
+    height: auto;
+  }
+  
+  
+  .quiz-content p {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 0px;
+    max-width: 700px;
+    margin-top: 20px;
+  
+  }
+  
+  .quiz-content button {
+    background-color: #f4a200;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .quiz-content button:hover {
+    background-color: #e09200;
+  }
+  
+  /* Icon Styling without circle */
+  .quiz-icon {
+    width: 80px; /* Lărgim puțin containerul */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EBEBEB; /* Fundalul containerului */
+    border-radius: 50%; /* Colțuri rotunjite pentru un efect circular */
+     /* Adăugăm un pic de padding pentru a da mai mult spațiu imaginii */
+  }
+  
+  .quiz-icon img {
+    width: 430px; /* Ajustăm dimensiunea imaginii pentru a încăpea bine în container */
+    height: 430px; /* Ajustăm dimensiunea imaginii */
+    object-fit: contain;
+    padding-right: 202px;
+    padding-bottom: 8px; /* Menține imaginea proporționată */
+  }
+  
+
+/*Testimoniale*/
+.reviews {
+    background-color: #2F584E;
+    padding: 40px 20px; /* Reducem padding-ul pentru a face secțiunea mai compactă */
+    text-align: center;
+    margin-top: 5% !important;
+    margin-bottom: 0;
+    margin-top: 5%;
+    width: 100%;
+    max-width: 1520px; /* Limitează lățimea maximă a secțiunii */
+    margin: 0 auto; /* Centrează secțiunea pe orizontală */
+    border-radius: 16px; /* Colțuri rotunjite pentru întreaga secțiune */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbră subtilă pentru un efect vizual plăcut */
+    overflow: hidden; /* Asigură că conținutul care iese din container nu va fi vizibil */
+}
+
+.reviews-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    
+}
+
+.reviews h3 {
+    font-family: 'Freeman', sans-serif;
+    font-size: 38px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.review-cards {
+    display: flex;
+    margin-top: 100px;
+    gap: 30px; /* Distanța între carduri */
+    transition: transform 0.5s ease; /* Animație lină pentru tranziția caruselului */
+}
+
+.review-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 25px;
+    width: 300px; /* Lățimea cardului */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Previne micșorarea cardurilor */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Tranziție pentru efectul de hover */
+}
+
+.review-card:hover {
+    transform: translateY(-10px); /* Mută cardul cu 10px în sus */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Umbră mai intensă pentru efect */
+}
+
+.review-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.stars {
+    font-size: 20px;
+    color: #FFD700; /* Culoare auriu pentru stele */
+    margin: 10px 0;
+}
+
+.review-card p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Stilizare pentru banner */
+.banner {
+    background-color: #2F584E; /* Culoare de fundal verde */
+    color: #EBEBEB;
+    text-align: center;
+    padding: 100px 0;
+    margin-top: 20px;
+    width: 100%;
+    border-radius:16px 16px 0 0 ;
+    margin-bottom: 0;
+   
+}
+
+.banner .banner-content h1 {
+    font-size: 2.5em;
+    margin-bottom:0px;
+}
+
+.banner .banner-content p {
+    font-size: 1.2em;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    background-color: #2F584E;
+    border-radius:0 0 16px 16px;
+}
+.banner.forum {
+    background-image: linear-gradient(to bottom, rgba(47, 88, 78, 1), rgba(161, 198, 183, 1)) !important;
+}
+
+
+
+
+.add-topic, #forum {
+    background-color: #2F584E;
+    padding: 20px;
+    height: fit-content;
+    border-radius: 16px;
+}
+
+
+.add-topic {
+    width: 35%;
+    background-color: #EBEBEB;
+    margin-top: 18px;
+    height: 650px;
+    margin-bottom: 63px;
+    margin-right: 20px;
+    align-items: center;
+    
+}
+
+#forum {
+    width: 65%;
+   margin-bottom: 0%;
+    
+}
+
+.navigation button {
+    font-size: 24px;  /* Dimensiunea iconițelor */
+    background-color: transparent;  /* Fără fundal pentru butoane */
+    border: none;  /* Fără margine */
+    color: #fff;  /* Culoare pentru iconițe */
+    cursor: pointer;
+    padding: 0px 20px;
+
+}
+
+.navigation button:hover {
+    color: #f4a200;  /* Culoare schimbată la hover */
+}
+
+.add-topic h2{
+    text-align: center;
+}
+
+.add-topic input, .add-topic textarea, .add-topic select, .add-topic button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-color: white;
+}
+
+.add-topic textarea {
+    resize: vertical;
+    height: 170px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #e88a15;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+
+.forum-topic {
+    background-color: #f9f9f9;; /* Culoare de fundal mai subtilă */
+    border-radius: 10px; /* Colțuri rotunjite */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Umbra subtilă pentru carduri */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Tranziție pentru hover */
+}
+
+
+.forum-topic h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.forum-topic p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6; /* Îmbunătățim lizibilitatea */
+}
+
+.forum-topic button {
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #f4a200;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.topic-category {
+   color: #e88a15;
+}
+
+
+h2::before {
+    content: "☆☆☆";            /* Asteriscul sau simbolul dorit */
+    display: block;          /* Afișează asteriscul pe o linie separată */
+    font-size: 40px;         /* Mărimea asteriscului */
+    color: #2F584E;          /* Culoarea asteriscului */
+    text-align: center;      /* Centrează asteriscul */
+    margin-bottom: 0.5rem;   /* Spațiere între asterisc și text */
+}  /* Spațiere între asterisc și text */
+
+/* Stil pentru stelute doar în secțiunea de recenzii */
+.reviews h3::before {
+    content: "☆☆☆";            /* Asteriscurile sau simbolul dorit */
+    display: block;            /* Afișează asteriscul pe o linie separată */
+    font-size: 40px;           /* Mărimea asteriscului */
+    color: white;              /* Culoarea asteriscului */
+    text-align: center;        /* Centrează asteriscul */
+    margin-bottom: 0.5rem;     /* Spațiere între asterisc și text */
+}
+
+/* Dacă vrei ca alte h3 să nu aibă stelute, pur și simplu nu aplici stilul pentru ele */
+h3::before {
+    content: none;             /* Elimină stelutele pentru toate celelalte h3 */
+}
+
+

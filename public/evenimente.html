@@ -3,32 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evenimente Studențești</title>
-    <link rel="stylesheet" href="css/evenimente.css">
+    <title>Evenimente</title>
+  
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="css/evenimente.css">
 </head>
 <body>
     <div id="header-placeholder"></div>
 
     <header>
-        <h1>Evenimente Studențești</h1>
-        <p>Descoperă cele mai interesante evenimente pentru studenți din întreaga țară!</p>
+        <h1>Evenimente Studențești: Creează Amintiri de Neuitat!</h1>
+        <p> Viața de student este mult mai mult decât cursuri și examene – este o perioadă de descoperire, prietenii și experiențe unice. Evenimentele studențești sunt șansa perfectă de a te conecta cu oameni noi, de a-ți dezvolta abilități și de a te bucura de momente care îți vor rămâne în suflet pentru totdeauna.</p>
+            <p> Explorează calendarul nostru de evenimente, află detalii despre activitățile care îți stârnesc curiozitatea și implică-te activ în viața studențească. Comunitatea noastră este mai puternică atunci când TU faci parte din ea!</p></p>
+            <p> De la festivaluri și workshop-uri interactive, până la competiții sportive și petreceri tematice, această pagină este locul unde vei găsi toate informațiile despre ce se întâmplă în comunitatea noastră academică. Indiferent dacă ești un lider înnăscut, un artist creativ sau doar în căutare de distracție, avem ceva pentru tine!</p>
     </header>
 
     <main>
-        <!-- Filtru de Căutare -->
+      
+        
+        <h2 id="evenimente">Evenimente Populare</h2> 
+        <div class="popular-events">
+ 
+  <!-- Filtru de Căutare -->
         <div class="filter-section">
-            <label for="event-type">Selectează tipul de eveniment:</label>
+            <label for="event-type">Tipul de eveniment:</label>
             <select id="event-type">
-                <option value="">Toate tipurile</option>
-                <option value="workshop">Workshopuri</option>
-                <option value="party">Petreceri</option>
-                <option value="conference">Conferințe</option>
-                <option value="contest">Concursuri</option>
+                <option value="coaching">Conferinta</option>
+                <option value="educational">Educaționale</option>
+                <option value="cultural">Culturale</option>
+                <option value="sport">Sportive</option>
+                <option value="career">Cariere</option>
+                <option value="scientific">Științifice</option>
             </select>
 
-            <label for="city">Selectează orașul:</label>
+            <label for="city">Oraș:</label>
             <select id="city">
                 <option value="">Toate orașele</option>
                 <option value="București">București</option>
@@ -36,65 +48,247 @@
                 <option value="Iași">Iași</option>
                 <option value="Timișoara">Timișoara</option>
                 <option value="Brașov">Brașov</option>
+                <option value="Online">Online</option>
             </select>
+            <button id="reset-filters">Resetare Filtre</button>
         </div>
+       
 
-        <!-- Evenimente Populare -->
-        <div class="popular-events">
-            <h2>Evenimente Populare</h2>
-            <div class="events-list">
-                <div class="event-item" data-city="București" data-type="workshop">
-                    <img src="https://via.placeholder.com/300x200" alt="Eveniment 1">
-                    <h3>Workshop despre Programare</h3>
-                    <p>Participă la un workshop intensiv despre programare web. Învață de la cei mai buni!</p>
-                    <p><strong>Data:</strong> 25 Noiembrie 2024</p>
-                    <p><strong>Locație:</strong> București, Universitatea X</p>
-                    <a href="#" class="btn">Înregistrează-te</a>
-                </div>
-                <div class="event-item" data-city="Cluj-Napoca" data-type="party">
-                    <img src="https://via.placeholder.com/300x200" alt="Eveniment 2">
-                    <h3>Petrecerea de Crăciun a Studenților</h3>
-                    <p>Vino alături de colegii tăi la cea mai tare petrecere din acest an!</p>
-                    <p><strong>Data:</strong> 10 Decembrie 2024</p>
-                    <p><strong>Locație:</strong> Cluj-Napoca, Club Y</p>
-                    <a href="#" class="btn">Rezervă-ți locul</a>
-                </div>
-                <div class="event-item" data-city="Iași" data-type="conference">
-                    <img src="https://via.placeholder.com/300x200" alt="Eveniment 3">
-                    <h3>Conferința Națională a Studenților</h3>
-                    <p>Oportunități de networking și sesiuni educaționale pentru studenți.</p>
-                    <p><strong>Data:</strong> 15 Decembrie 2024</p>
-                    <p><strong>Locație:</strong> Iași, Centrul de Conferințe</p>
-                    <a href="#" class="btn">Mai multe detalii</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Evenimente Viitoare -->
-        <div class="upcoming-events">
-            <h2>Evenimente Viitoare</h2>
-            <div class="event-slider">
-                <img src="https://via.placeholder.com/300x200" alt="Eveniment 1">
-                <img src="https://via.placeholder.com/300x200" alt="Eveniment 2">
-                <img src="https://via.placeholder.com/300x200" alt="Eveniment 3">
-            </div>
-        </div>
-
-        <!-- Testimoniale -->
-        <div class="testimonials">
-            <h2>Cele Mai Bune Experiențe ale Studenților</h2>
-            <div>
-                <p><strong>Maria P.</strong> - "Am participat la conferința despre programare și am învățat enorm! Recomand tuturor studenților care vor să își dezvolte abilitățile tehnice!"</p>
-            </div>
-            <div>
-                <p><strong>Ion V.</strong> - "Petrecerea de Crăciun a fost o experiență de neuitat! A fost o oportunitate excelentă de a socializa și de a cunoaște alți studenți."</p>
-            </div>
-        </div>
-    </main>
-    <div id="contactButton">
-        <a href="/formular-de-contact.html" title="Contactează-ne!">
-            <i class="fas fa-question"></i>
+           
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Fiecare eveniment este un "swiper-slide" -->
+                    
+                    <!-- Leaders Experience -->
+                    <div class="swiper-slide" data-city="Online" data-type="coaching">
+                        <div class="event-card">
+                            <a href="https://leaders.ro/programe/experience/" class="event-card-image-link">
+            <img src="images/events-leaders.jpg" alt="Leaders Experience">
         </a>
+                            <div class="event-card-content">
+                                <h3>Leaders Experience Sesiune #1</h3>
+                                <p>Coaching online dedicat studenților.</p>
+                                <p><strong>Data:</strong> 13 mai 2025</p>
+                                <p><strong>Locație:</strong> Online</p>
+                                <a href="https://leaders.ro/programe/experience/" class="btn-details">Detalii</a>
+                            </div>
+                        </div>
+                    </div>
+        <!-- Ziua Porților Deschise la UAIC -->
+                <div class="swiper-slide" data-city="Iași" data-type="educational">
+                    <div class="event-card">
+                        <a href="https://www.uaic.ro/zilele-universitatii-2024/" class="event-card-image-link">
+                            <img src="images/events-uaic.jpg" alt="Leaders Experience">
+                        </a>
+                                                <div class="event-card-content">
+                            <h3>Ziua Porților Deschise la UAIC</h3>
+                            <p>Eveniment dedicat prezentării facultăților viitori pentru studenți și liceeni.</p>
+                            <p><strong>Data:</strong> 15 aprilie 2025</p>
+                            <p><strong>Locație:</strong> UAIC din Iași</p>
+                    
+                            <a href="https://www.uaic.ro/zilele-universitatii-2024/" class="btn-details">Detalii</a>
+                        </div>
+                    </div>
+                </div>
+
+        
+                    <!-- TEDx Timișoara Students -->
+                    <div class="swiper-slide" data-city="Timișoara" data-type="conference">
+                        <div class="event-card">
+                            <a href="https://www.ted.com/tedx/events/2254" class="event-card-image-link">
+                                <img src="images/events-tedx.jpg" alt="Leaders Experience">
+                            </a>
+                            <div class="event-card-content">
+                                <h3>TEDx Timișoara Students</h3>
+                                <p>Discursuri inspiraționale susținute de studenți și antreprenori locali.</p>
+                                <p><strong>Data:</strong> 22 aprilie 2025</p>
+                                <p><strong>Locație:</strong> Universitatea de Vest</p>
+                                <a href="https://www.ted.com/tedx/events/2254" class="btn-details">Detalii</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide" data-city="Timișoara" data-type="cultural">
+                        <div class="event-card">
+                            <a href="https://uzpr.ro/08/07/2024/festivalul-artelor-cel-mai-asteptat-eveniment-cultural-al-verii/" class="event-card-image-link">
+                                <img src="images/events-arte.jpg" alt="Leaders Experience">
+                            </a>
+                            <div class="event-card-content">
+                                <h3>Festivalul Artelor Vizuale</h3>
+                                <p>Expoziții de artă și design realizate de studenți.</p>
+                                <p><strong>Data:</strong> 15 iunie 2025</p>
+                                <p><strong>Locație:</strong> Casa Studenților Timișoara</p>
+                                <a href="https://uzpr.ro/08/07/2024/festivalul-artelor-cel-mai-asteptat-eveniment-cultural-al-verii/" class="btn-details">Detalii</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+        
+                    <!-- Crosul Studențesc pentru Mediu -->
+                    <div class="swiper-slide" data-city="Brașov" data-type="sport">
+                        <div class="event-card">
+                            <a href="https://sport.unitbv.ro/ro/studenti/anunturi/372-crosul-studentesc.html" class="event-card-image-link">
+                                <img src="images/events-cros.png" alt="Leaders Experience">
+                            </a>
+                            <div class="event-card-content">
+                                <h3>Crosul Studențesc pentru Mediu</h3>
+                                <p>Eveniment sportiv pentru conștientizarea impactului asupra mediului.</p>
+                                <p><strong>Data:</strong> 12 mai 2025</p>
+                                <p><strong>Locație:</strong> Universitatea Transilvania</p>
+                                <a href="https://sport.unitbv.ro/ro/studenti/anunturi/372-crosul-studentesc.html" class="btn-details">Participă</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                  <!-- Noaptea Cercetătorilor 2025 -->
+                        <div class="swiper-slide" data-city="Iași" data-type="cultural">
+                            <div class="event-card">
+                                <a href="https://chatgpt.com/c/674ae7c2-48d4-8003-a96a-f8ec151ee8bd" class="event-card-image-link">
+                                    <img src="images/events-noaptea.jpg" alt="Leaders Experience">
+                                </a>                                <div class="event-card-content">
+                                    <h3>Noaptea Cercetătorilor 2025</h3>
+                                    <p>Eveniment național ce promovează știința prin experimente interactive și demonstrații .</p>
+                                    <p><strong>Data:</strong> 25 septembrie 2025</p>
+                                    <p><strong>Locație:</strong> Universitatea „Gh. Asachi” - Iași</p>
+                                    <a href="https://chatgpt.com/c/674ae7c2-48d4-8003-a96a-f8ec151ee8bd" class="btn-details">Detalii</a>
+                                </div>
+                            </div>
+                        </div>
+
+        
+                    <!-- Zilele Carierei 2025 -->
+                    <div class="swiper-slide" data-city="Cluj-Napoca" data-type="career">
+                        <div class="event-card">
+                            <a href="https://consilierecariera.ubbcluj.ro/zilele-carierei-2024-noiembrie/" class="event-card-image-link">
+                                <img src="images/events-cariere.jpg" alt="Leaders Experience">
+                            </a>
+                            <div class="event-card-content">
+                                <h3>Zilele Carierei 2025</h3>
+                                <p>Târg de locuri de muncă și orientare profesională.</p>
+                                <p><strong>Data:</strong> 20 martie 2025</p>
+                                <p><strong>Locație:</strong> Sala Polivalentă</p>
+                                <a href="https://consilierecariera.ubbcluj.ro/zilele-carierei-2024-noiembrie/" class="btn-details">Detalii</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Târgul de Cariere IT -->
+                    <div class="swiper-slide" data-city="Iași" data-type="career">
+                        <div class="event-card">
+                            <a href="https://www.targuldecariere.ro/iasi" class="event-card-image-link">
+                                <img src="images/events-targ.jpeg" alt="Leaders Experience">
+                            </a>
+                            <div class="event-card-content">
+                                <h3>Târgul de Cariere IT</h3>
+                                <p>Târg dedicat studenților pasionați de tehnologie, cu oportunități de angajare și internship-uri.</p>
+                                <p><strong>Data:</strong> 5 mai 2025</p>
+                                <p><strong>Locație:</strong> Palas Iași</p>
+                                <a href="https://www.targuldecariere.ro/iasi" class="btn-details">Detalii</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- PoliFest 2025 -->
+                    <div class="swiper-slide" data-city="București" data-type="educational">
+                        <div class="event-card">
+                            <a href="https://events.upb.ro/event/polifest/" class="event-card-image-link">
+                                <img src="images/events-poli.jpg" alt="Leaders Experience">
+                            </a>
+                            <div class="event-card-content">
+                                <h3>PoliFest 2025</h3>
+                                <p>Târg educațional din domeniul științei și ingineriei.</p>
+                                <p><strong>Data:</strong> 18 aprilie 2025</p>
+                                <p><strong>Locație:</strong> Rectoratul Universității POLITEHNICA București</p>
+                                <a href="https://events.upb.ro/event/polifest/" class="btn-details">Detalii</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+        
+                
+        
+                <!-- Paginare -->
+                
+        
+            </div>
+            <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+           
+        </div> <div class="swiper-pagination"></div>
+        
+
+        
+        
+
+        <!-- Secțiuni Noi -->
+        
+      <!-- Container Recomandate și Calendar -->
+<div class="recommended-events-container">
+    <div class="recommended-events">
+        <h2>Evenimente Recomandate</h2>
+        <div class="intro-text">
+            <p>Descoperă cele mai interesante evenimente din cadrul facultății! Explorează calendarul și înscrie-te acum la activități care te pot ajuta să îți îmbogățești experiența universitară! Fii parte din comunitatea activă a facultății și profită de fiecare oportunitate de învățare și dezvoltare personală!</p>
+        </div>
+        <div class="events-list">
+            <div class="event-item">
+                <a href="https://upb.ro/calendar-evenimente/hackathon-innovation-labs-2023/" class="event-card-image-link">
+                    <img src="images/events-hackathlon.jpg" alt="Leaders Experience">
+                </a>                <h3>Hackathon "Code Your Future" 2023</h3>
+                <p>Hackathon-ul „Code Your Future” 2023, organizat la Universitatea Politehnica din București, a oferit studenților oportunitatea de a dezvolta aplicații inovative într-un cadru competitiv, cu sprijinul companiilor mari din domeniul IT. Participanții au lucrat în echipe pentru a crea soluții tehnologice și au avut șansa de a câștiga premii și oportunități de carieră.</p>
+                <p><strong>An:</strong> 2023</p>
+                <p><strong>Locație:</strong> București, Universitatea Politehnica din București</p>
+                <a href="https://upb.ro/calendar-evenimente/hackathon-innovation-labs-2023/" class="btn-recom">Detalii</a>
+            </div>
+        </div>
+    </div>
+ <div class=" calendar"> 
+    <h2>Calendar evenimente</h2>
+        <div id="custom-calendar"></div>
+    </div>
+</div> <!-- Parteneri și Sponsori -->
+        <div class="partners-section">
+            <h2>Parteneri și Sponsori</h2>
+            <div class="partners-list">
+                <a href="https://www.raiffeisen.ro" target="_blank">
+                    <img src="images/raiffeisen.png"Raiffeisen Bank România">
+                </a>
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="images/linkedln.png" alt="LinkedIn România">
+                </a>
+                <a href="https://www.continental.com" target="_blank">
+                    <img src="images/continental.png" alt="Continental România">
+                </a>
+                <a href="https://www.nestle.ro" target="_blank">
+                    <img src="images/nestle.jpg" alt="Nestlé România">
+                </a>
+                <a href="https://www.endava.com" target="_blank">
+                    <img src="images/endava.png" alt="Endava">
+                </a>
+                <a href="https://www.amazon.ro" target="_blank">
+                    <img src="images/amazon.png" alt="Amazon Development Center Iași">
+                </a>
+                <a href="https://www.microsoft.com" target="_blank">
+                    <img src="images/microsoft.png" alt="Microsoft România">
+                </a>
+            </div>  
+        </div> 
+<!-- Overlay pentru a crea un efect de opacitate -->
+<div id="modal-overlay" style="display: none;"></div>
+
+<!-- Popup-ul evenimentului -->
+<div id="event-modal" style="display: none;">
+    <div class="modal-content">
+        <h3 id="modal-title">Titlul Evenimentului</h3>
+        <p id="modal-description">Descrierea Evenimentului</p>
+        <button id="modal-close">Închide</button>
+    </div>
+</div>
+    
+</div>
+
+       
+    </main>
     </div>
     
     <div id="footer-placeholder"></div>
@@ -102,46 +296,197 @@
     <script>
         // Filtrare Evenimente pe tip și oraș
         const filterType = document.getElementById('event-type');
-        const filterCity = document.getElementById('city');
-        const eventItems = document.querySelectorAll('.event-item');
-        
-        function filterEvents() {
-            const selectedType = filterType.value;
-            const selectedCity = filterCity.value;
-            
-            eventItems.forEach(item => {
-                const itemType = item.getAttribute('data-type');
-                const itemCity = item.getAttribute('data-city');
-                
-                if ((selectedType === '' || itemType === selectedType) && 
-                    (selectedCity === '' || itemCity === selectedCity)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+const filterCity = document.getElementById('city');
+const resetButton = document.getElementById('reset-filters');
+const eventItems = document.querySelectorAll('.swiper-slide');  // Menținem selecția pentru swiper-slide
+
+// Filtrare evenimente
+function filterEvents() {
+    const selectedType = filterType.value;
+    const selectedCity = filterCity.value;
+
+    eventItems.forEach(item => {
+        const itemType = item.getAttribute('data-type');
+        const itemCity = item.getAttribute('data-city');
+
+        if ((selectedType === '' || itemType === selectedType) && 
+            (selectedCity === '' || itemCity === selectedCity)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
         }
+    });
+}
 
-        filterType.addEventListener('change', filterEvents);
-        filterCity.addEventListener('change', filterEvents);
+// Resetare filtre
+function resetFilters() {
+    // Resetare filtre selectate
+    filterType.value = '';
+    filterCity.value = '';
+
+    // Afișează toate evenimentele
+    eventItems.forEach(item => {
+        item.style.display = 'block';
+    });
+}
+
+// Adaugă event listeners pentru filtre și butonul de resetare
+filterType.addEventListener('change', filterEvents);
+filterCity.addEventListener('change', filterEvents);
+resetButton.addEventListener('click', resetFilters);
 
 
 
-        fetch('activity_bar.html') // Fetch pentru header și footer
+        // Fetch pentru header și footer
+        fetch('activity_bar.html')
             .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-               
-            })
-            .catch(error => console.error('Error loading header/footer:', error));
-  
-    fetch('footer.html') // Fetch pentru header și footer
-        .then(response => response.text())
-        .then(data => {
+            .then(data => document.getElementById('header-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading header:', error));
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading footer:', error));
+
+
            
-            document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading header/footer:', error));
+
+            document.addEventListener('DOMContentLoaded', function () {
+    const calendarEl = document.getElementById('custom-calendar');
+
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth', // Vizualizare implicită
+        locale: 'ro',
+        headerToolbar: {
+            left: 'prev,next today',  // Navigare simplă
+            center: 'title',
+            right: '' // Nu afișăm butoanele pentru alte vizualizări
+        },
+        events: [
+    {
+        title: 'Leaders Experience Sesiune #1 Coaching Online',
+        start: '2025-05-13',
+        end: '2025-05-13',
+        description: 'Sesiune dedicată dezvoltării abilităților de leadership și coaching pentru studenți.',
+        link: 'https://www.leaders.ro'  // Exemplu link, poate fi schimbat în funcție de site-ul oficial
+    },
+    {
+        title: 'Webinar „Antreprenoriatul Studențesc”',
+        start: '2025-05-08',
+        end: '2025-05-08',
+        description: 'Curs online despre crearea de afaceri pentru studenți, oferind ghidaj pentru start-up-uri.',
+        link: 'https://www.linkedin.com'  // Exemplu link, poate fi schimbat în funcție de detaliile evenimentului
+    },
+    {
+        title: 'TEDx Timișoara Students',
+        start: '2025-04-22',
+        end: '2025-04-22',
+        description: 'Discursuri inspiraționale susținute de studenți și antreprenori locali.',
+        link: 'https://www.tedxtimisoara.com'  // Link real pentru TEDx Timișoara
+    },
+    {
+        title: 'Festivalul Artelor Vizuale',
+        start: '2025-06-15',
+        end: '2025-06-15',
+        description: 'Expoziții de artă și design realizate de studenți, promovând creativitatea tinerilor.',
+        link: 'https://www.casa.studentilor.timisoara.ro'  // Exemplu link, poate fi schimbat în funcție de organizatori
+    },
+    {
+        title: 'Crosul Studențesc pentru Mediu',
+        start: '2025-05-12',
+        end: '2025-05-12',
+        description: 'Eveniment sportiv dedicat sensibilizării asupra problemelor de mediu.',
+        link: 'https://www.unitbv.ro'  // Link oficial pentru Universitatea Transilvania Brașov
+    },
+    {
+        title: 'Școala de Vară 2025',
+        start: '2025-08-05',
+        end: '2025-08-15',
+        description: 'Workshopuri pe teme de dezvoltare personală și sustenabilitate.',
+        link: 'https://www.unitbv.ro'  // Link oficial pentru Universitatea Transilvania Brașov
+    },
+    {
+        title: 'Zilele Carierei 2025',
+        start: '2025-03-20',
+        end: '2025-03-20',
+        description: 'Târg de locuri de muncă și orientare profesională pentru studenți.',
+        link: 'https://www.sala-polivalenta.ro'  // Link pentru Sala Polivalentă din Cluj
+    },
+    {
+        title: 'Festivalul Studențesc de Teatru',
+        start: '2025-05-15',
+        end: '2025-05-15',
+        description: 'Eveniment cultural cu spectacole și workshopuri teatrale.',
+        link: 'https://www.tncluj.ro'  // Link pentru Teatrul Național Cluj-Napoca
+    },
+    {
+        title: 'Târgul de Cariere IT',
+        start: '2025-05-05',
+        end: '2025-05-05',
+        description: 'Târg dedicat studenților pasionați de tehnologie, cu oportunități de joburi și internshipuri.',
+        link: 'https://www.palas.ro'  // Link oficial pentru Palas Iași
+    },
+    {
+        title: 'Noaptea Cercetătorilor 2025',
+        start: '2025-09-25',
+        end: '2025-09-25',
+        description: 'Eveniment național care promovează știința prin experimente interactive și prezentări.',
+        link: 'https://www.nopteacercetatorilor.ro'  // Link oficial pentru Noaptea Cercetătorilor
+    }
+],
+
+        eventClick: function(info) {
+            // Populează popup-ul cu datele evenimentului
+            document.getElementById('modal-title').textContent = info.event.title;
+            document.getElementById('modal-description').textContent = info.event.extendedProps.description;
+
+            // Afișează popup-ul și overlay-ul
+            document.getElementById('modal-overlay').style.display = 'block';
+            document.getElementById('event-modal').style.display = 'block';
+        }
+    });
+
+    calendar.render();
+
+    // Închide popup-ul când utilizatorul apasă pe "Închide"
+    document.getElementById('modal-close').addEventListener('click', function () {
+        document.getElementById('modal-overlay').style.display = 'none';
+        document.getElementById('event-modal').style.display = 'none';
+    });
+
+    // Închide popup-ul când utilizatorul apasă pe overlay
+    document.getElementById('modal-overlay').addEventListener('click', function () {
+        document.getElementById('modal-overlay').style.display = 'none';
+        document.getElementById('event-modal').style.display = 'none';
+    });
+});
+
+///SWIPER
+const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3, // numărul de carduri vizibile pe ecran
+        spaceBetween: 20, // spațiu între carduri
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true, // Permite paginarea prin click
+        },
+        loop: true, // Permite derularea continuă a sliderului
+        breakpoints: {
+            1024: {
+                slidesPerView: 3, // La ecrane mari (desktop), se afișează 3 carduri
+            },
+            768: {
+                slidesPerView: 2, // La ecrane medii (tabletă), se afișează 2 carduri
+            },
+            480: {
+                slidesPerView: 1, // La ecrane mici (mobil), se afișează 1 card
+            }
+        }
+    });
+
     </script>
 </body>
 </html>

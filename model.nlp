@@ -1,0 +1,1058 @@
+{
+  "settings": {
+    "languages": [
+      "ro"
+    ]
+  },
+  "nluManager": {
+    "settings": {},
+    "languages": [
+      "ro"
+    ],
+    "intentDomains": {},
+    "domainManagers": {
+      "ro": {
+        "settings": {
+          "language": "ro",
+          "useNoneFeature": true,
+          "config": {
+            "activation": "leaky-relu",
+            "hiddenLayers": [],
+            "iterations": 20000,
+            "learningRate": 0.7,
+            "errorThresh": 0.00005,
+            "momentum": 0.5,
+            "deltaErrorThresh": 0.000001,
+            "maxDecimals": 9,
+            "leakyReluAlpha": 0.08,
+            "timeout": 120000
+          }
+        },
+        "language": "ro",
+        "nluClassName": "BrainNLU",
+        "useMasterDomain": true,
+        "trainByDomain": false,
+        "keepStopwords": true,
+        "stemDict": {
+          "salut": {
+            "domain": "default",
+            "intent": "greeting.hello"
+          },
+          "bun": {
+            "domain": "default",
+            "intent": "greeting.hello"
+          },
+          "ce,fac,mai": {
+            "domain": "default",
+            "intent": "greeting.howareyou"
+          },
+          "cin,ești": {
+            "domain": "default",
+            "intent": "bot.identity"
+          },
+          "cheam,cum,te": {
+            "domain": "default",
+            "intent": "bot.name"
+          },
+          "mulțum": {
+            "domain": "default",
+            "intent": "greeting.thanks"
+          },
+          "mers": {
+            "domain": "default",
+            "intent": "greeting.thanks"
+          },
+          "la,reved": {
+            "domain": "default",
+            "intent": "greeting.goodbye"
+          },
+          "bun,o,poț,recomand,univers,îmi": {
+            "domain": "default",
+            "intent": "university.recommend"
+          },
+          "aleg,ar,ce,să,treb,univers": {
+            "domain": "default",
+            "intent": "university.recommend"
+          },
+          "a,ajutor,aleg,am,de,nevoi,o,pentru,univers": {
+            "domain": "default",
+            "intent": "university.recommend"
+          },
+          "bun,car,cea,este,inginer,mai,pentru,univers": {
+            "domain": "default",
+            "intent": "university.recommend"
+          },
+          "ajută-m,găsesc,o,să,univers": {
+            "domain": "default",
+            "intent": "university.recommend"
+          },
+          "fac,pentru,quiz-,să,univers,vreau": {
+            "domain": "default",
+            "intent": "quiz.assistance"
+          },
+          "ajut,cu,mă,poț,quiz-": {
+            "domain": "default",
+            "intent": "quiz.assistance"
+          },
+          "a,cum,fac,găs,pentru,pot,potriv,quiz-,univers": {
+            "domain": "default",
+            "intent": "quiz.assistance"
+          },
+          "aleg,este,pentru,quiz-,unde,universităț": {
+            "domain": "default",
+            "intent": "quiz.assistance"
+          },
+          "ajută-m,pentru,quiz-,să,univers,încep": {
+            "domain": "default",
+            "intent": "quiz.assistance"
+          }
+        },
+        "intentDict": {
+          "greeting.hello": "default",
+          "greeting.howareyou": "default",
+          "bot.identity": "default",
+          "bot.name": "default",
+          "greeting.thanks": "default",
+          "greeting.goodbye": "default",
+          "university.recommend": "default",
+          "quiz.assistance": "default"
+        },
+        "useStemDict": true,
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "language": "ro",
+              "useNoneFeature": true,
+              "config": {
+                "activation": "leaky-relu",
+                "hiddenLayers": [],
+                "iterations": 20000,
+                "learningRate": 0.7,
+                "errorThresh": 0.00005,
+                "momentum": 0.5,
+                "deltaErrorThresh": 0.000001,
+                "maxDecimals": 9,
+                "leakyReluAlpha": 0.08,
+                "timeout": 120000
+              }
+            },
+            "language": "ro",
+            "keepStopwords": true,
+            "docs": [
+              {
+                "intent": "greeting.hello",
+                "tokens": [
+                  "salut"
+                ]
+              },
+              {
+                "intent": "greeting.hello",
+                "tokens": [
+                  "bun"
+                ]
+              },
+              {
+                "intent": "greeting.howareyou",
+                "tokens": [
+                  "ce",
+                  "mai",
+                  "fac"
+                ]
+              },
+              {
+                "intent": "bot.identity",
+                "tokens": [
+                  "cin",
+                  "ești"
+                ]
+              },
+              {
+                "intent": "bot.name",
+                "tokens": [
+                  "cum",
+                  "te",
+                  "cheam"
+                ]
+              },
+              {
+                "intent": "greeting.thanks",
+                "tokens": [
+                  "mulțum"
+                ]
+              },
+              {
+                "intent": "greeting.thanks",
+                "tokens": [
+                  "mers"
+                ]
+              },
+              {
+                "intent": "greeting.goodbye",
+                "tokens": [
+                  "la",
+                  "reved"
+                ]
+              },
+              {
+                "intent": "university.recommend",
+                "tokens": [
+                  "îmi",
+                  "poț",
+                  "recomand",
+                  "o",
+                  "univers",
+                  "bun"
+                ]
+              },
+              {
+                "intent": "university.recommend",
+                "tokens": [
+                  "ce",
+                  "univers",
+                  "ar",
+                  "treb",
+                  "să",
+                  "aleg"
+                ]
+              },
+              {
+                "intent": "university.recommend",
+                "tokens": [
+                  "am",
+                  "nevoi",
+                  "de",
+                  "ajutor",
+                  "pentru",
+                  "a",
+                  "aleg",
+                  "o",
+                  "univers"
+                ]
+              },
+              {
+                "intent": "university.recommend",
+                "tokens": [
+                  "car",
+                  "este",
+                  "cea",
+                  "mai",
+                  "bun",
+                  "univers",
+                  "pentru",
+                  "inginer"
+                ]
+              },
+              {
+                "intent": "university.recommend",
+                "tokens": [
+                  "ajută-m",
+                  "să",
+                  "găsesc",
+                  "o",
+                  "univers"
+                ]
+              },
+              {
+                "intent": "quiz.assistance",
+                "tokens": [
+                  "vreau",
+                  "să",
+                  "fac",
+                  "quiz-",
+                  "pentru",
+                  "univers"
+                ]
+              },
+              {
+                "intent": "quiz.assistance",
+                "tokens": [
+                  "mă",
+                  "poț",
+                  "ajut",
+                  "cu",
+                  "quiz-"
+                ]
+              },
+              {
+                "intent": "quiz.assistance",
+                "tokens": [
+                  "cum",
+                  "pot",
+                  "fac",
+                  "quiz-",
+                  "pentru",
+                  "a",
+                  "găs",
+                  "univers",
+                  "potriv"
+                ]
+              },
+              {
+                "intent": "quiz.assistance",
+                "tokens": [
+                  "unde",
+                  "este",
+                  "quiz-",
+                  "pentru",
+                  "aleg",
+                  "universităț"
+                ]
+              },
+              {
+                "intent": "quiz.assistance",
+                "tokens": [
+                  "ajută-m",
+                  "să",
+                  "încep",
+                  "quiz-",
+                  "pentru",
+                  "univers"
+                ]
+              }
+            ],
+            "features": {
+              "salut": 1,
+              "bun": 3,
+              "ce": 2,
+              "mai": 2,
+              "fac": 3,
+              "cin": 1,
+              "ești": 1,
+              "cum": 2,
+              "te": 1,
+              "cheam": 1,
+              "mulțum": 1,
+              "mers": 1,
+              "la": 1,
+              "reved": 1,
+              "îmi": 1,
+              "poț": 2,
+              "recomand": 1,
+              "o": 3,
+              "univers": 8,
+              "ar": 1,
+              "treb": 1,
+              "să": 4,
+              "aleg": 3,
+              "am": 1,
+              "nevoi": 1,
+              "de": 1,
+              "ajutor": 1,
+              "pentru": 6,
+              "a": 2,
+              "car": 1,
+              "este": 2,
+              "cea": 1,
+              "inginer": 1,
+              "ajută-m": 2,
+              "găsesc": 1,
+              "vreau": 1,
+              "quiz-": 5,
+              "mă": 1,
+              "ajut": 1,
+              "cu": 1,
+              "pot": 1,
+              "găs": 1,
+              "potriv": 1,
+              "unde": 1,
+              "universităț": 1,
+              "încep": 1
+            },
+            "isEditing": false,
+            "className": "BrainNLU",
+            "classifier": {
+              "className": "BrainClassifier",
+              "settings": {
+                "language": "ro",
+                "useNoneFeature": true,
+                "config": {
+                  "activation": "leaky-relu",
+                  "hiddenLayers": [],
+                  "iterations": 20000,
+                  "learningRate": 0.7,
+                  "errorThresh": 0.00005,
+                  "momentum": 0.5,
+                  "deltaErrorThresh": 0.000001,
+                  "maxDecimals": 9,
+                  "leakyReluAlpha": 0.08,
+                  "timeout": 120000
+                }
+              },
+              "labels": [],
+              "network": {
+                "sizes": [
+                  47,
+                  9
+                ],
+                "layers": [
+                  {
+                    "salut": {},
+                    "bun": {},
+                    "ce": {},
+                    "mai": {},
+                    "fac": {},
+                    "cin": {},
+                    "ești": {},
+                    "cum": {},
+                    "te": {},
+                    "cheam": {},
+                    "mulțum": {},
+                    "mers": {},
+                    "la": {},
+                    "reved": {},
+                    "îmi": {},
+                    "poț": {},
+                    "recomand": {},
+                    "o": {},
+                    "univers": {},
+                    "ar": {},
+                    "treb": {},
+                    "să": {},
+                    "aleg": {},
+                    "am": {},
+                    "nevoi": {},
+                    "de": {},
+                    "ajutor": {},
+                    "pentru": {},
+                    "a": {},
+                    "car": {},
+                    "este": {},
+                    "cea": {},
+                    "inginer": {},
+                    "ajută-m": {},
+                    "găsesc": {},
+                    "vreau": {},
+                    "quiz-": {},
+                    "mă": {},
+                    "ajut": {},
+                    "cu": {},
+                    "pot": {},
+                    "găs": {},
+                    "potriv": {},
+                    "unde": {},
+                    "universităț": {},
+                    "încep": {},
+                    "nonefeature": {}
+                  },
+                  {
+                    "greeting.hello": {
+                      "bias": 2.834853889,
+                      "weights": {
+                        "salut": 9.455507278,
+                        "bun": 8.994887352,
+                        "ce": -0.648952842,
+                        "mai": -1.880617261,
+                        "fac": -0.603053927,
+                        "cin": -1.434913158,
+                        "ești": -1.434913158,
+                        "cum": -0.95901674,
+                        "te": -0.95901674,
+                        "cheam": -0.95901674,
+                        "mulțum": -2.717139006,
+                        "mers": -2.691555738,
+                        "la": -1.416093946,
+                        "reved": -1.416093946,
+                        "îmi": -2.058451176,
+                        "poț": -2.24507308,
+                        "recomand": -2.058451176,
+                        "o": -2.065695286,
+                        "univers": -3.389157295,
+                        "ar": -0.045898922,
+                        "treb": -0.045898922,
+                        "să": -0.045898922,
+                        "aleg": -0.136370674,
+                        "am": -0.007244359,
+                        "nevoi": -0.007244359,
+                        "de": -0.007244359,
+                        "ajutor": -0.007244359,
+                        "pentru": -1.368035436,
+                        "a": -0.007244359,
+                        "car": -1.277563572,
+                        "este": -1.360791087,
+                        "cea": -1.277563572,
+                        "inginer": -1.277563572,
+                        "quiz-": -0.269849449,
+                        "mă": -0.186622053,
+                        "ajut": -0.186622053,
+                        "cu": -0.186622053,
+                        "unde": -0.083227374,
+                        "universităț": -0.083227374,
+                        "nonefeature": -2.618300676
+                      }
+                    },
+                    "greeting.howareyou": {
+                      "bias": 0.381117062,
+                      "weights": {
+                        "salut": -0.375806779,
+                        "bun": -0.461347103,
+                        "ce": 3.952616692,
+                        "mai": 4.166910648,
+                        "fac": 3.997617483,
+                        "cin": -0.246179104,
+                        "ești": -0.246179104,
+                        "cum": -0.364192069,
+                        "te": -0.139979839,
+                        "cheam": -0.139979839,
+                        "mulțum": -0.394782692,
+                        "mers": -0.389869958,
+                        "la": -0.227129728,
+                        "reved": -0.227129728,
+                        "îmi": -0.053299569,
+                        "poț": -0.071914904,
+                        "recomand": -0.053299569,
+                        "o": -0.055642676,
+                        "univers": -1.59826839,
+                        "ar": -0.600640953,
+                        "treb": -0.600640953,
+                        "să": -0.932068348,
+                        "aleg": -0.602984011,
+                        "am": -0.002343108,
+                        "nevoi": -0.002343108,
+                        "de": -0.002343108,
+                        "ajutor": -0.002343108,
+                        "pentru": -0.944328487,
+                        "a": -0.226555333,
+                        "car": -0.386345595,
+                        "este": -0.386345595,
+                        "cea": -0.386345595,
+                        "inginer": -0.386345595,
+                        "vreau": -0.331427306,
+                        "quiz-": -0.574254811,
+                        "mă": -0.018615337,
+                        "ajut": -0.018615337,
+                        "cu": -0.018615337,
+                        "pot": -0.224212214,
+                        "găs": -0.224212214,
+                        "potriv": -0.224212214,
+                        "nonefeature": -0.378468454
+                      }
+                    },
+                    "bot.identity": {
+                      "bias": 0.667338017,
+                      "weights": {
+                        "salut": -0.656887114,
+                        "bun": -0.65642339,
+                        "ce": -0.261269897,
+                        "mai": -0.231692091,
+                        "fac": -0.222328857,
+                        "cin": 5.908829212,
+                        "ești": 5.908829212,
+                        "cum": -0.281351298,
+                        "te": -0.281351298,
+                        "cheam": -0.281351298,
+                        "mulțum": -0.672312438,
+                        "mers": -0.667928576,
+                        "la": -0.368941009,
+                        "reved": -0.368941009,
+                        "îmi": -0.0628573,
+                        "poț": -0.19431597,
+                        "recomand": -0.0628573,
+                        "o": -0.181375712,
+                        "univers": -0.306505769,
+                        "ar": -0.064549632,
+                        "treb": -0.064549632,
+                        "să": -0.170375571,
+                        "aleg": -0.17455256,
+                        "am": -0.038301073,
+                        "nevoi": -0.038301073,
+                        "de": -0.038301073,
+                        "ajutor": -0.038301073,
+                        "pentru": -0.170583323,
+                        "a": -0.038301073,
+                        "car": -0.03497183,
+                        "este": -0.106673673,
+                        "cea": -0.03497183,
+                        "inginer": -0.03497183,
+                        "ajută-m": -0.080217339,
+                        "găsesc": -0.080217339,
+                        "vreau": -0.025608586,
+                        "quiz-": -0.228769094,
+                        "mă": -0.13145867,
+                        "ajut": -0.13145867,
+                        "cu": -0.13145867,
+                        "unde": -0.071701832,
+                        "universităț": -0.071701832,
+                        "nonefeature": -0.661649406
+                      }
+                    },
+                    "bot.name": {
+                      "bias": 0.427017416,
+                      "weights": {
+                        "salut": -0.424048752,
+                        "bun": -0.425733328,
+                        "ce": -0.082830258,
+                        "mai": -0.058207851,
+                        "fac": -0.499872059,
+                        "cin": -0.229155153,
+                        "ești": -0.229155153,
+                        "cum": 3.717621088,
+                        "te": 4.177110195,
+                        "cheam": 4.177110195,
+                        "mulțum": -0.44113633,
+                        "mers": -0.435219049,
+                        "la": -0.259984732,
+                        "reved": -0.259984732,
+                        "îmi": -0.063510366,
+                        "poț": -0.128685236,
+                        "recomand": -0.063510366,
+                        "o": -0.122418366,
+                        "univers": -0.68719548,
+                        "ar": -0.057452533,
+                        "treb": -0.057452533,
+                        "să": -0.094871484,
+                        "aleg": -0.093947239,
+                        "am": -0.036494706,
+                        "nevoi": -0.036494706,
+                        "de": -0.036494706,
+                        "ajutor": -0.036494706,
+                        "pentru": -0.543819308,
+                        "a": -0.495983422,
+                        "car": -0.032830127,
+                        "este": -0.032830127,
+                        "cea": -0.032830127,
+                        "inginer": -0.032830127,
+                        "ajută-m": -0.022413287,
+                        "găsesc": -0.022413287,
+                        "vreau": -0.015005667,
+                        "quiz-": -0.539669275,
+                        "mă": -0.065174878,
+                        "ajut": -0.065174878,
+                        "cu": -0.065174878,
+                        "pot": -0.45948875,
+                        "găs": -0.45948875,
+                        "potriv": -0.45948875,
+                        "nonefeature": -0.42634514
+                      }
+                    },
+                    "greeting.thanks": {
+                      "bias": 2.738651798,
+                      "weights": {
+                        "salut": -2.575378418,
+                        "bun": -2.559503078,
+                        "ce": -0.962716162,
+                        "mai": -0.877055466,
+                        "fac": -0.870010138,
+                        "cin": -1.345885038,
+                        "ești": -1.345885038,
+                        "cum": -0.913389862,
+                        "te": -0.896223903,
+                        "cheam": -0.896223903,
+                        "mulțum": 9.522023201,
+                        "mers": 9.506184578,
+                        "la": -1.372558117,
+                        "reved": -1.372558117,
+                        "îmi": -0.153391123,
+                        "poț": -0.602823496,
+                        "recomand": -0.153391123,
+                        "o": -0.580780268,
+                        "univers": -0.908887625,
+                        "ar": -0.168824643,
+                        "treb": -0.168824643,
+                        "să": -0.572471082,
+                        "aleg": -0.526432931,
+                        "am": -0.082695305,
+                        "nevoi": -0.082695305,
+                        "de": -0.082695305,
+                        "ajutor": -0.082695305,
+                        "pentru": -0.516890883,
+                        "a": -0.099861301,
+                        "car": -0.083163992,
+                        "este": -0.35807687,
+                        "cea": -0.083163992,
+                        "inginer": -0.083163992,
+                        "ajută-m": -0.34469375,
+                        "găsesc": -0.34469375,
+                        "vreau": -0.058952648,
+                        "quiz-": -0.800463796,
+                        "mă": -0.449432403,
+                        "ajut": -0.449432403,
+                        "cu": -0.449432403,
+                        "pot": -0.017166,
+                        "găs": -0.017166,
+                        "potriv": -0.017166,
+                        "unde": -0.274912924,
+                        "universităț": -0.274912924,
+                        "nonefeature": -2.608495951
+                      }
+                    },
+                    "greeting.goodbye": {
+                      "bias": 0.665708016,
+                      "weights": {
+                        "salut": -0.66484046,
+                        "bun": -0.666043282,
+                        "ce": -0.281856656,
+                        "mai": -0.245341778,
+                        "fac": -0.240861624,
+                        "cin": -0.358311236,
+                        "ești": -0.358311236,
+                        "cum": -0.254573852,
+                        "te": -0.247114241,
+                        "cheam": -0.247114241,
+                        "mulțum": -0.654800892,
+                        "mers": -0.650089025,
+                        "la": 5.909876347,
+                        "reved": 5.909876347,
+                        "îmi": -0.077884912,
+                        "poț": -0.22297661,
+                        "recomand": -0.077884912,
+                        "o": -0.207344949,
+                        "univers": -0.361851722,
+                        "ar": -0.077338889,
+                        "treb": -0.077338889,
+                        "să": -0.187744752,
+                        "aleg": -0.20102635,
+                        "am": -0.047938388,
+                        "nevoi": -0.047938388,
+                        "de": -0.047938388,
+                        "ajutor": -0.047938388,
+                        "pentru": -0.20085533,
+                        "a": -0.055398025,
+                        "car": -0.040823992,
+                        "este": -0.116573095,
+                        "cea": -0.040823992,
+                        "inginer": -0.040823992,
+                        "ajută-m": -0.081521668,
+                        "găsesc": -0.081521668,
+                        "vreau": -0.028884212,
+                        "quiz-": -0.257184654,
+                        "mă": -0.145091683,
+                        "ajut": -0.145091683,
+                        "cu": -0.145091683,
+                        "pot": -0.007459636,
+                        "găs": -0.007459636,
+                        "potriv": -0.007459636,
+                        "unde": -0.075749099,
+                        "universităț": -0.075749099,
+                        "nonefeature": -0.668944299
+                      }
+                    },
+                    "university.recommend": {
+                      "bias": -0.314851949,
+                      "weights": {
+                        "salut": -0.279415101,
+                        "bun": 0.420823276,
+                        "ce": 1.164847136,
+                        "mai": 1.33798039,
+                        "fac": -2.295420647,
+                        "cin": -0.150012016,
+                        "ești": -0.150012016,
+                        "cum": -0.641209543,
+                        "te": -0.003889186,
+                        "cheam": -0.003889186,
+                        "mulțum": -0.18058975,
+                        "mers": -0.17334561,
+                        "la": -0.132668212,
+                        "reved": -0.132668212,
+                        "îmi": 1.251307964,
+                        "poț": 1.11199367,
+                        "recomand": 1.251307964,
+                        "o": 4.081992626,
+                        "univers": 4.684896469,
+                        "ar": 1.798197985,
+                        "treb": 1.798197985,
+                        "să": 1.364661813,
+                        "aleg": 2.004278898,
+                        "am": 0.734914958,
+                        "nevoi": 0.734914958,
+                        "de": 0.734914958,
+                        "ajutor": 0.734914958,
+                        "pentru": -0.989218473,
+                        "a": 0.097594693,
+                        "car": 1.971331596,
+                        "este": 1.442496061,
+                        "cea": 1.971331596,
+                        "inginer": 1.971331596,
+                        "ajută-m": 0.591211498,
+                        "găsesc": 2.095772028,
+                        "vreau": -1.024748683,
+                        "quiz-": -3.834779501,
+                        "mă": -0.13931416,
+                        "ajut": -0.13931416,
+                        "cu": -0.13931416,
+                        "pot": -0.63732034,
+                        "găs": -0.63732034,
+                        "potriv": -0.63732034,
+                        "unde": -0.528835475,
+                        "universităț": -0.528835475,
+                        "încep": -1.504560709,
+                        "nonefeature": -0.291344315
+                      }
+                    },
+                    "quiz.assistance": {
+                      "bias": 0.259178993,
+                      "weights": {
+                        "salut": -0.310406268,
+                        "bun": -1.276818395,
+                        "ce": -0.881635725,
+                        "mai": -0.984056413,
+                        "fac": 1.187575459,
+                        "cin": -0.214431837,
+                        "ești": -0.214431837,
+                        "cum": 0.255799294,
+                        "te": -0.398712248,
+                        "cheam": -0.398712248,
+                        "mulțum": -0.268922776,
+                        "mers": -0.263646305,
+                        "la": -0.176263675,
+                        "reved": -0.176263675,
+                        "îmi": -0.474755824,
+                        "poț": 1.223297358,
+                        "recomand": -0.474755824,
+                        "o": -1.767015815,
+                        "univers": 0.078301668,
+                        "ar": -0.486829579,
+                        "treb": -0.486829579,
+                        "să": 1.216963887,
+                        "aleg": 0.087968588,
+                        "am": -0.729168177,
+                        "nevoi": -0.729168177,
+                        "de": -0.729168177,
+                        "ajutor": -0.729168177,
+                        "pentru": 2.90694499,
+                        "a": -0.074656613,
+                        "car": -0.589250267,
+                        "este": 0.714716136,
+                        "cea": -0.589250267,
+                        "inginer": -0.589250267,
+                        "ajută-m": 0.775923789,
+                        "găsesc": -0.563091636,
+                        "vreau": 0.927870274,
+                        "quiz-": 5.923415184,
+                        "mă": 1.698053122,
+                        "ajut": 1.698053122,
+                        "cu": 1.698053122,
+                        "pot": 0.654511631,
+                        "găs": 0.654511631,
+                        "potriv": 0.654511631,
+                        "unde": 1.303966165,
+                        "universităț": 1.303966165,
+                        "încep": 1.339015365,
+                        "nonefeature": -0.321972936
+                      }
+                    },
+                    "None": {
+                      "bias": 1.370707089,
+                      "weights": {
+                        "salut": -1.304336548,
+                        "bun": -1.294889569,
+                        "ce": -0.476175398,
+                        "mai": -0.440996557,
+                        "fac": -0.444232732,
+                        "cin": -0.677881122,
+                        "ești": -0.677881122,
+                        "cum": -0.453424007,
+                        "te": -0.453424007,
+                        "cheam": -0.453424007,
+                        "mulțum": -1.271497369,
+                        "mers": -1.258192658,
+                        "la": -0.66752094,
+                        "reved": -0.66752094,
+                        "îmi": -0.042627297,
+                        "poț": -0.269244999,
+                        "recomand": -0.042627297,
+                        "o": -0.292921305,
+                        "univers": -0.368394911,
+                        "ar": -0.046928339,
+                        "treb": -0.046928339,
+                        "să": -0.270614326,
+                        "aleg": -0.245404333,
+                        "am": -0.043403804,
+                        "nevoi": -0.043403804,
+                        "de": -0.043403804,
+                        "ajutor": -0.043403804,
+                        "pentru": -0.227021247,
+                        "a": -0.043403804,
+                        "car": -0.011749481,
+                        "este": -0.166821733,
+                        "cea": -0.011749481,
+                        "inginer": -0.011749481,
+                        "ajută-m": -0.208700329,
+                        "găsesc": -0.20689024,
+                        "vreau": -0.014985698,
+                        "quiz-": -0.398485541,
+                        "mă": -0.226617694,
+                        "ajut": -0.226617694,
+                        "cu": -0.226617694,
+                        "unde": -0.155072257,
+                        "universităț": -0.155072257,
+                        "încep": -0.001810076,
+                        "nonefeature": 10.772650719
+                      }
+                    }
+                  }
+                ],
+                "trainOpts": {
+                  "iterations": 20000,
+                  "errorThresh": 0.00005,
+                  "fixedError": false,
+                  "deltaErrorThresh": 0.000001,
+                  "learningRate": 0.7,
+                  "momentum": 0.5,
+                  "leakyReluAlpha": 0.08,
+                  "maxDecimals": 9,
+                  "log": false
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "extraSentences": [
+      [
+        "ro",
+        "salut"
+      ],
+      [
+        "ro",
+        "bună"
+      ],
+      [
+        "ro",
+        "ce mai faci"
+      ],
+      [
+        "ro",
+        "cine ești"
+      ],
+      [
+        "ro",
+        "cum te cheamă"
+      ],
+      [
+        "ro",
+        "mulțumesc"
+      ],
+      [
+        "ro",
+        "mersi"
+      ],
+      [
+        "ro",
+        "la revedere"
+      ],
+      [
+        "ro",
+        "Îmi poți recomanda o universitate bună?"
+      ],
+      [
+        "ro",
+        "Ce universitate ar trebui să aleg?"
+      ],
+      [
+        "ro",
+        "Am nevoie de ajutor pentru a alege o universitate."
+      ],
+      [
+        "ro",
+        "Care este cea mai bună universitate pentru inginerie?"
+      ],
+      [
+        "ro",
+        "Ajută-mă să găsesc o universitate."
+      ],
+      [
+        "ro",
+        "Vreau să fac quiz-ul pentru universitate"
+      ],
+      [
+        "ro",
+        "Mă poți ajuta cu quiz-ul?"
+      ],
+      [
+        "ro",
+        "Cum pot face quiz-ul pentru a găsi universitatea potrivită?"
+      ],
+      [
+        "ro",
+        "Unde este quiz-ul pentru alegerea universității?"
+      ],
+      [
+        "ro",
+        "Ajută-mă să încep quiz-ul pentru universitate."
+      ]
+    ]
+  },
+  "nerManager": {
+    "settings": {},
+    "threshold": 0.8,
+    "builtins": [
+      "Number",
+      "Ordinal",
+      "Percentage",
+      "Age",
+      "Currency",
+      "Dimension",
+      "Temperature",
+      "DateTime",
+      "PhoneNumber",
+      "IpAddress",
+      "Boolean",
+      "Email",
+      "Hashtag",
+      "URL"
+    ],
+    "namedEntities": {}
+  },
+  "slotManager": {},
+  "responses": {
+    "ro": {
+      "greeting.hello": [
+        {
+          "response": "Salut! Cu ce te pot ajuta?"
+        }
+      ],
+      "greeting.howareyou": [
+        {
+          "response": "Sunt un bot, dar mă descurc bine! Tu ce mai faci?"
+        }
+      ],
+      "bot.name": [
+        {
+          "response": "Mă cheamă Chatbot-ul tău prietenos."
+        }
+      ],
+      "bot.identity": [
+        {
+          "response": "Sunt un chatbot creat cu NLP.js."
+        }
+      ],
+      "greeting.thanks": [
+        {
+          "response": "Cu plăcere!"
+        }
+      ],
+      "greeting.goodbye": [
+        {
+          "response": "La revedere! O zi bună!"
+        }
+      ],
+      "university.recommend": [
+        {
+          "response": "Te pot ajuta cu siguranță! Îmi poți spune puțin despre interesele tale sau despre tipul de program care te interesează?"
+        },
+        {
+          "response": "Sigur! Ce domeniu te interesează să studiezi? Îți pot oferi câteva sugestii."
+        },
+        {
+          "response": "Să începem! Ce tip de universitate cauți—publică, privată sau specializată?"
+        }
+      ],
+      "quiz.assistance": [
+        {
+          "response": "Pentru a te ajuta să găsești cea mai bună universitate pentru tine, îți recomand să faci quiz-ul nostru. Poți accesa quiz-ul aici: [Link către quiz]."
+        },
+        {
+          "response": "Quiz-ul este o modalitate excelentă de a-ți restrânge opțiunile! Spune-mi dacă vrei să te ghidez."
+        },
+        {
+          "response": "Desigur! Poți face quiz-ul vizitând secțiunea de quiz sau dând click aici: www.choose-uni.com/quiz."
+        }
+      ]
+    }
+  },
+  "actions": {},
+  "utteranceDict": {
+    "?": "help"
+  }
+}

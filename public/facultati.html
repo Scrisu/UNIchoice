@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -5,19 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UNIchioce - Explorează facultățile</title>
   <link rel="stylesheet" href="css/facultati.css">
+  <!-- Includerea CSS-ului -->
+<link rel="stylesheet" href="popup.css">
+
+<!-- Includerea HTML-ului (dacă nu este deja integrat) -->
+<div id="quizBtn">Start Quiz</div>
+
+<!-- Includerea JavaScript-ului -->
+<script src="popup.js"></script>
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   </head>
 <body>
   
   <div id="header-placeholder"></div>
 
-  <section class="hero">
-    <section class="welcome-section">
-      <img src="images/DoamneAjuta.png" alt="Welcome Image">
-      <div class="welcome-box">
-          <h1>Explorează facultatea visurilor tale</h1>
-      </div>
-  </section></section>
+
+
+<!-- Secțiune de introducere -->
+
+<section class="intro-section">
+  <div class="intro-content">
+    <!-- Titlu -->
+    <h2>Găsește Facultatea Ideală cu UniChoice</h2>
+    
+    <!-- Paragrafe -->
+    <p>UniChoice este partenerul tău de încredere în căutarea facultății perfecte. Cu o platformă intuitivă și ușor de utilizat, te ajutăm să explorezi cele mai bune opțiuni academice, în funcție de interesele și obiectivele tale.</p>
+    
+    <p>Folosind filtrele noastre inteligente, poți selecta domeniul de studiu, locația, tipul programului educațional sau alte criterii care contează pentru tine. Fie că visezi la o carieră în științe exacte, arte sau tehnologie, UniChoice te ajută să iei decizia potrivită cu încredere.</p>
+    
+    <p>Nu pierde timpul cu căutări nesfârșite! Lasă UniChoice să-ți arate calea către viitorul tău academic. Începe acum și transformă-ți visurile în realitate.</p>
+  </div>
+</section>
+
+
+
 
   <!-- Main Content -->
   <main class="main-content">
@@ -25,47 +48,206 @@
  <!-- Sidebar Filter -->
 <aside class="filter">
     <h3>Filtrează</h3>
+
+      <!-- Filtru Locație -->
+      <div class="filter-item">
+        <label>Județ</label>
+        <select>
+          <option value=""> </option>
+          <option value="Alba-Iulia">Alba-Iulia</option>
+          <option value="Arad">Arad</option>
+          <option value="Bacău">Bacău</option>
+          <option value="Brașov">Brașov</option>
+          <option value="București">București</option>
+          <option value="Cluj-Napoca">Cluj-Napoca</option>
+          <option value="Constanța">Constanța</option>
+          <option value="Craiova">Craiova</option>
+          <option value="Iași">Iași</option>
+          <option value="Oradea">Oradea</option>
+          <option value="Sibiu">Sibiu</option>
+          <option value="Suceava">Suceava</option>
+          <option value="Târgu Mureș">Târgu Mureș</option>
+          <option value="Timișoara">Timișoara</option>
+        </select>
+      </div>
+
+    <!-- Filtru Universități -->
+<div class="filter-item">
+  <label>Universitate</label>
+  <select>
+    <option value=""> </option>
+    <option value="Universitatea „1 Decembrie 1918” din Alba Iulia">Universitatea „1 Decembrie 1918” din Alba Iulia</option>
+    <option value="Universitatea „Aurel Vlaicu” din Arad">Universitatea „Aurel Vlaicu” din Arad</option>
+    <option value="Universitatea „Vasile Alecsandri” din Bacău">Universitatea „Vasile Alecsandri” din Bacău</option>
+    <option value="Academia Forțelor Aeriene „Henri Coandă” din Brașov">Academia Forțelor Aeriene „Henri Coandă” din Brașov</option>
+    <option value="Universitatea „Transilvania” din Brașov">Universitatea „Transilvania” din Brașov</option>
+    <option value="Academia de Studii Economice din București">Academia de Studii Economice din București</option>
+    <option value="Universitatea „Româno-Americană” din București">Universitatea „Româno-Americană” din București</option>
+    <option value="Universitatea Națională de Știință și Tehnologie Politehnica București">Universitatea Națională de Știință și Tehnologie Politehnica București</option>
+    <option value="Universitatea de Arhitectură și Urbanism „Ion Mincu” din București">Universitatea de Arhitectură și Urbanism „Ion Mincu” din București</option>
+    <option value="Universitatea Națională de Artă Teatrală și Cinematografică „I. L. Caragiale” din București">Universitatea Națională de Artă Teatrală și Cinematografică „I. L. Caragiale” din București</option>
+    <option value="Universitatea de Medicină și Farmacie „Carol Davila” din București">Universitatea de Medicină și Farmacie „Carol Davila” din București</option>
+    <option value="Academia de Poliție „Alexandru Ioan Cuza” din București">Academia de Poliție „Alexandru Ioan Cuza” din București</option>
+    <option value="Universitatea din București">Universitatea din București</option>
+    <option value="Universitatea de Științe Agronomice și Medicină Veterinară din București">Universitatea de Științe Agronomice și Medicină Veterinară din București</option>
+    <option value="Academia Națională de Apărare „Carol I” din București">Academia Națională de Apărare „Carol I” din București</option>
+    <option value="Academia Tehnică Militară „Ferdinand I” din București">Academia Tehnică Militară „Ferdinand I” din București</option>
+    <option value="Universitatea Tehnică din Cluj-Napoca">Universitatea Tehnică din Cluj-Napoca</option>
+    <option value="Universitatea „Babeș-Bolyai” din Cluj-Napoca">Universitatea „Babeș-Bolyai” din Cluj-Napoca</option>
+    <option value="Universitatea de Medicină și Farmacie „Iuliu Hațieganu” din Cluj-Napoca">Universitatea de Medicină și Farmacie „Iuliu Hațieganu” din Cluj-Napoca</option>
+    <option value="Universitatea de Științe Agricole și Medicină Veterinară din Cluj-Napoca">Universitatea de Științe Agricole și Medicină Veterinară din Cluj-Napoca</option>
+    <option value="Universitatea „Bogdan Vodă” din Cluj-Napoca">Universitatea „Bogdan Vodă” din Cluj-Napoca</option>
+    <option value="Universitatea „Ovidius” din Constanța">Universitatea „Ovidius” din Constanța</option>
+    <option value="Universitatea Maritimă din Constanța">Universitatea Maritimă din Constanța</option>
+    <option value="Universitatea din Craiova">Universitatea din Craiova</option>
+    <option value="Universitatea de Medicină și Farmacie din Craiova">Universitatea de Medicină și Farmacie din Craiova</option>
+    <option value="Universitatea „Alexandru Ioan Cuza” din Iași">Universitatea „Alexandru Ioan Cuza” din Iași</option>
+    <option value="Universitatea Tehnică „Gheorghe Asachi” din Iași">Universitatea Tehnică „Gheorghe Asachi” din Iași</option>
+    <option value="Universitatea pentru Științele Vieții „Ion Ionescu de la Brad” din Iași">Universitatea pentru Științele Vieții „Ion Ionescu de la Brad” din Iași</option>
+    <option value="Universitatea „Ștefan cel Mare” din Suceava">Universitatea „Ștefan cel Mare” din Suceava</option>
+    <option value="Universitatea „Lucian Blaga” din Sibiu">Universitatea „Lucian Blaga” din Sibiu</option>
+    <option value="Universitatea Politehnica Timișoara">Universitatea Politehnica Timișoara</option>
+    <option value="Universitatea de Medicină și Farmacie „Victor Babeș” din Timișoara">Universitatea de Medicină și Farmacie „Victor Babeș” din Timișoara</option>
+  </select>
+</div>
+
+  <!-- Filtru Mod de învățământ -->
+  <div class="filter-item">
+    <label>Mod de învățământ</label>
+    <select>
+      <option value=""> </option>
+      <option value="ID/IF">ID/IF</option>
+    </select>
+  </div>
+
     
     <!-- Filtru Tip Admitere -->
     <div class="filter-item">
       <label>Tip admitere</label>
       <select>
         <option value=""> </option>
-        <option value="1">Examen</option>
-        <option value="2">Dosar</option>
+        <option value="Examen">Examen</option>
+        <option value="Dosar">Dosar</option>
+        <option value="Examen și Dosar">Examen și Dosar</option>
       </select>
     </div>
+
+      <!-- Filtru Tip Instituție -->
+      <div class="filter-item">
+        <label>Tip instituție</label>
+        <select>
+          <option value=""> </option>
+          <option value="De stat">De stat</option>
+          <option value="Militară">Militară</option>
+          <option value="Privată">Privată</option>
+        </select>
+      </div>
     
-    <!-- Filtru Tip Instituție -->
-    <div class="filter-item">
-      <label>Tip instituție</label>
-      <select>
-        <option value=""> </option>
-        <option value="1">Universitate</option>
-        <option value="2">Colegiu</option>
-      </select>
-    </div>
   
-    <!-- Filtru Domeniul de studiu -->
-    <div class="filter-item">
-      <label>Domeniul de studiu</label>
-      <select>
-        <option value=""> </option>
-        <option value="1">Informatică</option>
-        <option value="2">Inginerie</option>
-        <option value="3">Științe sociale</option>
-        <option value="4">Artă</option>
-      </select>
-    </div>
+  <!-- Filtru Domeniul de studiu -->
+<div class="filter-item">
+  <label>Domeniul de studiu</label>
+  <select>
+    <option value=""> </option>
+    <option value="Administarerea afacerilor">Administarerea afacerilor</option>
+    <option value="Administrație publică">Administrație publică</option>
+    <option value="Agricultură">Agricultură</option>
+    <option value="Arhitectură">Arhitectură</option>
+    <option value="Arhitectură și Urbanism">Arhitectură și Urbanism</option>
+    <option value="Arte Teatrale">Arte Teatrale</option>
+    <option value="Arte vizuale">Arte vizuale</option>
+    <option value="Asistență medicală">Asistență medicală</option>
+    <option value="Asistență medicală și moașe">Asistență medicală și moașe</option>
+    <option value="Asistență socială">Asistență socială</option>
+    <option value="Automatică și calculatoare">Automatică și calculatoare</option>
+    <option value="Aviație și transport aerian">Aviație și transport aerian</option>
+    <option value="Biologie">Biologie</option>
+    <option value="Biologie și Geologie">Biologie și Geologie</option>
+    <option value="Biotehnologie">Biotehnologie</option>
+    <option value="Chimie">Chimie</option>
+    <option value="Cinematografie">Cinematografie</option>
+    <option value="Contabilitate și Finanțe">Contabilitate și Finanțe</option>
+    <option value="Coregrafie">Coregrafie</option>
+    <option value="Design">Design</option>
+    <option value="Design și Inginerie">Design și Inginerie</option>
+    <option value="Design și Inginerie Lemnului">Design și Inginerie Lemnului</option>
+    <option value="Drept">Drept</option>
+    <option value="Drept și Administrație Publică">Drept și Administrație Publică</option>
+    <option value="Drept și Științe Sociale">Drept și Științe Sociale</option>
+    <option value="Economie">Economie</option>
+    <option value="Economie Agricolă">Economie Agricolă</option>
+    <option value="Economie și Administrație Publică">Economie și Administrație Publică</option>
+    <option value="Educație">Educație</option>
+    <option value="Educație Fizică și Sport">Educație Fizică și Sport</option>
+    <option value="Farmacie">Farmacie</option>
+    <option value="Filosofie">Filosofie</option>
+    <option value="Finanțe">Finanțe</option>
+    <option value="Fizică">Fizică</option>
+    <option value="Geodezie și Topografie">Geodezie și Topografie</option>
+    <option value="Geografie">Geografie</option>
+    <option value="Geologie și Geofizică">Geologie și Geofizică</option>
+    <option value="Horticultură">Horticultură</option>
+    <option value="Informatica">Informatica</option>
+    <option value="Informatică Economică">Informatică Economică</option>
+    <option value="Informații și Securitate">Informații și Securitate</option>
+    <option value="Ingineria Mediului">Ingineria Mediului</option>
+    <option value="Inginerie">Inginerie</option>
+    <option value="Inginerie (diverse specializări)">Inginerie (diverse specializări)</option>
+    <option value="Inginerie a Mediului">Inginerie a Mediului</option>
+    <option value="Inginerie Agricolă">Inginerie Agricolă</option>
+    <option value="Inginerie Alimentară">Inginerie Alimentară</option>
+    <option value="Inginerie Chimică">Inginerie Chimică</option>
+    <option value="Inginerie Civilă">Inginerie Civilă</option>
+    <option value="Inginerie Electrică">Inginerie Electrică</option>
+    <option value="Inginerie Electrică și Energetică">Inginerie Electrică și Energetică</option>
+    <option value="Inginerie Electrică și IT">Inginerie Electrică și IT</option>
+    <option value="Inginerie Industrială">Inginerie Industrială</option>
+    <option value="Inginerie IT">Inginerie IT</option>
+    <option value="Inginerie în Transporturi">Inginerie în Transporturi</option>
+    <option value="Inginerie Materialelor">Inginerie Materialelor</option>
+    <option value="Inginerie Mecanică">Inginerie Mecanică</option>
+    <option value="Inginerie Mecanică și Industrială">Inginerie Mecanică și Industrială</option>
+    <option value="Inginerie Militară">Inginerie Militară</option>
+    <option value="Inginerie și Management">Inginerie și Management</option>
+    <option value="Inginerie și Management Maritim">Inginerie și Management Maritim</option>
+    <option value="Istorie">Istorie</option>
+    <option value="Istorie și Filosofie">Istorie și Filosofie</option>
+    <option value="Jurnalism">Jurnalism</option>
+    <option value="Limbi Străine">Limbi Străine</option>
+    <option value="Marketing">Marketing</option>
+    <option value="Matematică">Matematică</option>
+    <option value="Matematică și Informatică">Matematică și Informatică</option>
+    <option value="Medicină">Medicină</option>
+    <option value="Medicină Dentară">Medicină Dentară</option>
+    <option value="Medicină Veterinară">Medicină Veterinară</option>
+    <option value="Muzică">Muzică</option>
+    <option value="Psihologie">Psihologie</option>
+    <option value="Relații Internaționale">Relații Internaționale</option>
+    <option value="Sociologie">Sociologie</option>
+    <option value="Sport">Sport</option>
+    <option value="Științe Alimentare">Științe Alimentare</option>
+    <option value="Științe Exacte">Științe Exacte</option>
+    <option value="Științe Militare">Științe Militare</option>
+    <option value="Științe Politice">Științe Politice</option>
+    <option value="Științe Sociale">Științe Sociale</option>
+    <option value="Tehnologia Produselor Agricole">Tehnologia Produselor Agricole</option>
+    <option value="Telecomunicații">Telecomunicații</option>
+    <option value="Teologie">Teologie</option>
+    <option value="Turism și Alimentație">Turism și Alimentație</option>
+    <option value="Urbanism">Urbanism</option>
+    <option value="Zootehnie">Zootehnie</option>
+  </select>
+</div>
+
   
     <!-- Filtru Limbă de predare -->
     <div class="filter-item">
       <label>Limbă de predare</label>
       <select>
         <option value=""> </option>
-        <option value="1">Română</option>
-        <option value="2">Engleză</option>
-        <option value="3">Franceză</option>
+        <option value="Română">Română</option>
+        <option value="Română/Engleză">Română/Engleză</option>
+        <option value="Engleză/Franceză/Germană">Engleză/Franceză/Germană</option>
       </select>
     </div>
   
@@ -74,36 +256,42 @@
       <label>Durata programului</label>
       <select>
         <option value=""> </option>
-        <option value="1">3 ani</option>
-        <option value="2">4 ani</option>
-        <option value="3">5 ani</option>
+        <option value="1 an">1 an</option>
+        <option value="2 ani (Master)">2 ani (Master)</option>
+        <option value="3 ani">3 ani</option>
+        <option value="3 ani (Licență)">3 ani (Licență)</option>
+        <option value="4 ani">4 ani</option>
+        <option value="4 ani (Licență)">4 ani (Licență)</option>
+        <option value="5 ani">5 ani</option>
+        <option value="6 ani">6 ani</option>
       </select>
     </div>
-  
-    <!-- Filtru Locație -->
-    <div class="filter-item">
-      <label>Locație</label>
+
+     <!-- Filtru Burse și oferte financiare -->
+     <div class="filter-item">
+      <label>Burse și oferte financiar</label>
       <select>
         <option value=""> </option>
-        <option value="1">Cluj-Napoca</option>
-        <option value="2">București</option>
-        <option value="3">Iași</option>
-        <option value="4">Timișoara</option>
+        <option value="Burse sociale, merit, Erasmus">Burse sociale, merit, Erasmus</option>
+        <option value="Burse de merit">Burse de merit</option>
+        <option value="Burse de merit, Erasmus">Burse de merit, Erasmus</option>
+        <option value="Burse de merit, Erasmus, internship-uri">Burse de merit, Erasmus, internship-uri</option>
+        <option value="Burse de merit, Erasmus, practică">Burse de merit, Erasmus, practică</option>
+        <option value="Burse de merit, Erasmus, Work and Travel">Burse de merit, Erasmus, Work and Travel</option>
+        <option value="Burse de merit, performanță, Erasmus">Burse de merit, performanță, Erasmus</option>
+        <option value="Burse de merit, sociale" >Burse de merit, sociale</option>
+        <option value="Burse de merit, sociale, Erasmus" >Burse de merit, sociale, Erasmus</option>
+        <option value="Burse de merit, sociale, Erasmus, internship-uri" >Burse de merit, sociale, Erasmus, internship-uri</option>
+        <option value="Burse de merit, speciale" >Burse de merit, speciale</option>
+        <option value="Burse de performanță">Burse de performanță</option>
+        <option value="Burse de performanță, Erasmus">Burse de performanță, Erasmus</option>
+        <option value="Burse de performanță, Erasmus, practică">Burse de performanță, Erasmus, practică</option>
+        <option value="Burse sociale">Burse sociale</option>
+        <option value="Burse sociale, merit">Burse sociale, merit</option>
+        <option value="Burse sociale, merit, Erasmus">Burse sociale, merit, Erasmus</option>
       </select>
     </div>
-  
-    <!-- Filtru Rating -->
-    <div class="filter-item">
-      <label>Rating</label>
-      <select>
-        <option value=""> </option>
-        <option value="1">1 stea</option>
-        <option value="2">2 stele</option>
-        <option value="3">3 stele</option>
-        <option value="4">4 stele</option>
-        <option value="5">5 stele</option>
-      </select>
-    </div>
+
   
   </aside>
   
@@ -271,6 +459,118 @@
     </section>
 </div>
 
+  <!-- Pop-Up pentru Universitatea Babeș-Bolyai -->
+  <div id="popup-1" class="popup">
+    <div class="popup-content">
+      <button class="close-popup">&times;</button>
+      <h2>Universitatea Babeș-Bolyai</h2>
+      <img src="images/ubb.jpg" alt="Universitatea Babeș-Bolyai">
+      <p>
+        Universitatea Babeș-Bolyai (UBB) este lider în educație și cercetare în România. Cu o istorie impresionantă, UBB oferă oportunități excelente pentru dezvoltare academică și profesională.
+      </p>
+      <p><strong>Posibile Specializări:</strong></p>
+      <ul style="text-align: left;">
+        <li>Informatică și Tehnologia Informației</li>
+        <li>Științe Economice și Administrarea Afacerilor</li>
+        <li>Psihologie și Științe Cognitive</li>
+        <li>Științe Politice și Relații Internaționale</li>
+        <li>Medicină și Farmacie</li>
+      </ul>
+   
+      <p>
+        UBB promovează un mediu academic inovativ, oferind acces la laboratoare de cercetare, biblioteci moderne și profesori de renume internațional.
+      </p>
+      <a class="official-link" href="https://www.ubbcluj.ro" target="_blank">Vizitează pagina oficială</a>
+    </div>
+  </div>
+   <!-- Pop-Up pentru Universitatea Alexandru Ioan Cuza -->
+   <div id="popup-2" class="popup">
+    <div class="popup-content">
+      <button class="close-popup">&times;</button>
+      <h2>Universitatea Alexandru Ioan Cuza</h2>
+      <img src="images/uni1.jpg" alt="Universitatea Alexandru Ioan Cuza">
+      <p>
+        Universitatea Alexandru Ioan Cuza din Iași este una dintre cele mai importante instituții de învățământ superior din România, cu un focus pe cercetare și educație de înaltă calitate.
+      </p>
+      <p><strong>Posibile Specializări:</strong></p>
+      <ul style="text-align: left;">
+        <li>Chimie și Biotehnologii</li>
+        <li>Psihologie</li>
+        <li>Științe Sociale</li>
+        <li>Matematică</li>
+      </ul>
+    
+      <p>
+        U.A.I.C. este recunoscută pentru excelenta sa activitate de cercetare și pentru facilitățile moderne de învățământ.
+      </p>
+      <a class="official-link" href="https://www.uaic.ro" target="_blank">Vizitează pagina oficială</a>
+    </div>
+  </div>
+
+  <!-- Pop-Up pentru Universitatea din București -->
+  <div id="popup-3" class="popup">
+    <div class="popup-content">
+      <button class="close-popup">&times;</button>
+      <h2>Universitatea din București</h2>
+      <img src="images/uni2.jpg" alt="Universitatea din București">
+      <p>
+        Universitatea din București este una dintre cele mai prestigioase instituții de învățământ din România, oferind o gamă largă de programe educaționale și cercetare de top.
+      </p>
+      <p><strong>Posibile Specializări:</strong></p>
+      <ul style="text-align: left;">
+        <li>Matematică și Informatică</li>
+        <li>Filologie</li>
+        <li>Științe Politice</li>
+        <li>Istorie</li>
+      </ul>
+    
+      <a class="official-link" href="https://www.unibuc.ro" target="_blank">Vizitează pagina oficială</a>
+    </div>
+  </div>
+
+  <!-- Pop-Up pentru Universitatea Politehnica din București -->
+  <div id="popup-4" class="popup">
+    <div class="popup-content">
+      <button class="close-popup">&times;</button>
+      <h2>Universitatea Politehnica din București</h2>
+      <img src="images/uni3.jpg" alt="Universitatea Politehnica din București">
+      <p>
+        Universitatea Politehnica din București este una dintre cele mai importante instituții de învățământ tehnic din România, specializată în domeniul ingineriei și tehnologiilor avansate.
+      </p>
+      <p><strong>Posibile Specializări:</strong></p>
+      <ul style="text-align: left;">
+        <li>Inginerie Mecanică</li>
+        <li>Automatica și Calculatoare</li>
+        <li>Electromecanică</li>
+      </ul>
+
+
+      <a class="official-link" href="https://www.upb.ro" target="_blank">Vizitează pagina oficială</a>
+    </div>
+  </div>
+
+  <!-- Pop-Up pentru Universitatea din Cluj-Napoca -->
+  <div id="popup-5" class="popup">
+    <div class="popup-content">
+      <button class="close-popup">&times;</button>
+      <h2>Universitatea din Cluj-Napoca</h2>
+      <img src="images/uni4.jpg" alt="Universitatea din Cluj-Napoca">
+      <p>
+        Universitatea din Cluj-Napoca este o instituție importantă, cu o tradiție în învățământul superior, având multiple facultăți dedicate cercetării și educației de calitate.
+      </p>
+      <p><strong>Posibile Specializări:</strong></p>
+      <ul style="text-align: left;">
+        <li>Biologie</li>
+        <li>Fizică</li>
+        <li>Științe Politice</li>
+      </ul>
+      
+      <a class="official-link" href="https://www.univcluj.ro" target="_blank">Vizitează pagina oficială</a>
+    </div>
+  </div>
+  <!-- Overlay -->
+  <div id="popup-overlay" class="popup-overlay"></div>
+
 
   </main>
 
@@ -298,12 +598,17 @@
         <!-- Înlocuim h2 cu o imagine -->
         <img src="images/quizText.png" alt="Quiz Title" class="quiz-title">
         <p>Ești gata să afli unde te duce curiozitatea? Completează formularul nostru interactiv și lasă-ne să-ți ghicim domeniul ideal!</p>
-        <button>Vezi quiz-ul</button>
+        <a href="quiz.html"> <!-- Linkul către pagina de quiz -->
+            <button>Vezi quiz-ul</button>
+        </a>
     </div>
     <div class="quiz-icon">
         <img src="images/quizImage.png" alt="Quiz Icon">
     </div>
 </div>
+
+
+
 
 <!-- Newsletter Section -->
 <section class="newsletter-section">
@@ -320,12 +625,9 @@
 </div>
 
 
-
-
   <div id="footer-placeholder"></div>
 </body>
 <script>
-
          fetch('activity_bar.html') // Fetch pentru header și footer
             .then(response => response.text())
             .then(data => {
@@ -344,7 +646,42 @@
 
 
 
+            
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.faculty-card'); // Select all cards
+  const overlay = document.getElementById('popup-overlay'); // Shared overlay
 
+  cards.forEach(card => {
+    const cardId = card.getAttribute('data-id'); // Get card's unique ID
+    const popup = document.getElementById(`popup-${cardId}`); // Match with corresponding pop-up
+
+    if (popup) {
+      const closeButton = popup.querySelector('.close-popup'); // Close button inside the pop-up
+
+      // Show pop-up when card is clicked
+      card.addEventListener('click', () => {
+        popup.classList.add('show');
+        overlay.classList.add('show');
+      });
+
+      // Close pop-up when close button is clicked
+      closeButton.addEventListener('click', () => {
+        popup.classList.remove('show');
+        overlay.classList.remove('show');
+      });
+    }
+  });
+
+  // Close pop-ups when overlay is clicked
+  overlay.addEventListener('click', () => {
+    document.querySelectorAll('.popup.show').forEach(popup => {
+      popup.classList.remove('show');
+    });
+    overlay.classList.remove('show');
+  });
+});
 
 </script>
 </body>

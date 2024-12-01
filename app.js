@@ -15,6 +15,7 @@ const verificationRoutes = require('./routes/verificationRoutes');
 const initDb = require('./config/initDb');
 const User = require('./models/User');
 const VerificationCode = require('./models/VerificationCode');
+const chatbotRoutes = require('./routes/chatbotRoutes');
 
 // Initialize Express App
 const app = express();
@@ -117,12 +118,16 @@ app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'home.html')); // Serves the static 'home.html' file from 'public'
 });
 
+app.get('/chatbot', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'chatbot.html'));
+});
+
 // Middleware to Prevent Caching
 app.use((req, res, next) => {
     res.setHeader('Cache-Control', 'no-store');
     next();
 });
-
+app.use('/api/chatbot', chatbotRoutes);
 // Start Server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

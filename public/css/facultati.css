@@ -25,63 +25,104 @@ body {
   min-height: 100vh;
   overflow-x: hidden; /* Evită derularea orizontală */
 }
- 
-/* Hero Section */
-.hero {
-  position: relative;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* pentru a evita ca imaginea să depășească marginile secțiunii */
-}
+
 option {
   background-color: rgb(255, 255, 255); /* Fundal implicit pentru opțiuni */
   color: rgb(0, 0, 0); /* Text implicit pentru opțiuni */
  
 }
-.welcome-section img {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-object-fit: con;
-display: block;
-}
- 
-.welcome-box {
-  position: absolute;
-  top: 50%; /* Poziționează chenarul pe verticală în mijlocul imaginii */
-  left: 50%; /* Poziționează chenarul pe orizontală în mijlocul imaginii */
-  transform: translate(-50%, -50%); /* Centrează chenarul perfect pe imagine */
-  background-color: rgba(47, 88, 78, 0.8); /* Adaugă un fundal semi-transparent */
-  padding: 20px 40px; /* Adaugă margini interne pentru text */
-  border-radius: 10px; /* Răsucirea colțurilor pentru un efect mai plăcut */
+
+
+.intro-section {
+  background: #EBEBEB; /* Fundal mai deschis pentru un contrast plăcut */
+  color: #ff7845; /* Portocaliu cald pentru text */
+  padding: 80px 20px;
   text-align: center;
-  color: white; /* Culoare albă pentru text */
-  font-family: 'Freeman', sans-serif;
-}
- 
-.welcome-box {
-width: 410px;
-height: 190px;
-  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 95%; /* Se păstrează lățimea, dar */
+  max-width: 1500px; /* Optional: limitează lățimea maximă */
+  margin: 50px auto; /* Centrare orizontală */
   border-radius: 16px;
- 
+  margin-top: 80px;
+  height: 600px;
+  transition: background-color 0.3s ease; 
+
 }
-.welcome-box h1 {
-  color: white;
-  font-size: 38px; ;
+
+
+/* Secțiunea principală */
+.intro-section {
+  position: relative; /* Permite suprapunerea elementelor în interior */
+  background: #EBEBEB; /* Fundal gri deschis */
+
   text-align: center;
-  margin: 0;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+
 }
- 
- 
- 
+
+.intro-container {
+  position: absolute; /* Poziționează containerul peste banner */
+  top: 50%; /* Poziționare verticală la mijloc */
+  left: 50%; /* Poziționare orizontală la mijloc */
+  transform: translate(-50%, -50%); /* Ajustare pentru centrare perfectă */
+  background: #EBEBEB; /* Fundal alb semi-transparent */
+  border-radius: 16px;
+  padding: 40px;
+  width: calc(100% - 40px); /* Ocupă întreaga lățime minus spațiul pentru padding */
+  max-width: 1000px; /* Limita maximă */
+   /* Umbră pentru profunzime */
+  z-index: 2; /* Asigură că e deasupra bannerului */
+  height: 500px;
+}
+
+
+/* Efect estetic pe paragrafe */
+.intro-content p:not(:last-child) {
+  border-bottom: 1px solid #c0bebe; /* Linie sub fiecare paragraf */
+  padding-bottom: 15px;
+}
+
+.intro-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro-content h2 {
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #FF9861;
+  margin-bottom: 50px; /* Micșorează spațiul dintre titlu și text */
+  margin-top: 0; /* Elimină marginile suplimentare de sus */
+}
+
+.intro-content p {
+  font-size: 18px;
+  max-width: 900px;
+  margin: 10px auto; /* Reduce spațierea pentru un aspect mai compact */
+  line-height: 1.6;
+  color: #555;
+  text-align: center; /* Centrare text */
+}
+
+
+.intro-content p:nth-child(2) {
+  color: #444;
+}
+
+.intro-content p:nth-child(3) {
+  color: #333;
+}
+
+
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 30px 15px; /* Redu spațierea pentru ecrane mai mici */
+  }
+  .intro-content {
+    padding: 0 10px; /* Adaugă puțină marjă pe laterale pentru mobil */
+  }
+} 
 .main-content {
   display: flex;
   flex-wrap: wrap;
@@ -290,18 +331,15 @@ gap: 10px; /* Spațiu între butonul de sortare și rezultatele afișate */
   padding-top: 5px;
 }
  
-
  
 .faculty-card .spacer {
   flex-grow: 1; /* Creează un spațiu gol între titlu și localitate */
 }
-
 .faculty-card p {
   font-size: 16px;
   margin: 0;
   align-self: flex-start; /* Aliniere la începutul cardului */
 }
-
  
  
 .results-navigation {
@@ -414,7 +452,7 @@ box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adăugarea unei umbre pentru efec
  
  
 .main-background {
-background-color: #F2F5F9; /* culoare deschisă */
+background-color: #EBEBEB; /* culoare deschisă */
 padding: 20px;
 border-radius: 8px; /* colțuri rotunjite opționale */
 display: flex;
@@ -583,7 +621,7 @@ width: 130px;
 padding: 1px;
 border: 0px solid #ccc;
 border-radius: 8px;
-background-color: #F2F5F9;
+background-color: #EBEBEB;
 font-size: 16px;
 color: #333;
 margin-bottom: 10px;
@@ -616,3 +654,103 @@ background-position: right 10px center;
   font-size: 24px; /* Dimensiunea iconului */
   text-decoration: none; /* Elimină sublinierea */
 }
+
+    /* Stil pentru pop-up */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; /* Lățime extinsă */
+      max-height: 80%; /* Înălțime maximă */
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      display: none;
+      padding: 30px;
+      overflow-y: auto; /* Permite derularea verticală */
+    }
+    
+        .popup.show {
+          display: block;
+        }
+    
+        .popup .popup-content {
+          text-align: center;
+        }
+    
+        .popup .popup-content img {
+          max-width: 100%;
+          border-radius: 10px;
+        }
+    
+        .popup .popup-content h2 {
+          margin-top: 10px;
+          font-size: 2em;
+        }
+    
+        .popup .popup-content p {
+          margin: 10px 0;
+          text-align: justify;
+          font-size: 1.1em;
+          line-height: 1.6;
+        }
+    
+        .popup .close-popup {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: none;
+          border: none;
+          font-size: 1.5em;
+          cursor: pointer;
+        }
+    
+        .popup .official-link {
+          display: block;
+          margin-top: 15px;
+          font-weight: bold;
+          color: #007bff;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+    
+        .popup .official-link:hover {
+          color: #0056b3;
+        }
+    
+        /* Stil pentru overlay */
+        .popup-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+          display: none;
+        }
+    
+        .popup-overlay.show {
+          display: block;
+        }
+    
+         /* Stilizarea barei de derulare */
+         .popup::-webkit-scrollbar {
+          width: 8px;
+        }
+    
+        .popup::-webkit-scrollbar-track {
+          background: #f1f1f1; /* Culoare de fundal */
+          border-radius: 10px;
+        }
+    
+        .popup::-webkit-scrollbar-thumb {
+          background: #007bff; /* Culoarea glisorului */
+          border-radius: 10px;
+        }
+    
+        .popup::-webkit-scrollbar-thumb:hover {
+          background: #0056b3; /* Culoarea glisorului la hover */
+        }
