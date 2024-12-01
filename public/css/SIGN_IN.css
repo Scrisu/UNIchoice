@@ -1,4 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+/* Import the fonts */
+@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro:wght@300;400;700&display=swap');
+
+/* Apply Freeman to titles */
+h1, h2, h3, .title {
+    font-family: 'Freeman', sans-serif;
+    font-weight: normal; /* Adjust as needed */
+}
+
+/* Apply Source Sans Pro to body and other text */
+body, p, span, input, button, a, .content {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400; /* Adjust as needed */
+}
+
+/* Ensure specific overrides for general font-family */
+h1 {
+    font-family: 'Freeman', sans-serif;
+}
+
+p, input, button {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
 
 * {
 	box-sizing: border-box;
@@ -10,7 +33,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
 	margin: -20px 0 50px;
 }
@@ -44,31 +66,35 @@ a {
 }
 
 button {
-	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 12px 45px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+	font-size: 16px;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+
+
 }
 
-button:active {
-	transform: scale(0.95);
+button:hover {
+	background-color: #FAC7DD;
+    color: #000;
 }
 
-button:focus {
-	outline: none;
+
+
+.button.ghost {
+    background-color: transparent;
+    color: #000;
 }
 
-button.ghost {
-	background-color: transparent;
-	border-color: #FFFFFF;
+/* Hover Effect for Ghost Buttons */
+.button.ghost:hover {
+    background-color: #FAC7DD;
+    color: #000;
 }
-
 form {
 	background-color: #FFFFFF;
 	display: flex;
@@ -78,11 +104,13 @@ form {
 	padding: 0 50px;
 	height: 100%;
 	text-align: center;
+	gap: 5px;
 }
 
 input {
-	background-color: #eee;
+	background-color: #f6f5f7;
 	border: none;
+	border-radius: 5px;
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
@@ -90,7 +118,7 @@ input {
 
 .container {
 	background-color: #fff;
-	border-radius: 10px;
+	border-radius: 5px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
@@ -111,6 +139,7 @@ input {
 	left: 0;
 	width: 50%;
 	z-index: 2;
+	margin-top: 15px;
 }
 
 .container.right-panel-active .sign-in-container {
@@ -159,19 +188,22 @@ input {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 0;
-	color: #FFFFFF;
-	position: relative;
-	left: -100%;
-	height: 100%;
-	width: 200%;
-  	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
+    background: linear-gradient(
+        to left,
+        rgba(47, 88, 78, 0.7) 0%,  /* Slightly lighter on the left */
+        rgba(47, 88, 78, 0.9) 50%, /* Almost fully opaque in the middle */
+        rgba(47, 88, 78, 1) 100%  /* Fully opaque on the right */
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Adjust text color for contrast */
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
 }
 
 .container.right-panel-active .overlay {
@@ -210,26 +242,7 @@ input {
 	transform: translateX(20%);
 }
 
-.social-container {
-	margin: 20px 0;
-}
 
-.social-container img {
-    width: 40px;  /* Adjust to your desired size */
-    height: 40px;
-    border-radius: 50%;  /* Makes the image circular */
-}
-
-.social-container a {
-	border: 1px solid #DDDDDD;
-	border-radius: 50%;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0 5px;
-	height: 40px;
-	width: 40px;
-}
 
 footer {
     background-color: #222;
@@ -247,11 +260,3 @@ footer p {
     margin: 10px 0;
 }
 
-footer i {
-    color: red;
-}
-
-footer a {
-    color: #3c97bf;
-    text-decoration: none;
-}
