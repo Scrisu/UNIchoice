@@ -47,7 +47,7 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 2;
-    width: 92%; /* Se păstrează lățimea, dar */
+    width: 90%; /* Se păstrează lățimea, dar */
     max-width: 1550px; /* Optional: limitează lățimea maximă */
     margin: 0 auto; /* Centrează containerul pe axa orizontală */
     justify-content: center; /* Centrează conținutul în cadrul containerului */
