@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/SIGN_IN.css">
 </head>
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form id="registerForm" method="POST" action="/request-verification">
-                <h1>Crează cont</h1>
-                <input type="text" name="username" placeholder="Username" required>
+                <h1>Creează cont</h1>
+                <input type="text" name="username" placeholder="Nume utilizator" required>
                 <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button type="submit" class="button">Register</button>
+                <input type="password" name="password" placeholder="Parola" required>
+                <button type="submit" class="button">Înregistrare</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
             <form id="login-form"> <!-- Corrected the ID to 'login-form' and removed 'method' and 'action' -->
-                <h1>Sign in</h1>
+                <h1>Conectare</h1>
                 <input type="email" id="email" name="email" placeholder="Email" required>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-                <button type="submit" class="button">Log In</button>
+                <input type="password" id="password" name="password" placeholder="Parola" required>
+                <button type="submit" class="button">Conectare</button>
             </form>
         </div>
         <div class="overlay-container">
@@ -30,12 +31,12 @@
                 <div class="overlay-panel overlay-left">
                     <h1>Ne bucurăm să te revedem!</h1>
                     <p>Pentru a rămâne la curent cu noile informații, conectează-te cu informațiile personale.</p>
-                    <button class="ghost" id="signIn">Sign In</button>
+                    <button class="ghost" id="signIn">Conectare</button>
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1>Bine ai venit!</h1>
                     <p>Introdu-ți detaliile personale și hai să pornim împreună în călătoria spre viitorul tău academic.</p>
-                    <button class="ghost" id="signUp">Sign Up</button>
+                    <button class="ghost" id="signUp">Înregistrare</button>
                 </div>
             </div>
         </div>

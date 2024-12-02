@@ -35,19 +35,18 @@ main {
     max-width: 1550px; 
     margin: auto; 
     justify-content: center; 
-    gap: 10px;
     background-color: #fff;
+    margin-top: 50px;
 }
 
 /* Header Styling */
-header {
+.intro-section {
     background: #EBEBEB; ;
     text-align: center;
     padding: 50px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 2;
-    width: 92%; /* Se păstrează lățimea, dar */
+    width: 90%; /* Se păstrează lățimea, dar */
     max-width: 1550px; /* Optional: limitează lățimea maximă */
     margin: 0 auto; /* Centrează containerul pe axa orizontală */
     justify-content: center; /* Centrează conținutul în cadrul containerului */
@@ -55,22 +54,25 @@ header {
     height: auto;
 }
 
-header h1 {
+.intro-section  h1 {
     color: #2F584E;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-size: 2.8em;
     letter-spacing: 2px;
     font-weight: bold;
     opacity: 100% !important;
+
+
 }
 
-header p {
+.intro-section  p {
     font-size: 1.2em;
     margin-top: 15px;
     margin-left: 80px;
     margin-right: 80px;
     font-style: italic;
     opacity: 100% !important;
+   
 }
 
 

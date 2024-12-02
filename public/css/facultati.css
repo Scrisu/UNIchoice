@@ -32,97 +32,43 @@ option {
  
 }
 
-
-.intro-section {
-  background: #EBEBEB; /* Fundal mai deschis pentru un contrast plăcut */
-  color: #ff7845; /* Portocaliu cald pentru text */
-  padding: 80px 20px;
+/* Header Styling */
+.intro {
+  background: #EBEBEB; ;
   text-align: center;
-  width: 95%; /* Se păstrează lățimea, dar */
-  max-width: 1500px; /* Optional: limitează lățimea maximă */
-  margin: 50px auto; /* Centrare orizontală */
+  padding: 50px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  width: 90%; /* Se păstrează lățimea, dar */
+  max-width: 1550px; /* Optional: limitează lățimea maximă */
+  margin: 0 auto; /* Centrează containerul pe axa orizontală */
+  justify-content: center; /* Centrează conținutul în cadrul containerului */
   border-radius: 16px;
-  margin-top: 80px;
-  height: 600px;
-  transition: background-color 0.3s ease; 
-
+  height: auto;
+  margin-top: 90px;
+  margin-bottom: 50px;
 }
 
-
-/* Secțiunea principală */
-.intro-section {
-  position: relative; /* Permite suprapunerea elementelor în interior */
-  background: #EBEBEB; /* Fundal gri deschis */
-
-  text-align: center;
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
-
-}
-
-.intro-container {
-  position: absolute; /* Poziționează containerul peste banner */
-  top: 50%; /* Poziționare verticală la mijloc */
-  left: 50%; /* Poziționare orizontală la mijloc */
-  transform: translate(-50%, -50%); /* Ajustare pentru centrare perfectă */
-  background: #EBEBEB; /* Fundal alb semi-transparent */
-  border-radius: 16px;
-  padding: 40px;
-  width: calc(100% - 40px); /* Ocupă întreaga lățime minus spațiul pentru padding */
-  max-width: 1000px; /* Limita maximă */
-   /* Umbră pentru profunzime */
-  z-index: 2; /* Asigură că e deasupra bannerului */
-  height: 500px;
-}
-
-
-/* Efect estetic pe paragrafe */
-.intro-content p:not(:last-child) {
-  border-bottom: 1px solid #c0bebe; /* Linie sub fiecare paragraf */
-  padding-bottom: 15px;
-}
-
-.intro-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.intro-content h2 {
-  font-size: 50px;
+.intro h1 {
+  color: #ff7845; 
+  margin-bottom: 50px;
+  font-size: 2.8em;
+  letter-spacing: 2px;
   font-weight: bold;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #FF9861;
-  margin-bottom: 50px; /* Micșorează spațiul dintre titlu și text */
-  margin-top: 0; /* Elimină marginile suplimentare de sus */
+  opacity: 100% !important;
 }
 
-.intro-content p {
-  font-size: 18px;
-  max-width: 900px;
-  margin: 10px auto; /* Reduce spațierea pentru un aspect mai compact */
-  line-height: 1.6;
-  color: #555;
-  text-align: center; /* Centrare text */
+.intro p {
+  font-size: 1.2em;
+  margin-top: 15px;
+  margin-left: 80px;
+  margin-right: 80px;
+  font-style: italic;
+  opacity: 100% !important;
 }
 
 
-.intro-content p:nth-child(2) {
-  color: #444;
-}
-
-.intro-content p:nth-child(3) {
-  color: #333;
-}
-
-
-@media (max-width: 768px) {
-  .intro-section {
-    padding: 30px 15px; /* Redu spațierea pentru ecrane mai mici */
-  }
-  .intro-content {
-    padding: 0 10px; /* Adaugă puțină marjă pe laterale pentru mobil */
-  }
-} 
 .main-content {
   display: flex;
   flex-wrap: wrap;

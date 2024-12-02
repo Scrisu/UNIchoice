@@ -34,12 +34,11 @@
     flex-wrap: wrap;
     width: 95%; /* Se păstrează lățimea, dar */
     max-width: 1550px; /* Optional: limitează lățimea maximă */
-    margin: 0 auto; /* Centrează containerul pe axa orizontală */
+    margin:auto; /* Centrează containerul pe axa orizontală */
     justify-content: center; /* Centrează conținutul în cadrul containerului */
-    gap: 10px; /* Spațiu între elemente */
     padding: 20px; /* Spațiu interior */
     overflow-x: hidden; /* Previne derularea orizontală */
-    margin-top: 40px;
+    margin-top: 50px;
   }
   
   .pre-quiz-banner {
@@ -69,7 +68,7 @@
 }
 
 .text-content h2 {
-    font-size: 2.4rem;
+    font-size: 2.0rem;
     margin-bottom: 1rem;
     color: #FF9861;
     text-align: center;
@@ -253,7 +252,7 @@
 
 .reviews h3 {
     font-family: 'Freeman', sans-serif;
-    font-size: 38px;
+    font-size: 30px;
     font-weight: bold;
     color: white;
     margin-bottom: 40px;
@@ -326,6 +325,7 @@
     margin-right: 20%;
     margin-top: 20px;
     margin-bottom: 0;
+    font-style: italic;
 }
 
 .container {
@@ -356,7 +356,7 @@
     background-color: #EBEBEB;
     margin-top: 18px;
     height: 650px;
-    margin-bottom: 63px;
+    margin-bottom: 80px;
     margin-right: 20px;
     align-items: center;
     
@@ -451,28 +451,6 @@ button {
 }
 
 
-h2::before {
-    content: "☆☆☆";            /* Asteriscul sau simbolul dorit */
-    display: block;          /* Afișează asteriscul pe o linie separată */
-    font-size: 40px;         /* Mărimea asteriscului */
-    color: #2F584E;          /* Culoarea asteriscului */
-    text-align: center;      /* Centrează asteriscul */
-    margin-bottom: 0.5rem;   /* Spațiere între asterisc și text */
-}  /* Spațiere între asterisc și text */
 
-/* Stil pentru stelute doar în secțiunea de recenzii */
-.reviews h3::before {
-    content: "☆☆☆";            /* Asteriscurile sau simbolul dorit */
-    display: block;            /* Afișează asteriscul pe o linie separată */
-    font-size: 40px;           /* Mărimea asteriscului */
-    color: white;              /* Culoarea asteriscului */
-    text-align: center;        /* Centrează asteriscul */
-    margin-bottom: 0.5rem;     /* Spațiere între asterisc și text */
-}
-
-/* Dacă vrei ca alte h3 să nu aibă stelute, pur și simplu nu aplici stilul pentru ele */
-h3::before {
-    content: none;             /* Elimină stelutele pentru toate celelalte h3 */
-}
 
 
