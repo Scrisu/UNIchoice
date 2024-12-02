@@ -63,7 +63,7 @@
                 <div class="card">
                     <img src="images/camine.jpg" alt="Image 1" class="card-image">
                     <div class="card-content">
-                        <button onclick="window.location.href='camine.html'">Detalii</button>
+                        <button class="button-camine" onclick="window.location.href='camine.html'">Detalii</button>
                     </div>
                 </div>
                 
@@ -85,10 +85,12 @@
         
         <section class="forum">
             <div class="forum-frame">
-                <h2>Vrei să discuți cu ceilalți studenți?</h2>
-                <button onclick="window.location.href='resurse.html'">Vezi resurse</button>
+                <h2>Conectează-te cu alți studenți și împărtășește idei!</h2>
+                <p>Vrei să afli mai multe despre viața de student, să îți împărtășești experiențele și să înveți din poveștile altora? Forumul nostru este locul ideal pentru a discuta diverse subiecte, de la provocările academice la activitățile extracurriculare. Alătură-te comunității noastre și începem conversații care te pot ajuta să îți îmbunătățești viața de student, să faci noi prietenii.</p>
+                <button onclick="window.location.href='resurse.html'">Discută acum!</button>
             </div>
         </section>
+        
         
         <div id="contactButton">
             <a href="/formular-de-contact.html" title="Contactează-ne!">
@@ -98,12 +100,12 @@
 
         
 
-        <div id="footer-placeholder"></div>
         
         
         
     </main>
-    
+    <div id="footer-placeholder"></div>
+        
     <script>
         fetch('activity_bar.html') // Fetch pentru header și footer
             .then(response => response.text())
