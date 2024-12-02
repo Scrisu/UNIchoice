@@ -122,6 +122,10 @@ app.get('/chatbot', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'chatbot.html'));
 });
 
+app.get('/quiz', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'quiz.html'));
+});
+
 // Middleware to Prevent Caching
 app.use((req, res, next) => {
     res.setHeader('Cache-Control', 'no-store');
