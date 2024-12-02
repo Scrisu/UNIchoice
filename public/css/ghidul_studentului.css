@@ -5,37 +5,80 @@
     box-sizing: border-box;
 }
 
-/* Container de bază */
-.main-container {
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: white;
+    color: #333;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    background: white;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evită derularea orizontală */
+    padding-top: 120px; /* Adaugă un padding suficient pentru a lăsa spațiu sub header */
 }
-
- 
-
-/* Importă fontul Freeman Regular (asigură-te că ai fișierul de font) */
-@font-face {
-    font-family: 'Freeman Regular';
-    src: url('path-to-your-font/freeman-regular.ttf') format('truetype');
-}
-
-/* Welcome Section */
-
-.welcome-section img {
-    width: 100%;  /* Asigură-te că imaginea se extinde pe întreaga lățime a secțiunii */
-    height: auto;
-}
+    main {
+        padding: 20px;
+        width: 95%; 
+        max-width: 1550px; 
+        margin: 40px 20px; 
+        justify-content: center; 
+        gap: 10px;
+        background-color: #fff;
+    }
+   
+   
+   
+  @import url('https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro:wght@400;700&display=swap');
+   
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Freeman', sans-serif; /* Font pentru toate titlurile */
+  }
+   
+  p {
+    font-family: 'Source Sans Pro', sans-serif; /* Font pentru toate paragrafele */
+  }
 
 
 .between-sections-text {
-    font-size: 28px;      /* Setează dimensiunea fontului */
+    font-size: 35px;      /* Setează dimensiunea fontului */
     text-align: center;   /* Centrează textul */
     font-weight: bold;    /* Adaugă un aspect de tip "bold" (opțional, pentru a face textul mai vizibil) */
     padding-bottom: 20px;
+    color: #2F584E;
+    padding-top: 40px;
 }
 
+header {
+    background: #EBEBEB; ;
+    text-align: center;
+    padding: 50px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    width: 90%; /* Se păstrează lățimea, dar */
+    max-width: 1550px; /* Optional: limitează lățimea maximă */
+    margin: 0 auto; /* Centrează containerul pe axa orizontală */
+    justify-content: center; /* Centrează conținutul în cadrul containerului */
+    border-radius: 16px;
+    height: auto;
+}
+
+header h1 {
+    color: #2F584E;
+    margin-bottom: 50px;
+    font-size: 2.8em;
+    letter-spacing: 2px;
+    font-weight: bold;
+    opacity: 100% !important;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-left: 80px;
+    margin-right: 80px;
+    font-style: italic;
+    opacity: 100% !important;
+}
 
 /* General Reset */
 * {
@@ -76,7 +119,7 @@
 }
 
 .frame h2 {
-    font-size: 30px; /* Reducem dimensiunea titlului */
+    font-size: 40px; /* Reducem dimensiunea titlului */
     color: #333;
     margin-bottom: 1rem;
     text-align: center;
@@ -84,7 +127,7 @@
 
 
 .frame p {
-    font-size: 16px; /* Reducem dimensiunea textului */
+    font-size: 20px; /* Reducem dimensiunea textului */
     color: #555;
     text-align: center;
 }
@@ -123,7 +166,6 @@
 
 /* Container principal pentru secțiunea info-cards */
 .info-cards-container {
-    width: 100%;
     height: auto; /* Permitem să se ajusteze la conținut */
     margin: 0 auto;
     display: flex;
@@ -132,6 +174,9 @@
     background-color: #f5f5f5;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    width: 95%; /* Se păstrează lățimea, dar */
+    max-width: 1550px; /* Optional: limitează lățimea maximă */
+    margin: 0 auto; /* Centrează containerul pe axa orizontală */
 }
 
 /* Info Cards Section */
@@ -140,13 +185,15 @@
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    padding: 0;
+    padding: 40px;
     background-color: #f5f5f5;
     width: 90%;
     flex-wrap: wrap;
     border-radius: 16px;
-    margin: 0 auto; 
-    height: 500px ;/* Asigură că frame-ul este centrat pe pagină */
+    height: auto;
+    width: 95%; /* Se păstrează lățimea, dar */
+    max-width: 1550px; /* Optional: limitează lățimea maximă */
+    margin: 0 auto; /* Centrează containerul pe axa orizontală */
 }
 /* Stilizare card */
 
@@ -171,7 +218,7 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    opacity: 70%;
+   
 }
 
 /* Adăugăm un efect de hover pentru imaginile cardurilor */
@@ -218,22 +265,18 @@
 }
 
 .card-content h3 {
-    font-size: 24px; /* Micșorăm dimensiunea titlului */
+    font-size: 35px; /* Micșorăm dimensiunea titlului */
     margin-bottom: 0.5rem;
     position: absolute;
-    top: -50px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.card-content p {
-    font-size: 14px; /* Micșorăm dimensiunea textului */
-    color: white;
-}
 
 /* Stilul pentru titluri */
 .title-camine, .title-evenimente, .title-transport {
-    font-size: 18px; /* Micșorăm dimensiunea titlurilor */
+    font-size: 50px; /* Micșorăm dimensiunea titlurilor */
 }
 
 /* Stil pentru titlul "Camine" */
@@ -257,7 +300,8 @@
 /* Stilul general pentru butoanele cardurilor */
 .card-content button {
     position: absolute;
-    bottom: -50px;
+    bottom: -90px;
+    
     left: 50%;
     transform: translateX(-50%);
     padding: 0.5rem 1rem;
@@ -266,7 +310,7 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 0.8rem; /* Micșorăm dimensiunea fontului butonului */
+    font-size: 1rem; /* Micșorăm dimensiunea fontului butonului */
 }
 
 .card-content button:hover {
@@ -307,21 +351,20 @@
     font-family: "Freeman, Regular";
     padding: 20px;
 }
-.forum h2 {
-    font-size: 30px; /* Reducem dimensiunea titlului */
-    margin-bottom: 5px;
-}
 
 .forum button {
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem; /* Crește spațiul intern pe verticală și orizontală */
     background-color: #2F584E;
     color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 0.8rem; /* Reducem dimensiunea fontului butonului */
+    font-size: 1rem; /* Mărește dimensiunea fontului */
     margin-bottom: 20px;
+    width: 400px; /* Adaugă o lățime fixă opțională */
+    height: 200px; /* Adaugă o înălțime fixă opțională */
 }
+
 
 .forum button:hover {
     background-color: #21443b;
@@ -357,14 +400,7 @@
     text-align: center;
     margin: 0;
   }
-  h2::before {
-        content: "☆☆☆";            /* Asteriscul sau simbolul dorit */
-        display: block;          /* Afișează asteriscul pe o linie separată */
-        font-size: 40px;         /* Mărimea asteriscului */
-        color: #2F584E;          /* Culoarea asteriscului */
-        text-align: center;      /* Centrează asteriscul */
-        margin-bottom: 0.5rem;   /* Spațiere între asterisc și text */
-    }  /* Spațiere între asterisc și text */
+ 
 
     #contactButton {
         position: fixed; /* Rămâne fixat în colțul din dreapta jos */
