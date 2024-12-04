@@ -141,3 +141,56 @@ background-color: #EBF86E;
     margin: 5px 0;
   }
 }
+/* Style for the container */
+.right-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px; /* Space between buttons and avatar */
+  padding: 10px;
+}
+
+/* Style for the Sign In button */
+.sign-in-button {
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for the Log Out button */
+.logout-button {
+  background-color: #dc3545; /* Red background */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #a71d2a; /* Darker red on hover */
+}
+
+/* Style for the avatar icon */
+.avatar-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.avatar-icon:hover {
+  transform: scale(1.1); /* Slightly larger on hover */
+}
