@@ -6,6 +6,7 @@
     <title>Top Activity Bar</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro:wght@400;700&display=swap">
     <link rel="stylesheet" href="css/activity_bar.css"> 
+    <link rel="stylesheet" href="/css/chatbot.css"> <!-- Include chatbot CSS -->
 </head>
 <body>
   <!-- Activity Bar Section -->
@@ -30,9 +31,19 @@
 
     <!-- Right-aligned profile section -->
     <div class="right-buttons">
-      <a href="auth.html">Sign In</a>
+      <button id="sign-in-btn" class="sign-in-button" onclick="window.location.href='/auth';">Sign In</button>
+      <button id="logout-btn" class="logout-button" style="display: none;">Log Out</button>
+      
+  
       <img src="images/account.png" alt="Avatar" class="avatar-icon">
     </div>
   </header>
+
+
+
+      
+
+  <script src="js/activity_bar.js"></script> <!-- Link to the activity bar JavaScript -->
+<!-- Link to the chatbot JavaScript -->
 </body>
 </html>

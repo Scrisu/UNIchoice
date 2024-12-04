@@ -610,11 +610,10 @@ main {
 /* Stil pentru zilele din calendar */
 
 .fc-daygrid-day {
-    background-color: #ecf0f1;
+    background-color: #EDF0F1;
     transition: background-color 0.3s ease;
     position: relative;
     height: 10%; /* Modifică înălțimea zilelor */
-    width: 10%; /* Modifică lățimea zilelor */
     padding: 5px;
     border-radius: 5px;
     margin: 2px; /* Spațiu între zile */
@@ -624,7 +623,6 @@ main {
 /* Stil pentru zilele curente */
 .fc-daygrid-day.fc-day-today {
     background-color: #2F584E;
-    color: #fff;
     border-radius: 5px;
     display: flex;
     align-items: center;

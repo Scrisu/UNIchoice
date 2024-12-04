@@ -162,3 +162,4 @@ signInButton.addEventListener('click', () => {
     handleLogin(); // Attach event listener to login form
     handleLogout(); // Attach event listener to logout button
 });
+
