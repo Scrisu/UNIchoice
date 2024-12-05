@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -6,139 +5,215 @@
 }
 
 body {
-    display: flex; 
-    align-items: flex-start; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
     background-color: #F8F8F8;
     color: #333;
     font-family: 'Source Sans Pro', sans-serif;
-    padding: 20px;
-    gap: 20px; 
+    padding: 2vw;
+    gap: 2vw;
+    max-width: 100%;
+    overflow-x: hidden;
 }
-
-.sidebar .main-content{
-    align-items: flex-start;
-}
-.sidebar {
-    width: 205px;
-    height: 245px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    padding: 20px;
-    text-align: left;
-    display: flex;
-    margin-top: 20px;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 10px;
-}
-
-.sidebar ul li a {
-    display: block;
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-    font-size: 14px;
-    padding: 8px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.sidebar ul li a:hover {
-    background-color: #C3F499;
-}
-
-.sidebar ul li a.active {
-    color: #000;
-}
-
 
 .main-content {
-    flex: 1; 
-    padding: 20px;
+    flex: 1;
+    max-width: 80vw;
+    padding: 2vw;
     display: flex;
     flex-direction: column;
-    gap: 20px; 
+    gap: 2vw;
 }
 
+.details-calendar-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Two columns: one for calendar, one for user details */
+    gap: 4vw;
+    width: 100%;
+}
 
-
-.user-details, .documents {
+.calendar {
     background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    position: relative;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 0.5em;
+    padding: 3vw;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
-.user-details h2, .documents h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+.calendar h2 {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
     font-weight: bold;
 }
 
+.calendar-days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
 
-/* Edit Button Styling */
+.calendar-day {
+    width: 13%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.calendar-events {
+    margin-top: 1.5em;
+}
+
+.event {
+    background-color: #c3f49942;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.event-time {
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+.event-name {
+    font-size: 1em;
+}
+
+.user-details {
+    background-color: #fff;
+    border-radius: 0.5em;
+    padding: 3vw;
+    position: relative;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+
+}
+
+.user-details h2 {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+}
+/* Avatar styling */
+.avatar {
+    width: 6vw; /* You can adjust the size of the avatar */
+    height: 6vw; /* Keeps the avatar circular */
+    border-radius: 50%; /* Make it circular */
+    overflow: hidden; /* Hides any overflow of the image */
+    background-color: #d3d3d3; /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the avatar area without stretching */
+}
+
+
 .edit-btn {
+    background-color: #f8c8d8;
+    border: none;
     position: absolute;
-    right: 20px;
-    top: 20px;
-    background-color: transparent;
-    border: 2px solid transparent; /* Initial border */
-    border-radius: 5px;
-    padding: 5px 15px; /* Default padding */
+    right: 4.5vw;
+    top: 3vw;
+    border-radius: 0.3em;
+    padding: 0.5em 1.5em;
     font-weight: bold;
     color: #000;
     cursor: pointer;
-    transition: background-color 0.3s ease, border 0.3s ease; /* Transition border width and color */
+    transition: background-color 0.3s ease, border 0.3s ease;
 }
 
 .edit-btn:hover {
-    background-color: #f8c8d8; 
-    border: 2px solid #f8c8d8; 
-    padding: 5px 15px; 
+    background-color: #C3F499;
+    border: none;
 }
-
-
 
 .profile {
     display: flex;
-    align-items:flex-start;
+    align-items: flex-start;
+    gap:2vw;
 }
 
 .avatar {
-    width: 60px;
-    height: 60px;
+    width: 6vw;
+    height: 6vw;
     border-radius: 50%;
     background-color: #d3d3d3;
-    margin-right: 20px;
+    margin-right: 2vw;
 }
 
 .info p {
-    margin-bottom: 10px;
-    font-size: 16px;
+    margin-bottom: 1em;
+    font-size: 1em;
 }
 
+/* Document Section Card Styling */
+.documents {
+    background-color: #fff;
+    border-radius: 0.5em;
+    padding: 3vw;
+    position: relative; /* This allows the button to be positioned inside the .documents container */
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+}
+
+.documents h2 {
+    font-size: 1.5em;
+    margin-bottom: 1.7em;
+    font-weight: bold;
+}
 
 .document-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 2vw 7vw;
 }
 
 .document-item {
     width: 45%;
     background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 16px;
+    padding: 1.5em;
+    border-radius: 0.5em;
 }
 
 .document-item p {
-    margin-bottom: 5px;
+    margin-bottom: 0.5em;
+}
+
+.document-item {
+    width: 45%;
+    background-color: #f9f9f9;
+    padding: 1.5em;
+    border-radius: 0.5em;
+    margin-bottom: 1.5em; /* Adds space between document items */
+}
+
+.document-info {
+    display: flex; /* Align the text and button horizontally */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Vertically center the text and button */
+    gap: 1vw; /* Adds space between text and button */
+}
+
+.download-btn {
+   /* border: 0.1em solid #000; /* Light pink for download button */
+   background-color: #f8c8d8;
+   border: none;
+    /*color: #000;*/
+    padding: 0.5em 1.5em;
+    font-size: 0.7em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: auto; /* This pushes the button to the right */
+}
+
+.download-btn:hover {
+    background-color: #C3F499; /* Slightly darker green on hover */
+    border: none;
+    /*border: #C3F499;*/
 }

@@ -1,24 +1,4 @@
-window.onload = function() {
-    // Load header and footer placeholders
-    fetch('activity_bar.html')
-        .then(response => response.text())
-        .then(data => {
-            // Insert header HTML into the placeholder
-            document.getElementById('header-placeholder').innerHTML = data;
 
-            // Run user status check AFTER the header is loaded
-            checkUserStatus(); 
-            attachEventListeners(); // Attach event listeners for sign-in and logout
-        })
-        .catch(error => console.error('Error loading header:', error));
-
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading footer:', error));
-};
 
 // Function to check the user's login status and update UI accordingly
 const checkUserStatus = () => {

@@ -1,192 +1,79 @@
 /* Main container styling */
-html, body {
-    display: flex;
-    flex-direction: column;
+@charset "utf-8";
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #333333;
     overflow-x: hidden;
-}
-
-/* Ecrane mari - desktop */
-@media (min-width: 1024px) {
-    .main-container {
-        padding: 0 20px; /* Adaugă padding pentru margini */
-    }
-}
-
-/* Ecrane medii - tablete */
-@media (max-width: 1024px) {
-    .cta-button {
-        width: 20%;
-    }
-
-    .title1 {
-        font-size: 48px;
-    }
-
-    .description1 {
-        font-size: 20px;
-    }
-
-    .image-gallery {
-        flex-direction: column; /* Afișează imaginile pe o singură coloană */
-        align-items: center; /* Centrează imaginile */
-    }
-
-    .image-item {
-        width: 80%; /* Redu lățimea imaginilor */
-        height: auto; /* Păstrează proporția imaginii */
-    }
-}
-
-/* Ecrane mici - telefoane mobile */
-@media (max-width: 768px) {
-    .cta-button {
-        width: 80%; /* Lărgește butonul pentru ecrane mici */
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .title1 {
-        font-size: 36px; /* Diminuează dimensiunea fontului pentru titlu */
-    }
-
-    .description1 {
-        font-size: 18px;
-    }
-
-    .content-container {
-        max-width: 100%; /* Extinde lățimea containerului de text */
-        padding: 10px;
-    }
-
-    .image-gallery {
-        flex-direction: column;
-        gap: 20px; /* Redu spațierea între imagini */
-    }
-
-    .image-item {
-        width: 100%; /* Folosește întreaga lățime disponibilă */
-        height: auto;
-    }
-}
-
-/* Ecrane foarte mici - telefoane foarte înguste */
-@media (max-width: 480px) {
-    .title1 {
-        font-size: 28px; /* Diminuează și mai mult fontul */
-    }
-
-    .description1 {
-        font-size: 16px;
-    }
-
-    .cta-button {
-        width: 90%;
-        height: 40px; /* Diminuează înălțimea butonului */
-        font-size: 16px; /* Diminuează dimensiunea textului */
-    }
-
-    .overlay-link {
-        font-size: 20px; /* Redu dimensiunea fontului pentru linkuri */
-    }
 }
 
 .main-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;  /* Centers horizontally */
+    align-items: flex-start;  /* Aligns content to the top */
+    flex-direction: column;   /* Stacks items vertically */
+    width: 100%;              /* Full width */
+    padding-top: 100px;       /* Adds padding from the top */
+    box-sizing: border-box;   /* Ensures padding doesn't cause overflow */
 }
 
-/* Intro Section */
+
 .intro-section {
-    position: relative;
-    height: 100vh; /* Înălțimea secțiunii pe toată fereastra browserului */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .content-container {
-    position: relative;
-    z-index: 2; /* Asigură că textul va fi vizibil deasupra imaginii */
-    color: white;
-    text-align: center;
-    max-width: 80%; /* Limitează lățimea textului */
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 16px;
-    align-items: center;
-  }
-
-  .background-image {
-    position: absolute;
-    width: 90%;
-    height: 80%;
-    align-items: center;
-    object-fit: cover; /* Asigură-te că imaginea acoperă întreaga secțiune */
-    z-index: 1; /* Pune imaginea în spatele textului */
-    opacity: 100%;
-    border-radius: 16px;
-
-  }
-
-/* Titlu și descriere */
-.title1 {
-    width: 100%;
-    text-align: center;
-    color: white;
-    font-size: 5vw;
-    font-family: 'Freeman', sans-serif;
-    font-weight: 400;
-    word-wrap: break-word;
+  background-color: #EBEBEB;
+  border-radius: 0.3125rem; /* 5px in rem */
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  padding: 3rem 2rem; /* Adjusted padding for better spacing */
+  text-align: center;
+  width: 100%; /* Full width */
+  max-width: 95vw; /* Limiting width to 90% of the viewport width */
+  margin: 0 auto; /* Centered */
+  margin-bottom: 3rem; /* Space after intro section */
+  min-height: 20vh; /* Adjusted height */
 }
 
-.description1 {
-    width: 100%;
-    color: white;
-    font-size: 24px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 400;
-    text-align: center;
-    word-wrap: break-word;
+.intro-section .title {
+  font-size: 3rem; /* Set the font-size to 48px (3rem) */
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  margin-bottom: 1.5rem; /* Adjust space between title and description */
 }
 
-/* Butonul CTA */
-/* Stilul inițial al butonului */
-.cta-button {
-    width: 10%;
-    height: 50px;
-    background: #FF9861;
-    border-radius: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    transition: transform 0.3s ease; /* Adaugă o tranziție lină */
-    cursor: pointer; /* Modifică cursorul la mână la hover */
-     margin-left: 45%;
-     margin-top: 5%;
-     margin-bottom: 5%;
+/* General Styles for Description */
+.intro-section .description {
+  font-size: 1rem; /* 16px in rem, assuming 1rem = 16px */
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 10px;
 }
 
-/* Efect de hover pentru buton */
-.cta-button:hover {
-    background: #FF6347; /* Schimbă culoarea la hover (poți alege altă culoare) */
-    transform: scale(1.1); /* Crește dimensiunea butonului pentru un efect de zoom */
+/* Button Styling */
+.intro-section .cta-button {
+  font-size: 1rem; /* Smaller button font size */
+  color: #ffffff;
+  background-color: #000000;
+  padding: 0.625rem 1.5625rem;
+  border-radius: 0.3125rem; /* Rounded corners */
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s;
+  width: 100%; /* Stretch button to full width */
+  max-width: 8rem; /* Max width for button */
 }
 
-/* Stilul textului din buton */
-.cta-button span {
-    font-size: 1.2vw;
-    color: white; /* Asigură-te că textul rămâne alb */
-    transition: color 0.3s ease; /* Adaugă o tranziție lină pentru schimbarea culorii textului */
+/* Button Hover Effect */
+.intro-section .cta-button:hover {
+  background-color: #FF9861;
+  color: #000000;
 }
-
-/* Efect de hover pentru textul din buton */
-.cta-button:hover span {
-    color: white; /* Păstrează textul alb la hover, dar îl poți schimba la o altă culoare */
-}
-
 .home-message::before {
     content: "☆☆☆";            /* Asteriscul sau simbolul dorit */
     display: block;          /* Afișează asteriscul pe o linie separată */
@@ -229,121 +116,94 @@ html, body {
     padding: 10px 20px;
     font-size: 18px;
     text-decoration: none;
-    border-radius: 16px;
+    border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-.cta-link:hover {
-    background-color: #FF6347; /* Culoare mai închisă la hover */
-}
 
-
-
-/* Galerie imagini */
-.image-gallery {
+.gallery {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    gap: 60px;
-    margin: 60px auto;
-    padding: 0 20px;
-    transform: scale(1.1); /* Mărește întregul container la 110% constant */
-}
-
-.image-item {
-    width: 400px;
-    height: 300px;
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    cursor: pointer; /* Modifică cursorul la mână pe imagine */
-}
-
-.image-item img {
+    gap: 20px;
     width: 100%;
-    height: auto;
-    position: absolute;
-    left: 0;
-    top: 0;
+    justify-items: center;
+    padding: 40px 30px;
 }
 
-/* Overlay container */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 500px;
+.gallery-item {
+    flex:1;
+    display: flex;
+    width: 200px;
     height: 300px;
+    border-radius: 5px;
+}
+
+
+.flip-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+}
+
+
+.flip-card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* Nu afectează textul, doar fundalul */
-    background: rgba(0, 0, 0, 0.6); /* Fundal semi-transparent pentru overlay */
-    transition: opacity 0.3s ease-in-out;
-    z-index: 2;
+    flex-direction: column;
+    
 }
 
-/* Background for overlay */
-.overlay-background {
-    position: absolute;
-    top: 0;
-    left: 0;
+.flip-card-front img {
     width: 100%;
     height: 100%;
-    background: black;
-    border-radius: 16px; /* Același border-radius ca la imagine */
-    z-index: 1; /* Fundalul este în spatele textului */
+    object-fit: cover;
+    border-radius: 5px;
 }
 
-/* Stiluri comune pentru toate linkurile */
-.overlay-link {
-    color: #FF9861 !important; /* Asigură că textul va fi vizibil indiferent de hover */
-    text-decoration: none !important;
-    font-size: 30px !important;
-    font-family: 'Source Sans Pro', sans-serif !important;
-    font-weight: 600 !important;
-    z-index: 3; /* Textul apare deasupra fundalului semi-transparent */
-    position: relative !important;
-    transition: color 0.3s ease !important;
-    opacity: 1 !important; /* Textul va rămâne opac */
-    margin-right: 20%;
+.flip-card-back {
+    background-color: #EBEBEB;
+    color: black;
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    gap: 30px;
 }
 
-.descoperă-text {
-    font-size: 20px; /* Setează dimensiunea fontului la 16px */
-    font-family: 'Source Sans Pro', sans-serif; /* Aplică familia de fonturi Source Sans Pro */
-    font-weight: 400; /* Poți ajusta greutatea fontului dacă dorești */
-    color: white; /* Poți seta o culoare pentru text dacă vrei */
+/* Button styling */
+.flip-button {
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
 }
 
-
-/* Stiluri pentru link-ul "Facultăți" */
-.overlay-link.facultati {
-    font-size: 35px; /* Mărime mai mare pentru Facultăți */
-    color: #FF6347; /* O culoare diferită */
-}
-
-/* Stiluri pentru link-ul "Studii" */
-.overlay-link.studii {
-    font-size: 28px;
-    color: #32CD32; /* O culoare verde pentru Studii */
-}
-
-/* Stiluri pentru link-ul "Ghid student" */
-.overlay-link.ghid-student {
-    font-size: 30px;
-    color: #1E90FF; /* O culoare albastră pentru Ghid student */
-}
-
-
-.image-item:hover .overlay {
-    opacity: 1; /* Doar fundalul devine vizibil */
-}
-
-/* Modificare pentru background-ul overlay la hover */
-.overlay:hover .overlay-background {
-    background: rgba(0, 0, 0, 0.1) !important; /* Fundalul devine mai închis la hover */
-    cursor: pointer; /* Modifică cursorul la mână la hover pe overlay */
+.flip-button:hover {
+    background-color: #FF9861;
+    border-color: #FF9861;
+    color: #000;
 }
 
 
@@ -362,8 +222,7 @@ html, body {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: 20px;
-        margin-right: 15px;
+        margin-bottom: 30px;
     }
   
   /* Banner-ul de știri */
@@ -373,56 +232,51 @@ html, body {
     align-items: center; /* Centrează pe verticală */
     background-color: #ffffff; /* Fundal alb pentru banner */
     padding: 20px 30px; /* Dimensiuni reduse pentru padding */
-    border-radius: 16px; /* Colțuri rotunjite */
-    box-shadow: 0; /* Umbra ușoară pentru efect */
+    border-radius: 5px; /* Colțuri rotunjite */
+    gap: 40px;
     max-width: 100%; /* Lărgirea până la 100% din lățimea containerului părinte */
-    width: 94%; /* Lățimea completă a secțiunii */
-    margin: 0 auto; /* Centrează bannerul pe pagină */
     height: auto; /* Înălțimea se ajustează automat */
   }
   
   /* Textul din banner */
   .text-content {
     flex: 1; /* Permite textului să ocupe tot spațiul disponibil pe partea stângă */
-    padding-right: 60px; /* Adaugă spațiu între text și imagine */
+    
   }
   
   .text-content h3 {
     font-size: 45px; /* Font mai mare */
     color: #333;
     margin-bottom: 10px;
-    margin-left: 0px;
   }
   
   .text-content p {
-    font-size: 20px; /* Font mai mic pentru paragrafe */
+    font-size: 16px; /* Font mai mic pentru paragrafe */
     color: #666;
     margin-bottom: 30px;
-    margin-left: 0px;
   }
   
   .text-content button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-size: 18px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px 25px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 40px;
-    margin-left: 0px;
+    transition: background-color 0.3s;
+    border: none;
   }
   
   .text-content button:hover {
-    background-color: #d67b12; /* Umbră mai închisă la hover */
+    background-color: #FF9861;
+    color: #000000; /* Umbră mai închisă la hover */
   }
   
   /* Imaginea din banner */
    .image-content img {
-    width: 440px; /* Setează lățimea la 400px, la fel ca în galerie */
+    width: 450px; /* Setează lățimea la 400px, la fel ca în galerie */
     height: 340px; /* Setează înălțimea la 300px, la fel ca în galerie */
-    border-radius: 16px; /* Aplică colțurile rotunjite, dacă este necesar */
+    border-radius: 5px; /* Aplică colțurile rotunjite, dacă este necesar */
     object-fit: cover;
 }
 
@@ -432,17 +286,18 @@ html, body {
   .quiz-section {
     background-color: #EBEBEB;
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 5px;
     width: 100%;
     height: 29=50px;
-    max-width: 1500px;
     margin: 20px auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: row;
+    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     gap:20px;
+    padding: 20px 30px;
+    width: 95%;
   }
   
   /* Quiz Content Styling */
@@ -470,19 +325,20 @@ html, body {
   }
   
   .quiz-content button {
-    background-color: #f4a200;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 8px;
     font-size: 16px;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px 25px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
+    border: none;
     margin-top: 20px;
   }
   
   .quiz-content button:hover {
-    background-color: #e09200;
+    background-color: #FF9861;
+    color: #000;
   }
   
   /* Icon Styling without circle */
@@ -553,3 +409,166 @@ html, body {
   .newsletter-section button:hover {
     background-color: #555;
   }
+
+
+  .aboutus-content {
+    background-color: #2F584E; /* Fundalul secțiunii */
+    padding: 20px 30px; /* Spațiu interior */
+    border-radius: 5px; /* Colțuri rotunjite */
+    width: 95%; /* Lățime aproape completă */
+    max-width: 1200px; /* Limitarea lățimii maxime */
+    height: auto; /* Înălțime automată pentru conținut dinamic */
+    margin: 20px auto; /* Spațiu deasupra și dedesubt */
+    display: flex; /* Flexbox pentru aliniere */
+    align-items: center; /* Centrare pe verticală */
+    justify-content: space-between; /* Spațiu egal între secțiuni */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbră */
+    gap: 20px; /* Spațiu între secțiunile flexbox */
+}
+
+/* Imaginea din secțiunea stângă */
+.image-container img {
+    width: 120px; /* Lățimea imaginii */
+    height: auto; /* Păstrează proporțiile */
+    border-radius: 5px; /* Colțuri rotunjite, dacă este necesar */
+}
+
+/* Stil pentru titlul și textul din partea dreaptă */
+.content-right h1 {
+    font-size: 35px;
+    color: #fff;
+}
+
+.content-right p {
+    font-size: 16px;
+    color: #fff; /* Text alb */
+}
+
+/* Secțiunea cu cele trei blocuri sub titlu și paragraf */
+.three-sections {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 20px 40px;
+  margin: 20px auto;
+  border-radius: 5px;
+  width: 80%; /* Ajustat pentru a face secțiunea mai îngustă */
+  max-width: 1200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap; /* Permite wrap pentru mobil */
+}
+
+/* Stil pentru fiecare secțiune */
+.section {
+  text-align: center;
+  flex: 1;
+  padding: 0 20px;
+  margin-bottom: 20px; /* Spațiu sub fiecare secțiune */
+  max-width: 250px; /* Limitează lățimea secțiunilor la 250px */
+}
+
+/* Stil pentru titluri din secțiuni */
+.section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #2F584E; /* Culoare verde închis */
+}
+
+/* Stil pentru textul din secțiuni */
+.section p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Stil pentru separatorii verticali */
+.divider {
+  width: 1px;
+  background-color: #ccc;
+  height: 60px;
+  margin: 0 20px;
+}
+
+/* Adăugăm un mic gap între secțiuni pe mobil */
+@media (max-width: 768px) {
+  .three-sections {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .divider {
+      display: none; /* Ascundem dividerii pe mobil */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slider-item {
+      flex: 0 0 calc(33.33% - 10px); /* On smaller screens, fit 3 images */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slider-item {
+      flex: 0 0 calc(50% - 10px); /* On very small screens, fit 2 images */
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .intro-section .title {
+      font-size: 2.5rem; /* 40px on large screens like medium desktops */
+  }
+
+  .intro-section .description {
+      font-size: 0.9375rem; /* 15px on medium screens */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .intro-section .title {
+      font-size: 2rem; /* 32px on smaller screens like tablets */
+  }
+
+  .intro-section .description {
+      font-size: 0.875rem; /* 14px on smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .intro-section .title {
+      font-size: 1.75rem; /* 28px on mobile screens */
+  }
+
+  .intro-section .description {
+      font-size: 0.875rem; /* 14px on mobile screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .intro-section .title {
+      font-size: 1.5rem; /* 24px on extra small screens */
+  }
+
+  .intro-section .description {
+      font-size: 0.875rem; /* 14px on extra small screens */
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .intro-section .title {
+      font-size: 1.25rem; /* 20px on very small screens */
+  }
+
+  .intro-section .description {
+      font-size: 0.875rem; /* 14px on very small screens */
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .intro-section .title {
+      font-size: 1.125rem; /* 18px on ultra small screens (phones in portrait) */
+  }
+
+  .intro-section .description {
+      font-size: 0.875rem; /* 14px on ultra small screens */
+  }
+}

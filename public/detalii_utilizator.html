@@ -8,28 +8,51 @@
     <link rel="stylesheet" href="css/detalii_utilizator.css">
 </head>
 <body>
-    <div class="sidebar">
-        <ul>
-            <li><a href="#" class="active">Detalii utilizator</a></li>
-            <li><a href="#">Universitățile mele</a></li>
-            <li><a href="#">Domeniile mele</a></li>
-            <li><a href="#">Evenimente importante</a></li>
-        </ul>
-    </div>
-    
     <div class="main-content">
-        <!-- User Details Section -->
-        <section class="user-details">
-            <h2>Detalii utilizator</h2>
-            <button class="edit-btn">Editează</button>
-            <div class="profile">
-                <div class="avatar"></div>
-                <div class="info">
-                    <p><strong>Nume:</strong> Popescu</p>
-                    <p><strong>Prenume:</strong> Maria</p>
-                    <p><strong>Email:</strong> maria.popescu@gmail.com</p>
-                    <p><strong>Număr telefon:</strong> 0733445566</p>
-                    <p><strong>Parolă:</strong> **********</p>
+        <div id="header-placeholder"></div>
+        <!-- User Details Section and Calendar -->
+        <section class="details-calendar-container">
+            <!-- Calendar Section -->
+            <div class="calendar">
+                <h2>Calendar</h2>
+                <div class="calendar-days">
+                    <div class="calendar-day" data-day="Mon">Mon</div>
+                    <div class="calendar-day" data-day="Tue">Tue</div>
+                    <div class="calendar-day" data-day="Wed">Wed</div>
+                    <div class="calendar-day" data-day="Thu">Thu</div>
+                    <div class="calendar-day" data-day="Fri">Fri</div>
+                    <div class="calendar-day" data-day="Sat">Sat</div>
+                    <div class="calendar-day" data-day="Sun">Sun</div>
+                </div>
+                <div class="calendar-events">
+                    <div class="event">
+                        <span class="event-time">09:00</span>
+                        <span class="event-name">Meeting</span>
+                    </div>
+                    <div class="event">
+                        <span class="event-time">15:00</span>
+                        <span class="event-name">Appointment</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Details Section -->
+            <div class="user-details">
+                <h2>Detalii utilizator</h2>
+                <button class="edit-btn">Editează</button>
+                <div class="profile">
+                    <!-- Avatar Section -->
+<div class="avatar">
+    <img src="images/account.png" alt="User Avatar">
+</div>
+
+                    <div class="info">
+                        <p><strong>Nume:</strong> Popescu</p>
+                        <p><strong>Prenume:</strong> Maria</p>
+                        <p><strong>Email:</strong> maria.popescu@gmail.com</p>
+                        <p><strong>Număr telefon:</strong> 0733445566</p>
+                        <p><strong>Parolă:</strong> **********</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -40,33 +63,50 @@
             <button class="edit-btn">Editează</button>
             <div class="document-list">
                 <div class="document-item">
-                    <p><strong>Diplomă bacalaureat</strong></p>
+                    <div class="document-info">
+                        <p><strong>Diplomă bacalaureat</strong></p>
+                        <button class="download-btn" onclick="window.location.href='path/to/diploma_bac.pdf'">Descarcă</button>
+                    </div>
                     <p>diploma_bac.pdf</p>
                 </div>
                 <div class="document-item">
-                    <p><strong>Diplomă Cambridge</strong></p>
+                    <div class="document-info">
+                        <p><strong>Diplomă Cambridge</strong></p>
+                        <button class="download-btn" onclick="window.location.href='path/to/diploma_Cambridge.pdf'">Descarcă</button>
+                    </div>
                     <p>diploma_Cambridge.pdf</p>
                 </div>
                 <div class="document-item">
-                    <p><strong>Act de identitate</strong></p>
+                    <div class="document-info">
+                        <p><strong>Act de identitate</strong></p>
+                        <button class="download-btn" onclick="window.location.href='path/to/act_identitate.pdf'">Descarcă</button>
+                    </div>
                     <p>act_identitate.pdf</p>
                 </div>
                 <div class="document-item">
-                    <p><strong>Certificat de naștere</strong></p>
+                    <div class="document-info">
+                        <p><strong>Certificat de naștere</strong></p>
+                        <button class="download-btn" onclick="window.location.href='path/to/certificat_nastere.pdf'">Descarcă</button>
+                    </div>
                     <p>certificat_nastere.pdf</p>
                 </div>
                 <div class="document-item">
-                    <p><strong>Fotografie</strong></p>
+                    <div class="document-info">
+                        <p><strong>Fotografie</strong></p>
+                        <button class="download-btn" onclick="window.location.href='path/to/fotografie.jpg'">Descarcă</button>
+                    </div>
                     <p>fotografie.jpg</p>
                 </div>
                 <div class="document-item">
-                    <p><strong>Adeverință medicală</strong></p>
+                    <div class="document-info">
+                        <p><strong>Adeverință medicală</strong></p>
+                        <button class="download-btn" onclick="window.location.href='path/to/adeverinta.pdf'">Descarcă</button>
+                    </div>
                     <p>adeverinta.pdf</p>
                 </div>
             </div>
         </section>
     </div>    
-        </div>
-    </div>
+    <div id="footer-placeholder"></div>
 </body>
 </html>

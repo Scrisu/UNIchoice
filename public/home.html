@@ -6,58 +6,78 @@
     <title>Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/home.css"> <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="css/activity_bar.css">
 </head>
 <body>
-
-<div class="main-container">
-    <div id="header-placeholder"></div>
-
-    <div class="intro-section">
-        <div class="content-container">
-          <div class="title1">
-            PRIMUL PAS CĂTRE VIITORUL TĂU!
-          </div>
-          <div class="description1">
-            Transformă-ți visurile în realitate alături de noi! Suntem aici să-ți ghidăm fiecare pas în alegerea facultății care te inspiră și te reprezintă. Descoperă-ți pasiunile, explorează opțiunile și lasă-te îndrumat de experți dedicați care îți vor arăta toate posibilitățile. Viitorul tău începe acum—fă primul pas spre cariera la care visezi!
-          </div>
-          <div class="cta-button">
-            <span class="descoperă-text">Descoperă</span>
-          </div>
+    
+    <div class="main-container">
+    
+        <!-- Header Placeholder (loads dynamically) -->
+        <div id="header-placeholder"></div>
+    
+        <!-- Intro Section -->
+        <div class="intro-section">
+            <div class="title">
+                PRIMUL PAS CĂTRE VIITORUL TĂU!
+            </div>
+            <div class="description">
+                Transformă-ți visurile în realitate alături de noi! Suntem aici să-ți ghidăm fiecare pas în alegerea facultății care te inspiră și te reprezintă. Descoperă-ți pasiunile, explorează opțiunile și lasă-te îndrumat de experți dedicați care îți vor arăta toate posibilitățile. Viitorul tău începe acum—fă primul pas spre cariera la care visezi!
+            </div>
+            <div class="cta-button">
+                Descoperă
+            </div>
         </div>
-        <img src="images/home-image.avif" alt="Fundal" class="background-image">
-      </div>
-
-      <div class="home-message">
-        <h1 class="title">Alege-ți viitorul educațional cu încredere!</h1>
-        <p class="description">
-            Descoperă universitățile din întreaga lume, compară programele de studii și găsește opțiunea care ți se potrivește cel mai bine. Fie că ești la început de drum sau îți continui studiile, noi îți oferim informațiile de care ai nevoie pentru a face alegerea corectă.
-        </p>
-    </div>    
-
- <!-- Galerie imagini -->
- <div class="image-gallery">
-    <div class="image-item">
-        <img src="images/home-universitate.png" alt="image 1"/>
-        <div class="overlay">
-            <div class="overlay-background"></div>
-            <a href="facultati.html" class="overlay-link facultati">Facultăți</a>
+    
+        <!-- Image Gallery -->
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/home-universitate.png" alt="image 1">
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Facultăți</h3>
+                            <p>Exploreaza universitatile de renume si alege-ti viitorul!</p>
+                            <button class="flip-button">Află mai mult</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="gallery-item">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/home-studii.png" alt="image 2">
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Ghidul studentului</h3>
+                            <p>Iti oferim informatii despre transport, cazari si evenimente de interes!</p>
+                            <button class="flip-button">Află mai mult</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="gallery-item">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/resurse.jpg" alt="image 3">
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Resurse</h3>
+                            <p>Doresti o discutie cu viitorii studenti sau ai nevoie de informatii suplimentare despre utilizarea platformei? Consulta resursele.</p>
+                            <button class="flip-button">Află mai mult</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-    </div>
-    <div class="image-item">
-        <img src="images/home-studii.png" alt="image 2" class="image-opacity"/>
-        <div class="overlay">
-            <div class="overlay-background"></div>
-            <a href="studii.html" class="overlay-link studii">Studii</a>
-        </div>
-    </div>
-    <div class="image-item">
-        <img src="images/home-ghid.jpg" alt="image 3"/>
-        <div class="overlay">
-            <div class="overlay-background"></div>
-            <a href="ghidul_studentului.html" class="overlay-link ghid-student">Ghid student</a>
-        </div>
-    </div>
-</div>
+    
 
 <!-- News Section -->
 <section class="news-section">
@@ -71,7 +91,7 @@
         <img src="images/news.png" alt="Banner Image">
       </div>
     </div>
-  </section>
+  </section>
 
 
   <div class="quiz-section">
@@ -79,32 +99,45 @@
         <!-- Înlocuim h2 cu o imagine -->
         <img src="images/quizText.png" alt="Quiz Title" class="quiz-title">
         <p>Ești gata să afli unde te duce curiozitatea? Completează formularul nostru interactiv și lasă-ne să-ți ghicim domeniul ideal!</p>
-        <a href="quiz.html"> <!-- Linkul către pagina de quiz -->
-          <button>Vezi quiz-ul</button>
-      </a>
+        <button>Vezi quiz-ul</button>
     </div>
     <div class="quiz-icon">
         <img src="images/quizImage.png" alt="Quiz Icon">
     </div>
 </div>
-
-<!-- Newsletter Section -->
-<section class="newsletter-section">
-  <h3>Rămâi la curent cu noutățile din educație!</h3>
-  <form action="#">
-      <input type="email" placeholder="email@example.com" required>
-      <button type="submit">Abonare</button>
-  </form>
-</section>
-
-
+<div class="aboutus-content">
+   <!-- <div class="content-left">
+        <div class="image-container">
+            <img src="images/about-us.png" alt="Banner Image">
+        </div>
+    </div>-->
+    <div class="content-right">
+        <h1>De ce sa ne alegeti pe noi?</h1>
+        <p>Custom content goes here. Add icons, text, or anything you need!</p>
+    </div>
+     <!-- Secțiunea cu cele trei blocuri -->
+     <div class="three-sections">
+        <div class="section">
+            <h3>Individual</h3>
+            <p>The program is selected taking into account the nature and interests of the child.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <h3>Playful Learning</h3>
+            <p>We motivate children to study with the help of games and interactive activities.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <h3>Reward System</h3>
+            <p>Children are encouraged and rewarded for their achievements, fostering enthusiasm.</p>
+        </div>
+</div>
 
 
 </div>
 <div id="footer-placeholder"></div>
 </div>
-<script src="js/home.js"></script>
 
-
+<script src="js/global.js" defer></script>
 </body>
 </html>

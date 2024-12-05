@@ -1,15 +1,8 @@
-
 /* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-/*body {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 14px;
-  background-color: transparent;
 }
 
 /* Activity Bar */
@@ -89,40 +82,30 @@
   background-color: #ebf86e;
 }
 
-/* Right Buttons and Profile Alignment */
 .right-buttons {
   display: flex;
   align-items: center;
-  gap: 30px;
-  padding-right: 20px;
+  gap: 10px;
 }
 
-.right-buttons a{
-color: #000000;
+.right-buttons a {
+  color: #000000;
+  background-color: #EBF86E;
   text-decoration: none;
   padding: 5px 20px;
+  border-radius: 5px;
   font-family: 'Source Sans Pro', sans-serif;
   transition: background-color 0.3s, color 0.3s;
 }
-
 .right-buttons a:hover{
-background-color: #EBF86E;
-  color: #000000;
+  background-color: #000;
+  color: #fff;
   border-radius: 5px;
 }
-
-
-/* Avatar Icon */
 .avatar-icon {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-}
-
-/* Adjusting Profile Button Alignment */
-.right-buttons .profile-button {
-  display: inline-flex;
-  align-items: center;
 }
 
 /* Logo */
@@ -130,6 +113,31 @@ background-color: #EBF86E;
   width: 150px;
   height: auto;
 }
+
+/* Specific to logged-in vs logged-out user */
+.logged-in {
+  display: flex;
+  align-items: center;
+}
+
+.not-logged-in {
+  display: flex;
+}
+.right-buttons .avatar-div{
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+#avatar-div{
+  background-color: transparent;
+}
+#avatar-div :hover{
+  background-color: transparent;
+  transform: scale(1.2);
+}
+
 
 /* Responsive Design */
 @media (max-width: 600px) {

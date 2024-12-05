@@ -5,34 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Activity Bar</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro:wght@400;700&display=swap">
-    <link rel="stylesheet" href="css/activity_bar.css"> 
+    <link rel="stylesheet" href="css/activity_bar.css">
 </head>
 <body>
-  <!-- Activity Bar Section -->
-  <header class="activity-bar">
-    <!-- Left-aligned logo and buttons -->
-    <div class="left-section">
-      <img src="images/unichoice-logo.png" alt="Logo" class="logo">
-      <div class="left-buttons">
-        <div class="dropdown">
-          <a href="ghidul_studentului.html" class="dropdown-btn">Ghid</a>
-          <div class="dropdown-content">
-            <a href="camine.html">Cămine</a>
-            <a href="transport.html">Transport</a>
-          </div>
+    <!-- Activity Bar Section -->
+    <header class="activity-bar">
+        <!-- Left-aligned logo and buttons -->
+        <div class="left-section">
+            <a href="home.html">
+                <img src="images/unichoice-logo.png" alt="Logo" class="logo">
+            </a>
+            
+            <div class="left-buttons">
+                <div class="dropdown">
+                    <a href="ghidul_studentului.html" class="dropdown-btn">Ghid</a>
+                    <div class="dropdown-content">
+                        <a href="camine.html">Cămine</a>
+                        <a href="transport.html">Transport</a>
+                    </div>
+                </div>
+                <a href="resurse.html">Resurse</a>
+                <a href="facultati.html">Facultăți</a>
+                <a href="evenimente.html">Evenimente</a>
+            </div>
         </div>
-        <a href="facultati.html">Resurse</a>
-        <a href="facultati.html">Facultăți</a>
-        <a href="facultati.html">Evenimente</a>
-        </div>
-      </div>
-    </div>
 
-    <!-- Right-aligned profile section -->
-    <div class="right-buttons">
-      <a href="auth.html">Sign In</a>
-      <img src="images/account.png" alt="Avatar" class="avatar-icon">
-    </div>
-  </header>
+        <!-- Right-aligned profile section -->
+        <div class="right-buttons">
+            <!-- Butonul de înregistrare (se va afișa dacă utilizatorul nu este logat) -->
+            <div id="sign-in-btn" class="inregistrare">
+                <a href="auth.html">Înregistrare</a>
+            </div>
+           
+           
+        
+            <!-- Butonul de log out (se va afișa dacă utilizatorul este logat) -->
+            <div id="logout-btn" style="display: none;">
+                <a href="#">Log out</a>
+            </div>
+             <!-- Avatar (se va afișa dacă utilizatorul este logat) -->
+            <a id="avatar-div" href="detalii_utilizator.html" style="display: none;"  >
+                <img id="avatar" src="images/account.png" alt="Avatar" class="avatar-icon">
+            </a>
+        </div>
+    </header>
+
+    <script src="js/activity_bar.js"></script>
 </body>
 </html>

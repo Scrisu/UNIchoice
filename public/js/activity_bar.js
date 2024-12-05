@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("User status response:", data);
             const signInButton = document.getElementById('sign-in-btn');
             const logoutButton = document.getElementById('logout-btn');
+            const avatarButton = document.getElementById('avatar-div');
             const profileButton = document.querySelector('.profile-button');
 
             if (data.loggedIn) {
@@ -50,7 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (logoutButton) {
                     logoutButton.style.display = 'none';
                 }
-
+                if (avatarButton) {
+                    avatarButton.style.display = 'block';
+                }
                 // Hide Profile button
                 if (profileButton) {
                     profileButton.style.display = 'none';
@@ -63,10 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Fallback to make sure elements are appropriately displayed in case of an error
             const signInButton = document.getElementById('sign-in-btn');
             const logoutButton = document.getElementById('logout-btn');
+            const avatarButton = document.getElementById('avatar-div');
             const profileButton = document.querySelector('.profile-button');
 
             if (signInButton) signInButton.style.display = 'block';
             if (logoutButton) logoutButton.style.display = 'none';
+            if (avatarButton) avatarButton.style.display = 'block';
             if (profileButton) profileButton.style.display = 'none';
         });
     };
