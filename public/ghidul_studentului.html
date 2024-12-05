@@ -9,16 +9,17 @@
 
 </head>
 <body>
-    <div class="main-container">
+   
         
         <div id="header-placeholder"></div>
 
-        <section class="welcome-section">
-            <img src="images/pagina-ghid2.png" alt="Welcome Image">
-            <div class="welcome-box">
-                <h1>Bine ai venit în Ghidul Studentului</h1>
-            </div>
-        </section>
+        <div class="intro-section">
+            <h1>Ghidul Studentului: Explorează, Descoperă, Conectează-te!</h1>
+            <p>Viața de student vine cu multe provocări și oportunități, iar noi suntem aici să te ajutăm să navighezi cu ușurință. Acest ghid a fost creat special pentru tine, oferindu-ți informații esențiale și resurse utile pentru a profita la maximum de anii de studenție.</p>
+            <p>Descoperă cele mai bune opțiuni de transport pentru a ajunge rapid și în siguranță la facultate, explorează evenimentele organizate pentru studenți și află toate detaliile despre cazarea în căminele noastre. Tot ce ai nevoie este la un click distanță!</p>
+            <p>Fie că ești la început de drum sau deja un student cu experiență, ghidul nostru îți oferă răspunsuri și soluții la toate întrebările. Intră în secțiunile dedicate și află totul despre:</p>
+            <p>Pregătește-te să explorezi oportunitățile și să construiești amintiri de neuitat. Viața de student începe aici!</p>
+        </div>
         
         
     <!-- Main Content -->
@@ -37,7 +38,7 @@
             <div class="gallery">
                 <!-- Container pentru imaginile orizontale plasate una sub alta -->
                 <div class="image-column">
-                    <img src="images/ghid-copii.png" alt="Imagine 1" class="image-horizontal">
+                    <img src="images/sharing-opinions.jpg" alt="Imagine 1" class="image-horizontal">
                     <img src="images/ghid-fata.png" alt="Imagine 2" class="image-horizontal">
                 </div>
                 <!-- Imaginea verticală lângă containerul de imagini orizontale -->
@@ -50,40 +51,30 @@
          
         <div class="info-cards-frame">
             <section class="info-cards">
+                
+                <!-- Card pentru "Evenimente" -->
+                <div class="card">
+                    <img src="images/ghid-events.avif" alt="Image 3" class="card-image">
+                    <div class="card-content">
+                        <button onclick="window.location.href='evenimente.html'">Detalii</button>
+                    </div>
+                </div>
                 <!-- Card pentru "Camine" -->
                 <div class="card">
                     <img src="images/camine.jpg" alt="Image 1" class="card-image">
-                    <div class="overlay-rectangle"></div>
                     <div class="card-content">
-                        <h3 class="title-camine">Camine</h3>
-                        <p>Explorează căminele din întreaga țară pentru a avea cât mai multe informații despre viața de student.</p>
-                        <button onclick="window.location.href='camine.html'">Vezi cămine</button>
+                        <button class="button-camine" onclick="window.location.href='camine.html'">Detalii</button>
                     </div>
                 </div>
                 
                 <!-- Card pentru "Transport" -->
                     <div class="card">
                     <img src="images/ghid-tramvai.avif" alt="Image 2" class="card-image">
-                     <div class="overlay-rectangle"></div>
                      <div class="card-content">
-                       <h3 class="title-transport">Transport</h3>
-                                  <p class="content-transport">Explorează mijloacele de transport din întreaga țară pentru a avea cât mai multe informații despre viața de student.</p>
-                                  <button class="button-transport" onclick="window.location.href='transport.html'">Vezi transport</button>
+                                  <button class="button-transport" onclick="window.location.href='transport.html'">Detalii</button>
 
                     </div>
                     </div>
-
-        
-                <!-- Card pentru "Evenimente" -->
-                <div class="card">
-                    <img src="images/ghid-evenimente.jpg" alt="Image 3" class="card-image">
-                    <div class="overlay-rectangle"></div>
-                    <div class="card-content">
-                        <h3 class="title-evenimente">Evenimente</h3>
-                        <p>Explorează evenimentele din întreaga țară pentru a avea cât mai multe informații despre viața de student.</p>
-                        <button onclick="window.location.href='evenimente.html'">Vezi evenimente</button>
-                    </div>
-                </div>
             </section>
         </div>
         
@@ -91,10 +82,12 @@
         
         <section class="forum">
             <div class="forum-frame">
-                <h2>Vrei să discuți cu ceilalți studenți?</h2>
-                <button onclick="window.location.href='forum.html'">Vizitează forum</button>
+                <h2>Conectează-te cu alți studenți și împărtășește idei!</h2>
+                <p>Alătură-te comunității noastre și începem conversații care te pot ajuta să îți îmbunătățești viața de student, să faci noi prietenii.</p>
+                <button onclick="window.location.href='resurse.html'">Discută acum!</button>
             </div>
         </section>
+        
         
         <div id="contactButton">
             <a href="/formular-de-contact.html" title="Contactează-ne!">
@@ -102,12 +95,14 @@
             </a>
         </div>
 
-        <div id="footer-placeholder"></div>
+        
+
         
         
         
     </main>
-    
+    <div id="footer-placeholder"></div>
+        
     <script>
         fetch('activity_bar.html') // Fetch pentru header și footer
             .then(response => response.text())
@@ -127,6 +122,7 @@
         })
         .catch(error => console.error('Error loading header/footer:', error));
 </script>
+<script src="/js/injectChatbot.js" defer></script>
 
 </body>
 </html>

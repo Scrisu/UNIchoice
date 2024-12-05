@@ -1,11 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unichoice - Cămine Studențești</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <link rel="stylesheet" href="css/camine.css">
 </head>
+
 <body>
-    
+
+  <div id="header-placeholder"></div>
+
+  <div class="intro">
+    <h1>Descoperă Viața de Cămin cu UniChoice</h1>
+    <p>Pregătirea pentru facultate nu se limitează doar la alegerea programului ideal – locul în care vei locui joacă un rol esențial în experiența ta academică și socială. UniChoice îți oferă toate informațiile de care ai nevoie despre viața în căminele studențești.</p>
+    <p>Explorează opțiunile de cazare disponibile în campusuri din întreaga țară, de la facilități moderne și costuri accesibile, până la detalii despre comunitatea studențească. Alege locul care îți oferă confortul și sprijinul necesar pentru a te concentra pe succesul academic.</p>
+    <p>Cu UniChoice, găsirea unui cămin potrivit devine simplă și rapidă. Începe căutarea chiar acum și pregătește-te să transformi perioada studenției într-o experiență de neuitat!</p>
+</div>
+
+
+  <main>
+    <section class="filters">
+      <h2>Filtrează căminele</h2>
+      <div class="filter-container">
+        <div class="filter-group">
+          <label for="city">Oraș:</label>
+          <select id="city">
+            <option value="">Toate orașele</option>
+            <option value="bucuresti">București</option>
+            <option value="cluj">Cluj-Napoca</option>
+            <option value="iasi">Iași</option>
+            <option value="timisoara">Timișoara</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="price">Preț maxim (RON/lună):</label>
+          <input type="range" id="price" min="100" max="1000" step="50" value="500">
+          <span id="price-value">500 RON</span>
+        </div>
+
+        <div class="filter-group">
+          <label for="room-type">Tipul camerei:</label>
+          <select id="room-type">
+            <option value="">Oricare</option>
+            <option value="single">Single</option>
+            <option value="double">Dublă</option>
+            <option value="triple">Triplă</option>
+            <option value="private-bathroom">Cu baie proprie</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Facilități:</label>
+          <input type="checkbox" id="wifi" value="Wi-Fi"> Wi-Fi
+          <input type="checkbox" id="kitchen" value="Bucătărie comună"> Bucătărie comună
+          <input type="checkbox" id="laundry" value="Spălătorie"> Spălătorie
+          <input type="checkbox" id="study-rooms" value="Săli de studiu"> Săli de studiu
+          <input type="checkbox" id="parking" value="Parcare"> Parcare
+          <input type="checkbox" id="accessible" value="Accesibilitate"> Accesibilitate
+        </div>
+
+        <div class="filter-group">
+          <label for="distance">Distanța până la universitate:</label>
+          <select id="distance">
+            <option value="">Oricare</option>
+            <option value="1km">Mai puțin de 1 km</option>
+            <option value="1-3km">1-3 km</option>
+            <option value="3km+">Peste 3 km</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="rating">Rating minim:</label>
+          <select id="rating">
+            <option value="">Oricare</option>
+            <option value="5">★★★★★</option>
+            <option value="4">★★★★☆ sau mai mult</option>
+            <option value="3">★★★☆☆ sau mai mult</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="rental-period">Perioada de închiriere:</label>
+          <select id="rental-period">
+            <option value="">Oricare</option>
+            <option value="semester">Semestru</option>
+            <option value="academic-year">An academic</option>
+            <option value="full-year">Perioadă completă</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="budget">Buget total (RON):</label>
+          <input type="number" id="budget" placeholder="Introduceți suma maximă">
+        </div>
+
+        <!-- Buton de aplicare filtre -->
+        <div class="button-container">
+          <button id="apply-filters">Caută cămine</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rezultate cămine -->
+    <section class="results">
+      <h2>Cămine Studențești</h2>
+      <div id="accommodation-list" class="accommodation-list">
+        <!-- Rezultate generate prin JavaScript -->
+      </div>
+    </section>
+
+    <!-- Mesaj pentru cămine inexistente și alternative -->
+    <p id="no-results-message"></p>
+
+    <!-- Opțiuni alternative -->
+    <section id="alternatives">
+      <h2>Opțiuni Alternative</h2>
+      <p>Dacă un cămin nu este potrivit pentru tine, poți explora alte variante:</p>
+      <ul>
+        <li><a href="https://www.airbnb.com/" target="_blank">Airbnb</a> - Locuințe temporare în orașul tău.</li>
+        <li><a href="https://www.booking.com/" target="_blank">Booking.com</a> - Apartamente și alte unități de cazare.</li>
+        <li><a href="https://www.olx.ro/imobiliare/" target="_blank">OLX Imobiliare</a> - Anunțuri pentru chirii și camere de închiriat.</li>
+      </ul>
+    </section>
+
+    <!-- Hartă -->
+    <section class="map">
+      <h2>Locațiile pe hartă</h2>
+      <div id="map" style="height: 400px;"></div>
+    </section>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+ 
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="js/camine.js"></script>
+  
 </body>
 </html>

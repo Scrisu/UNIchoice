@@ -25,19 +25,12 @@
 
 <!-- Secțiune de introducere -->
 
-<section class="intro-section">
-  <div class="intro-content">
-    <!-- Titlu -->
-    <h2>Găsește Facultatea Ideală cu UniChoice</h2>
-    
-    <!-- Paragrafe -->
-    <p>UniChoice este partenerul tău de încredere în căutarea facultății perfecte. Cu o platformă intuitivă și ușor de utilizat, te ajutăm să explorezi cele mai bune opțiuni academice, în funcție de interesele și obiectivele tale.</p>
-    
-    <p>Folosind filtrele noastre inteligente, poți selecta domeniul de studiu, locația, tipul programului educațional sau alte criterii care contează pentru tine. Fie că visezi la o carieră în științe exacte, arte sau tehnologie, UniChoice te ajută să iei decizia potrivită cu încredere.</p>
-    
-    <p>Nu pierde timpul cu căutări nesfârșite! Lasă UniChoice să-ți arate calea către viitorul tău academic. Începe acum și transformă-ți visurile în realitate.</p>
-  </div>
-</section>
+<div class="intro">
+  <h1>Găsește Facultatea Ideală cu UniChoice</h1>
+  <p>UniChoice este partenerul tău de încredere în căutarea facultății perfecte. Cu o platformă intuitivă și ușor de utilizat, te ajutăm să explorezi cele mai bune opțiuni academice, în funcție de interesele și obiectivele tale.</p>
+  <p>Folosind filtrele noastre inteligente, poți selecta domeniul de studiu, locația, tipul programului educațional sau alte criterii care contează pentru tine. Fie că visezi la o carieră în științe exacte, arte sau tehnologie, UniChoice te ajută să iei decizia potrivită cu încredere.</p>
+  <p>Nu pierde timpul cu căutări nesfârșite! Lasă UniChoice să-ți arate calea către viitorul tău academic. Începe acum și transformă-ți visurile în realitate.</p>
+</div>
 
 
 
@@ -626,63 +619,9 @@
 
 
   <div id="footer-placeholder"></div>
+  
+
+
 </body>
-<script>
-         fetch('activity_bar.html') // Fetch pentru header și footer
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-                
-            })
-            .catch(error => console.error('Error loading header/footer:', error));
-
-            fetch('footer.html') // Fetch pentru header și footer
-            .then(response => response.text())
-            .then(data => {
-               
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading header/footer:', error));
-
-
-
-            
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.faculty-card'); // Select all cards
-  const overlay = document.getElementById('popup-overlay'); // Shared overlay
-
-  cards.forEach(card => {
-    const cardId = card.getAttribute('data-id'); // Get card's unique ID
-    const popup = document.getElementById(`popup-${cardId}`); // Match with corresponding pop-up
-
-    if (popup) {
-      const closeButton = popup.querySelector('.close-popup'); // Close button inside the pop-up
-
-      // Show pop-up when card is clicked
-      card.addEventListener('click', () => {
-        popup.classList.add('show');
-        overlay.classList.add('show');
-      });
-
-      // Close pop-up when close button is clicked
-      closeButton.addEventListener('click', () => {
-        popup.classList.remove('show');
-        overlay.classList.remove('show');
-      });
-    }
-  });
-
-  // Close pop-ups when overlay is clicked
-  overlay.addEventListener('click', () => {
-    document.querySelectorAll('.popup.show').forEach(popup => {
-      popup.classList.remove('show');
-    });
-    overlay.classList.remove('show');
-  });
-});
-
-</script>
-</body>
+<script src="js/facultati.js"></script>
 </html>

@@ -6,110 +6,291 @@
     <title>Transport – Ghidul viitorului student</title>
     <link rel="stylesheet" href="css/transport.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
 
 
 </head>
 <body>
     <div id="header-placeholder"></div>
-    <header>
-        <h1>Transport – Ghidul Viitorului Student</h1>
-        <p>Informații utile despre transportul pentru studenți în România.</p>
-    </header>
- 
+
+    <div class="intro">
+        <h1>Explorează Opțiunile de Transport pentru Studenți</h1>        
+        <p>Accesul facil la campusuri universitare și alte locații cheie reprezintă un aspect important al vieții studențești. În cadrul acestei secțiuni, UniChoice îți pune la dispoziție informații detaliate despre opțiunile de transport disponibile în orașele universitare.</p>
+        <p>De la rețelele de transport public și abonamentele dedicate studenților, până la alternative precum transportul cu bicicleta sau serviciile de ridesharing, găsești toate detaliile necesare pentru a te deplasa eficient și economic. Scopul nostru este să te ajutăm să te adaptezi rapid la noile tale împrejurimi și să economisești timp prețios.</p>
+        <p>Consultă ghidul nostru pentru a descoperi soluții de transport adaptate nevoilor tale și pentru a face tranziția către viața studențească cât mai simplă și confortabilă.</p>
+      </div>
+      
     <main>
         
        
 
         <!-- Informații generale -->
+
+      
+
         <section class="general-section">
-            <h2>Reduceri generale pentru studenți</h2>
-            <p>În România, studenții beneficiază de numeroase reduceri pentru transportul public, atât la nivel local, cât și național:</p>
+            <h1>Reduceri Generale pentru Studenți</h1>
+            <p>În România, studenții beneficiază de o serie de facilități pentru transportul public, reglementate prin legislația națională, care au ca scop sprijinirea mobilității și accesului facil la educație:</p>
             <ul>
-                <li><strong>Transport feroviar:</strong> Gratuitate pentru călătoriile cu trenurile CFR pe rutele Regio și InterRegio, clasa a II-a.</li>
-                <li><strong>Transport urban:</strong> Reduceri semnificative sau chiar gratuitate în majoritatea orașelor universitare.</li>
-                <li><strong>Acte necesare:</strong> Este nevoie de un carnet de student vizat la zi sau un card studențesc recunoscut de operatorul de transport.</li>
+                <li><strong>Transport feroviar:</strong>  
+                    În conformitate cu Legea Educației Naționale nr. 1/2011, articolul 205, alin. (2), toți studenții români din învățământul superior acreditat beneficiază de *gratuitate* la transportul feroviar pe rutele Regio și InterRegio, clasa a II-a, cu operatorul CFR. Acest beneficiu include călătoriile în interes personal sau academic, pe întreg teritoriul țării. 
+                </li>
+                <li><strong>Transport urban:</strong>  
+                    <p>Majoritatea orașelor universitare din România oferă reduceri semnificative sau chiar gratuitate pentru transportul în comun destinat studenților. Aceste facilități sunt reglementate de hotărâri ale consiliilor locale și pot varia în funcție de oraș, având scopul de a sprijini mobilitatea studenților și accesul facil la educație.</p>
+                </li>
+                <li><strong>Transport interurban:</strong>  
+                    Pentru transportul cu autocarele sau microbuzele operate de companii private, reducerile variază. Conform HG nr. 42/2017, studenții pot beneficia de reduceri de minimum 50% pentru aceste servicii, dacă operatorii sunt incluși în programele naționale de transport subvenționat.
+                </li>
+                <li><strong>Acte necesare:</strong>  
+                    Pentru a beneficia de aceste reduceri, studenții trebuie să prezinte:  
+                    <ul>
+                        <li>*Carnetul de student vizat pentru anul universitar în curs*;</li>
+                        <li>*Cardul studențesc* emis de universitate sau alte documente eliberate de instituția de învățământ (ex. adeverință);</li>
+                        <li>*Buletinul de identitate*, pentru verificarea identității.</li>
+                    </ul>
+                </li>
             </ul>
             <div class="info-box">
-                <p>Studenții trebuie să se asigure că au carnetul de student vizat pentru a beneficia de reduceri. La operatorii privați, pot exista condiții suplimentare.</p>
+                <h2>Informații suplimentare</h2>
+                <p>Este important ca studenții să se asigure că documentele necesare sunt valabile și vizate la zi pentru a putea beneficia de facilități. De asemenea, condițiile pot varia pentru operatorii privați de transport, care pot solicita documente suplimentare sau pot aplica reduceri mai mici.</p>
+                <p>Facilitățile pentru transport sunt disponibile atât pentru studenții români, cât și pentru studenții internaționali înscriși în programe de studii acreditate în România, conform legislației în vigoare.</p>
             </div>
         </section>
+        
 
         <!-- Secțiunea de filtre -->
         <div class="filter-section">
-            <label for="city-select">Alege orașul:</label>
+            <label for="city-select">Alege orașul în care vrei să studiezi:</label>
             <select id="city-select">
                 <option value="">-- Selectează un oraș --</option>
+                <option value="arad">Arad</option>
+                <option value="bacau">Bacău</option>
+                <option value="brasov">Brașov</option>
                 <option value="bucuresti">București</option>
-                <option value="cluj">Cluj-Napoca</option>
+                <option value="cluj-napoca">Cluj-Napoca</option>
+                <option value="constanta">Constanța</option>
+                <option value="craiova">Craiova</option>
                 <option value="iasi">Iași</option>
+                <option value="oradea">Oradea</option>
+                <option value="sibiu">Sibiu</option>
+                <option value="suceava">Suceava</option>
+                <option value="targu-mures">Târgu Mureș</option>
                 <option value="timisoara">Timișoara</option>
             </select>
         </div>
 
-        <!-- Informații pentru București -->
-        <section id="bucuresti" class="section">
-            <h2>Transport în București</h2>
-            <p>Bucureștiul oferă multiple opțiuni de transport:</p>
-            <ul>
-                <li>Metrou: O rețea rapidă care acoperă principalele zone ale orașului.</li>
-                <li>Autobuze și troleibuze STB: Funcționează pe rute extinse.</li>
-                <li>Ride-sharing: Uber, Bolt și FreeNow sunt disponibile.</li>
-            </ul>
-            <div class="info-box">
-                <p><strong>Reduceri pentru studenți:</strong> Abonamente gratuite pe transportul public local cu carnetul de student vizat.</p>
-            </div>
-            <div class="image-container">
-                <img src="https://via.placeholder.com/800x400?text=Metroul+din+Bucuresti" alt="Metrou București">
-            </div>
-        </section>
+       <!-- Informații pentru Arad -->
+<section id="arad" class="section">
+    <h2>Transport în Arad</h2>
+    <p>Aradul beneficiază de un transport public bine organizat:</p>
+    <ul>
+        <li>Tramvaie și autobuze STPT.</li>
+        <li>Biciclete disponibile pentru închiriere.</li>
+    </ul>
+    <div class="info-box">
+        <p><strong>Reduceri pentru studenți:</strong> Abonamente reduse pentru studenți la transportul public local.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400?text=Transport+Arad" alt="Transport Arad">
+    </div>
+</section>
 
-        <!-- Informații pentru Cluj-Napoca -->
-        <section id="cluj" class="section">
-            <h2>Transport în Cluj-Napoca</h2>
-            <p>Cluj-Napoca este bine deservit de transport public:</p>
-            <ul>
-                <li>Autobuze, troleibuze și tramvaie.</li>
-                <li>Biciclete și trotinete electrice disponibile pentru închiriere.</li>
-            </ul>
-            <div class="info-box">
-                <p><strong>Reduceri pentru studenți:</strong> Abonamente reduse pe mijloacele de transport local.</p>
-            </div>
-            <div class="image-container">
-                <img src="https://via.placeholder.com/800x400?text=Transport+Cluj-Napoca" alt="Transport Cluj-Napoca">
-            </div>
-        </section>
+<!-- Informații pentru Bacău -->
+<section id="bacau" class="section">
+    <h2>Transport în Bacău</h2>
+    <p>Bacăul oferă opțiuni de transport pentru studenți:</p>
+    <ul>
+        <li>Autobuze și microbuze.</li>
+        <li>Trasee pentru biciclete în oraș.</li>
+    </ul>
+    <div class="info-box">
+        <p><strong>Reduceri pentru studenți:</strong> Abonamente gratuite sau reduse la transportul public.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400?text=Transport+Bacau" alt="Transport Bacău">
+    </div>
+</section>
 
-        <!-- Informații pentru Iași -->
-        <section id="iasi" class="section">
-            <h2>Transport în Iași</h2>
-            <p>Iașiul oferă transport public accesibil studenților:</p>
-            <ul>
-                <li>Autobuze și tramvaie moderne.</li>
-                <li>Stații de biciclete publice în oraș.</li>
-            </ul>
-            <div class="info-box">
-                <p><strong>Reduceri pentru studenți:</strong> Tarife reduse pentru abonamente lunare.</p>
-            </div>
-            <div class="image-container">
-                <img src="https://via.placeholder.com/800x400?text=Transport+Iasi" alt="Transport Iași">
-            </div>
-        </section>
+<!-- Informații pentru Brașov -->
+<section id="brasov" class="section">
+    <h2>Transport în Brașov</h2>
+    <p>Brașovul oferă o rețea de transport diversificată:</p>
+    <ul>
+        <li>Autobuze și troleibuze RATBV.</li>
+        <li>Trasee pentru biciclete publice.</li>
+    </ul>
+    <div class="info-box">
+        <p><strong>Reduceri pentru studenți:</strong> Abonamente reduse pentru transportul public local.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400?text=Transport+Brasov" alt="Transport Brașov">
+    </div>
+</section>
 
-        <!-- Informații pentru Timișoara -->
-        <section id="timisoara" class="section">
-            <h2>Transport în Timișoara</h2>
-            <p>Opțiuni principale de transport:</p>
-            <ul>
-                <li>Tramvaie și autobuze eficiente.</li>
-                <li>Infrastructură dezvoltată pentru biciclete.</li>
-            </ul>
-            <div class="info-box">
-                <p><strong>Reduceri pentru studenți:</strong> Abonamente la preț redus pentru toți studenții înregistrați.</p>
-            </div>
-            <div class="image-container">
-                <img src="https://via.placeholder.com/800x400?text=Transport+Timisoara" alt="Transport Timișoara">
-            </div>
-        </section>
+<!-- Informații pentru București -->
+<section id="bucuresti" class="section">
+    <h2>Transport în București</h2>
+    <p>Bucureștiul oferă multiple opțiuni de transport:</p>
+    <ul>
+        <li>Metrou: O rețea rapidă care acoperă principalele zone ale orașului.</li>
+        <li>Autobuze și troleibuze STB: Funcționează pe rute extinse.</li>
+        <li>Ride-sharing: Uber, Bolt și FreeNow sunt disponibile.</li>
+    </ul>
+    <div class="info-box">
+        <p><strong>Reduceri pentru studenți:</strong> Abonamente gratuite pe transportul public local cu carnetul de student vizat.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400?text=Metroul+din+Bucuresti" alt="Metrou București">
+    </div>
+</section>
+
+<!-- Informații pentru Cluj-Napoca -->
+<section id="cluj-napoca" class="section">
+    <h2>Transport în Cluj-Napoca</h2>
+    <p>Cluj-Napoca este bine deservit de transport public:</p>
+    <ul>
+        <li>Autobuze, troleibuze și tramvaie.</li>
+        <li>Biciclete și trotinete electrice disponibile pentru închiriere.</li>
+    </ul>
+    <div class="info-box">
+        <p><strong>Reduceri pentru studenți:</strong> Abonamente reduse pe mijloacele de transport local.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400?text=Transport+Cluj-Napoca" alt="Transport Cluj-Napoca">
+    </div>
+</section>
+
+<!-- Informații pentru Constanța -->
+<section id="constanta" class="section">
+    <h2>Transport în Constanța</h2>
+    <p>Constanța pune la dispoziție mai multe tipuri de transport public:</p>
+    <ul>
+        <li>Autobuze și microbuze.</li>
+        <li>Servicii de închiriat biciclete și trotinete electrice.</li>
+    </ul>
+    <div class="info-box">
+        <p><strong>Reduceri pentru studenți:</strong> Reduceri semnificative la abonamentele pentru transportul local.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400?text=Transport+Constanta" alt="Transport Constanța">
+    </div>
+</section>
+
+<!-- Informații pentru Craiova -->
+<section id="craiova" class="section">
+    <h2>Transport în Craiova</h2>
+    <p>Craiova oferă o rețea de transport accesibilă pentru studenți:</p>
+    <ul>
+        <li>Autobuze și microbuze.</li>
+        <li>Infrastructură dedicată bicicletelor.</li>
+    </ul>
+    <div class="info-box">
+        <p><strong>Reduceri pentru studenți:</strong> Abonamente cu reducere pentru studenți la transportul public.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400?text=Transport+Craiova" alt="Transport Craiova">
+    </div>
+</section>
+
+<!-- Informații pentru Iași -->
+<section id="iasi" class="section">
+    <h2>Transport în Iași</h2>
+    <p>Iașiul oferă transport public accesibil studenților:</p>
+    <ul>
+        <li>Autobuze și tramvaie moderne.</li>
+        <li>Stații de biciclete publice în oraș.</li>
+    </ul>
+    <div class="info-box">
+        <p><strong>Reduceri pentru studenți:</strong> Tarife reduse pentru abonamente lunare.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400?text=Transport+Iasi" alt="Transport Iași">
+    </div>
+</section>
+
+<!-- Informații pentru Oradea -->
+<section id="oradea" class="section">
+    <h2>Transport în Oradea</h2>
+    <p>Oradea oferă opțiuni diverse de transport public:</p>
+    <ul>
+        <li>Autobuze și tramvaie.</li>
+        <li>Biciclete și trotinete electrice disponibile pentru închiriere.</li>
+    </ul>
+    <div class="info-box">
+        <p><strong>Reduceri pentru studenți:</strong> Abonamente reduse la transportul public.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400?text=Transport+Oradea" alt="Transport Oradea">
+    </div>
+</section>
+
+<!-- Informații pentru Sibiu -->
+<section id="sibiu" class="section">
+    <h2>Transport în Sibiu</h2>
+    <p>Sibiu oferă diverse opțiuni de transport urban:</p>
+    <ul>
+        <li>Autobuze și microbuze.</li>
+        <li>Rețea de piste pentru biciclete în oraș.</li>
+    </ul>
+    <div class="info-box">
+        <p><strong>Reduceri pentru studenți:</strong> Reduceri pentru abonamente la transportul public.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400?text=Transport+Sibiu" alt="Transport Sibiu">
+    </div>
+</section>
+
+<!-- Informații pentru Suceava -->
+<section id="suceava" class="section">
+    <h2>Transport în Suceava</h2>
+    <p>Suceava oferă soluții de transport public pentru studenți:</p>
+    <ul>
+        <li>Autobuze și microbuze locale.</li>
+        <li>Trasee pentru biciclete în oraș.</li>
+    </ul>
+    <div class="info-box">
+        <p><strong>Reduceri pentru studenți:</strong> Abonamente gratuite sau la preț redus pentru studenți.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400?text=Transport+Suceava" alt="Transport Suceava">
+    </div>
+</section>
+
+<!-- Informații pentru Târgu Mureș -->
+<section id="targu-mures" class="section">
+    <h2>Transport în Târgu Mureș</h2>
+    <p>Târgu Mureș oferă diverse opțiuni de transport:</p>
+    <ul>
+        <li>Autobuze și microbuze.</li>
+        <li>Rețea de piste pentru biciclete în oraș.</li>
+    </ul>
+    <div class="info-box">
+        <p><strong>Reduceri pentru studenți:</strong> Abonamente reduse pentru transportul public local.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400?text=Transport+Targu+Mures" alt="Transport Târgu Mureș">
+    </div>
+</section>
+
+<!-- Informații pentru Timișoara -->
+<section id="timisoara" class="section">
+    <h2>Transport în Timișoara</h2>
+    <p>Timișoara beneficiază de o rețea extinsă de transport:</p>
+    <ul>
+        <li>Tramvaie și autobuze.</li>
+        <li>Biciclete și trotinete electrice disponibile pentru închiriere.</li>
+    </ul>
+    <div class="info-box">
+        <p><strong>Reduceri pentru studenți:</strong> Abonamente reduse pentru transportul public local.</p>
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400?text=Transport+Timisoara" alt="Transport Timișoara">
+    </div>
+</section>
+
+
+        
         <div id="contactButton">
             <a href="/formular-de-contact.html" title="Contactează-ne!">
                 <i class="fas fa-question"></i>
@@ -121,33 +302,6 @@
 
     <div id="footer-placeholder"></div>
 
-    <script>
-        // JavaScript pentru schimbarea orașului
-        document.getElementById("city-select").addEventListener("change", function () {
-            const selectedCity = this.value;
-            document.querySelectorAll(".section").forEach(section => {
-                section.classList.remove("active");
-            });
-            if (selectedCity) {
-                document.getElementById(selectedCity).classList.add("active");
-            }
-        });
-   
-        fetch('activity_bar.html') // Fetch pentru header și footer
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-               
-            })
-            .catch(error => console.error('Error loading header/footer:', error));
-  
-    fetch('footer.html') // Fetch pentru header și footer
-        .then(response => response.text())
-        .then(data => {
-           
-            document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading header/footer:', error));
-</script>
+    <script src="js/transport.js"></script>
 </body>
 </html>

@@ -3,49 +3,91 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     color: #333;
 }
 
-header {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 20px 10px;
+ 
+@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro:wght@400;700&display=swap');
+ 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Freeman', sans-serif; /* Font pentru toate titlurile */
 }
-
-header h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-header p {
-    margin: 5px 0 0;
+ 
+p {
+  font-family: 'Source Sans Pro', sans-serif; /* Font pentru toate paragrafele */
 }
 
 main {
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1525px;
     margin: 0 auto;
     background: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    margin-top: 30px;
+    margin-bottom: 100px;
 }
 
 .general-section {
     margin-bottom: 30px;
+
+}
+.general-section h1{
+    color: #2F584E; 
+    font-size: 30px;
+
 }
 
-.general-section p {
+
+
+/* Header Styling */
+.intro {
+    background: #EBEBEB; ;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 2;
+    width: 90%; /* Se păstrează lățimea, dar */
+    max-width: 1550px; /* Optional: limitează lățimea maximă */
+    margin: 0 auto; /* Centrează containerul pe axa orizontală */
+    justify-content: center; /* Centrează conținutul în cadrul containerului */
+    border-radius: 16px;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+  
+  .intro h1 {
+    color: #2F584E; 
+    margin-bottom: 50px;
+    font-size: 2.8em;
+    letter-spacing: 2px;
+    font-weight: bold;
+    opacity: 100% !important;
+  }
+  
+  .intro p {
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-left: 80px;
+    margin-right: 80px;
+    font-style: italic;
+    opacity: 100% !important;
+  }
+  .general-section li, ul,p{
     margin: 10px 0;
-    font-size: 1.1em;
-}
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif; /* Font pentru toate paragrafele */
+  }
+  
+
 
 .info-box {
-    background-color: #e7f3ff;
-    border: 1px solid #007bff;
-    padding: 15px;
-    margin: 15px 0;
+    background-color: #9cc9be;
+    border: 1px solid #2F584E;
+    padding: 10px;
+    margin: 20px 0;
     border-radius: 5px;
 }
 
@@ -57,7 +99,7 @@ main {
 .filter-section select {
     padding: 10px;
     font-size: 1em;
-    border: 1px solid #ccc;
+    border: 1px solid #2F584E;
     border-radius: 5px;
 }
 
@@ -71,8 +113,8 @@ main {
 }
 
 h2 {
-    color: #007bff;
-    margin-top: 20px;
+    color: #2F584E;
+    margin-top: 10px;
 }
 
 ul {
@@ -95,7 +137,7 @@ li {
 }
 
 a {
-    color: #007bff;
+    color: #2F584E;
     text-decoration: none;
 }
 
@@ -116,10 +158,10 @@ a:hover {
     align-items: center;
     cursor: pointer;
     z-index: 1000; /* Asigură-te că butonul este deasupra altor elemente */
-}
-
-#contactButton a {
+  }
+  
+  #contactButton a {
     color: white; /* Culoarea iconului */
     font-size: 24px; /* Dimensiunea iconului */
     text-decoration: none; /* Elimină sublinierea */
-}
+  }
