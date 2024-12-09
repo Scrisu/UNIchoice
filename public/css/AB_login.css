@@ -1,0 +1,159 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Activity Bar */
+.activity-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    color: #030303;
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Left Section */
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Left Buttons */
+.left-buttons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.left-buttons a {
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.left-buttons a:hover {
+    background-color: #EBF86E;
+    color: #000000;
+    border-radius: 5px;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.dropdown-content a:hover {
+    background-color: #EBF86E;
+}
+
+/* Right Buttons and Profile Alignment */
+.right-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+}
+
+.profile-button {
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.profile-button:hover {
+    background-color: #ebf86e;
+    color: #000000;
+    border-radius: 5px;
+}
+
+/* Avatar Icon */
+.avatar-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* Adjusting Profile Button Alignment */
+.right-buttons .profile-button {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Login Button */
+.login-button {
+    background-color: #ebf86e;
+    color: #000000;
+    text-decoration: none;
+    padding: 8px 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #ebf86e;
+    color: #000000;
+}
+
+/* Logo */
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .activity-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .left-section, .right-buttons {
+        margin: 5px 0;
+    }
+
+    .login-button, .profile-button {
+        padding: 5px 15px;
+    }
+}

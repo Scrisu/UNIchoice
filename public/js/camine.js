@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Actualizarea prețului când se modifică slider-ul
   priceInput.addEventListener("input", () => {
     priceValue.textContent = `${priceInput.value} RON`;
-
   });
 
   // Inițializare hartă
@@ -50,14 +49,13 @@ const accommodations = [
 
 
   // Afișarea căminelor pe hartă
-const renderMap = (data) => {
-  data.forEach(item => {
-    L.marker([item.lat, item.lng])
-      .addTo(map)
-      .bindPopup(`${item.name} - ${item.city}`);
-  });
-};
-
+  const renderMap = (data) => {
+    data.forEach(item => {
+      L.marker([item.lat, item.lng])
+        .addTo(map)
+        .bindPopup(`${item.name} - ${item.city}`);
+    });
+  };
 
   // Funcție de filtrare
   const filterAccommodations = () => {
