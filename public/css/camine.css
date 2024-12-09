@@ -479,3 +479,77 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   cursor: pointer;
 }
+/* Stiluri pentru secțiunea articolelor utile */
+.article{
+  max-width: 1500px;
+ margin-left: 100px;
+ margin-bottom: 100px;
+ border-radius: 16px;
+}
+#articles {
+  padding: 40px 0;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+}
+
+#articles h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: 20px;
+}
+
+#articles p {
+  text-align: left;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+.article-list {
+  display: block; /* Schimbăm de la grid la block pentru a aranja articolele pe verticală */
+}
+.article-item {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1400px;
+  margin-left: 50px;
+
+  /* Adăugăm tranziție pentru un efect mai fluid */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efect pe hover */
+.article-item:hover {
+  transform: translateX(10px); /* Mută articolul puțin spre dreapta */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adâncește umbra pentru un efect de „ridicare” */
+}
+
+
+.article-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.article-item p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+  align-items: left;
+}
+
+.read-more {
+  font-size: 1rem;
+  color: orange;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
