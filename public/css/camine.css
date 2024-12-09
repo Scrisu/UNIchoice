@@ -5,7 +5,7 @@ body {
     padding: 0;
     background-color: #ffffff;
   }
-  
+
 
 /* Header Styling */
 .intro {
@@ -23,6 +23,20 @@ body {
   height: auto;
   margin-top: 120px;
   margin-bottom: 50px;
+background: #EBEBEB; ;
+text-align: center;
+padding: 50px 20px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+position: relative;
+z-index: 2;
+width: 90%; /* Se păstrează lățimea, dar */
+max-width: 1550px; /* Optional: limitează lățimea maximă */
+margin: 0 auto; /* Centrează containerul pe axa orizontală */
+justify-content: center; /* Centrează conținutul în cadrul containerului */
+border-radius: 16px;
+height: auto;
+margin-top: 90px;
+margin-bottom: 50px;
 }
 
 .intro h1 {
@@ -32,15 +46,21 @@ body {
   letter-spacing: 2px;
   font-weight: bold;
   opacity: 100% !important;
+color: #ff7845; 
+margin-bottom: 50px;
+font-size: 2.8em;
+letter-spacing: 2px;
+font-weight: bold;
+opacity: 100% !important;
 }
 
 .intro p {
-  font-size: 1.2em;
-  margin-top: 15px;
-  margin-left: 80px;
-  margin-right: 80px;
-  font-style: italic;
-  opacity: 100% !important;
+font-size: 1.2em;
+margin-top: 15px;
+margin-left: 80px;
+margin-right: 80px;
+font-style: italic;
+opacity: 100% !important;
 }
 
   
@@ -55,54 +75,94 @@ body {
     margin-top: 2rem;
   }
 
-  /* Filters section */
-  .filters {
-    margin-bottom: 2rem;
-  }
-  
-  .filters h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
+/* Header styles */
+header {
+  background: #1e90ff;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .filter-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
 
-  .filter-group {
-    flex: 1 1 calc(33% - 1.5rem);
-    margin-bottom: 1.5rem;
-  }
+header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
 
-  .filter-group label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
+/* Main content styles */
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 2rem;
+}
 
-  .filter-group select,
-  .filter-group input[type="range"],
-  .filter-group input[type="number"] {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
+/* Filters section */
+.filters {
+  margin-bottom: 2rem;
+}
 
-  .filter-group input[type="checkbox"] {
-    margin-right: 5px;
-  }
+.filters h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
 
-  .button-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
 
+.filter-group {
+  flex: 1 1 calc(33% - 1.5rem);
+  margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.filter-group select,
+.filter-group input[type="range"],
+.filter-group input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.filter-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 1rem 3rem;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
   button {
     padding: 11px;
     background-color: #e88a15;
@@ -114,10 +174,17 @@ body {
     margin-top: 1.5rem;
   }
 
+button:hover {
+  background-color: #007acc;
+}
   button:hover {
     background-color: #bc4606;
   }
 
+/* Accommodation list styles */
+.results {
+  margin-bottom: 2rem;
+}
   /* Accommodation list styles */
   .results {
     margin-bottom: 2rem;
@@ -126,12 +193,19 @@ body {
     margin-bottom: 10px;
   }
 
-  .accommodation-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
-  }
+.accommodation-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
 
+.accommodation-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+}
   .accommodation-item {
     background: #fff;
     border-radius: 8px;
@@ -147,24 +221,33 @@ body {
   }
   
 
+.accommodation-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #1e90ff;
+}
   .accommodation-item h3 {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
     color: black;
   }
 
-  .accommodation-item p {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #666;
-  }
+.accommodation-item p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
 
-  .accommodation-item img {
-    max-width: 100%;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-  }
+.accommodation-item img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
 
+/* Map section */
+.map {
+  margin-top: 2rem;
+}
   /* Map section */
   .map {
     margin-top: 2rem;
@@ -188,56 +271,111 @@ body {
   @media (max-width: 768px) {
     .filter-container {
       flex-direction: column;
-    }
+  } }
+#map {
+  height: 400px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    .filter-group {
-      flex: 1 1 100%;
-    }
+/* Footer styles */
+footer {
+  background: #1e90ff;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+}
 
-    .accommodation-item {
-      padding: 1rem;
-    }
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
 
-    footer {
-      padding: 1.2rem;
-    }
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filter-container {
+    flex-direction: column;
   }
 
-  /* No results section */
-  #no-results-message {
-    color: #e74c3c;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 1.5rem;
+  .filter-group {
+    flex: 1 1 100%;
   }
 
-  #alternatives {
-    display: none;
-    background: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-top: 2rem;
+  .accommodation-item {
+    padding: 1rem;
   }
 
-  #alternatives h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+  footer {
+    padding: 1.2rem;
   }
+}
 
-  #alternatives ul {
-    list-style-type: none;
-    padding: 0;
-  }
+/* No results section */
+#no-results-message {
+  color: #e74c3c;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1.5rem;
+}
 
-  #alternatives ul li {
-    margin: 0.8rem 0;
-  }
+#alternatives {
+  display: none;
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
 
-  #alternatives a {
-    color: #1e90ff;
-    text-decoration: none;
-  }
+#alternatives h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#alternatives ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#alternatives ul li {
+  margin: 0.8rem 0;
+}
+
+#alternatives a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+#alternatives a:hover {
+  text-decoration: underline;
+}
+
+.camin-card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 15px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.camin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.camin-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
   #alternatives a:hover {
     text-decoration: underline;
@@ -362,7 +500,6 @@ input[type="range"] {
   background: linear-gradient(to right, #FF9861 50%, #ddd 50%); /* Jumătate portocaliu, restul gri */
   border-radius: 5px;
   outline: none;
-  transition: background 0.3s; /* Tranziție smooth */
 }
 
 /* Thumb-ul (butonul slider-ului) */
