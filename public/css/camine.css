@@ -259,3 +259,114 @@ body {
   #alternatives a:hover {
     text-decoration: underline;
   }
+
+  .camin-card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 15px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .camin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .camin-card-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .camin-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #ccc;
+  }
+  
+  .card-content {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .card-content h5 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .card-content p {
+    font-size: 1em;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .card-content .price {
+    color: #27ae60;
+    font-weight: bold;
+  }
+  
+  .card-content .rating {
+    color: #f39c12;
+  }
+  
+  .details-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .details-button:hover {
+    background-color: #3498db;
+  }
+  
+  /* Stilizare Pop-up */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

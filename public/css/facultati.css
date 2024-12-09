@@ -470,7 +470,7 @@ margin-top: 20px;
  
 .quiz-content button {
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 15px;
   color: #fff;
   background-color: #e88a15;
   border: none;
@@ -528,7 +528,7 @@ flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
 }
  
 .newsletter-section input[type="email"] {
-padding: 15px;
+padding: 10px;
 border: 1px solid #ddd;
 border-radius: 8px;
 font-size: 18px;
