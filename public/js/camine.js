@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   priceInput.addEventListener("input", () => {
     priceValue.textContent = `${priceInput.value} RON`;
   });
+  
 
   // Inițializare hartă
   const map = L.map('map').setView([45.9432, 24.9668], 6); // Centru România
@@ -17,8 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
  // Datele căminelor (exemplu de obiecte)
 const accommodations = [
-  { id: 1, name: "Cămin Universitatea Ovidius Constanța", city: "Constanța", price: 220, roomType: "single", lat: 45.5, lng: 28.5, rating: 4, facilities: ["wifi", "parking"], description: "Cămin bine situat." },
-  { id: 2, name: "Cămin Particular Constanța City Lodge", city: "Constanța", price: 300, roomType: "double", lat: 45.6, lng: 28.6, rating: 5, facilities: ["wifi"], description: "Cămin modern și confortabil." },
+  { id: 1, name: "Cămin Universitatea Ovidius Constanța", city: "Constanța", price: 220, roomType: "single", lat: 45.5, lng: 28.5, rating: 4, facilities: ["wifi", "parking"], description: "Cămin bine situat.", url: "https://www.example.com/camin1" },
+  { id: 2, name: "Cămin Particular Constanța City Lodge", city: "Constanța", price: 300, roomType: "double", lat: 45.6, lng: 28.6, rating: 5, facilities: ["wifi"], description: "Cămin modern și confortabil.", url: "https://www.example.com/camin2" },  { id: 2, name: "Cămin Particular Constanța City Lodge", city: "Constanța", price: 300, roomType: "double", lat: 45.6, lng: 28.6, rating: 5, facilities: ["wifi"], description: "Cămin modern și confortabil." },
   { id: 3, name: "Cămin Universitatea din Craiova (UCV) – Campus Nicolae Titulescu", city: "Craiova", price: 180, roomType: "single", lat: 44.3, lng: 23.8, rating: 3, facilities: ["wifi", "parking"], description: "Cămin confortabil cu facilități de bază." },
   { id: 4, name: "Cămin UMF Craiova", city: "Craiova", price: 250, roomType: "single", lat: 44.3, lng: 23.9, rating: 4, facilities: ["wifi", "kitchen"], description: "Cămin modern, aproape de campus." },
   { id: 5, name: "Cămin Universitatea din Oradea – Campus Central", city: "Oradea", price: 220, roomType: "double", lat: 47.0, lng: 21.9, rating: 4, facilities: ["wifi", "parking"], description: "Cămin situat central, ideal pentru studenți." },
@@ -44,7 +45,27 @@ const accommodations = [
   { id: 25, name: "Cămin Universitatea „Ștefan cel Mare” Suceava – Căminul 1", city: "Suceava", price: 200, roomType: "single", lat: 47.6, lng: 26.3, rating: 3, facilities: ["wifi", "gym"], description: "Cămin confortabil, situat aproape de facultate." },
   { id: 26, name: "Cămin Particular Suceava Student Residence", city: "Suceava", price: 280, roomType: "double", lat: 47.7, lng: 26.4, rating: 4, facilities: ["wifi", "laundry"], description: "Cămin modern și accesibil." },
   { id: 27, name: "Cămin Universitatea din Oradea – Campus Universitar", city: "Oradea", price: 230, roomType: "single", lat: 47.0, lng: 21.8, rating: 4, facilities: ["wifi", "parking"], description: "Cămin central, aproape de campus." },
-  { id: 28, name: "Cămin Particular Oradea Residence", city: "Oradea", price: 310, roomType: "studio", lat: 47.1, lng: 21.9, rating: 5, facilities: ["wifi", "laundry"], description: "Cămin modern și deosebit." }
+  { id: 28, name: "Cămin Particular Oradea Residence", city: "Oradea", price: 310, roomType: "studio", lat: 47.1, lng: 21.9, rating: 5, facilities: ["wifi", "laundry"], description: "Cămin modern și deosebit." },
+    { id: 29, name: "Cămin Universitatea Ovidius Constanța", city: "Constanța", price: 220, roomType: "single", lat: 45.5, lng: 28.5, rating: 4, facilities: ["wifi", "parking"], description: "Cămin bine situat." },
+    { id: 30, name: "Cămin Particular Constanța City Lodge", city: "Constanța", price: 300, roomType: "double", lat: 45.6, lng: 28.6, rating: 5, facilities: ["wifi"], description: "Cămin modern și confortabil." },
+    { id: 31, name: "Cămin Central Brașov", city: "Brașov", price: 350, roomType: "single", lat: 45.65, lng: 25.6, rating: 3, facilities: ["wifi", "laundry", "study-rooms"], description: "Cămin situat aproape de centru." },
+    { id: 32, name: "Cămin Universitatea Babeș-Bolyai Cluj", city: "Cluj", price: 250, roomType: "double", lat: 46.75, lng: 23.6, rating: 4, facilities: ["wifi", "kitchen", "laundry"], description: "Cămin cu facilități moderne." },
+    { id: 33, name: "Cămin Timișoara College", city: "Timișoara", price: 400, roomType: "triple", lat: 45.75, lng: 21.25, rating: 5, facilities: ["wifi", "kitchen", "parking"], description: "Cămin aproape de facultate." },
+    { id: 34, name: "Cămin Universitatea Politehnica București", city: "București", price: 350, roomType: "single", lat: 44.43, lng: 26.1, rating: 4, facilities: ["wifi", "parking", "study-rooms"], description: "Cămin în apropiere de Politehnică." },
+    { id: 35, name: "Cămin Oradea Residence", city: "Oradea", price: 180, roomType: "single", lat: 47.05, lng: 21.92, rating: 3, facilities: ["wifi", "laundry"], description: "Cămin accesibil în apropiere de universitate." },
+    { id: 36, name: "Cămin Sibiu Campus", city: "Sibiu", price: 270, roomType: "double", lat: 45.8, lng: 24.15, rating: 4, facilities: ["wifi", "parking"], description: "Cămin liniștit în campusul universitar." },
+    { id: 37, name: "Cămin Suceava University Dorm", city: "Suceava", price: 230, roomType: "single", lat: 47.65, lng: 26.25, rating: 4, facilities: ["wifi", "laundry", "study-rooms"], description: "Cămin cu facilități complete." },
+    { id: 38, name: "Cămin Târgu Mureș Studii", city: "Târgu Mureș", price: 300, roomType: "private-bathroom", lat: 46.54, lng: 24.57, rating: 5, facilities: ["wifi", "study-rooms", "parking"], description: "Cămin modern, cu baie proprie." },
+    { id: 39, name: "Cămin Craiova Dormitory", city: "Craiova", price: 220, roomType: "double", lat: 44.43, lng: 23.8, rating: 3, facilities: ["wifi", "laundry"], description: "Cămin situat central, aproape de facultate." },
+    { id: 40, name: "Cămin Iași Central", city: "Iași", price: 260, roomType: "single", lat: 47.15, lng: 27.58, rating: 4, facilities: ["wifi", "parking", "study-rooms"], description: "Cămin accesibil în orașul Iași." },
+    { id: 41, name: "Cămin Arad Student", city: "Arad", price: 240, roomType: "double", lat: 46.18, lng: 21.31, rating: 5, facilities: ["wifi", "kitchen", "laundry"], description: "Cămin cu facilități moderne și locuri de parcare." },
+    { id: 42, name: "Cămin Brașov City Center", city: "Brașov", price: 350, roomType: "private-bathroom", lat: 45.65, lng: 25.58, rating: 5, facilities: ["wifi", "laundry", "study-rooms", "parking"], description: "Cămin elegant cu baie proprie." },
+    { id: 43, name: "Cămin Constanța Residence", city: "Constanța", price: 280, roomType: "triple", lat: 45.48, lng: 28.61, rating: 4, facilities: ["wifi", "parking", "kitchen"], description: "Cămin la distanță mică de universitate." },
+    { id: 44, name: "Cămin Cluj Napoca University", city: "Cluj", price: 275, roomType: "double", lat: 46.76, lng: 23.61, rating: 4, facilities: ["wifi", "laundry"], description: "Cămin confortabil și aproape de universitate." },
+    { id: 45, name: "Cămin Suceava University Dormitory", city: "Suceava", price: 210, roomType: "single", lat: 47.64, lng: 26.26, rating: 3, facilities: ["wifi", "study-rooms"], description: "Cămin central, aproape de facultate." },
+    { id: 46, name: "Cămin Timișoara University", city: "Timișoara", price: 330, roomType: "triple", lat: 45.75, lng: 21.25, rating: 4, facilities: ["wifi", "laundry", "parking"], description: "Cămin aproape de Universitatea Politehnica." },
+    { id: 47, name: "Cămin Sibiu Student House", city: "Sibiu", price: 280, roomType: "single", lat: 45.80, lng: 24.14, rating: 4, facilities: ["wifi", "kitchen"], description: "Cămin în apropiere de campus." },
+    { id: 48, name: "Cămin Craiova College", city: "Craiova", price: 230, roomType: "double", lat: 44.45, lng: 23.83, rating: 5, facilities: ["wifi", "parking"], description: "Cămin modern cu facilități excelente." }
 ];
 
 
@@ -103,8 +124,9 @@ const accommodations = [
         <p>${item.description}</p>
         <p><strong>Rating:</strong> ${'★'.repeat(item.rating)}</p>
         <p><strong>Facilități:</strong> ${item.facilities.join(", ")}</p>
-        <button class="details-button" onclick="openPopup('popup-${item.id}')">Vezi Detalii</button>
-      `;
+ <a href="${item.url}" target="_blank">
+        <button>Vezi Detalii</button>
+      </a>      `;
       accommodationList.appendChild(div);
 
       // Creare pop-up dinamic pentru fiecare cămin
@@ -126,6 +148,7 @@ const accommodations = [
       document.body.appendChild(popup);
     });
   };
+  
 
   // Aplica filtrele la apăsarea butonului
   document.getElementById("apply-filters").addEventListener("click", (e) => {
@@ -158,3 +181,31 @@ const accommodations = [
     .then(data => document.getElementById('footer-placeholder').innerHTML = data)
     .catch(error => console.error('Error loading header/footer:', error));
 });
+
+
+const slider = document.getElementById("price");
+const output = document.getElementById("price-value");
+
+function updateSliderBackground() {
+  const min = slider.min;
+  const max = slider.max;
+  const val = slider.value;
+
+  // Calcularea procentajului selectat
+  const percentage = ((val - min) / (max - min)) * 100;
+
+  // Actualizarea culorii folosind un gradient
+  slider.style.background = `linear-gradient(to right, #ffa500 ${percentage}%, #ddd ${percentage}%)`;
+
+  // Actualizarea textului pentru afișarea valorii
+  output.textContent = `${val} RON`;
+}
+
+// Eveniment pentru actualizarea slider-ului
+slider.addEventListener("input", updateSliderBackground);
+
+// Setarea inițială a fundalului
+updateSliderBackground();
+
+
+

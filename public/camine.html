@@ -29,28 +29,29 @@
         <div class="filter-group">
           <label for="city">Oraș:</label>
           <select id="city">
-            <option value=""> </option>
-          <option value="Arad">Arad</option>
-â          <option value="Brașov">Brașov</option>
-          <option value="București">București</option>
-          <option value="Cluj">Cluj-Napoca</option>
-          <option value="Constanța">Constanța</option>
-          <option value="Craiova">Craiova</option>
-          <option value="Iași">Iași</option>
-          <option value="Oradea">Oradea</option>
-          <option value="Sibiu">Sibiu</option>
-          <option value="Suceava">Suceava</option>
-          <option value="Târgu Mureș">Târgu Mureș</option>
-          <option value="Timișoara">Timișoara</option>
+            <option value="">Oricare</option>
+            <option value="Arad">Arad</option>
+            <option value="Brașov">Brașov</option>
+            <option value="București">București</option>
+            <option value="Cluj">Cluj-Napoca</option>
+            <option value="Constanța">Constanța</option>
+            <option value="Craiova">Craiova</option>
+            <option value="Iași">Iași</option>
+            <option value="Oradea">Oradea</option>
+            <option value="Sibiu">Sibiu</option>
+            <option value="Suceava">Suceava</option>
+            <option value="Târgu Mureș">Târgu Mureș</option>
+            <option value="Timișoara">Timișoara</option>
           </select>
         </div>
-
+      
         <div class="filter-group">
           <label for="price">Preț maxim (RON/lună):</label>
           <input type="range" id="price" min="100" max="1000" step="50" value="500">
           <span id="price-value">500 RON</span>
         </div>
-
+        
+      
         <div class="filter-group">
           <label for="room-type">Tipul camerei:</label>
           <select id="room-type">
@@ -61,17 +62,17 @@
             <option value="private-bathroom">Cu baie proprie</option>
           </select>
         </div>
-
+      
         <div class="filter-group">
           <label>Facilități:</label>
-          <input type="checkbox" id="wifi" value="Wi-Fi"> Wi-Fi
-          <input type="checkbox" id="kitchen" value="Bucătărie comună"> Bucătărie comună
-          <input type="checkbox" id="laundry" value="Spălătorie"> Spălătorie
-          <input type="checkbox" id="study-rooms" value="Săli de studiu"> Săli de studiu
-          <input type="checkbox" id="parking" value="Parcare"> Parcare
-          <input type="checkbox" id="accessible" value="Accesibilitate"> Accesibilitate
+          <input type="checkbox" id="wifi" value="wifi"> Wi-Fi
+          <input type="checkbox" id="kitchen" value="kitchen"> Bucătărie comună
+          <input type="checkbox" id="laundry" value="laundry"> Spălătorie
+          <input type="checkbox" id="study-rooms" value="study-rooms"> Săli de studiu
+          <input type="checkbox" id="parking" value="parking"> Parcare
+          <input type="checkbox" id="accessible" value="accessible"> Accesibilitate
         </div>
-
+      
         <div class="filter-group">
           <label for="distance">Distanța până la universitate:</label>
           <select id="distance">
@@ -81,7 +82,7 @@
             <option value="3km+">Peste 3 km</option>
           </select>
         </div>
-
+      
         <div class="filter-group">
           <label for="rating">Rating minim:</label>
           <select id="rating">
@@ -91,18 +92,8 @@
             <option value="3">★★★☆☆ sau mai mult</option>
           </select>
         </div>
-        <!-- 
-        <div class="filter-group">
-          <label for="rental-period">Perioada de închiriere:</label>
-          <select id="rental-period">
-            <option value="">Oricare</option>
-            <option value="semester">Semestru</option>
-            <option value="academic-year">An academic</option>
-            <option value="full-year">Perioadă completă</option>
-          </select>
-        </div>
-      -->
-
+      </div>
+      
         
 
         <!-- Buton de aplicare filtre -->
@@ -117,428 +108,6 @@
       <h2>Cămine Studențești</h2>
       <div id="accommodation-list" class="accommodation-list">
         <div class="camine-container">
-
-
-
-
-   <!-- Popup pentru Cămin 1 -->
-   <div class="popup" id="popup1">
-    <div class="popup-content">
-      <button class="close-btn" onclick="closePopup('popup1')">Închide</button>
-      <h2>Cămin Studențesc Universitatea Aurel Vlaicu</h2>
-      <p><strong>Oraș:</strong> Arad</p>
-      <p><strong>Preț:</strong> 200 RON/lună</p>
-      <p><strong>Facilități:</strong> Wi-Fi, Bucătărie comună, Parcare</p>
-      <p><strong>Detalii suplimentare:</strong> Căminul oferă camere duble, iar distanța față de universitate este de mai puțin de 1 km.</p>
-    </div>
-  </div>
-  
-      <!-- Popup 2 - Universitatea de Vest „Vasile Goldiș” din Arad -->
-      <div id="popup2" class="popup">
-          <div class="popup-content">
-              <span class="close" onclick="closePopup('popup2')">&times;</span>
-              <h2>Universitatea de Vest „Vasile Goldiș” din Arad</h2>
-              <p><strong>Adresă:</strong> Str. Cocorilor, nr. 57, Arad.</p>
-              <p><strong>Descriere:</strong> Cămin Universitar cu camere pentru studenți.</p>
-              <p><strong>Tipuri de camere și prețuri:</strong> Cameră dublă – 100 EUR/lună (echivalent în lei).</p>
-              <p><strong>Facilități:</strong> Camere cu 2 paturi, acces la utilități esențiale.</p>
-              <p><strong>Perioada de închiriere:</strong> Lunar.</p>
-              <a href="https://www.uvvg.ro/docs/Universitate/Cadrul_Juridic/Regulamentul_de_functionare_camin_studentesc.pdf" target="_blank">
-                <button class="see-camin-button">Vezi Cămin</button>
-            </a>
-          </div>
-      </div>
-
-      <!-- Popup 3 - Cămin Universitatea Vasile Alecsandri -->
-<div id="popup3" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup3')">&times;</span>
-      <h2>Cămin Universitatea Vasile Alecsandri</h2>
-      <p><strong>Adresă:</strong> Str. Spiru Haret, nr. 8, Bacău.</p>
-      <p><strong>Descriere:</strong> Cămin dedicat studenților universității.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră triplă – 150 RON/persoană.</p>
-      <p><strong>Facilități:</strong> Wi-Fi, bibliotecă, cantină.</p>
-      <p><strong>Perioada de închiriere:</strong> Semestrial.</p>
-      <a href="https://www.ub.ro/camine-studentesti" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 4 - Cămin Privat Campus Bacău -->
-<div id="popup4" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup4')">&times;</span>
-      <h2>Cămin Privat Campus Bacău</h2>
-      <p><strong>Adresă:</strong> Str. Mioriței, nr. 12, Bacău.</p>
-      <p><strong>Descriere:</strong> Cămin privat cu condiții de lux.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră single – 450 RON/lună.</p>
-      <p><strong>Facilități:</strong> Sală de lectură, bucătărie comună, spațiu verde.</p>
-      <p><strong>Perioada de închiriere:</strong> Pe lună.</p>
-      <a href="https://www.ub.ro/camine-studentesti" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 5 - Cămin Universitatea Transilvania Brașov -->
-<div id="popup5" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup5')">&times;</span>
-      <h2>Cămin Universitatea Transilvania Brașov</h2>
-      <p><strong>Adresă:</strong> Str. Memorandului, nr. 29, Brașov.</p>
-      <p><strong>Descriere:</strong> Cămin modern situat în campus.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră dublă – 250 RON/persoană.</p>
-      <p><strong>Facilități:</strong> Sală de fitness, bucătărie comună, Wi-Fi.</p>
-      <p><strong>Perioada de închiriere:</strong> Pe semestru.</p>
-      <a href="https://www.unitbv.ro/studenti/administrative/camine-si-cazari.html" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 6 - Cămin Privat Brașov Residence -->
-<div id="popup6" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup6')">&times;</span>
-      <h2>Cămin Privat Brașov Residence</h2>
-      <p><strong>Adresă:</strong> Str. Lungă, nr. 11, Brașov.</p>
-      <p><strong>Descriere:</strong> Cămin privat aproape de centrul orașului.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră single – 500 RON/lună.</p>
-      <p><strong>Facilități:</strong> Acces securizat, parcare, spațiu verde.</p>
-      <p><strong>Perioada de închiriere:</strong> Pe lună.</p>
-      <a href="https://houseofstudents.ro/cazare-studenti-brasov-strada-lunga-langa-memo/" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-  </div>
-
-<!-- Popup 7 - Cămin Universitatea Politehnica București (UPB) -->
-<div id="popup7" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup7')">&times;</span>
-      <h2>Cămin Universitatea Politehnica București (UPB)</h2>
-      <p><strong>Adresă:</strong> Campus Regie, Splaiul Independenței, nr. 313.</p>
-      <p><strong>Descriere:</strong> Cămin mare, cu facilități multiple pentru studenții UPB.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră triplă – 250 RON/persoană.</p>
-      <p><strong>Facilități:</strong> Săli de lectură, cantine, Wi-Fi.</p>
-      <p><strong>Perioada de închiriere:</strong> Pe semestru.</p>
-      <a href="https://upb.ro/camine/" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 8 - Cămin Universitatea București (UB) – Grozăvești -->
-<div id="popup8" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup8')">&times;</span>
-      <h2>Cămin Universitatea București (UB) – Grozăvești</h2>
-      <p><strong>Adresă:</strong> Str. Grozăvești, nr. 4.</p>
-      <p><strong>Descriere:</strong> Situat lângă stația de metrou Grozăvești, cu acces facil la facultăți.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră dublă – 300 RON/persoană.</p>
-      <p><strong>Facilități:</strong> Aer condiționat, sală de studiu, bucătărie comună.</p>
-      <p><strong>Perioada de închiriere:</strong> An universitar.</p>
-      <a href="https://unibuc.ro/student-ub/campus/camine-studentesti/" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 9 - Cămin Universitatea Babeș-Bolyai (UBB) -->
-<div id="popup9" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup9')">&times;</span>
-      <h2>Cămin Universitatea Babeș-Bolyai (UBB)</h2>
-      <p><strong>Adresă:</strong> Str. Observatorului, nr. 34, Cluj-Napoca.</p>
-      <p><strong>Descriere:</strong> Cămin cu spații recent renovate.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră dublă – 200 RON/persoană.</p>
-      <p><strong>Facilități:</strong> Spălătorie, cantină, spațiu de relaxare.</p>
-      <p><strong>Perioada de închiriere:</strong> Semestrial.</p>
-      <a href="https://www.ubbcluj.ro/ro/studenti/campus/spatii_cazare" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 10 - Cămin Particular Cluj Campus Plus -->
-<div id="popup10" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup10')">&times;</span>
-      <h2>Cămin Particular Cluj Campus Plus</h2>
-      <p><strong>Adresă:</strong> Str. Fabricii, nr. 40, Cluj-Napoca.</p>
-      <p><strong>Descriere:</strong> Cămin privat modern cu acces securizat.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră single – 550 RON/lună.</p>
-      <p><strong>Facilități:</strong> Parcare, sală de fitness, Wi-Fi.</p>
-      <p><strong>Perioada de închiriere:</strong> Lunar.</p>
-      <a href="https://cluj.info/page/camine-private-cluj/" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-
-<!-- Popup 11 - Cămin Universitatea Ovidius Constanța -->
-<div id="popup11" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup11')">&times;</span>
-      <h2>Cămin Universitatea Ovidius Constanța</h2>
-      <p><strong>Adresă:</strong> Aleea Universității, nr. 1, Constanța.</p>
-      <p><strong>Descriere:</strong> Cămin dedicat studenților de la Universitatea Ovidius.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră dublă – 150 RON/persoană.</p>
-      <p><strong>Facilități:</strong> Cantină, spații verzi, săli de lectură.</p>
-      <p><strong>Perioada de închiriere:</strong> Pe semestru.</p>
-      <a href="https://www.univ-ovidius.ro/studenti/info-camine-cazare/info-camine" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 12 - Cămin Particular Constanța City Lodge -->
-<div id="popup12" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup12')">&times;</span>
-      <h2>Cămin Particular Constanța City Lodge</h2>
-      <p><strong>Adresă:</strong> Str. Mircea cel Bătrân, nr. 10, Constanța.</p>
-      <p><strong>Descriere:</strong> Cămin privat cu facilități moderne.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră single – 450 RON/lună.</p>
-      <p><strong>Facilități:</strong> Aer condiționat, Wi-Fi, bucătărie comună.</p>
-      <p><strong>Perioada de închiriere:</strong> Pe lună.</p>
-      <a href="https://www.booking.com/searchresults.ro.html?aid=356980&label=gog235jc-1DCAsowAFCEGNpdHktcGFyay1zdHVkaW9IIFgDaMABiAEBmAEguAEXyAEM2AED6AEB-AECiAIBqAIDuAKH38a6BsACAdICJDUxNGQ0OWZmLTY2ZjgtNDVhYS04YWI2LWNlZDliMjg3Y2Q4M9gCBOACAQ&highlighted_hotels=2420676&redirected=1&city=-1156502&hlrd=user_sh&source=hotel&expand_sb=1&keep_landing=1&sid=dbf07808c4cf207ef3d96bea654641b6" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 13 - Cămin Universitatea din Craiova (UCV) – Campus Nicolae Titulescu -->
-<div id="popup13" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup13')">&times;</span>
-      <h2>Cămin Universitatea din Craiova (UCV) – Campus Nicolae Titulescu</h2>
-      <p><strong>Adresă:</strong> Str. Petre Ispirescu, nr. 107, Craiova.</p>
-      <p><strong>Descriere:</strong> Situat în apropierea facultăților, ideal pentru studenți.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră triplă – 180 RON/persoană.</p>
-      <p><strong>Facilități:</strong> Wi-Fi gratuit, spălătorie, sală de mese.</p>
-      <p><strong>Perioada de închiriere:</strong> Pe semestru.</p>
-      <a href="https://admitere.univnt.ro/facilitati/camin-studentesc/" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 14 - Cămin UMF Craiova -->
-<div id="popup14" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup14')">&times;</span>
-      <h2>Cămin UMF Craiova</h2>
-      <p><strong>Adresă:</strong> Str. Caracal, nr. 12, Craiova.</p>
-      <p><strong>Descriere:</strong> Un cămin privat cu dotări moderne și securitate.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră dublă – 500 RON/lună.</p>
-      <p><strong>Facilități:</strong> Bucătărie comună, sală de fitness, Wi-Fi.</p>
-      <p><strong>Perioada de închiriere:</strong> Lunar.</p>
-      <a href="https://www.umfcv.ro/ro/despre-noi/informatii-despre-viata-studenteasca/cazare" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-
-<!-- Popup 15 - Cămin Universitatea din Oradea – Campus Central -->
-<div id="popup15" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup15')">&times;</span>
-      <h2>Cămin Universitatea din Oradea – Campus Central</h2>
-      <p><strong>Adresă:</strong> Str. Universității, nr. 1, Oradea.</p>
-      <p><strong>Descriere:</strong> Cămin situat aproape de campus, recent renovat.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră triplă – 160 RON/persoană.</p>
-      <p><strong>Facilități:</strong> Cantină, săli de lectură, Wi-Fi.</p>
-      <p><strong>Perioada de închiriere:</strong> Pe semestru.</p>
-      <a href="https://www.uoradea.ro/Caz%C4%83ri+%C3%AEn+c%C4%83minele+studen%C8%9Be%C8%99ti" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 16 - Cămin Particular Elite Residence Oradea -->
-<div id="popup16" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup16')">&times;</span>
-      <h2>Cămin Particular Elite Residence Oradea</h2>
-      <p><strong>Adresă:</strong> Str. Roman Ciorogariu, nr. 5, Oradea.</p>
-      <p><strong>Descriere:</strong> Cămin privat modern, aproape de centrul orașului.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră dublă – 450 RON/lună.</p>
-      <p><strong>Facilități:</strong> Securitate 24/7, Wi-Fi, bucătărie comună.</p>
-      <p><strong>Perioada de închiriere:</strong> Lunar.</p>
-      <a href="https://www.transilvaniabusiness.ro/2024/09/24/un-nou-camin-studentesc-cu-246-de-locuri-la-universitatea-din-oradea/" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-
-<!-- Popup 17 - Cămin Universitatea „Lucian Blaga” Sibiu (ULBS) – Cămin 1 -->
-<div id="popup17" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup17')">&times;</span>
-      <h2>Cămin Universitatea „Lucian Blaga” Sibiu (ULBS) – Cămin 1</h2>
-      <p><strong>Adresă:</strong> Str. Victoriei, nr. 4-6, Sibiu.</p>
-      <p><strong>Descriere:</strong> Aproape de campus și zonele centrale.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră dublă – 180 RON/persoană.</p>
-      <p><strong>Facilități:</strong> Spălătorie, Wi-Fi, bucătărie comună.</p>
-      <p><strong>Perioada de închiriere:</strong> Pe semestru.</p>
-      <a href="https://www.ulbsibiu.ro/ro/studenti/campus/camine/" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 18 - Cămin Particular Sibiu Student Hostel -->
-<div id="popup18" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup18')">&times;</span>
-      <h2>Cămin Particular Sibiu Student Hostel</h2>
-      <p><strong>Adresă:</strong> Str. Mihai Viteazu, nr. 7, Sibiu.</p>
-      <p><strong>Descriere:</strong> Modern, cu servicii premium pentru studenți.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră single – 550 RON/lună.</p>
-      <p><strong>Facilități:</strong> Sală de fitness, Wi-Fi, parcare privată.</p>
-      <p><strong>Perioada de închiriere:</strong> Lunar.</p>
-      <a href="https://continental-forum-sibiu.continentalhotels.ro/oferte/oferta-cazare-studenti" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 19 - Cămin Universitatea „Ștefan cel Mare” Suceava (USV) – Căminul 2 -->
-<div id="popup19" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup19')">&times;</span>
-      <h2>Cămin Universitatea „Ștefan cel Mare” Suceava (USV) – Căminul 2</h2>
-      <p><strong>Adresă:</strong> Str. Universității, nr. 13, Suceava.</p>
-      <p><strong>Descriere:</strong> Aproape de campus și alte facilități.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră triplă – 150 RON/persoană.</p>
-      <p><strong>Facilități:</strong> Sală de mese, Wi-Fi gratuit, spații de recreere.</p>
-      <p><strong>Perioada de închiriere:</strong> Pe semestru.</p>
-      <a href="https://usv.ro/despre-noi/povestea-noastra/facilitati/camine/" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 20 - Cămin Particular Casa Studenților Suceava -->
-<div id="popup20" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup20')">&times;</span>
-      <h2>Cămin Particular Casa Studenților Suceava</h2>
-      <p><strong>Adresă:</strong> Str. Mihai Viteazu, nr. 22, Suceava.</p>
-      <p><strong>Descriere:</strong> Dotat modern, cu servicii premium.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră dublă – 400 RON/lună.</p>
-      <p><strong>Facilități:</strong> Wi-Fi, bucătărie comună, parcare gratuită.</p>
-      <p><strong>Perioada de închiriere:</strong> Lunar.</p>
-      <a href="#" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 21 - Cămin Universitatea de Medicină, Farmacie, Științe și Tehnologie (UMFST) – Căminul 1 -->
-<div id="popup21" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup21')">&times;</span>
-      <h2>Cămin Universitatea de Medicină, Farmacie, Științe și Tehnologie (UMFST) – Căminul 1</h2>
-      <p><strong>Adresă:</strong> Str. Gheorghe Marinescu, nr. 38, Târgu Mureș.</p>
-      <p><strong>Descriere:</strong> Special destinat studenților UMFST.</p>
-      <p><strong>Facilități:</strong> Wi-Fi, cantină, spălătorie.</p>
-      <p><strong>Perioada de închiriere:</strong> Pe semestru.</p>
-      <a href="https://umfst.ro/universitate/directia-administrativa/serviciul-social/camine-studentesti/" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 22 - Cămin Particular Mureș Student Residence -->
-<div id="popup22" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup22')">&times;</span>
-      <h2>Cămin Particular Mureș Student Residence</h2>
-      <p><strong>Adresă:</strong> Str. Pădurii, nr. 8, Târgu Mureș.</p>
-      <p><strong>Descriere:</strong> Modern, cu facilități variate.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră single – 500 RON/lună.</p>
-      <p><strong>Facilități:</strong> Sală de fitness, bucătărie, securitate 24/7.</p>
-      <p><strong>Perioada de închiriere:</strong> Lunar.</p>
-      <a href="https://www.happycampus.ro/" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-
-<!-- Popup 23 - Cămin Universitatea de Vest Timișoara (UVT) – Căminul 4 -->
-<div id="popup23" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup23')">&times;</span>
-      <h2>Cămin Universitatea de Vest Timișoara (UVT) – Căminul 4</h2>
-      <p><strong>Adresă:</strong> Bd. Vasile Pârvan, nr. 4, Timișoara.</p>
-      <p><strong>Descriere:</strong> Recent renovat, în apropierea campusului principal.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră triplă – 170 RON/persoană.</p>
-      <p><strong>Facilități:</strong> Wi-Fi, cantină, săli de lectură.</p>
-      <p><strong>Perioada de închiriere:</strong> Pe semestru.</p>
-      <a href="https://www.uvt.ro/educatie/campus-uvt/cazare-in-caminele-uvt/" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<!-- Popup 24 - Cămin Particular Timișoara Student Living -->
-<div id="popup24" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup24')">&times;</span>
-      <h2>Cămin Particular Timișoara Student Living</h2>
-      <p><strong>Adresă:</strong> Str. Mihai Viteazu, nr. 3, Timișoara.</p>
-      <p><strong>Descriere:</strong> Cămin privat premium, cu dotări de calitate.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră dublă – 450 RON/lună.</p>
-      <p><strong>Facilități:</strong> Bucătărie complet utilată, sală de fitness, terasă.</p>
-      <p><strong>Perioada de închiriere:</strong> Lunar.</p>
-      <a href="https://www.camintimisoara.ro/ro/" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-<div id="popup27" class="popup" data-oras="Iași" data-pret="180" data-tip_camera="double" data-facilitati="wifi,study-rooms">
-  <div class="popup-content">
-    <span class="close" onclick="closePopup('popup27')">&times;</span>
-    <h2>Cămin Titu Maiorescu Iași</h2>
-    <p><strong>Adresă:</strong> Str. Titu Maiorescu, nr. 1, Iași.</p>
-    <p><strong>Descriere:</strong> Cămin situat în apropierea facultăților și campusului universitar.</p>
-    <p><strong>Tipuri de camere și prețuri:</strong> Cameră dublă – 180 RON/persoană.</p>
-    <p><strong>Facilități:</strong> Wi-Fi, sală de lectură, cantină.</p>
-    <p><strong>Perioada de închiriere:</strong> Semestrial.</p>
-    <a href="https://www.uaic.ro/studenti/camine/" target="_blank">
-      <button class="see-camin-button">Vezi Cămin</button>
-    </a>
-  </div>
-</div>
-
-
-<!-- Popup 28 - Cămin Gaudeamus Iași -->
-<div id="popup28" class="popup">
-  <div class="popup-content">
-      <span class="close" onclick="closePopup('popup28')">&times;</span>
-      <h2>Cămin Gaudeamus Iași</h2>
-      <p><strong>Adresă:</strong> Str. Gaudeamus, nr. 10, Iași.</p>
-      <p><strong>Descriere:</strong> Cămin modern, aproape de zona centrală și facultăți.</p>
-      <p><strong>Tipuri de camere și prețuri:</strong> Cameră dublă – 200 RON/persoană.</p>
-      <p><strong>Facilități:</strong> Wi-Fi, sală de lectură, cantină, spațiu de relaxare.</p>
-      <p><strong>Perioada de închiriere:</strong> Semestrial.</p>
-      <a href="https://www.uaic.ro/studenti/camine/" target="_blank">
-          <button class="see-camin-button">Vezi Cămin</button>
-      </a>
-  </div>
-</div>
-
-
-
-  
     </section>
 
     <!-- Mesaj pentru cămine inexistente și alternative -->
@@ -554,13 +123,13 @@
         <li><a href="https://www.olx.ro/imobiliare/" target="_blank">OLX Imobiliare</a> - Anunțuri pentru chirii și camere de închiriat.</li>
       </ul>
     </section>
-
+  </main>
     <!-- Hartă -->
     <section class="map">
       <h2>Locațiile pe hartă</h2>
-      <div id="map" style="height: 400px;"></div>
+      <div id="map" style="height: 500px;"></div>
     </section>
-  </main>
+ 
   
   <div id="footer-placeholder"></div>
  
