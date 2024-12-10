@@ -39,7 +39,15 @@ main {
 
 }
 
-
+@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Source+Sans+Pro:wght@400;700&display=swap');
+   
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Freeman', sans-serif; /* Font pentru toate titlurile */
+}
+ 
+p {
+  font-family: 'Source Sans Pro', sans-serif; /* Font pentru toate paragrafele */
+}
 
 /* Header Styling */
 .intro {
