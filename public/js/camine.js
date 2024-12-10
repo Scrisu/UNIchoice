@@ -64,8 +64,7 @@ const accommodations = [
     { id: 44, name: "Cămin Cluj Napoca University– Cămin municipal", city: "Cluj", price: 275, roomType: "double", lat: 46.76, lng: 23.61, rating: 4, facilities: ["wifi", "laundry"], description: "Cămin confortabil și aproape de universitate." },
     { id: 45, name: "Cămin Suceava University Dormitory– Cămin municipal", city: "Suceava", price: 210, roomType: "single", lat: 47.64, lng: 26.26, rating: 3, facilities: ["wifi", "study-rooms"], description: "Cămin central, aproape de facultate." },
     { id: 46, name: "Cămin Timișoara University– Cămin municipal important", city: "Timișoara", price: 330, roomType: "triple", lat: 45.75, lng: 21.25, rating: 4, facilities: ["wifi", "laundry", "parking"], description: "Cămin aproape de Universitatea Politehnica." },
-    { id: 47, name: "Cămin Sibiu Student House", city: "Sibiu", price: 280, roomType: "single", lat: 45.80, lng: 24.14, rating: 4, facilities: ["wifi", "kitchen"], description: "Cămin în apropiere de campus." },
-    { id: 48, name: "Cămin Craiova College", city: "Craiova", price: 230, roomType: "double", lat: 44.45, lng: 23.83, rating: 5, facilities: ["wifi", "parking"], description: "Cămin modern cu facilități excelente." }
+    { id: 47, name: "Cămin Sibiu Student House", city: "Sibiu", price: 280, roomType: "single", lat: 45.80, lng: 24.14, rating: 4, facilities: ["wifi", "kitchen"], description: "Cămin în apropiere de campus." }
 ];
 
 
