@@ -146,6 +146,7 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
+  
 }
 
 .accommodation-item {
@@ -154,6 +155,7 @@ button:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   text-align: center;
+  flex: 0 1 calc(33.333% - 20px); /* Fiecare card ocupă o treime din rând */
 }
 
 .accommodation-item h3 {
